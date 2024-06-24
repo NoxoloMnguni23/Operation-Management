@@ -1,0 +1,19 @@
+{
+    "classes": [
+        "dark-blue-bg",
+        "light-blue-bg",
+        "mid-blue-bg",
+        "gray-blue-bg",
+        "blue-bg",
+        "color-blue",
+        "color-light-blue",
+        "color-mid-blue",
+        "color-dark-blue",
+        "color-gray-blue",
+        "color-dark-gray",
+        "full-height",
+        "half-height",
+        "full-width",
+        "half-width"
+    ]
+}

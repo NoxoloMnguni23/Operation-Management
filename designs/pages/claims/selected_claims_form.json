@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_JtSCQUqS51aBAx8U",
+        "type": "tab",
+        "createdDate": "2024-06-20T11:06:42.050Z",
+        "label": "selected_claims_form",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "selected_claims_formComponent"
+    },
+    {
+        "id": "sd_ufvki9FByCmm6HF9",
+        "type": "OnInit",
+        "z": "sd_JtSCQUqS51aBAx8U",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_ufvki9FByCmm6HF9",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_eNoIDFSepvvsLVI9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "selected_claims_formComponent"
+    },
+    {
+        "id": "sd_eNoIDFSepvvsLVI9",
+        "type": "PageVariables",
+        "z": "sd_JtSCQUqS51aBAx8U",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_eNoIDFSepvvsLVI9",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_claims_formComponent",
+        "generated": true
+    }
+]

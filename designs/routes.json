@@ -1,0 +1,42 @@
+{
+    "routes": [
+        {
+            "component": "signInComponent",
+            "path": "signIn"
+        },
+        {
+            "component": "operations_dashboardComponent",
+            "path": "operations_dashboard"
+        },
+        {
+            "component": "user_dashboardComponent",
+            "path": "user_dashboard"
+        },
+        {
+            "component": "add_receiptComponent",
+            "path": "add_receipt"
+        },
+        {
+            "component": "selected_receipt_formComponent",
+            "path": "selected_receipt_form"
+        },
+        {
+            "path": "view_table_of_receipt",
+            "component": "view_table_of_receiptComponent"
+        },
+        {
+            "path": "all_purchased_items_table",
+            "component": "all_purchased_items_tableComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "/signIn",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

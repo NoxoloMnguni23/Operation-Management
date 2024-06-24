@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_1V5aIn6YDe1GpVdE",
+        "type": "tab",
+        "createdDate": "2024-06-20T11:09:18.964Z",
+        "label": "add_receipt",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_nRZRxWg6wQmHetCJ",
+        "type": "OnInit",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_nRZRxWg6wQmHetCJ",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_ahkmXkQ9ZOV7VZEC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_ahkmXkQ9ZOV7VZEC",
+        "type": "PageVariables",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_ahkmXkQ9ZOV7VZEC",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    }
+]

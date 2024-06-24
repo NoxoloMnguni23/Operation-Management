@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_gWnbl3zLLCbgPSWI",
+        "type": "tab",
+        "createdDate": "2024-06-20T11:05:30.404Z",
+        "label": "add_claims_form",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "add_claims_formComponent"
+    },
+    {
+        "id": "sd_wPo9wUao3PJQcCU4",
+        "type": "OnInit",
+        "z": "sd_gWnbl3zLLCbgPSWI",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_wPo9wUao3PJQcCU4",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_6OP7gafQVDyLy7vJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_claims_formComponent"
+    },
+    {
+        "id": "sd_6OP7gafQVDyLy7vJ",
+        "type": "PageVariables",
+        "z": "sd_gWnbl3zLLCbgPSWI",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_6OP7gafQVDyLy7vJ",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_claims_formComponent",
+        "generated": true
+    }
+]

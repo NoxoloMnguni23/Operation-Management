@@ -1,0 +1,97 @@
+/*Importing default angular material css theme. */
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
+
+
+///colours
+$dark-blue : #395886; ///side nav
+$blue : #638ecb; 
+$mid-blue : #8aaee0;
+$light-blue : #b1c9ef; //on-hover
+$gray-blue : #d5deef; //background
+$white-blue : #f0f3fa;//side nav text color
+$dark-gray : #9a9b9e;//body text color
+
+///category color
+$orange-maintenance : #f1680c;
+$green-groceries : green;
+$yellow-supplies : yellow;
+$pending-category: gray;
+
+.dark-blue-bg {
+    background-color: $dark-blue;
+}
+
+.light-blue-bg {
+    background-color: $light-blue;
+}
+
+.mid-blue-bg {
+    background-color: $mid-blue;
+}
+
+.gray-blue-bg {
+    background-color: $gray-blue;
+}
+
+.blue-bg {
+    background-color: $blue;
+}
+
+.color-blue {
+    color: $blue;
+}
+
+.color-light-blue {
+    color: $light-blue;
+}
+
+.color-mid-blue {
+    color: $mid-blue;
+}
+
+.color-dark-blue {
+    color: $dark-blue;
+}
+
+.color-gray-blue {
+    color: $gray-blue;
+}
+
+.color-dark-gray {
+    color: $dark-gray;
+}
+
+
+//Sizes
+.full-height {
+    height: 100%;
+}
+
+.half-height {
+    height: 50%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+
+
+
+
+
+
+
