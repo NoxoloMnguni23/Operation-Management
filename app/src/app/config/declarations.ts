@@ -22,6 +22,8 @@ import { donut_chartComponent } from '../components/charts/donut_chart.component
 import { line_chartComponent } from '../components/charts/line_chart.component';
 //CORE_REFERENCE_IMPORT-login_guidelinesComponent
 import { login_guidelinesComponent } from '../components/dashboard/login_guidelines.component';
+//CORE_REFERENCE_IMPORT-categoriesComponent
+import { categoriesComponent } from '../components/categories/categories.component';
 //CORE_REFERENCE_IMPORT-all_purchased_items_tableComponent
 import { all_purchased_items_tableComponent } from '../components/reports/all_purchased_items_table.component';
 //CORE_REFERENCE_IMPORT-signInComponent
@@ -80,6 +82,8 @@ export const appDeclarations = [
   line_chartComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-login_guidelinesComponent
   login_guidelinesComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-categoriesComponent
+  categoriesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-all_purchased_items_tableComponent
   all_purchased_items_tableComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-signInComponent
@@ -147,6 +151,7 @@ export const appRoutes = [
   { path: 'login_guidelines', component: login_guidelinesComponent },
   { path: 'line_chart', component: line_chartComponent },
   { path: 'donut_chart', component: donut_chartComponent },
+  { path: 'categories', component: categoriesComponent },
   { path: '', redirectTo: '/view_table_of_receipt', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

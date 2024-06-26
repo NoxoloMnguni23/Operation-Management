@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './declarations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import 'hammerjs';
-import { NgChartsModule } from 'ng2-charts';
+
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { NeutrinosModule } from 'neutrinos-module';
@@ -76,7 +76,7 @@ export const appImportModules: any = [
 	FlexLayoutModule,
 	RouterModule.forRoot(appRoutes),
 	NgxChartsModule,
-	NgChartsModule,
+	
 	HttpClientModule,
 	/**
 	 * Angular material components

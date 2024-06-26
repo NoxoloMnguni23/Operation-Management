@@ -12,7 +12,11 @@ $light-blue : #b1c9ef; //on-hover
 $gray-blue : #d5deef; //background
 $white-blue : #f0f3fa;//side nav text color
 $dark-gray : #9a9b9e;//body text color
-
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
 body {
     font-family: "Roboto", sans-serif;
     background-color: $gray-blue;
@@ -63,6 +67,9 @@ body {
 
 .blue-bg {
     background-color: $blue;
+}
+.white-blue-bg {
+    background-color: $white-blue;
 }
 
 .color-blue {

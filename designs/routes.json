@@ -47,6 +47,10 @@
             "component": "donut_chartComponent"
         },
         {
+            "path": "categories",
+            "component": "categoriesComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/view_table_of_receipt",
             "pathMatch": "full",
