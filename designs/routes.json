@@ -30,7 +30,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/signIn",
+            "redirectTo": "/all_purchased_items_table",
             "pathMatch": "full",
             "default": true
         },

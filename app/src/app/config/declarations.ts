@@ -123,7 +123,7 @@ export const appRoutes = [
     path: 'all_purchased_items_table',
     component: all_purchased_items_tableComponent,
   },
-  { path: '', redirectTo: '/signIn', pathMatch: 'full' },
+  { path: '', redirectTo: '/all_purchased_items_table', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END
