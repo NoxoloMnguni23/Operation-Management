@@ -138,7 +138,7 @@ export const appRoutes = [
   { path: 'login_guidelines', component: login_guidelinesComponent },
   { path: 'line_chart', component: line_chartComponent },
   { path: 'donut_chart', component: donut_chartComponent },
-  { path: '', redirectTo: '/signIn', pathMatch: 'full' },
+  { path: '', redirectTo: '/view_table_of_receipt', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

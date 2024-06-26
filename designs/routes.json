@@ -42,7 +42,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/signIn",
+            "redirectTo": "/view_table_of_receipt",
             "pathMatch": "full",
             "default": true
         },

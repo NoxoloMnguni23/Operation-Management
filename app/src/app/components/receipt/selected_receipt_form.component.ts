@@ -59,10 +59,34 @@ export class selected_receipt_formComponent {
 
   sd_XyfbDazfYKEzilS2(bh) {
     try {
+      bh = this.sd_49ZekZ6zNblKYnYe(bh);
       //appendnew_next_sd_XyfbDazfYKEzilS2
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_XyfbDazfYKEzilS2');
+    }
+  }
+
+  sd_49ZekZ6zNblKYnYe(bh) {
+    try {
+      this.page.userData = JSON.parse(sessionStorage.getItem('user'));
+      bh = this.sd_q1lHTwDbml4pIrPz(bh);
+      //appendnew_next_sd_49ZekZ6zNblKYnYe
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_49ZekZ6zNblKYnYe');
+    }
+  }
+
+  sd_q1lHTwDbml4pIrPz(bh) {
+    try {
+      const page = this.page;
+
+      console.log('recived', page.userData);
+      //appendnew_next_sd_q1lHTwDbml4pIrPz
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_q1lHTwDbml4pIrPz');
     }
   }
 

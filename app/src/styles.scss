@@ -13,6 +13,15 @@ $gray-blue : #d5deef; //background
 $white-blue : #f0f3fa;//side nav text color
 $dark-gray : #9a9b9e;//body text color
 
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
+
+
+
+
 ///category color
 $orange-maintenance : #f1680c;
 $green-groceries : green;
