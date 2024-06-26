@@ -16,6 +16,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-donut_chartComponent
+import { donut_chartComponent } from '../components/charts/donut_chart.component';
+//CORE_REFERENCE_IMPORT-line_chartComponent
+import { line_chartComponent } from '../components/charts/line_chart.component';
 //CORE_REFERENCE_IMPORT-login_guidelinesComponent
 import { login_guidelinesComponent } from '../components/dashboard/login_guidelines.component';
 //CORE_REFERENCE_IMPORT-all_purchased_items_tableComponent
@@ -70,6 +74,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-donut_chartComponent
+  donut_chartComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-line_chartComponent
+  line_chartComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-login_guidelinesComponent
   login_guidelinesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-all_purchased_items_tableComponent
@@ -128,6 +136,8 @@ export const appRoutes = [
     component: all_purchased_items_tableComponent,
   },
   { path: 'login_guidelines', component: login_guidelinesComponent },
+  { path: 'line_chart', component: line_chartComponent },
+  { path: 'donut_chart', component: donut_chartComponent },
   { path: '', redirectTo: '/signIn', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

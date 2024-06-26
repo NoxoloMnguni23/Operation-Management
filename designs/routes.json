@@ -33,6 +33,14 @@
             "component": "login_guidelinesComponent"
         },
         {
+            "path": "line_chart",
+            "component": "line_chartComponent"
+        },
+        {
+            "path": "donut_chart",
+            "component": "donut_chartComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/signIn",
             "pathMatch": "full",
