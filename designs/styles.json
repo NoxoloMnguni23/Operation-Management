@@ -1,5 +1,6 @@
 {
     "classes": [
+        "dark-grey-bg",
         "dark-blue-bg",
         "light-blue-bg",
         "mid-blue-bg",
@@ -11,9 +12,30 @@
         "color-dark-blue",
         "color-gray-blue",
         "color-dark-gray",
+        "white-bg-lebo",
         "full-height",
         "half-height",
         "full-width",
-        "half-width"
+        "half-width",
+        "font-300-lebo",
+        "font-weight-900-lebo",
+        "no-margin-lebo",
+        "margin-top-10px-lebo",
+        "margin-right-160px-lebo",
+        "margin-bottom-10-lebo",
+        "margin-top-10-lebo",
+        "dot-groceries-lebo",
+        "dot-maintenance-lebo",
+        "dot-supplies-lebo",
+        "main-container-lebo",
+        "padding-left-12px-lebo",
+        "padding-right-12px-lebo",
+        "padding-10-lebo",
+        "border-radius-20px-lebo",
+        "guide-info",
+        "text-center",
+        "absolute-lebo",
+        "guide-lebo",
+        "font-date-lebo"
     ]
 }
