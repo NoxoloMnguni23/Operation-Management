@@ -10,13 +10,13 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 //append_imports_end
 
 @Component({
-  selector: 'bh-selected_receipt_form',
-  templateUrl: './selected_receipt_form.template.html',
+  selector: 'bh-line_chart',
+  templateUrl: './line_chart.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class selected_receipt_formComponent {
+export class line_chartComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -33,7 +33,7 @@ export class selected_receipt_formComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_uX0UIxISFMwosX18(bh);
+      this.sd_stIqQyTQKpMlT5xk(bh);
     }
   }
 
@@ -45,48 +45,65 @@ export class selected_receipt_formComponent {
     //append_listeners
   }
 
-  sd_uX0UIxISFMwosX18(bh) {
+  sd_stIqQyTQKpMlT5xk(bh) {
     try {
-      bh = this.sd_XyfbDazfYKEzilS2(bh);
-      //appendnew_next_sd_uX0UIxISFMwosX18
+      bh = this.sd_Dk6e19F4ZFxtymyB(bh);
+      //appendnew_next_sd_stIqQyTQKpMlT5xk
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uX0UIxISFMwosX18');
+      return this.errorHandler(bh, e, 'sd_stIqQyTQKpMlT5xk');
     }
   }
 
-  //appendnew_flow_selected_receipt_formComponent_start
+  //appendnew_flow_line_chartComponent_start
 
-  sd_XyfbDazfYKEzilS2(bh) {
+  sd_Dk6e19F4ZFxtymyB(bh) {
     try {
-      bh = this.sd_49ZekZ6zNblKYnYe(bh);
-      //appendnew_next_sd_XyfbDazfYKEzilS2
+      this.page.lineChartData = this.page.lineChartData;
+      bh = this.sd_61T0Ny18yQQm3DCq(bh);
+      //appendnew_next_sd_Dk6e19F4ZFxtymyB
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_XyfbDazfYKEzilS2');
+      return this.errorHandler(bh, e, 'sd_Dk6e19F4ZFxtymyB');
     }
   }
 
-  sd_49ZekZ6zNblKYnYe(bh) {
-    try {
-      this.page.userData = JSON.parse(sessionStorage.getItem('user'));
-      bh = this.sd_q1lHTwDbml4pIrPz(bh);
-      //appendnew_next_sd_49ZekZ6zNblKYnYe
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_49ZekZ6zNblKYnYe');
-    }
-  }
-
-  sd_q1lHTwDbml4pIrPz(bh) {
+  sd_61T0Ny18yQQm3DCq(bh) {
     try {
       const page = this.page;
+      page.lineChartData = [
+        {
+          name: 'Monthly Expenditure',
+          series: [
+            { value: 6000, name: 'January' },
+            { value: 8000, name: 'February' },
+            { value: 2500, name: 'March' },
+            { value: 2500, name: 'April' },
+            { value: 2900, name: 'May' },
+            { value: 20500, name: 'June' },
+            { value: 700, name: 'July' },
+            { value: 9500, name: 'August' },
+            { value: 0, name: 'September' },
+            { value: 15000, name: 'October' },
+            { value: 14000, name: 'November' },
+            { value: 10000, name: 'December' },
+          ],
+        },
+      ];
 
-      console.log('recived', page.userData);
-      //appendnew_next_sd_q1lHTwDbml4pIrPz
+      // {
+      // "name": "USA",
+      // "series": [
+      // {"value": 5481,"name":2010},
+      // {"value": 5881,"name":2011},
+      // {"value": 3860,"name":2012},
+      // ]}
+      // ];
+
+      //appendnew_next_sd_61T0Ny18yQQm3DCq
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_q1lHTwDbml4pIrPz');
+      return this.errorHandler(bh, e, 'sd_61T0Ny18yQQm3DCq');
     }
   }
 
@@ -106,5 +123,5 @@ export class selected_receipt_formComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_selected_receipt_formComponent_Catch
+  //appendnew_flow_line_chartComponent_Catch
 }

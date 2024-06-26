@@ -43,8 +43,63 @@
         "globalVariables": [],
         "functionName": "sd_XyfbDazfYKEzilS2",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 65,
+        "y": 120,
+        "wires": [
+            [
+                "sd_49ZekZ6zNblKYnYe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_49ZekZ6zNblKYnYe",
+        "type": "Storage",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "user"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "userData"
+        },
+        "functionName": "sd_49ZekZ6zNblKYnYe",
+        "category": "Storage",
+        "x": 165,
+        "y": 120,
+        "wires": [
+            [
+                "sd_q1lHTwDbml4pIrPz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_q1lHTwDbml4pIrPz",
+        "type": "Script",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\n\nconsole.log(\"recived\",page.userData)",
+        "functionName": "sd_q1lHTwDbml4pIrPz",
+        "category": "Function",
+        "x": 305,
+        "y": 120,
         "wires": [
             []
         ],
