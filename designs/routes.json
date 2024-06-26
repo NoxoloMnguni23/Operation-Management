@@ -29,6 +29,10 @@
             "component": "all_purchased_items_tableComponent"
         },
         {
+            "path": "login_guidelines",
+            "component": "login_guidelinesComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/signIn",
             "pathMatch": "full",
