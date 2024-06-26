@@ -19,11 +19,11 @@
         "name": "",
         "functionName": "sd_7yx73swzCgSQ89eB",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 65,
+        "y": 60,
         "wires": [
             [
-                "sd_oILf1PmiKBS7wYCG"
+                "sd_O2uh2oOCq9Gzz9zw"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -40,11 +40,306 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "collapsed",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
+            },
+            {
+                "textIp": "menuItems",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": "menuItems"
+                }
+            },
+            {
+                "textIp": "selectedItem",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            }
+        ],
         "functionName": "sd_oILf1PmiKBS7wYCG",
         "category": "Function",
+        "x": 285,
+        "y": 60,
+        "wires": [
+            [
+                "sd_5X1HLpopsEG2VXgY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_o1OdsJdaSOvBrQpX",
+        "type": "PageStart",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "sidenavToggles",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sidenavToggles",
+        "category": "General",
+        "x": 60,
+        "y": 200,
+        "wires": [
+            [
+                "sd_30pcqYf701ywgBPP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "operations_dashboardComponent"
+    },
+    {
+        "id": "sd_30pcqYf701ywgBPP",
+        "type": "Script",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.collapsed = !page.collapsed",
+        "functionName": "sd_30pcqYf701ywgBPP",
+        "category": "Function",
         "x": 180,
-        "y": 30,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_O2uh2oOCq9Gzz9zw",
+        "type": "Script",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.menuItems = [\n    {label: 'Dashboard', icon: 'dashboard', route: '/operations_dashboard'},\n    {label: 'Categories', icon: 'category', route: '#'},\n    {label: 'Receipts', icon: 'receipt', route: 'view_table_of_receipt'},\n    {label: 'Reports', icon: 'table_view', route: '#'},\n    {label: 'Statistics', icon: 'trending_up', route: '#'},\n    {label: 'Logout', icon: 'logout', route: '/signIn'},\n\n]",
+        "functionName": "sd_O2uh2oOCq9Gzz9zw",
+        "category": "Function",
+        "x": 185,
+        "y": 60,
+        "wires": [
+            [
+                "sd_oILf1PmiKBS7wYCG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xeM9wambVxpp5VLA",
+        "type": "PageStart",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "index",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "label",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "index",
+        "category": "General",
+        "x": 85,
+        "y": 340,
+        "wires": [
+            [
+                "sd_R9E4FPsD1A4haZLZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "operations_dashboardComponent"
+    },
+    {
+        "id": "sd_L81aWNgSsYcQyLt2",
+        "type": "Storage",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "menuLabels"
+        },
+        "value": {
+            "type": "bh",
+            "value": "menuLabel"
+        },
+        "resultMapping": {},
+        "functionName": "sd_L81aWNgSsYcQyLt2",
+        "category": "Storage",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "sd_ESkOTLP0Ll1LnYvR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5X1HLpopsEG2VXgY",
+        "type": "Script",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.collapsed = !page.collapsed\n\nbh.firstItem = page.menuItems[0];\n\n",
+        "functionName": "sd_5X1HLpopsEG2VXgY",
+        "category": "Function",
+        "x": 385,
+        "y": 60,
+        "wires": [
+            [
+                "sd_0C6WjPKpUZdNPt2d"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_R9E4FPsD1A4haZLZ",
+        "type": "Script",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.menuLabel = bh.input.label",
+        "functionName": "sd_R9E4FPsD1A4haZLZ",
+        "category": "Function",
+        "x": 185,
+        "y": 340,
+        "wires": [
+            [
+                "sd_L81aWNgSsYcQyLt2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ESkOTLP0Ll1LnYvR",
+        "type": "Storage",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "menuLabels"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "label"
+        },
+        "functionName": "sd_ESkOTLP0Ll1LnYvR",
+        "category": "Storage",
+        "x": 365,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0C6WjPKpUZdNPt2d",
+        "type": "Storage",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "menuLabels"
+        },
+        "value": {
+            "type": "bh",
+            "value": "firstItem"
+        },
+        "resultMapping": {},
+        "functionName": "sd_0C6WjPKpUZdNPt2d",
+        "category": "Storage",
+        "x": 465,
+        "y": 60,
+        "wires": [
+            [
+                "sd_YhA3OA5xsjzvr8dG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YhA3OA5xsjzvr8dG",
+        "type": "Storage",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "menuLabels"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "label"
+        },
+        "functionName": "sd_YhA3OA5xsjzvr8dG",
+        "category": "Storage",
+        "x": 585,
+        "y": 60,
         "wires": [
             []
         ],
