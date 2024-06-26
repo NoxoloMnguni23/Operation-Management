@@ -37,5 +37,10 @@
         "absolute-lebo",
         "guide-lebo",
         "font-date-lebo"
+        "half-width",
+        "mat-header-row",
+        "mat-table",
+        "mat-table-sticky",
+        "mat-paginator-container"
     ]
 }

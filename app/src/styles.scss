@@ -221,8 +221,19 @@ body {
 .font-date-lebo {
     margin-top:0;    
     font-size: small;
+}tr.mat-header-row{
+    height: 56px;
+    background-color: $mid-blue!important;
 }
 
+.mat-table thead, .mat-table tbody, .mat-table tfoot, mat-header-row, mat-row, mat-footer-row, [mat-header-row], [mat-row], [mat-footer-row], .mat-table-sticky {
+    background:$gray-blue ;
+}
+
+.mat-paginator-container {
+    min-height: 56px;
+    background-color: $mid-blue;
+}
 
 
 
