@@ -1,1 +1,723 @@
-{}
+{
+    "65aa8439-1ce4-69a4-b71e-e75e4b1f2154": {
+        "paletteKey": "FlexLayoutCol",
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "componentLabel",
+                "_value": "Column",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "dav",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "fxFlex",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "fxLayoutGap",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "wrap",
+                "_value": "wrap",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "layoutAlign",
+                "_value": "start",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "pLayoutAlign",
+                "_value": "stretch",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[fxShow]",
+                "_value": "true",
+                "_type": "kv",
+                "_attrDef": "p"
+            }
+        ],
+        "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50": {
+            "paletteKey": "ng-table",
+            "parentEditorKey": "65aa8439-1ce4-69a4-b71e-e75e4b1f2154",
+            "isAdvancedComponent": true,
+            "commentid": null,
+            "designerReference": [
+                {
+                    "_key": "componentLabel",
+                    "_value": "Table",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": [],
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[dataSource]",
+                    "_value": "page.tableData",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "value": "page?.tableData"
+                },
+                {
+                    "_key": "(rowclick)",
+                    "_value": "selected(row)",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_customAttributeFlag": "flowpicker",
+                    "objValue": {
+                        "nodeID": "sd_LPpzec9McQsWn2OI",
+                        "functionName": "selected",
+                        "activeTree": "pages",
+                        "z": "sd_PDYpvdpmhJjQKFZR",
+                        "input": [
+                            "row"
+                        ]
+                    }
+                },
+                {
+                    "_key": "header",
+                    "_value": true,
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": true
+                },
+                {
+                    "skipCodegen": true,
+                    "_key": "__n_dependant_flows_key__",
+                    "_value": [
+                        "sd_d89hjoGjZlXsDLO7",
+                        "sd_tjmwePBfe5bgwkEA",
+                        "sd_B0p4UNJVpdAGYeHd",
+                        "sd_EpO0cd9Bw7NyhAFb",
+                        "sd_jqPHBFO646fs8G0y"
+                    ],
+                    "_type": "a",
+                    "_attrDef": "c",
+                    "_visibility": false
+                }
+            ],
+            "9ffb4fdf-b64f-b81b-33cb-4dde14fc4dd8": {
+                "paletteKey": "ng-table-column",
+                "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
+                "isAdvancedChildComponent": true,
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "Header Label",
+                        "_value": "Name ",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "matSortHeaderColumn",
+                        "_value": "mat-sort-header",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "Mapping",
+                        "_value": "{{table.Person | titlecase }}",
+                        "_type": "ma",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "columnName",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p",
+                        "_visibility": false
+                    },
+                    {
+                        "_key": "headerclass",
+                        "_value": [
+                            "bg-grey"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "columnclass",
+                        "_value": [
+                            "bg-grey",
+                            "on-hover"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
+            "daca1130-437f-c157-e6fa-b8e50c653634": {
+                "paletteKey": "ng-table-column",
+                "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
+                "isAdvancedChildComponent": true,
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "Header Label",
+                        "_value": "Shop Name",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "matSortHeaderColumn",
+                        "_value": "mat-sort-header",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "Mapping",
+                        "_value": "{{table.shopName | titlecase}}",
+                        "_type": "ma",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "columnName",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p",
+                        "_visibility": false
+                    },
+                    {
+                        "_key": "headerclass",
+                        "_value": [],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "columnclass",
+                        "_value": [],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
+            "22f6109e-34b0-20e3-9ef5-267fcdbe2989": {
+                "paletteKey": "ng-table-column",
+                "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
+                "isAdvancedChildComponent": true,
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "Header Label",
+                        "_value": "Total Amount",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "matSortHeaderColumn",
+                        "_value": "mat-sort-header",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "Mapping",
+                        "_value": "{{table.totalAmount}}",
+                        "_type": "ma",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "columnName",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p",
+                        "_visibility": false
+                    },
+                    {
+                        "_key": "headerclass",
+                        "_value": [
+                            "bg-grey"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "columnclass",
+                        "_value": [
+                            "bg-grey"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
+            "e027531a-2bd4-99f9-57f5-ec0c741b8e77": {
+                "paletteKey": "ng-table-column",
+                "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
+                "isAdvancedChildComponent": true,
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "Header Label",
+                        "_value": "Date Uploaded",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "matSortHeaderColumn",
+                        "_value": "mat-sort-header",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "Mapping",
+                        "_value": "{{table.dateUploaded}}",
+                        "_type": "ma",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "columnName",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p",
+                        "_visibility": false
+                    },
+                    {
+                        "_key": "headerclass",
+                        "_value": [
+                            "bg-grey"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "columnclass",
+                        "_value": [
+                            "bg-grey"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
+            "8333a50f-15f8-0038-b3a2-cf32d492db73": {
+                "paletteKey": "ng-droppable-table-column",
+                "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
+                "isAdvancedChildComponent": true,
+                "isCommented": "true",
+                "commentid": "1719393589949",
+                "designerReference": [
+                    {
+                        "_key": "Sort Key",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "matSortHeaderColumn",
+                        "_value": "",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "columnId",
+                        "_value": "bd5a3101-c485-1c29-31c5-4cac6fcb0722",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "Header Label",
+                        "_value": "",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "headerclass",
+                        "_value": [
+                            "bg-grey"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "columnclass",
+                        "_value": [
+                            "bg-grey"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    }
+                ],
+                "e7ec0e04-9c0a-6259-c20d-db9f6f303e44": {
+                    "paletteKey": "Html5",
+                    "parentEditorKey": "8333a50f-15f8-0038-b3a2-cf32d492db73",
+                    "isAdvancedComponent": true,
+                    "isCommented": "true",
+                    "commentid": "1719393589949",
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "htmlElement",
+                            "_value": "div",
+                            "_type": "dav",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "tagType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "sandbox",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "src",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "srcdoc",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "width",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "[autoplay]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "[loop]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "data",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioSource",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoSource",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioDatasource",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioSrc",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoDatasource",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoSrc",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audioplay)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videoplay)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audiopause)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videopause)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audioended)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videoended)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        }
+                    ],
+                    "edf15999-95d2-7477-8e85-74f9db1b8794": {
+                        "paletteKey": "html-editor",
+                        "parentEditorKey": "e7ec0e04-9c0a-6259-c20d-db9f6f303e44",
+                        "isAdvancedChildComponent": true,
+                        "isCommented": "true",
+                        "commentid": "1719393578156",
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "html",
+                                "_value": "<div>\r\n  <!-- <p>Status: {{ table.status | titlecase }}</p> -->\r\n  <span *ngIf=\"(table.status | titlecase) === 'Rejected'\" class=\"dot red-dot\"></span>\r\n  <span *ngIf=\"(table.status | titlecase) === 'Approved'\" class=\"dot green-dot\"></span>\r\n  <span *ngIf=\"(table.status | titlecase) === 'Pending'\" class=\"dot blue-dot\"></span>\r\n</div>",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    }
+                }
+            },
+            "38187dfd-e8d2-0faf-108f-8b42a5db5ce4": {
+                "paletteKey": "ng-table-filter",
+                "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
+                "isAdvancedComponent": true,
+                "advancedSiblingType": "before",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": [],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(tableFilterFunction)",
+                        "_value": "onFilter_1($event)",
+                        "_type": "dav",
+                        "_attrDef": "p",
+                        "value": "onFilter_1($event)",
+                        "_customAttributeFlag": "flowpicker",
+                        "objValue": {
+                            "activeTree": "pages",
+                            "functionName": "onFilter_1",
+                            "input": [
+                                "$event"
+                            ],
+                            "nodeID": "sd_T0BbfQcoOwupG32S",
+                            "z": ""
+                        }
+                    },
+                    {
+                        "_key": "placeholder",
+                        "_value": "Search",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "end",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "end",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "skipCodegen": true,
+                        "_key": "__n_dependant_flows_key__",
+                        "_value": [
+                            "sd_BKxEW5tMPqq58rrp",
+                            "sd_T0BbfQcoOwupG32S"
+                        ],
+                        "_type": "a",
+                        "_attrDef": "c",
+                        "_visibility": false
+                    }
+                ]
+            },
+            "25e67f1a-2c67-971d-e6ef-ebc2a005c84e": {
+                "paletteKey": "ng-table-paginator",
+                "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
+                "isAdvancedComponent": true,
+                "advancedSiblingType": "after",
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": [],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[length]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_customAttributeFlag": "flowpicker"
+                    },
+                    {
+                        "_key": "[pageSize]",
+                        "_value": "5",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[pageSizeOptions]",
+                        "_value": "[5, 10, 25, 100]",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(page)",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "value": ""
+                    },
+                    {
+                        "skipCodegen": true,
+                        "_key": "__n_dependant_flows_key__",
+                        "_value": [
+                            "sd_zfOEljQEdUYfZ95X",
+                            "sd_wjPFEZ0PrZEjPYh2",
+                            "sd_fsDpw6K92JfXYn9S"
+                        ],
+                        "_type": "a",
+                        "_attrDef": "p",
+                        "_visibility": false
+                    }
+                ]
+            }
+        }
+    }
+}
