@@ -1,0 +1,139 @@
+[
+    {
+        "id": "sd_bobfEtnRayZA0DvN",
+        "type": "tab",
+        "createdDate": "2024-06-26T08:48:53.062Z",
+        "label": "donut_chart",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "donut_chartComponent"
+    },
+    {
+        "id": "sd_EXWXWGYu6Arm7abk",
+        "type": "OnInit",
+        "z": "sd_bobfEtnRayZA0DvN",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_EXWXWGYu6Arm7abk",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_wriQccPkIfeEtZo6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "donut_chartComponent"
+    },
+    {
+        "id": "sd_wriQccPkIfeEtZo6",
+        "type": "PageVariables",
+        "z": "sd_bobfEtnRayZA0DvN",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "doughnutChartColor",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "doughnutChartColor"
+                }
+            },
+            {
+                "textIp": "chartOptions",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "chartOptions"
+                }
+            }
+        ],
+        "functionName": "sd_wriQccPkIfeEtZo6",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_ZOpv5oYTlxoT6aiJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "donut_chartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZOpv5oYTlxoT6aiJ",
+        "type": "Script",
+        "z": "sd_bobfEtnRayZA0DvN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.doughnutChartData = [\n        { data: [50000, 23000, 27000], label: 'Series A' }\n    ];\n    \npage.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];\n\npage.doughnutChartColor = [\n        {\n        backgroundColor: 'rgba(256, 123, 234, 0.1)',\n        borderColor: '#230b84',\n        color: '#000',\n    }\n    ]\n\n     page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}\n\n   ",
+        "functionName": "sd_ZOpv5oYTlxoT6aiJ",
+        "category": "Function",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "donut_chartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HydO33Nqx4PFt96G",
+        "type": "PageStart",
+        "z": "sd_bobfEtnRayZA0DvN",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "flow_type": "sync",
+        "functionName": "sd_HydO33Nqx4PFt96G",
+        "category": "General",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "sd_MCz9QOdKbmqEwbUO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "donut_chartComponent"
+    },
+    {
+        "id": "sd_MCz9QOdKbmqEwbUO",
+        "type": "Script",
+        "z": "sd_bobfEtnRayZA0DvN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}",
+        "functionName": "sd_MCz9QOdKbmqEwbUO",
+        "category": "Function",
+        "x": 220,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "donut_chartComponent",
+        "generated": true
+    }
+]

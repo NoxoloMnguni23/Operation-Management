@@ -29,8 +29,20 @@
             "component": "all_purchased_items_tableComponent"
         },
         {
+            "path": "login_guidelines",
+            "component": "login_guidelinesComponent"
+        },
+        {
+            "path": "line_chart",
+            "component": "line_chartComponent"
+        },
+        {
+            "path": "donut_chart",
+            "component": "donut_chartComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "/all_purchased_items_table",
+            "redirectTo": "/view_table_of_receipt",
             "pathMatch": "full",
             "default": true
         },

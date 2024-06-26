@@ -10,13 +10,13 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 //append_imports_end
 
 @Component({
-  selector: 'bh-selected_receipt_form',
-  templateUrl: './selected_receipt_form.template.html',
+  selector: 'bh-login_guidelines',
+  templateUrl: './login_guidelines.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class selected_receipt_formComponent {
+export class login_guidelinesComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -33,7 +33,7 @@ export class selected_receipt_formComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_uX0UIxISFMwosX18(bh);
+      this.sd_T1nWJsX8PVGcpbN6(bh);
     }
   }
 
@@ -45,48 +45,24 @@ export class selected_receipt_formComponent {
     //append_listeners
   }
 
-  sd_uX0UIxISFMwosX18(bh) {
+  sd_T1nWJsX8PVGcpbN6(bh) {
     try {
-      bh = this.sd_XyfbDazfYKEzilS2(bh);
-      //appendnew_next_sd_uX0UIxISFMwosX18
+      bh = this.sd_ZAe2f0NR0MuO5n7Z(bh);
+      //appendnew_next_sd_T1nWJsX8PVGcpbN6
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uX0UIxISFMwosX18');
+      return this.errorHandler(bh, e, 'sd_T1nWJsX8PVGcpbN6');
     }
   }
 
-  //appendnew_flow_selected_receipt_formComponent_start
+  //appendnew_flow_login_guidelinesComponent_start
 
-  sd_XyfbDazfYKEzilS2(bh) {
+  sd_ZAe2f0NR0MuO5n7Z(bh) {
     try {
-      bh = this.sd_49ZekZ6zNblKYnYe(bh);
-      //appendnew_next_sd_XyfbDazfYKEzilS2
+      //appendnew_next_sd_ZAe2f0NR0MuO5n7Z
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_XyfbDazfYKEzilS2');
-    }
-  }
-
-  sd_49ZekZ6zNblKYnYe(bh) {
-    try {
-      this.page.userData = JSON.parse(sessionStorage.getItem('user'));
-      bh = this.sd_q1lHTwDbml4pIrPz(bh);
-      //appendnew_next_sd_49ZekZ6zNblKYnYe
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_49ZekZ6zNblKYnYe');
-    }
-  }
-
-  sd_q1lHTwDbml4pIrPz(bh) {
-    try {
-      const page = this.page;
-
-      console.log('recived', page.userData);
-      //appendnew_next_sd_q1lHTwDbml4pIrPz
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_q1lHTwDbml4pIrPz');
+      return this.errorHandler(bh, e, 'sd_ZAe2f0NR0MuO5n7Z');
     }
   }
 
@@ -106,5 +82,5 @@ export class selected_receipt_formComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_selected_receipt_formComponent_Catch
+  //appendnew_flow_login_guidelinesComponent_Catch
 }
