@@ -40,11 +40,209 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "yellow",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
+            },
+            {
+                "textIp": "green",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
+            },
+            {
+                "textIp": "orange",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
+            }
+        ],
         "functionName": "sd_ahkmXkQ9ZOV7VZEC",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jivlYmkKZSJdA57I",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "green",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "green",
+        "category": "General",
+        "x": 45,
+        "y": 180,
+        "wires": [
+            [
+                "sd_4Qmf5jrH3OWs83SD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_GtKqUJdNZHTNSC93",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "orange",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "orange",
+        "category": "General",
+        "x": 45,
+        "y": 360,
+        "wires": [
+            [
+                "sd_lgXb5YjOyVDpQYIA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_kPblvcC67pkTdzTZ",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "yellow",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "yellow",
+        "category": "General",
+        "x": 45,
+        "y": 280,
+        "wires": [
+            [
+                "sd_PEuW2A95AfnPt6Ad"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_4Qmf5jrH3OWs83SD",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.orange =!page.orange\npage.yellow = false",
+        "functionName": "sd_4Qmf5jrH3OWs83SD",
+        "category": "Function",
+        "x": 145,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lgXb5YjOyVDpQYIA",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.green = false\npage.yellow = false",
+        "functionName": "sd_lgXb5YjOyVDpQYIA",
+        "category": "Function",
+        "x": 145,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PEuW2A95AfnPt6Ad",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.orange = false\npage.green = false",
+        "functionName": "sd_PEuW2A95AfnPt6Ad",
+        "category": "Function",
+        "x": 145,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WqpKewWxNZbCN1c0",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "picked",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "picked",
+        "category": "General",
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "sd_Efhy3iIWo3WByxX4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_Efhy3iIWo3WByxX4",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.orange = false\npage.yellow = false\npage.green = false;\n\nif(page.orange = true){\npage.yellow = false\npage.green = false;\n\n}",
+        "functionName": "sd_Efhy3iIWo3WByxX4",
+        "category": "Function",
+        "x": 405,
+        "y": 220,
         "wires": [
             []
         ],

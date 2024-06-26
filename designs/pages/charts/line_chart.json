@@ -1,0 +1,90 @@
+[
+    {
+        "id": "sd_8hL8mn86KD9LDcCB",
+        "type": "tab",
+        "createdDate": "2024-06-26T07:57:40.764Z",
+        "label": "line_chart",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "line_chartComponent"
+    },
+    {
+        "id": "sd_stIqQyTQKpMlT5xk",
+        "type": "OnInit",
+        "z": "sd_8hL8mn86KD9LDcCB",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_stIqQyTQKpMlT5xk",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_Dk6e19F4ZFxtymyB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "line_chartComponent"
+    },
+    {
+        "id": "sd_Dk6e19F4ZFxtymyB",
+        "type": "PageVariables",
+        "z": "sd_8hL8mn86KD9LDcCB",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "lineChartData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "lineChartData"
+                }
+            }
+        ],
+        "functionName": "sd_Dk6e19F4ZFxtymyB",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_61T0Ny18yQQm3DCq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "line_chartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_61T0Ny18yQQm3DCq",
+        "type": "Script",
+        "z": "sd_8hL8mn86KD9LDcCB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.lineChartData =\n[{\n\"name\": \"Monthly Expenditure\",\n\"series\": [\n{\"value\": 6000,\"name\":\"January\" },\n{\"value\": 8000,\"name\":\"February\" },\n{\"value\": 2500,\"name\":\"March\" },\n{\"value\": 2500,\"name\":\"April\" },\n{\"value\": 2900,\"name\":\"May\" },\n{\"value\": 20500,\"name\":\"June\" },\n{\"value\": 700,\"name\":\"July\" },\n{\"value\": 9500,\"name\":\"August\" },\n{\"value\": 0,\"name\":\"September\" },\n{\"value\": 15000,\"name\":\"October\" },\n{\"value\": 14000,\"name\":\"November\" },\n{\"value\": 10000,\"name\":\"December\" },\n]}]\n\n\n// {\n// \"name\": \"USA\",\n// \"series\": [\n// {\"value\": 5481,\"name\":2010},\n// {\"value\": 5881,\"name\":2011},\n// {\"value\": 3860,\"name\":2012},\n// ]}\n// ];\n\n",
+        "functionName": "sd_61T0Ny18yQQm3DCq",
+        "category": "Function",
+        "x": 325,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "line_chartComponent",
+        "generated": true
+    }
+]

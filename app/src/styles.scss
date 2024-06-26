@@ -4,13 +4,6 @@
 @import "nDefaults.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: $gray-blue;
-    color: $dark-gray;
-}
-
-
 ///colours
 $dark-blue : #395886; ///side nav
 $blue : #638ecb; 
@@ -25,6 +18,17 @@ $orange-maintenance : #f1680c;
 $green-groceries : green;
 $yellow-supplies : yellow;
 $pending-category: gray;
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
+
+.dark-grey-bg {
+    background-color: $dark-gray !important;
+}
 
 .dark-blue-bg {
     background-color: $dark-blue;
@@ -70,6 +74,9 @@ $pending-category: gray;
     color: $dark-gray;
 }
 
+.white-bg-lebo {
+    background-color: #ffffff;
+}
 
 //Sizes
 .full-height {
@@ -88,9 +95,124 @@ $pending-category: gray;
     width: 50%;
 }
 
+.font-300-lebo {
+    font-weight: 300;
+}
+
+.font-weight-900-lebo {
+    font-weight: 900;
+}
 
 
+//Margins
+.no-margin-lebo {
+    margin: 0;
+}
 
+.margin-top-10px-lebo {
+    margin-top: 10px;
+}
+
+.margin-right-160px-lebo {
+    margin-right: 200px;
+}
+
+.margin-bottom-10-lebo {
+    margin-bottom: 10px;
+}
+
+.margin-top-10-lebo {
+    margin-top:10px
+
+}
+
+.dot-groceries-lebo {
+    height: 25px;
+    width: 25px;
+    background-color: $green-groceries;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-maintenance-lebo {
+    height: 25px;
+    width: 25px;
+    background-color: $orange-maintenance;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-supplies-lebo {
+    height: 25px;
+    width: 25px;
+    background-color: $yellow-supplies;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.main-container-lebo {
+    width: 45%;
+    background-color: white;
+    // padding: 12px;
+    border-radius: 10px;
+}
+
+//Paddings
+.padding-left-12px-lebo {
+    padding-left: 12px;
+}
+
+.padding-right-12px-lebo {
+    padding-right: 12px;
+}
+
+.padding-10-lebo {
+    padding: 10px;
+}
+
+
+//Radius 
+.border-radius-20px-lebo {
+    border-radius: 20px !important;
+}
+
+
+.guide-info{
+    right: 40%;
+    top: 40%;
+    height: 35%;
+    width: 21%;
+    background-color: white;
+    border-radius: 34px;
+    padding: 10px;
+    border: 3px solid $dark-blue;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.absolute-lebo {
+    position: absolute;
+}
+
+.guide-lebo {
+    right: 10px;
+    bottom: 3em;
+    height: 15%;
+    width: 20%;
+    background-color: white;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+    border-bottom-right-radius: 34px;
+    border: 3px solid $dark-blue;
+}
+
+.font-date-lebo {
+    margin-top:0;    
+    font-size: small;
+}
 
 
 
