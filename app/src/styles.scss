@@ -39,8 +39,14 @@ body {
     background-color: $dark-gray !important;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
+
 .dark-blue-bg {
-    background-color: $dark-blue;
+    background-color: $dark-blue !important;
 }
 
 .light-blue-bg {
@@ -65,6 +71,10 @@ body {
 
 .color-light-blue {
     color: $light-blue;
+}
+
+.color-white-blue{
+    color: $white-blue;
 }
 
 .color-mid-blue {
@@ -236,4 +246,75 @@ body {
 }
 
 
+bh-operations_dashboard{
+    height: 100vh;
+}
+
+.max-width-300px-tii{
+    max-width: 300px;
+}
+
+.width-50px-tii{
+    width: 50px;
+}
+
+.width-150px-tii{
+    width: 150px;
+}
+
+.overflow-hidden-tii{
+    overflow: hidden;
+}
+
+.close-nav-icon-tii{
+    position: absolute;
+    right: -5px;
+    top: 65px;
+    background-color: rgba(255, 255, 255, 0.315);
+    border-radius: 5px;
+}
+
+.position-relative-tii{
+    position: relative;
+}
+
+.margin-1em-tii{
+    margin-top: 1em; 
+    margin-left: 1em;  
+    margin-right: 1em
+}
+
+.height-10-tii{
+    height: 10%
+}
+
+.margin-bottom-2em-tii{
+    margin-bottom: 2em;
+}
+
+.activeNow-tii{
+    background-color: rgba(255, 255, 255, 0.342);
+    border-radius: 5px;
+}
+
+.flex1-tii{
+    flex: 1;
+}
+
+.cursor-tii{
+    cursor: pointer;
+}
+
+.flexflow{
+    flex-flow: nowrap !important;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    white-space: unset !important;
+}
+
+.router-outlet-content-tii {
+  height: calc(100% - 64px);
+  overflow-y: auto;
+}
 

@@ -6,7 +6,13 @@
         },
         {
             "component": "operations_dashboardComponent",
-            "path": "operations_dashboard"
+            "path": "operations_dashboard",
+            "children": [
+                {
+                    "path": "view_table_of_receipt",
+                    "component": "view_table_of_receiptComponent"
+                }
+            ]
         },
         {
             "component": "user_dashboardComponent",
