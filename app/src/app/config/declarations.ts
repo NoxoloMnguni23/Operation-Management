@@ -114,7 +114,16 @@ export const appProviders = [
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
   { path: 'signIn', component: signInComponent },
-  { path: 'operations_dashboard', component: operations_dashboardComponent },
+  {
+    path: 'operations_dashboard',
+    component: operations_dashboardComponent,
+    children: [
+      {
+        path: 'view_table_of_receipt',
+        component: view_table_of_receiptComponent,
+      },
+    ],
+  },
   { path: 'user_dashboard', component: user_dashboardComponent },
   { path: 'add_receipt', component: add_receiptComponent },
   { path: 'selected_receipt_form', component: selected_receipt_formComponent },
