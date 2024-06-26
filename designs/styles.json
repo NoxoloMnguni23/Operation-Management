@@ -5,6 +5,7 @@
         "mid-blue-bg",
         "gray-blue-bg",
         "blue-bg",
+        "white-blue-bg",
         "color-blue",
         "color-light-blue",
         "color-mid-blue",
@@ -14,6 +15,8 @@
         "full-height",
         "half-height",
         "full-width",
-        "half-width"
+        "half-width",
+        "class1",
+        "class2"
     ]
 }

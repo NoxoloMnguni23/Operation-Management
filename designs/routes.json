@@ -29,6 +29,10 @@
             "component": "all_purchased_items_tableComponent"
         },
         {
+            "path": "categories",
+            "component": "categoriesComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/signIn",
             "pathMatch": "full",

@@ -17,10 +17,14 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
         "functionName": "sd_ZWbgrLo5RCoZRp5A",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 65,
+        "y": 40,
         "wires": [
             [
                 "sd_kyQIKe8WKryMkG6c"
@@ -40,11 +44,48 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "doughnutChartLabels",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": " ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];"
+                }
+            },
+            {
+                "textIp": "doughnutChartData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[65, 59, 80, 81, 56, 55, 40];     "
+                }
+            }
+        ],
         "functionName": "sd_kyQIKe8WKryMkG6c",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_iG9OzR29o1W2QzI4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signInComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iG9OzR29o1W2QzI4",
+        "type": "Script",
+        "z": "sd_NdL0PrOCMLvl6Q63",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "",
+        "functionName": "sd_iG9OzR29o1W2QzI4",
+        "category": "Function",
+        "x": 325,
+        "y": 40,
         "wires": [
             []
         ],

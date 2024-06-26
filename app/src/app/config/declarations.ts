@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-categoriesComponent
+import { categoriesComponent } from '../components/categories/categories.component';
 //CORE_REFERENCE_IMPORT-all_purchased_items_tableComponent
 import { all_purchased_items_tableComponent } from '../components/reports/all_purchased_items_table.component';
 //CORE_REFERENCE_IMPORT-signInComponent
@@ -68,6 +70,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-categoriesComponent
+  categoriesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-all_purchased_items_tableComponent
   all_purchased_items_tableComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-signInComponent
@@ -123,6 +127,7 @@ export const appRoutes = [
     path: 'all_purchased_items_table',
     component: all_purchased_items_tableComponent,
   },
+  { path: 'categories', component: categoriesComponent },
   { path: '', redirectTo: '/signIn', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
