@@ -10,13 +10,13 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 //append_imports_end
 
 @Component({
-  selector: 'bh-signIn',
-  templateUrl: './signIn.template.html',
+  selector: 'bh-statistics',
+  templateUrl: './statistics.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class signInComponent {
+export class statisticsComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -33,7 +33,7 @@ export class signInComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_ZWbgrLo5RCoZRp5A(bh);
+      this.sd_3m0sCIP8PgQqxbRf(bh);
     }
   }
 
@@ -45,54 +45,24 @@ export class signInComponent {
     //append_listeners
   }
 
-  sd_ZWbgrLo5RCoZRp5A(bh) {
+  sd_3m0sCIP8PgQqxbRf(bh) {
     try {
-      bh = this.sd_kyQIKe8WKryMkG6c(bh);
-      //appendnew_next_sd_ZWbgrLo5RCoZRp5A
+      bh = this.sd_sviPcC5dXzxeSL7w(bh);
+      //appendnew_next_sd_3m0sCIP8PgQqxbRf
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ZWbgrLo5RCoZRp5A');
+      return this.errorHandler(bh, e, 'sd_3m0sCIP8PgQqxbRf');
     }
   }
 
-  //appendnew_flow_signInComponent_start
+  //appendnew_flow_statisticsComponent_start
 
-  sd_kyQIKe8WKryMkG6c(bh) {
+  sd_sviPcC5dXzxeSL7w(bh) {
     try {
-      bh = this.sd_iG9OzR29o1W2QzI4(bh);
-      //appendnew_next_sd_kyQIKe8WKryMkG6c
+      //appendnew_next_sd_sviPcC5dXzxeSL7w
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_kyQIKe8WKryMkG6c');
-    }
-  }
-
-  sd_iG9OzR29o1W2QzI4(bh) {
-    try {
-      const page = this.page;
-      page.doughnutChartData = [
-        { data: [50000, 23000, 27000], label: 'Series A' },
-      ];
-
-      page.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];
-
-      page.doughnutChartColor = [
-        {
-          backgroundColor: 'rgba(256, 123, 234, 0.1)',
-          borderColor: '#230b84',
-          color: '#000',
-        },
-      ];
-
-      page.chartOptions = {
-        legend: {
-          position: 'right', // Position legend to the right of the chart
-        },
-      };
-      //appendnew_next_sd_iG9OzR29o1W2QzI4
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_iG9OzR29o1W2QzI4');
+      return this.errorHandler(bh, e, 'sd_sviPcC5dXzxeSL7w');
     }
   }
 
@@ -112,5 +82,5 @@ export class signInComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_signInComponent_Catch
+  //appendnew_flow_statisticsComponent_Catch
 }

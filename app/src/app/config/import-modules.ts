@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './declarations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 import 'hammerjs';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
@@ -77,10 +78,12 @@ export const appImportModules: any = [
 	RouterModule.forRoot(appRoutes),
 	NgxChartsModule,
 	NgChartsModule,
+	
 	HttpClientModule,
 	/**
 	 * Angular material components
 	 */
+
 	MatMenuModule,
 	MatDialogModule,
 	MatSnackBarModule,
