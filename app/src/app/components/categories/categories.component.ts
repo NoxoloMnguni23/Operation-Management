@@ -47,7 +47,7 @@ export class categoriesComponent {
 
   sd_ur9hkAgcy7ijyncx(bh) {
     try {
-      bh = this.sd_2rrqe6DKr4G5TCB7(bh);
+      bh = this.sd_XASJm5GtYmf3XfeR(bh);
       //appendnew_next_sd_ur9hkAgcy7ijyncx
       return bh;
     } catch (e) {
@@ -57,12 +57,133 @@ export class categoriesComponent {
 
   //appendnew_flow_categoriesComponent_start
 
-  sd_2rrqe6DKr4G5TCB7(bh) {
+  sd_XASJm5GtYmf3XfeR(bh) {
     try {
-      //appendnew_next_sd_2rrqe6DKr4G5TCB7
+      this.page.items = undefined;
+      this.page.Groceries = [];
+      this.page.Supplies = [];
+      this.page.Maintenance = [];
+      this.page.priceG = 0;
+      this.page.priceM = 0;
+      this.page.priceS = 0;
+      bh = this.sd_MwRsJo4lV9LxxPCW(bh);
+      //appendnew_next_sd_XASJm5GtYmf3XfeR
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_2rrqe6DKr4G5TCB7');
+      return this.errorHandler(bh, e, 'sd_XASJm5GtYmf3XfeR');
+    }
+  }
+
+  sd_MwRsJo4lV9LxxPCW(bh) {
+    try {
+      const page = this.page;
+      page.items = [
+        { category: 'Groceries', name: 'Eggs', price: 2.99 },
+        { category: 'Groceries', name: 'Milk', price: 3.49 },
+        { category: 'Groceries', name: 'Bread', price: 2.0 },
+        { category: 'Groceries', name: 'Apples', price: 1.99 },
+        { category: 'Groceries', name: 'Pasta', price: 1.5 },
+        {
+          category: 'Maintenance',
+          name: 'Light bulbs (pack of 4)',
+          price: 8.99,
+        },
+        {
+          category: 'Maintenance',
+          name: 'AA Batteries (pack of 12)',
+          price: 6.49,
+        },
+        { category: 'Maintenance', name: 'Duct Tape', price: 4.99 },
+        { category: 'Maintenance', name: 'Multi-purpose Cleaner', price: 3.79 },
+        {
+          category: 'Maintenance',
+          name: 'Paper Towels (pack of 6 rolls)',
+          price: 9.99,
+        },
+        {
+          category: 'Supplies',
+          name: 'Printer Paper (ream of 500 sheets)',
+          price: 5.99,
+        },
+        { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
+        { category: 'Supplies', name: 'Scotch Tape', price: 2.99 },
+        { category: 'Supplies', name: 'Envelopes (pack of 50)', price: 7.99 },
+        {
+          category: 'Supplies',
+          name: 'Sticky Notes (pack of 100)',
+          price: 4.29,
+        },
+      ];
+      page.items.forEach((item) => {
+        if (item.category === 'Groceries') {
+          page.Groceries.push(item);
+        }
+        if (item.category === 'Supplies') {
+          return page.Supplies.push(item);
+        }
+        if (item.category === 'Maintenance') {
+          return page.Maintenance.push(item);
+        }
+      });
+      console.log(page.Groceries);
+
+      console.log(page.Supplies);
+      console.log(page.Maintenance);
+      bh = this.sd_SKCtHJkWA3Ww9vcJ(bh);
+      //appendnew_next_sd_MwRsJo4lV9LxxPCW
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_MwRsJo4lV9LxxPCW');
+    }
+  }
+
+  sd_SKCtHJkWA3Ww9vcJ(bh) {
+    try {
+      const page = this.page;
+      page.Groceries.forEach((item) => {
+        page.priceG = page.priceG + item.price;
+      });
+      page.Supplies.forEach((item) => {
+        page.priceS = page.priceS + item.price;
+      });
+      page.Maintenance.forEach((item) => {
+        page.priceM = page.priceM + item.price;
+      });
+
+      bh = this.sd_JYIOkH9NmgEaHeE6(bh);
+      //appendnew_next_sd_SKCtHJkWA3Ww9vcJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_SKCtHJkWA3Ww9vcJ');
+    }
+  }
+
+  sd_JYIOkH9NmgEaHeE6(bh) {
+    try {
+      const page = this.page;
+      page.doughnutChartData = [
+        { data: [page.priceG, page.priceS, page.priceM], label: 'Series A' },
+      ];
+
+      page.doughnutChartLabels = ['Groceries', 'Supplies', 'Maintenance'];
+
+      page.doughnutChartColor = [
+        {
+          backgroundColor: 'rgba(256, 123, 234, 0.1)',
+          borderColor: '#230b76',
+          color: '#080',
+        },
+      ];
+
+      page.chartOptions = {
+        legend: {
+          position: 'right', // Position legend to the right of the chart
+        },
+      };
+      //appendnew_next_sd_JYIOkH9NmgEaHeE6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_JYIOkH9NmgEaHeE6');
     }
   }
 

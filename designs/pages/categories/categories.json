@@ -23,7 +23,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_2rrqe6DKr4G5TCB7"
+                "sd_XASJm5GtYmf3XfeR"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -93,16 +93,17 @@
         ],
         "functionName": "sd_XASJm5GtYmf3XfeR",
         "category": "Function",
-        "x": 165,
-        "y": 140,
+        "x": 125,
+        "y": 40,
         "wires": [
             [
                 "sd_MwRsJo4lV9LxxPCW"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "categoriesComponent"
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
     },
     {
         "id": "sd_MwRsJo4lV9LxxPCW",
@@ -114,16 +115,17 @@
         "script": "page.items = [\n    { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 },\n    { category: \"Groceries\", name: \"Apples\", price: 1.99 },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50 },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99 },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49 },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99 },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79 },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99 },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotch Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopes (pack of 50)\", price: 7.99 },\n    { category: \"Supplies\", name: \"Sticky Notes (pack of 100)\", price: 4.29 }\n];\npage.items.forEach(item => {\n    if (item.category ===\"Groceries\" ){\n      page.Groceries.push(item)\n\n    }\n     if (item.category ===\"Supplies\" ){\n      return  page.Supplies.push(item)\n    }\n    if(item.category ===\"Maintenance\" ){\n      return  page.Maintenance.push(item)\n    }\n   \n});\n console.log( page.Groceries)\n \n  console.log( page.Supplies)\n   console.log( page.Maintenance)",
         "functionName": "sd_MwRsJo4lV9LxxPCW",
         "category": "Function",
-        "x": 285,
-        "y": 140,
+        "x": 225,
+        "y": 40,
         "wires": [
             [
                 "sd_SKCtHJkWA3Ww9vcJ"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "categoriesComponent"
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
     },
     {
         "id": "sd_SKCtHJkWA3Ww9vcJ",
@@ -135,29 +137,29 @@
         "script": "page.Groceries.forEach(item => \n{page.priceG =page.priceG +item.price}\n);\npage.Supplies.forEach(item => \n{page.priceS =page.priceS +item.price}\n);\npage.Maintenance.forEach(item => \n{page.priceM =page.priceM +item.price}\n);\n",
         "functionName": "sd_SKCtHJkWA3Ww9vcJ",
         "category": "Function",
-        "x": 385,
-        "y": 140,
+        "x": 325,
+        "y": 40,
         "wires": [
-            []
+            [
+                "sd_JYIOkH9NmgEaHeE6"
+            ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "categoriesComponent"
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
     },
     {
-        "id": "sd_2rrqe6DKr4G5TCB7",
-        "type": "PageVariables",
+        "id": "sd_JYIOkH9NmgEaHeE6",
+        "type": "Script",
         "z": "sd_Zg0T4cPUJNxauKEy",
-        "viewType": "pages",
+        "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [],
-        "functionName": "sd_2rrqe6DKr4G5TCB7",
+        "script": "page.doughnutChartData = [\n        { data: [page.priceG, page.priceS, page.priceM], label: 'Series A' }\n    ];\n    \npage.doughnutChartLabels = ['Groceries', 'Supplies', 'Maintenance'];\n\npage.doughnutChartColor = [\n        {\n        backgroundColor: 'rgba(256, 123, 234, 0.1)',\n        borderColor: '#230b76',\n        color: '#080',\n    }\n    ]\n\n     page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}",
+        "functionName": "sd_JYIOkH9NmgEaHeE6",
         "category": "Function",
-        "x": 125,
+        "x": 425,
         "y": 40,
         "wires": [
             []

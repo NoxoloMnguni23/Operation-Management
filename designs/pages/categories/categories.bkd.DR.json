@@ -4348,15 +4348,14 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "width:45% ",
+                        "_value": "width:45%  ",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
                     {
                         "_key": "class",
                         "_value": [
-                            "blue-bg",
-                            "full-height"
+                            "half-height"
                         ],
                         "_type": "dav",
                         "_attrDef": "p"
@@ -4398,9 +4397,10 @@
                         "_attrDef": "p"
                     }
                 ],
-                "fa1d6e74-1496-7a94-abe7-8fc13b45fa10": {
+                "0cbec44b-ee83-4176-6525-197628b4281b": {
                     "paletteKey": "NG-ng-doughnut-chart",
                     "parentEditorKey": "3bf72300-c83e-10e5-b466-e294b6fe740e",
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -4418,7 +4418,7 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -4430,13 +4430,13 @@
                         },
                         {
                             "_key": "[datasets]",
-                            "_value": "page.doughnutChartData ",
+                            "_value": "page.doughnutChartData",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "[labels]",
-                            "_value": "page.doughnutChartLabels",
+                            "_value": "page.doughnutChartLabels ",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

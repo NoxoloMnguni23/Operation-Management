@@ -59,40 +59,10 @@ export class signInComponent {
 
   sd_kyQIKe8WKryMkG6c(bh) {
     try {
-      bh = this.sd_iG9OzR29o1W2QzI4(bh);
       //appendnew_next_sd_kyQIKe8WKryMkG6c
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_kyQIKe8WKryMkG6c');
-    }
-  }
-
-  sd_iG9OzR29o1W2QzI4(bh) {
-    try {
-      const page = this.page;
-      page.doughnutChartData = [
-        { data: [50000, 23000, 27000], label: 'Series A' },
-      ];
-
-      page.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];
-
-      page.doughnutChartColor = [
-        {
-          backgroundColor: 'rgba(256, 123, 234, 0.1)',
-          borderColor: '#230b84',
-          color: '#000',
-        },
-      ];
-
-      page.chartOptions = {
-        legend: {
-          position: 'right', // Position legend to the right of the chart
-        },
-      };
-      //appendnew_next_sd_iG9OzR29o1W2QzI4
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_iG9OzR29o1W2QzI4');
     }
   }
 
