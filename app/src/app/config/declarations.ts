@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-statisticsComponent
+import { statisticsComponent } from '../components/statistics/statistics.component';
 //CORE_REFERENCE_IMPORT-donut_chartComponent
 import { donut_chartComponent } from '../components/charts/donut_chart.component';
 //CORE_REFERENCE_IMPORT-line_chartComponent
@@ -76,6 +78,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-statisticsComponent
+  statisticsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-donut_chartComponent
   donut_chartComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-line_chartComponent
@@ -138,6 +142,12 @@ export const appRoutes = [
         path: 'view_table_of_receipt',
         component: view_table_of_receiptComponent,
       },
+      { path: 'categories', component: categoriesComponent },
+      {
+        path: 'all_purchased_items_table',
+        component: all_purchased_items_tableComponent,
+      },
+      { path: 'statistics', component: statisticsComponent },
     ],
   },
   { path: 'user_dashboard', component: user_dashboardComponent },
@@ -151,7 +161,6 @@ export const appRoutes = [
   { path: 'login_guidelines', component: login_guidelinesComponent },
   { path: 'line_chart', component: line_chartComponent },
   { path: 'donut_chart', component: donut_chartComponent },
-  { path: 'categories', component: categoriesComponent },
   { path: '', redirectTo: '/view_table_of_receipt', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
