@@ -44,22 +44,7 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [
-            {
-                "textIp": "doughnutChartLabels",
-                "typedIpValue": {
-                    "type": "literal",
-                    "value": " ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];"
-                }
-            },
-            {
-                "textIp": "doughnutChartData",
-                "typedIpValue": {
-                    "type": "literal",
-                    "value": "[65, 59, 80, 81, 56, 55, 40];     "
-                }
-            }
-        ],
+        "globalVariables": [],
         "functionName": "sd_kyQIKe8WKryMkG6c",
         "category": "Function",
         "x": 185,
@@ -81,7 +66,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "",
+        "script": "page.doughnutChartData = [\n        { data: [50000, 23000, 27000], label: 'Series A' }\n    ];\n    \npage.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];\n\npage.doughnutChartColor = [\n        {\n        backgroundColor: 'rgba(256, 123, 234, 0.1)',\n        borderColor: '#230b84',\n        color: '#000',\n    }\n    ]\n\n     page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}",
         "functionName": "sd_iG9OzR29o1W2QzI4",
         "category": "Function",
         "x": 325,

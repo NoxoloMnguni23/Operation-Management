@@ -59,16 +59,6 @@ export class signInComponent {
 
   sd_kyQIKe8WKryMkG6c(bh) {
     try {
-      this.page.doughnutChartLabels = [
-        '2006',
-        '2007',
-        '2008',
-        '2009',
-        '2010',
-        '2011',
-        '2012',
-      ];
-      this.page.doughnutChartData = [65, 59, 80, 81, 56, 55, 40];
       bh = this.sd_iG9OzR29o1W2QzI4(bh);
       //appendnew_next_sd_kyQIKe8WKryMkG6c
       return bh;
@@ -79,6 +69,26 @@ export class signInComponent {
 
   sd_iG9OzR29o1W2QzI4(bh) {
     try {
+      const page = this.page;
+      page.doughnutChartData = [
+        { data: [50000, 23000, 27000], label: 'Series A' },
+      ];
+
+      page.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];
+
+      page.doughnutChartColor = [
+        {
+          backgroundColor: 'rgba(256, 123, 234, 0.1)',
+          borderColor: '#230b84',
+          color: '#000',
+        },
+      ];
+
+      page.chartOptions = {
+        legend: {
+          position: 'right', // Position legend to the right of the chart
+        },
+      };
       //appendnew_next_sd_iG9OzR29o1W2QzI4
       return bh;
     } catch (e) {

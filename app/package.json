@@ -43,6 +43,7 @@
         "moment": "2.29.4",
         "neutrinos-module": "0.0.70-beta.3",
         "neutrinos-oauth-client": "1.2.5-beta.1",
+        "ng2-charts": "3.0.11",
         "rxjs": "7.5.5",
         "signature_pad": "4.0.7",
         "tslib": "2.4.0",
