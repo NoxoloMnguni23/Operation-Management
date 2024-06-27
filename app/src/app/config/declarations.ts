@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-statisticsComponent
+import { statisticsComponent } from '../components/statistics/statistics.component';
 //CORE_REFERENCE_IMPORT-landingComponent
 import { landingComponent } from '../components/dashboard/landing.component';
 //CORE_REFERENCE_IMPORT-donut_chartComponent
@@ -78,6 +80,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-statisticsComponent
+  statisticsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
   landingComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-donut_chartComponent
@@ -134,6 +138,22 @@ export const appProviders = [
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
   { path: 'signIn', component: signInComponent },
+  {
+    path: 'operations_dashboard',
+    component: operations_dashboardComponent,
+    children: [
+      {
+        path: 'view_table_of_receipt',
+        component: view_table_of_receiptComponent,
+      },
+      { path: 'categories', component: categoriesComponent },
+      {
+        path: 'all_purchased_items_table',
+        component: all_purchased_items_tableComponent,
+      },
+      { path: 'statistics', component: statisticsComponent },
+    ],
+  },
   { path: 'operations_dashboard', component: operations_dashboardComponent },
   { path: 'user_dashboard', component: user_dashboardComponent },
   { path: 'add_receipt', component: add_receiptComponent },
