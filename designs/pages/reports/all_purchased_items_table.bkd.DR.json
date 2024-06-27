@@ -460,7 +460,6 @@
                 "bbce8e80-06a2-8bea-7ebe-ababb095c138": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -641,7 +640,7 @@
                     "designerReference": [
                         {
                             "_key": "Header Label",
-                            "_value": "Catagory",
+                            "_value": "CATEGORY",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -811,7 +810,7 @@
                     "designerReference": [
                         {
                             "_key": "Header Label",
-                            "_value": "Name",
+                            "_value": "NAME",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -857,7 +856,7 @@
                     "designerReference": [
                         {
                             "_key": "Header Label",
-                            "_value": "Price",
+                            "_value": "PRICE",
                             "_type": "a",
                             "_attrDef": "p"
                         },

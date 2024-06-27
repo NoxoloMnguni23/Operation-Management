@@ -151,6 +151,7 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
         { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
         { category: 'Supplies', name: 'Scotch Tape', price: 2.99 },
         { category: 'Supplies', name: 'Envelopes (pack of 50)', price: 7.99 },
+        { category: 'TOTAL', name: '', price: 1060 },
       ]);
       bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
       //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
