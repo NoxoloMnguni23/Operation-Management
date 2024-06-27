@@ -136,7 +136,7 @@
                     },
                     {
                         "_key": "[sidenavMode]",
-                        "_value": "'push'",
+                        "_value": "'side'",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -847,7 +847,6 @@
                     "ca10eb91-1535-8b2e-4276-7961388df832": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "fee25e09-76ed-a505-38a2-8de9d808dee3",
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1595,7 +1594,6 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "c32d7fac-8524-37af-5832-ac9795db7fc7",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1785,7 +1783,6 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "deb832ab-bc72-df38-0750-fe5be251b0b6",
                             "isAdvancedChildComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {

@@ -11,6 +11,18 @@
                 {
                     "path": "view_table_of_receipt",
                     "component": "view_table_of_receiptComponent"
+                },
+                {
+                    "path": "categories",
+                    "component": "categoriesComponent"
+                },
+                {
+                    "component": "all_purchased_items_tableComponent",
+                    "path": "all_purchased_items_table"
+                },
+                {
+                    "component": "statisticsComponent",
+                    "path": "statistics"
                 }
             ]
         },
@@ -45,10 +57,6 @@
         {
             "path": "donut_chart",
             "component": "donut_chartComponent"
-        },
-        {
-            "path": "categories",
-            "component": "categoriesComponent"
         },
         {
             "path": "''",
