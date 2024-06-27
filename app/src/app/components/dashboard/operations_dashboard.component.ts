@@ -93,12 +93,16 @@ export class operations_dashboardComponent {
         {
           label: 'Dashboard',
           icon: 'dashboard',
-          route: '/operations_dashboard',
+          route: 'operations_dashboard',
         },
-        { label: 'Categories', icon: 'category', route: '#' },
+        { label: 'Categories', icon: 'category', route: 'categories' },
         { label: 'Receipts', icon: 'receipt', route: 'view_table_of_receipt' },
-        { label: 'Reports', icon: 'table_view', route: '#' },
-        { label: 'Statistics', icon: 'trending_up', route: '#' },
+        {
+          label: 'Reports',
+          icon: 'table_view',
+          route: 'all_purchased_items_table',
+        },
+        { label: 'Statistics', icon: 'trending_up', route: 'statistics' },
         { label: 'Logout', icon: 'logout', route: '/signIn' },
       ];
       bh = this.sd_oILf1PmiKBS7wYCG(bh);
