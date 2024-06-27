@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-landingComponent
+import { landingComponent } from '../components/dashboard/landing.component';
 //CORE_REFERENCE_IMPORT-donut_chartComponent
 import { donut_chartComponent } from '../components/charts/donut_chart.component';
 //CORE_REFERENCE_IMPORT-line_chartComponent
@@ -76,6 +78,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
+  landingComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-donut_chartComponent
   donut_chartComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-line_chartComponent
@@ -130,16 +134,7 @@ export const appProviders = [
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
   { path: 'signIn', component: signInComponent },
-  {
-    path: 'operations_dashboard',
-    component: operations_dashboardComponent,
-    children: [
-      {
-        path: 'view_table_of_receipt',
-        component: view_table_of_receiptComponent,
-      },
-    ],
-  },
+  { path: 'operations_dashboard', component: operations_dashboardComponent },
   { path: 'user_dashboard', component: user_dashboardComponent },
   { path: 'add_receipt', component: add_receiptComponent },
   { path: 'selected_receipt_form', component: selected_receipt_formComponent },
@@ -151,8 +146,8 @@ export const appRoutes = [
   { path: 'login_guidelines', component: login_guidelinesComponent },
   { path: 'line_chart', component: line_chartComponent },
   { path: 'donut_chart', component: donut_chartComponent },
-  { path: 'categories', component: categoriesComponent },
-  { path: '', redirectTo: '/view_table_of_receipt', pathMatch: 'full' },
+  { path: 'landing', component: landingComponent },
+  { path: '', redirectTo: '/operations_dashboard', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

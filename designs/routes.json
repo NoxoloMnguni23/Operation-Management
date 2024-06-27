@@ -6,13 +6,7 @@
         },
         {
             "component": "operations_dashboardComponent",
-            "path": "operations_dashboard",
-            "children": [
-                {
-                    "path": "view_table_of_receipt",
-                    "component": "view_table_of_receiptComponent"
-                }
-            ]
+            "path": "operations_dashboard"
         },
         {
             "component": "user_dashboardComponent",
@@ -47,12 +41,12 @@
             "component": "donut_chartComponent"
         },
         {
-            "path": "categories",
-            "component": "categoriesComponent"
+            "path": "landing",
+            "component": "landingComponent"
         },
         {
             "path": "''",
-            "redirectTo": "/view_table_of_receipt",
+            "redirectTo": "/operations_dashboard",
             "pathMatch": "full",
             "default": true
         },
