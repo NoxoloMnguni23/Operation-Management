@@ -18,6 +18,8 @@ window['neutrinos'] = {
 //CORE_REFERENCE_IMPORTS
 //CORE_REFERENCE_IMPORT-statisticsComponent
 import { statisticsComponent } from '../components/statistics/statistics.component';
+//CORE_REFERENCE_IMPORT-landingComponent
+import { landingComponent } from '../components/dashboard/landing.component';
 //CORE_REFERENCE_IMPORT-donut_chartComponent
 import { donut_chartComponent } from '../components/charts/donut_chart.component';
 //CORE_REFERENCE_IMPORT-line_chartComponent
@@ -80,6 +82,8 @@ export const appDeclarations = [
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-statisticsComponent
   statisticsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
+  landingComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-donut_chartComponent
   donut_chartComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-line_chartComponent
@@ -148,10 +152,11 @@ export const appRoutes = [
         component: all_purchased_items_tableComponent,
       },
       { path: 'statistics', component: statisticsComponent },
+      { path: 'landing', component: landingComponent },
+      { path: 'add_receipt', component: add_receiptComponent },
     ],
   },
   { path: 'user_dashboard', component: user_dashboardComponent },
-  { path: 'add_receipt', component: add_receiptComponent },
   { path: 'selected_receipt_form', component: selected_receipt_formComponent },
   { path: 'view_table_of_receipt', component: view_table_of_receiptComponent },
   {

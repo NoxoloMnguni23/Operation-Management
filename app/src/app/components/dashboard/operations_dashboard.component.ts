@@ -93,7 +93,7 @@ export class operations_dashboardComponent {
         {
           label: 'Dashboard',
           icon: 'dashboard',
-          route: '/operations_dashboard',
+          route: '/operations_dashboard/landing',
         },
         { label: 'Categories', icon: 'category', route: 'categories' },
         { label: 'Receipts', icon: 'receipt', route: 'view_table_of_receipt' },

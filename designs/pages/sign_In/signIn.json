@@ -50,28 +50,6 @@
         "x": 185,
         "y": 40,
         "wires": [
-            [
-                "sd_iG9OzR29o1W2QzI4"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "signInComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_iG9OzR29o1W2QzI4",
-        "type": "Script",
-        "z": "sd_NdL0PrOCMLvl6Q63",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.doughnutChartData = [\n        { data: [50000, 23000, 27000], label: 'Series A' }\n    ];\n    \npage.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];\n\npage.doughnutChartColor = [\n        {\n        backgroundColor: 'rgba(256, 123, 234, 0.1)',\n        borderColor: '#230b84',\n        color: '#000',\n    }\n    ]\n\n     page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}",
-        "functionName": "sd_iG9OzR29o1W2QzI4",
-        "category": "Function",
-        "x": 325,
-        "y": 40,
-        "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
