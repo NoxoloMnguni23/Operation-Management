@@ -17,13 +17,17 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
         "functionName": "sd_3m0sCIP8PgQqxbRf",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 85,
+        "y": 60,
         "wires": [
             [
-                "sd_sviPcC5dXzxeSL7w"
+                "sd_HmysSc28zLxg8P5S"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -40,11 +44,204 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "lineChartData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "lineChartData"
+                }
+            },
+            {
+                "textIp": "lineChartLabels",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "lineChartLabels"
+                }
+            },
+            {
+                "textIp": "barChartData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartData"
+                }
+            },
+            {
+                "textIp": "barChartLabels",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartLabels"
+                }
+            },
+            {
+                "textIp": "barChartBudget",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartBudget"
+                }
+            },
+            {
+                "textIp": "barChartSavings",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartSavings"
+                }
+            },
+            {
+                "textIp": "barChartExpenses",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartExpenses"
+                }
+            },
+            {
+                "textIp": "barChartOptions",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "barChartOptions"
+                }
+            },
+            {
+                "textIp": "insight",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "insight"
+                }
+            },
+            {
+                "textIp": "twoMonthAvg",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "twoMonthAvg"
+                }
+            },
+            {
+                "textIp": "allYearMaxExpense",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "allYearMaxExpense"
+                }
+            },
+            {
+                "textIp": "expensesData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "expensesData"
+                }
+            },
+            {
+                "textIp": "allYearMaxExpenseIndex",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "allYearMaxExpenseIndex"
+                }
+            },
+            {
+                "textIp": "maxMonth",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "maxMonth"
+                }
+            },
+            {
+                "textIp": "maxExpense",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "maxExpense"
+                }
+            },
+            {
+                "textIp": "budgetMinusExpense",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "budgetMinusExpense"
+                }
+            },
+            {
+                "textIp": "lessSpent",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "lessSpent"
+                }
+            },
+            {
+                "textIp": "moreSpent",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "moreSpent"
+                }
+            }
+        ],
         "functionName": "sd_sviPcC5dXzxeSL7w",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 235,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "statisticsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HmysSc28zLxg8P5S",
+        "type": "Script",
+        "z": "sd_EHqxhFZBDfBQcB9S",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.lineChartData = [\n        { data: [, , , , , 55, 40,10,20,30,40,50], label: 'Budget' },\n        { data: [2, 2, 2, 2, 2, 25, 90,11,23,31,42,51], label: 'Expenses' },\n        { data: [, , , , , 26, 40,12,24,32,43,52], label: 'Savings' },\n        // { data: [15, 42, 76, 7, 105, 25, 40,12,24,32,43,52], label: 'Series D' },\n        // { data: [19, 48, 77, 5, 103, 27, 40,12,24,32,43,52], label: 'Series E' },\n        // { data: [28, 47, 40, 19, 86, 28, 90,11,23,31,42,51], label: 'Series F' },\n        // { data: [25, 46, 42, 15, 85, 27, 90,11,23,31,42,51], label: 'Series G' },\n    ];\npage.lineChartLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July','Aug','Sep','Oct','nov','dec',];\n\n//Find the max number in expenses and the corresponding month\nconst expensesData = page.lineChartData.find(item => item.label === 'Expenses').data;\nconst { maxExpense, maxIndex } = expensesData.reduce((acc, curr, index) => {\n    if (curr > acc.maxExpense) {\n        return { maxExpense: curr, maxIndex: index };\n    }\n    return acc;\n}, { maxExpense: expensesData[0], maxIndex: 0 });\n\n// Get the month corresponding to the max index\nconst maxMonth = page.lineChartLabels[maxIndex];\n//console.log('The maximum number in Expenses is', maxExpense, 'at index', maxIndex, 'corresponding to the month of', maxMonth);\n\npage.maxExpense = maxExpense\npage.maxIndex = maxIndex\npage.maxMonth = maxMonth\n\npage.barChartData = [\n        { data: [65, 59], label: 'Monthly Budget' },\n        { data: [28, 48], label: 'Expanses' },\n        { data: [47, 40,], label: 'Savings' }\n    ];\n    \npage.barChartLabels = ['May', 'June'];\n\npage.barChartBudget = [\n        { data: [65, 59], label: 'Monthly Budget' }\n]\n\npage.barChartExpenses = [\n       { data: [37, 48], label: 'Expenses' }\n]\n\nif(page.barChartExpenses[0].data[0] > page.barChartExpenses[0].data[1]){\n        console.log(\"If statement, is greater:\", page.barChartExpenses[0].data[0])\n} else {\n        console.log(\"If statement, is greater:\", page.barChartExpenses[0].data[1]);\n        // console.log(\"Month:\", page.barChartLabels[1]);\n        page.insight = \"You spent more in the month of \" + page.barChartLabels[0] + \" by spending \" + page.barChartExpenses[0].data[1]\n        console.log(\"hhhhhh\",page.insight)\n}\n\npage.diff =  Math.abs(page.barChartExpenses[0].data[1] - page.barChartExpenses[0].data[0] )\n// page.twoMonthAvg = (page.barChartExpenses[0].data[1] - page.barChartExpenses[0].data[0]) / 2\n// page.perDiff = (page.diff / page.twoMonthAvg) * 100\n\n// page.perDiff = ((page.barChartExpenses[0].data[1] - page.barChartExpenses[0].data[0]) / page.barChartExpenses[0].data[0]) * 100\npage.perDiff = Math.abs(((page.barChartExpenses[0].data[1] - page.barChartExpenses[0].data[0]) / page.barChartExpenses[0].data[0]) * 100)\n\n// console.log(page.insight, page.diff, page.perDiff.toFixed(2) + \"%\" )\n\n\npage.barChartSavings = [\n        { data: [27, 40,], label: 'Savings' }\n]\n\npage.budgetMinusExpense = Math.abs(page.barChartBudget[0].data[0] - page.barChartExpenses[0].data[0])\npage.lessSpent = \"Actual spending was less than budgeted amount by R \" + page.budgetMinusExpense\npage.moreSpent = \"Actual spending was more than budgeted amount by R \" + page.budgetMinusExpense + \" . You are advised to watch your savings to ensure that you do not go onto the negative side regularly\"\n\n\nif(page.barChartExpenses[0].data[0] < page.barChartBudget[0].data[0]){\n//        console.log(page.lessSpent) \n       page.newAmount = page.lessSpent\n} else {\n        // console.log(page.moreSpent)\n       page.newAmount = page.moreSpent\n\n}\n\n\npage.savedMoreAmt = Math.abs(page.barChartSavings[0].data[0] - page.barChartSavings[0].data[1])\n\nif(page.barChartSavings[0].data[0] > page.barChartSavings[0].data[1]){\n        page.savedMoreMonth = \"You saved more last month by saving R \" + page.savedMoreAmt + \" more than you did this month\"\n        console.log(page.savedMoreMonth)\n} else {\n        page.savedMoreMonth = \"You saved more this month by saving R \" + page.savedMoreAmt + \" more than you did last month\"      \n        console.log( page.savedMoreMonth)\n\n}",
+        "functionName": "sd_HmysSc28zLxg8P5S",
+        "category": "Function",
+        "x": 160,
+        "y": 60,
+        "wires": [
+            [
+                "sd_sviPcC5dXzxeSL7w"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "statisticsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_50DaZEwV8Ka1zbqm",
+        "type": "PageStart",
+        "z": "sd_EHqxhFZBDfBQcB9S",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "mycharclick",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "mycharclick",
+        "category": "General",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "sd_KCRuwyCtZy3brvWI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "statisticsComponent"
+    },
+    {
+        "id": "sd_KCRuwyCtZy3brvWI",
+        "type": "Script",
+        "z": "sd_EHqxhFZBDfBQcB9S",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "alert('char clicked')",
+        "functionName": "sd_KCRuwyCtZy3brvWI",
+        "category": "Function",
+        "x": 200,
+        "y": 220,
         "wires": [
             []
         ],

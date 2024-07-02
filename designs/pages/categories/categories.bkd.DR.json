@@ -68,6 +68,7 @@
         "041c099b-3875-5312-75a4-6e3b3c231f65": {
             "paletteKey": "NG-Toolbar",
             "parentEditorKey": "10ce9589-9153-968d-589f-6f75a551f1b3",
+            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -105,6 +106,7 @@
             "a7a3ce0e-7228-a941-0fb7-d4e8e732af60": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "041c099b-3875-5312-75a4-6e3b3c231f65",
+                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -169,6 +171,7 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "a7a3ce0e-7228-a941-0fb7-d4e8e732af60",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -356,6 +359,7 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "499a76b5-99d2-e964-be20-0b37950b2818",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {

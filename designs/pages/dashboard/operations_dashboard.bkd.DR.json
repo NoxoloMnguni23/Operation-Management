@@ -469,9 +469,9 @@
                             {
                                 "_key": "class",
                                 "_value": [
+                                    "max-width-300px2-tii",
                                     "margin-bottom-2em-tii",
-                                    "height-10-tii",
-                                    "max-width-300px-tii"
+                                    "height-10-tii"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -836,7 +836,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "Operations",
+                                        "_value": "Operations Department",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }
@@ -1359,7 +1359,9 @@
                         },
                         {
                             "_key": "class",
-                            "_value": [],
+                            "_value": [
+                                "toolbar-bg"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -2019,6 +2021,79 @@
                                 }
                             ]
                         }
+                    },
+                    "9b8b305b-0620-6ab3-c4eb-3368d90c6ee1": {
+                        "paletteKey": "NG-image",
+                        "parentEditorKey": "c32d7fac-8524-37af-5832-ac9795db7fc7",
+                        "commentid": null,
+                        "designerReference": [
+                            {
+                                "_key": "componentLabel",
+                                "_value": "Image",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": [
+                                    "margin-left-1em",
+                                    "border-radius-50",
+                                    "height-30px-tii",
+                                    "width-40px-tii"
+                                ],
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "imgSrc",
+                                "_value": "Web/Images/lucas.jpg",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "alt",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[src]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "imgSecure",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "width",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "srcset",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "sizes",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            }
+                        ]
                     }
                 },
                 "6db8ba6c-979b-bc83-011f-9471f5777509": {
@@ -2042,6 +2117,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "gray-blue-bg",
                                 "router-outlet-content-tii"
                             ],
                             "_type": "dav",

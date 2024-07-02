@@ -60,7 +60,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/view_table_of_receipt",
+            "redirectTo": "/operations_dashboard",
             "pathMatch": "full",
             "default": true
         },

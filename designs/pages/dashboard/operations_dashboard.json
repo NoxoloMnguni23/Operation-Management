@@ -128,7 +128,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.menuItems = [\n    {label: 'Dashboard', icon: 'dashboard', route: 'operations_dashboard'},\n    {label: 'Categories', icon: 'category', route: 'categories'},\n    {label: 'Receipts', icon: 'receipt', route: 'view_table_of_receipt'},\n    {label: 'Reports', icon: 'table_view', route: 'all_purchased_items_table'},\n    {label: 'Statistics', icon: 'trending_up', route: 'statistics'},\n    {label: 'Logout', icon: 'logout', route: '/signIn'},\n\n]",
+        "script": "bh.menuItems = [\n    {label: 'Dashboard', icon: 'dashboard', route: '/operations_dashboard'},\n    {label: 'Categories', icon: 'category', route: 'categories'},\n    {label: 'Receipts', icon: 'receipt', route: 'view_table_of_receipt'},\n    {label: 'Reports', icon: 'table_view', route: 'all_purchased_items_table'},\n    {label: 'Statistics', icon: 'trending_up', route: 'statistics'},\n    {label: 'Logout', icon: 'logout', route: '/signIn'},\n\n]",
         "functionName": "sd_O2uh2oOCq9Gzz9zw",
         "category": "Function",
         "x": 185,

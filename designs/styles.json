@@ -44,6 +44,7 @@
         "mat-table-sticky",
         "mat-paginator-container",
         "max-width-300px-tii",
+        "max-width-300px2-tii",
         "width-50px-tii",
         "width-150px-tii",
         "overflow-hidden-tii",
@@ -58,6 +59,14 @@
         "flexflow",
         "mat-toolbar-row",
         "mat-toolbar-single-row",
-        "router-outlet-content-tii"
+        "router-outlet-content-tii",
+        "toolbar-bg",
+        "padding2em-tii",
+        "card-size-tii",
+        "fz-15px-tii",
+        "width-40px-tii",
+        "height-30px-tii",
+        "border-radius-50",
+        "margin-left-1em"
     ]
 }

@@ -261,6 +261,15 @@ bh-operations_dashboard{
     max-width: 300px;
 }
 
+.max-width-300px2-tii{
+    max-width: 300px;
+}
+
+.max-width-300px-tii:hover{
+    background-color: $light-blue;
+    border-radius: 5px;
+}
+
 .width-50px-tii{
     width: 50px;
 }
@@ -277,7 +286,7 @@ bh-operations_dashboard{
     position: absolute;
     right: -5px;
     top: 65px;
-    background-color: rgba(255, 255, 255, 0.315);
+    background-color: $light-blue;
     border-radius: 5px;
 }
 
@@ -300,7 +309,7 @@ bh-operations_dashboard{
 }
 
 .activeNow-tii{
-    background-color: rgba(255, 255, 255, 0.342);
+    background-color: $light-blue;
     border-radius: 5px;
 }
 
@@ -339,4 +348,43 @@ bh-all_purchased_items_table{
 bh-categories{
     height: 100vh;
     width: 100%;
+}
+
+.toolbar-bg{
+    background-color: white;
+}
+
+bh-statistics{
+    // background-color: yellow;
+    height: 100vh;
+    width: 100%;
+}
+
+.padding2em-tii{
+    padding: 2em
+}
+
+.card-size-tii{
+    width: 400px; 
+    height: 350px
+}
+
+.fz-15px-tii{
+    font-size: 15px
+}
+
+.width-40px-tii{
+    width: 40px;
+}
+
+.height-30px-tii{
+     height: 30px;
+}
+
+.border-radius-50{
+     border-radius: 50%;
+}
+
+.margin-left-1em{
+     margin-left: 1em
 }
