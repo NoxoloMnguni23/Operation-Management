@@ -40,7 +40,29 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "total",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            },
+            {
+                "textIp": "datas",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "arrayData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_7NyJWrMmj6Xj60dl",
         "category": "Function",
         "x": 125,
@@ -62,7 +84,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.dataSource = new MatTableDataSource([\n \n { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 },\n    { category: \"Groceries\", name: \"Apples\", price: 1.99 },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50 },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99 },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49 },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99 },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79 },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99 },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotch Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopes (pack of 50)\", price: 7.99 },\n     { category: \"TOTAL\", name: \"\", price: 1060 },\n     \n  \n]);",
+        "script": "\n\npage.dataSource = new MatTableDataSource ([\n \n  { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 },\n    { category: \"Groceries\", name: \"Apples\", price: 1.99 },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50 },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99 },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49 },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99 },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79 },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99 },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotch Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopes (pack of 50)\", price: 7.99 },\n     { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n     { category: \"TOTAL\", name: \"\", price: 0 },\n\n]);\n\n//converting the object to an Array\npage.arrayData = page.dataSource.data\n\n//adding the total to the spreadsheet and table\npage.arrayData .forEach((item,indx) => {\n  if(page.arrayData.length - 1 === indx){\n    return;\n  }\n page.arrayData[page.arrayData.length - 1].price = page.arrayData[page.arrayData.length - 1].price + item.price \n})\n\nconsole.log(page.arrayData[page.arrayData.length - 1])\nconsole.log(\"newArray\", page.arrayData);\n\n//Adding the total to the total outside the table\n\npage.arrayData .forEach(item => {\n  return page.total = page.total + item.price / 2\n\n})\n\n\n\n\n   \n  \n    \n  \n\n\n\n\n",
         "functionName": "sd_eJuzOUTYKNgXaqdz_1",
         "category": "Function",
         "x": 225,
@@ -91,7 +113,7 @@
             {
                 "textIp": "tableData",
                 "typedIpValue": {
-                    "type": "bh.local",
+                    "type": "this.page",
                     "value": "dataSource"
                 }
             },
@@ -100,6 +122,13 @@
                 "typedIpValue": {
                     "type": "this.page",
                     "value": "excelsheet"
+                }
+            },
+            {
+                "textIp": "price",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
                 }
             }
         ],
@@ -257,11 +286,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.dataSource = new MatTableDataSource([\n \n  { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 },\n    { category: \"Groceries\", name: \"Apples\", price: 1.99 },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50 },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99 },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49 },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99 },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79 },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99 },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotch Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopes (pack of 50)\", price: 7.99 },\n\n]);\n \n \n//storing in name tableData\n bh.local.tableData = bh.local.dataSource;\n    console.log(bh.local.tableData); \n\n\n//converting\n\n// const worksheet: WorkSheet = utils.table_to_sheet(bh.local.tableData);\n\n    // Create a new workbook and add the worksheet to it\n    // const workbook: WorkBook = utils.book_new();\n    // utils.book_append_sheet(workbook, worksheet, 'Sheet1');\n\n    // Convert the workbook to a binary string\n    // const excelBuffer: any = write(workbook, { bookType: 'xlsx', type: 'array' });\n\n    // Create a Blob from the binary string and save it using FileSaver\n    // const dataBlob: Blob = new Blob([excelBuffer], { type: 'application/octet-stream' });\n    // saveAs(dataBlob, 'table_data.xlsx');\n  \n\n  //trying new one\n\n  // fileName = \"excelsheet.xlsx\"\n\n let data = document.getElementById('table-table')\n\n  const ws:  WorkSheet = utils.table_to_sheet(data);\n  const workbook: WorkBook = utils.book_new();\n  utils.book_append_sheet(workbook, ws, 'Sheet1');\n//saving\n  // page.saveAs.writeFile(workbook, page.fileName)\n\n  const excelBuffer: any = write(workbook, { bookType: 'xlsx', type: 'array' });\n\n   const dataBlob: Blob = new Blob([excelBuffer], { type: 'application/octet-stream' });\n     saveAs(dataBlob, 'table_data.xlsx');",
+        "script": "\n//convert to an Array \npage.arrayData = page.dataSource.data\n\n//get the table data\n//  let datas = document.getElementById('table-table')\n \n//converting\n  //trying new one\n let data = document.getElementById('table-table')\n\n  const ws:  WorkSheet = utils.table_to_sheet(data);\n  //  const workbook: WorkBook = { Sheets: { 'datas': ws }, SheetNames: ['datas'] };\n\n  const workbook: WorkBook = utils.book_new();\n  utils.book_append_sheet(workbook, ws, 'Sheet1');\n//saving\n  // page.saveAs.writeFile(workbook, page.fileName)\n\n\n\n  const excelBuffer: any = write(workbook, { bookType: 'xlsx', type: 'array' });\n\n   const dataBlob: Blob = new Blob([excelBuffer], { type: 'application/octet-stream' });\n     saveAs(dataBlob, 'table_data.xlsx');",
         "functionName": "sd_2VNGqvcKee34lvOz_3",
         "category": "Function",
-        "x": 245,
-        "y": 520,
+        "x": 185,
+        "y": 160,
         "wires": [
             []
         ],
@@ -323,8 +352,8 @@
         "flow_type": "sync",
         "functionName": "convert",
         "category": "General",
-        "x": 80,
-        "y": 520,
+        "x": 85,
+        "y": 160,
         "wires": [
             [
                 "sd_PbjQ2z5pylux6pBD"
@@ -428,6 +457,50 @@
         "category": "Function",
         "x": 565,
         "y": 20,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "all_purchased_items_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_wHr6YuVKPRrX2kMN",
+        "type": "PageStart",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "totalAmount",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "totalAmount",
+        "category": "General",
+        "x": 85,
+        "y": 560,
+        "wires": [
+            [
+                "sd_SROyLdDiPneI4O4E"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "all_purchased_items_tableComponent"
+    },
+    {
+        "id": "sd_SROyLdDiPneI4O4E",
+        "type": "Script",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.arrayData = page.dataSource.data\n\n\npage.arrayData .forEach(item => {\n  return page.total = page.total + item.price\n\n})\nconsole.log(\"price\", page.arrayData)",
+        "functionName": "sd_SROyLdDiPneI4O4E",
+        "category": "Function",
+        "x": 225,
+        "y": 560,
         "wires": [
             []
         ],
