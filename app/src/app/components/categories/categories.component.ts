@@ -55,6 +55,20 @@ export class categoriesComponent {
     }
   }
 
+  open(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_ktYD8TZZTgcq0OUO(bh);
+      //appendnew_next_open
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_yhlBySxgfJy54S0Y');
+    }
+  }
   //appendnew_flow_categoriesComponent_start
 
   sd_XASJm5GtYmf3XfeR(bh) {
@@ -66,6 +80,9 @@ export class categoriesComponent {
       this.page.priceG = 0;
       this.page.priceM = 0;
       this.page.priceS = 0;
+      this.page.Suppliesfinal = [];
+      this.page.Maintenancefinal = [];
+      this.page.Groceriesfinal = [];
       bh = this.sd_MwRsJo4lV9LxxPCW(bh);
       //appendnew_next_sd_XASJm5GtYmf3XfeR
       return bh;
@@ -79,6 +96,7 @@ export class categoriesComponent {
       const page = this.page;
       page.items = [
         { category: 'Groceries', name: 'Eggs', price: 2.99 },
+        { category: 'Groceries', name: 'Milk', price: 3.49 },
         { category: 'Groceries', name: 'Milk', price: 3.49 },
         { category: 'Groceries', name: 'Bread', price: 2.0 },
         { category: 'Groceries', name: 'Apples', price: 1.99 },
@@ -106,11 +124,24 @@ export class categoriesComponent {
           price: 5.99,
         },
         { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
-        { category: 'Supplies', name: 'Scotch Tape', price: 2.99 },
-        { category: 'Supplies', name: 'Envelopes (pack of 50)', price: 7.99 },
+        { category: 'Supplies', name: 'Scotchi Tape', price: 2.99 },
+        { category: 'Supplies', name: 'Envelopesy (pack of 50)', price: 7.99 },
         {
           category: 'Supplies',
-          name: 'Sticky Notes (pack of 100)',
+          name: 'Sticky Notesd (pack of 100)',
+          price: 4.29,
+        },
+        {
+          category: 'Supplies',
+          name: 'Printer Papere (ream of 500 sheets)',
+          price: 5.99,
+        },
+        { category: 'Supplies', name: 'Penst (pack of 10)', price: 3.49 },
+        { category: 'Supplies', name: 'Scotchr Tape', price: 2.99 },
+        { category: 'Supplies', name: 'Envelopesk (pack of 50)', price: 7.99 },
+        {
+          category: 'Supplies',
+          name: 'Sticky Notesd (pack of 100)',
           price: 4.29,
         },
       ];
@@ -125,10 +156,21 @@ export class categoriesComponent {
           return page.Maintenance.push(item);
         }
       });
+
+      // page.Milk = page.items.filter(arr => arr.name == "Milk")
+
+      // page.milkItems = page.items.filter(item => item.name === "Milk");
+      // page.milkCount = page.milkItems.length;
+      // page.milkTotalPrice = page.milkItems.reduce((total, item) => total + item.price, 0);
+
+      // console.log(`Number of "Milk" items: ${page.milkCount}`);
+      // console.log(`Total price of "Milk" items: R${page.milkTotalPrice.toFixed(2)}`);
+
       console.log(page.Groceries);
 
       console.log(page.Supplies);
       console.log(page.Maintenance);
+      //  console.log( page.Milk)
       bh = this.sd_SKCtHJkWA3Ww9vcJ(bh);
       //appendnew_next_sd_MwRsJo4lV9LxxPCW
       return bh;
@@ -180,10 +222,98 @@ export class categoriesComponent {
           position: 'right', // Position legend to the right of the chart
         },
       };
+      bh = this.supplies(bh);
       //appendnew_next_sd_JYIOkH9NmgEaHeE6
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_JYIOkH9NmgEaHeE6');
+    }
+  }
+
+  supplies(bh) {
+    try {
+      const page = this.page;
+      page.Supplies.forEach((item) => {
+        if (!page.Suppliesfinal.find((__item) => __item.name === item.name)) {
+          item['itemsCount'] = 1;
+          page.Suppliesfinal.push(item);
+        } else {
+          page.Suppliesfinal.forEach((_item, indx) => {
+            if (_item.name === item.name) {
+              page.Suppliesfinal[indx].price =
+                page.Suppliesfinal[indx].price + item.price;
+              page.Suppliesfinal[indx].itemsCount += 1;
+            }
+          });
+        }
+      });
+      bh = this.maintenance(bh);
+      //appendnew_next_supplies
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bDJi4ASAW2RU4LOe');
+    }
+  }
+
+  maintenance(bh) {
+    try {
+      const page = this.page;
+      page.Maintenance.forEach((item) => {
+        if (
+          !page.Maintenancefinal.find((__item) => __item.name === item.name)
+        ) {
+          item['itemsCount'] = 1;
+          page.Maintenancefinal.push(item);
+        } else {
+          page.Maintenancefinal.forEach((_item, indx) => {
+            if (_item.name === item.name) {
+              page.Maintenancefinal[indx].price =
+                page.Maintenancefinal[indx].price + item.price;
+              page.Maintenancefinal[indx].itemsCount += 1;
+            }
+          });
+        }
+      });
+      bh = this.groceries(bh);
+      //appendnew_next_maintenance
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_fq6qiHNJvpwKvu5c');
+    }
+  }
+
+  groceries(bh) {
+    try {
+      const page = this.page;
+      page.Groceries.forEach((item) => {
+        if (!page.Groceriesfinal.find((__item) => __item.name === item.name)) {
+          item['itemsCount'] = 1;
+          page.Groceriesfinal.push(item);
+        } else {
+          page.Groceriesfinal.forEach((_item, indx) => {
+            if (_item.name === item.name) {
+              page.Groceriesfinal[indx].price =
+                page.Groceriesfinal[indx].price + item.price;
+              page.Groceriesfinal[indx].itemsCount += 1;
+            }
+          });
+        }
+      });
+      //appendnew_next_groceries
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ysYTNzvv6mWUJoXn');
+    }
+  }
+
+  sd_ktYD8TZZTgcq0OUO(bh) {
+    try {
+      const page = this.page;
+      page.isOpen = !page.isOpen;
+      //appendnew_next_sd_ktYD8TZZTgcq0OUO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ktYD8TZZTgcq0OUO');
     }
   }
 
