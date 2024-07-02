@@ -84,7 +84,7 @@
         "script": "page.doughnutChartData = [\n        { data: [50000, 23000, 27000], label: 'Series A' }\n    ];\n    \npage.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];\n\npage.doughnutChartColor = [\n        {\n        backgroundColor: 'rgba(256, 123, 234, 0.1)',\n        borderColor: '#230b84',\n        color: '#000',\n    }\n    ]\n\n     page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}\n\n   ",
         "functionName": "sd_ZOpv5oYTlxoT6aiJ",
         "category": "Function",
-        "x": 305,
+        "x": 285,
         "y": 40,
         "wires": [
             []
