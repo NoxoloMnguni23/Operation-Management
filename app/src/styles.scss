@@ -252,7 +252,7 @@ tr.mat-header-row{
     background-color: $mid-blue!important;
 }
 
-.mat-table thead, .mat-table tbody, .mat-table tfoot, mat-header-row, mat-row, mat-footer-row, [mat-header-row], [mat-row], [mat-footer-row], .mat-table-sticky {
+.mat-table thead, .mat-table tbody, .mat-table tfoot, mat-row, mat-footer-row, [mat-row], [mat-footer-row], .mat-table-sticky {
     background:$gray-blue ;
 }
 
@@ -341,7 +341,7 @@ bh-view_table_of_receipt{
 }
 
 bh-all_purchased_items_table{
-    height: 100vh ;
+    height: 80%;
     width: 100%;
 }
 

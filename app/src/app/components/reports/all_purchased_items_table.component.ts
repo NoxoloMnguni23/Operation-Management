@@ -105,10 +105,28 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_MVizDoI525jCG00k');
     }
   }
+
+  totalAmount(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_SROyLdDiPneI4O4E(bh);
+      //appendnew_next_totalAmount
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wHr6YuVKPRrX2kMN');
+    }
+  }
   //appendnew_flow_all_purchased_items_tableComponent_start
 
   sd_7NyJWrMmj6Xj60dl(bh) {
     try {
+      this.page.total = 0;
+      this.page.datas = undefined;
+      this.page.arrayData = undefined;
       bh = this.sd_eJuzOUTYKNgXaqdz_1(bh);
       //appendnew_next_sd_7NyJWrMmj6Xj60dl
       return bh;
@@ -120,7 +138,8 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
   sd_eJuzOUTYKNgXaqdz_1(bh) {
     try {
       const page = this.page;
-      bh.local.dataSource = new MatTableDataSource([
+
+      page.dataSource = new MatTableDataSource([
         { category: 'Groceries', name: 'Eggs', price: 2.99 },
         { category: 'Groceries', name: 'Milk', price: 3.49 },
         { category: 'Groceries', name: 'Bread', price: 2.0 },
@@ -151,7 +170,31 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
         { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
         { category: 'Supplies', name: 'Scotch Tape', price: 2.99 },
         { category: 'Supplies', name: 'Envelopes (pack of 50)', price: 7.99 },
+        { category: 'Groceries', name: 'Eggs', price: 2.99 },
+        { category: 'TOTAL', name: '', price: 0 },
       ]);
+
+      //converting the object to an Array
+      page.arrayData = page.dataSource.data;
+
+      //adding the total to the spreadsheet and table
+      page.arrayData.forEach((item, indx) => {
+        if (page.arrayData.length - 1 === indx) {
+          return;
+        }
+        page.arrayData[page.arrayData.length - 1].price =
+          page.arrayData[page.arrayData.length - 1].price + item.price;
+      });
+
+      console.log(page.arrayData[page.arrayData.length - 1]);
+      console.log('newArray', page.arrayData);
+
+      //Adding the total to the total outside the table
+
+      page.arrayData.forEach((item) => {
+        return (page.total = page.total + item.price / 2);
+      });
+
       bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
       //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
       return bh;
@@ -162,8 +205,9 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
 
   sd_E9QbOlnVduPNV5MO_1(bh) {
     try {
-      this.page.tableData = bh.local.dataSource;
+      this.page.tableData = this.page.dataSource;
       this.page.fileName = this.page.excelsheet;
+      this.page.price = 0;
       bh = this.sd_ivaTji8kiYYwm6z7(bh);
       //appendnew_next_sd_E9QbOlnVduPNV5MO_1
       return bh;
@@ -246,65 +290,19 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
   sd_2VNGqvcKee34lvOz_3(bh) {
     try {
       const page = this.page;
-      bh.local.dataSource = new MatTableDataSource([
-        { category: 'Groceries', name: 'Eggs', price: 2.99 },
-        { category: 'Groceries', name: 'Milk', price: 3.49 },
-        { category: 'Groceries', name: 'Bread', price: 2.0 },
-        { category: 'Groceries', name: 'Apples', price: 1.99 },
-        { category: 'Groceries', name: 'Pasta', price: 1.5 },
-        {
-          category: 'Maintenance',
-          name: 'Light bulbs (pack of 4)',
-          price: 8.99,
-        },
-        {
-          category: 'Maintenance',
-          name: 'AA Batteries (pack of 12)',
-          price: 6.49,
-        },
-        { category: 'Maintenance', name: 'Duct Tape', price: 4.99 },
-        { category: 'Maintenance', name: 'Multi-purpose Cleaner', price: 3.79 },
-        {
-          category: 'Maintenance',
-          name: 'Paper Towels (pack of 6 rolls)',
-          price: 9.99,
-        },
-        {
-          category: 'Supplies',
-          name: 'Printer Paper (ream of 500 sheets)',
-          price: 5.99,
-        },
-        { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
-        { category: 'Supplies', name: 'Scotch Tape', price: 2.99 },
-        { category: 'Supplies', name: 'Envelopes (pack of 50)', price: 7.99 },
-      ]);
+      //convert to an Array
+      page.arrayData = page.dataSource.data;
 
-      //storing in name tableData
-      bh.local.tableData = bh.local.dataSource;
-      console.log(bh.local.tableData);
+      //get the table data
+      //  let datas = document.getElementById('table-table')
 
       //converting
-
-      // const worksheet: WorkSheet = utils.table_to_sheet(bh.local.tableData);
-
-      // Create a new workbook and add the worksheet to it
-      // const workbook: WorkBook = utils.book_new();
-      // utils.book_append_sheet(workbook, worksheet, 'Sheet1');
-
-      // Convert the workbook to a binary string
-      // const excelBuffer: any = write(workbook, { bookType: 'xlsx', type: 'array' });
-
-      // Create a Blob from the binary string and save it using FileSaver
-      // const dataBlob: Blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
-      // saveAs(dataBlob, 'table_data.xlsx');
-
       //trying new one
-
-      // fileName = "excelsheet.xlsx"
-
       let data = document.getElementById('table-table');
 
       const ws: WorkSheet = utils.table_to_sheet(data);
+      //  const workbook: WorkBook = { Sheets: { 'datas': ws }, SheetNames: ['datas'] };
+
       const workbook: WorkBook = utils.book_new();
       utils.book_append_sheet(workbook, ws, 'Sheet1');
       //saving
@@ -323,6 +321,22 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_PbjQ2z5pylux6pBD');
+    }
+  }
+
+  sd_SROyLdDiPneI4O4E(bh) {
+    try {
+      const page = this.page;
+      page.arrayData = page.dataSource.data;
+
+      page.arrayData.forEach((item) => {
+        return (page.total = page.total + item.price);
+      });
+      console.log('price', page.arrayData);
+      //appendnew_next_sd_SROyLdDiPneI4O4E
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_SROyLdDiPneI4O4E');
     }
   }
 
