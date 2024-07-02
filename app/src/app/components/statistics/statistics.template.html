@@ -1,1 +1,63 @@
-<div id="angularRoot"></div>
+<div fxLayout="column wrap" class="padding2em-tii full-height" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" class="padding2em-tii" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row " fxLayoutGap="6em" fxLayoutAlign="start stretch" [fxShow]="true"><mat-card class="card-size-tii">
+        <mat-card-title class="fz-15px-tii">Yearly Budget, Expenses and Savings Comparison</mat-card-title>
+
+        <mat-card-content>
+          <div fxFlex="100">
+            <canvas baseChart [datasets]="page.lineChartData" [labels]="page.lineChartLabels" type="line" (chartClick)="mycharclick()"></canvas>
+          </div>
+        </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            The month with the most expenditure spent is {{page.maxMonth}} with R {{page.maxExpense}} as the value. </p>
+        </mat-card-content>
+      </mat-card><mat-card class="card-size-tii">
+        <mat-card-title class="fz-15px-tii">Previous and current month comparison</mat-card-title>
+
+        <mat-card-content>
+          <div fxFlex="100">
+            <canvas baseChart [datasets]="page.barChartExpenses" [labels]="page.barChartLabels" type="bar"></canvas>
+          </div>
+        </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            {{page.insight}} with a difference of R {{page.diff}}.
+            <br> <br>
+            There is a {{page.perDiff.toFixed(2)}} percentage difference between the two months.
+          </p>
+        </mat-card-content>
+      </mat-card></div>
+    <div fxLayout="row " fxLayoutGap="6em" fxLayoutAlign="start stretch" [fxShow]="true"><mat-card class="card-size-tii">
+        <mat-card-title class="fz-15px-tii">Previous and current month comparison</mat-card-title>
+
+        <mat-card-content>
+          <div fxFlex="100">
+            <canvas baseChart [datasets]="page.barChartBudget" [labels]="page.barChartLabels" type="bar"></canvas>
+          </div>
+        </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            {{page.newAmount}}
+          </p>
+        </mat-card-content>
+      </mat-card><mat-card class="card-size-tii">
+        <mat-card-title class="fz-15px-tii">Previous and current month comparison</mat-card-title>
+
+        <mat-card-content>
+          <div fxFlex="100">
+            <canvas baseChart [datasets]="page.barChartSavings" [labels]="page.barChartLabels" type="bar"></canvas>
+          </div>
+        </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            {{page.savedMoreMonth}}
+          </p>
+        </mat-card-content>
+      </mat-card></div>
+  </div>
+</div>

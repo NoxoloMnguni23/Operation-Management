@@ -1,10 +1,10 @@
 <div fxLayout="column " fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true"><mat-sidenav-container class="full-height" autosize="true" [hasBackdrop]="false"><mat-sidenav #sidenav class="overflow-hidden-tii position-relative-tii color-white-blue dark-blue-bg full-height" [mode]="&apos;side&apos;" [position]="&apos;start&apos;" [opened]="true" fixedInViewport="false">
       <div fxLayout="row wrap" class="close-nav-icon-tii" fxLayoutAlign="start stretch" [fxShow]="true" (click)="sidenavToggles()"><mat-icon *ngIf="!page.collapsed">chevron_right</mat-icon><mat-icon *ngIf="page.collapsed">chevron_left</mat-icon></div>
       <div fxLayout="column wrap" class="margin-1em-tii overflow-hidden-tii" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" class="margin-bottom-2em-tii height-10-tii max-width-300px-tii" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="row wrap" class="max-width-300px2-tii margin-bottom-2em-tii height-10-tii" fxLayoutAlign="start center" [fxShow]="true">
           <div fxLayout="row wrap" class="width-50px-tii" fxLayoutAlign="center center" [fxShow]="true"><mat-icon>receipt_long</mat-icon></div>
           <p *ngIf="page.collapsed" class="width-150px-tii">
-            Operations</p>
+            Operations Department</p>
         </div>
         <div fxLayout="row wrap" class="cursor-tii height-10-tii max-width-300px-tii" fxLayoutAlign="start center" [fxShow]="true" (click)="index(item); page.selectedItem = i" *ngFor="let item of page.menuItems; let i = index" [routerLink]="item.route" routerLinkActive="activeNow-tii" [class.activeNow-tii]="page.selectedItem === i">
           <div fxLayout="row wrap" class="width-50px-tii" fxLayoutAlign="center center" [fxShow]="true"><mat-icon>{{item.icon}}</mat-icon></div>
@@ -14,14 +14,14 @@
         </div>
       </div>
     </mat-sidenav>
-    <div fxLayout="column " class="full-height" fxLayoutAlign="start stretch" [fxShow]="true"><mat-toolbar>
+    <div fxLayout="column " class="full-height" fxLayoutAlign="start stretch" [fxShow]="true"><mat-toolbar class="toolbar-bg">
         <div>
           {{page.label.label}}
         </div><span class="flex1-tii">
                 </span>
         <div>
-          Lucas Walker</div>
+          Lucas Walker</div><img imgSrc="Web/Images/lucas.jpg" class="margin-left-1em border-radius-50 height-30px-tii width-40px-tii">
       </mat-toolbar>
-      <div fxLayout="row wrap" class="router-outlet-content-tii" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" fxFill><router-outlet></router-outlet></div>
+      <div fxLayout="row wrap" class="gray-blue-bg router-outlet-content-tii" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" fxFill><router-outlet></router-outlet></div>
     </div>
   </mat-sidenav-container></div>

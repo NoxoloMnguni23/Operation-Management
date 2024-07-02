@@ -45,6 +45,7 @@
         "mat-table-sticky",
         "mat-paginator-container",
         "max-width-300px-tii",
+        "max-width-300px2-tii",
         "width-50px-tii",
         "width-150px-tii",
         "overflow-hidden-tii",
@@ -62,6 +63,14 @@
         "router-outlet-content-tii",
         "stat-kim",
         "table-kim",
-        "donut-angel"
+        "donut-angel",
+        "toolbar-bg",
+        "padding2em-tii",
+        "card-size-tii",
+        "fz-15px-tii",
+        "width-40px-tii",
+        "height-30px-tii",
+        "border-radius-50",
+        "margin-left-1em"
     ]
 }
