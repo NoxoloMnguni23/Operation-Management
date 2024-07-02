@@ -61,6 +61,7 @@
         "mat-toolbar-single-row",
         "router-outlet-content-tii",
         "stat-kim",
-        "table-kim"
+        "table-kim",
+        "donut-angel"
     ]
 }
