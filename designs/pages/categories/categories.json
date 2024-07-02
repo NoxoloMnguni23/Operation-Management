@@ -89,6 +89,27 @@
                     "type": "literal",
                     "value": "0"
                 }
+            },
+            {
+                "textIp": "Suppliesfinal",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "Maintenancefinal",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "Groceriesfinal",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
             }
         ],
         "functionName": "sd_XASJm5GtYmf3XfeR",
@@ -112,7 +133,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.items = [\n    { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 },\n    { category: \"Groceries\", name: \"Apples\", price: 1.99 },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50 },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99 },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49 },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99 },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79 },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99 },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotch Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopes (pack of 50)\", price: 7.99 },\n    { category: \"Supplies\", name: \"Sticky Notes (pack of 100)\", price: 4.29 }\n];\npage.items.forEach(item => {\n    if (item.category ===\"Groceries\" ){\n      page.Groceries.push(item)\n\n    }\n     if (item.category ===\"Supplies\" ){\n      return  page.Supplies.push(item)\n    }\n    if(item.category ===\"Maintenance\" ){\n      return  page.Maintenance.push(item)\n    }\n   \n});\n console.log( page.Groceries)\n \n  console.log( page.Supplies)\n   console.log( page.Maintenance)",
+        "script": "page.items = [\n    { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n     { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 },\n    { category: \"Groceries\", name: \"Apples\", price: 1.99 },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50 },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99 },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49 },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99 },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79 },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99 },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotchi Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopesy (pack of 50)\", price: 7.99 },\n    { category: \"Supplies\", name: \"Sticky Notesd (pack of 100)\", price: 4.29 },\n    { category: \"Supplies\", name: \"Printer Papere (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Penst (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotchr Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopesk (pack of 50)\", price: 7.99 },\n    { category: \"Supplies\", name: \"Sticky Notesd (pack of 100)\", price: 4.29 }\n];\npage.items.forEach(item => {\n    if (item.category ===\"Groceries\" ){\n      page.Groceries.push(item)\n\n    }\n     if (item.category ===\"Supplies\" ){\n      return  page.Supplies.push(item)\n    }\n    if(item.category ===\"Maintenance\" ){\n      return  page.Maintenance.push(item)\n    }\n   \n});\n\n// page.Milk = page.items.filter(arr => arr.name == \"Milk\")\n\n// page.milkItems = page.items.filter(item => item.name === \"Milk\");\n// page.milkCount = page.milkItems.length;\n// page.milkTotalPrice = page.milkItems.reduce((total, item) => total + item.price, 0);\n\n// console.log(`Number of \"Milk\" items: ${page.milkCount}`);\n// console.log(`Total price of \"Milk\" items: R${page.milkTotalPrice.toFixed(2)}`);\n\n console.log( page.Groceries)\n \n  console.log( page.Supplies)\n   console.log( page.Maintenance)\n  //  console.log( page.Milk)",
         "functionName": "sd_MwRsJo4lV9LxxPCW",
         "category": "Function",
         "x": 225,
@@ -161,6 +182,116 @@
         "category": "Function",
         "x": 425,
         "y": 40,
+        "wires": [
+            [
+                "sd_bDJi4ASAW2RU4LOe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ysYTNzvv6mWUJoXn",
+        "type": "Script",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Groceries",
+        "script": "page.Groceries.forEach(item => {\n  if(!page.Groceriesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Groceriesfinal.push(item)\n    }else {\n\npage.Groceriesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Groceriesfinal[indx].price = page.Groceriesfinal[indx].price + item.price;\n        page.Groceriesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "functionName": "groceries",
+        "category": "Function",
+        "x": 685,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fq6qiHNJvpwKvu5c",
+        "type": "Script",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Maintenance",
+        "script": "page.Maintenance.forEach(item => {\n  if(!page.Maintenancefinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Maintenancefinal.push(item)\n    }else {\n\npage.Maintenancefinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Maintenancefinal[indx].price = page.Maintenancefinal[indx].price + item.price;\n        page.Maintenancefinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "functionName": "maintenance",
+        "category": "Function",
+        "x": 565,
+        "y": 140,
+        "wires": [
+            [
+                "sd_ysYTNzvv6mWUJoXn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bDJi4ASAW2RU4LOe",
+        "type": "Script",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Supplies",
+        "script": "page.Supplies.forEach(item => {\n  if(!page.Suppliesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Suppliesfinal.push(item)\n    }else {\n\npage.Suppliesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Suppliesfinal[indx].price = page.Suppliesfinal[indx].price + item.price;\n        page.Suppliesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "functionName": "supplies",
+        "category": "Function",
+        "x": 485,
+        "y": 160,
+        "wires": [
+            [
+                "sd_fq6qiHNJvpwKvu5c"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yhlBySxgfJy54S0Y",
+        "type": "PageStart",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "Open",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "open",
+        "category": "General",
+        "x": 65,
+        "y": 260,
+        "wires": [
+            [
+                "sd_ktYD8TZZTgcq0OUO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "categoriesComponent"
+    },
+    {
+        "id": "sd_ktYD8TZZTgcq0OUO",
+        "type": "Script",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.isOpen =!page.isOpen",
+        "functionName": "sd_ktYD8TZZTgcq0OUO",
+        "category": "Function",
+        "x": 220,
+        "y": 260,
         "wires": [
             []
         ],

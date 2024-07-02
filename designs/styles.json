@@ -58,6 +58,7 @@
         "flexflow",
         "mat-toolbar-row",
         "mat-toolbar-single-row",
-        "router-outlet-content-tii"
+        "router-outlet-content-tii",
+        "donut-angel"
     ]
 }
