@@ -1,25 +1,17 @@
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-    <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="row wrap" fxLayoutGap="9em" fxLayoutAlign="space-between center" [fxShow]="true">
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-            <h5 class="margin-top-10px-lebo no-margin-lebo color-dark-gray">
-              Monthy Budget</h5>
-          </div>
-          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-            <p class="font-date-lebo color-dark-blue">
-              Jun 01 - Jun 30,2023</p>
-          </div>
-        </div>
-        <div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true">
-          <h3 class="color-dark-blue">
-            Manage Budget</h3>
-        </div>
+<div fxLayout="column wrap" style="height:5px" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutGap="9em" fxLayoutAlign="space-between center" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h5 class="margin-top-10px-lebo no-margin-lebo color-dark-gray">
+          Monthy Budget</h5>
       </div>
-      <div>
-        <canvas baseChart [datasets]="page.doughnutChartData" [labels]="page.doughnutChartLabels " type="doughnut"></canvas>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <p class="font-date-lebo color-dark-blue">
+          Jun 01 - Jun 30,2023</p>
       </div>
     </div>
+  </div>
+  <div>
+    <canvas baseChart [datasets]="page.doughnutChartData" [labels]="page.doughnutChartLabels " type="doughnut"></canvas>
   </div>
 </div>

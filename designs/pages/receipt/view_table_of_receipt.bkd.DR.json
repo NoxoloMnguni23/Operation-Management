@@ -12,7 +12,7 @@
             },
             {
                 "_key": "style",
-                "_value": "",
+                "_value": " padding: 20px;",
                 "_type": "kv",
                 "_attrDef": "p"
             },

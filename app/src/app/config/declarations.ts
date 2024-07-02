@@ -152,11 +152,11 @@ export const appRoutes = [
         component: all_purchased_items_tableComponent,
       },
       { path: 'statistics', component: statisticsComponent },
+      { path: 'landing', component: landingComponent },
+      { path: 'add_receipt', component: add_receiptComponent },
     ],
   },
-  { path: 'operations_dashboard', component: operations_dashboardComponent },
   { path: 'user_dashboard', component: user_dashboardComponent },
-  { path: 'add_receipt', component: add_receiptComponent },
   { path: 'selected_receipt_form', component: selected_receipt_formComponent },
   { path: 'view_table_of_receipt', component: view_table_of_receiptComponent },
   {
@@ -166,7 +166,6 @@ export const appRoutes = [
   { path: 'login_guidelines', component: login_guidelinesComponent },
   { path: 'line_chart', component: line_chartComponent },
   { path: 'donut_chart', component: donut_chartComponent },
-  { path: 'landing', component: landingComponent },
   { path: '', redirectTo: '/operations_dashboard', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
