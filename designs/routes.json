@@ -23,16 +23,20 @@
                 {
                     "component": "statisticsComponent",
                     "path": "statistics"
+                },
+                {
+                    "path": "landing",
+                    "component": "landingComponent"
+                },
+                {
+                    "path": "add_receipt",
+                    "component": "add_receiptComponent"
                 }
             ]
         },
         {
             "component": "user_dashboardComponent",
             "path": "user_dashboard"
-        },
-        {
-            "component": "add_receiptComponent",
-            "path": "add_receipt"
         },
         {
             "component": "selected_receipt_formComponent",
@@ -60,7 +64,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/view_table_of_receipt",
+            "redirectTo": "/operations_dashboard",
             "pathMatch": "full",
             "default": true
         },

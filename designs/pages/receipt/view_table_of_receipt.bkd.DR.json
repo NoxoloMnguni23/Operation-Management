@@ -12,7 +12,7 @@
             },
             {
                 "_key": "style",
-                "_value": "",
+                "_value": " padding: 20px;",
                 "_type": "kv",
                 "_attrDef": "p"
             },
@@ -663,7 +663,6 @@
                 "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
                 "isAdvancedComponent": true,
                 "advancedSiblingType": "after",
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -713,7 +712,7 @@
                             "sd_fsDpw6K92JfXYn9S"
                         ],
                         "_type": "a",
-                        "_attrDef": "p",
+                        "_attrDef": "c",
                         "_visibility": false
                     }
                 ]

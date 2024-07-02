@@ -14,6 +14,7 @@
         "color-dark-blue",
         "color-gray-blue",
         "color-dark-gray",
+        "color-light-gray",
         "white-bg-lebo",
         "full-height",
         "half-height",
@@ -58,6 +59,8 @@
         "flexflow",
         "mat-toolbar-row",
         "mat-toolbar-single-row",
-        "router-outlet-content-tii"
+        "router-outlet-content-tii",
+        "stat-kim",
+        "table-kim"
     ]
 }
