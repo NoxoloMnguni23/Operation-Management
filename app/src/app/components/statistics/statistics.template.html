@@ -1,5 +1,5 @@
 <div fxLayout="column wrap" class="padding2em-tii full-height" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div fxLayout="column wrap" class="padding2em-tii" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" class="padding2em-tii" fxLayoutGap="3em" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="row " fxLayoutGap="6em" fxLayoutAlign="start stretch" [fxShow]="true"><mat-card class="card-size-tii">
         <mat-card-title class="fz-15px-tii">Yearly Budget, Expenses and Savings Comparison</mat-card-title>
 
@@ -27,6 +27,8 @@
             {{page.insight}} with a difference of R {{page.diff}}.
             <br> <br>
             There is a {{page.perDiff.toFixed(2)}} percentage difference between the two months.
+
+
           </p>
         </mat-card-content>
       </mat-card></div>

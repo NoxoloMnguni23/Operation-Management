@@ -17,11 +17,7 @@ body {
     background-color: $gray-blue;
     color: $dark-gray;
 }
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: $gray-blue;
-    color: $dark-gray;
-}
+
 
 
 
@@ -33,21 +29,12 @@ $yellow-supplies : yellow;
 $pending-category: gray;
 
 
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: $gray-blue;
-    color: $dark-gray;
-}
+
 
 .dark-grey-bg {
     background-color: $dark-gray !important;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: $gray-blue;
-    color: $dark-gray;
-}
 
 .dark-blue-bg {
     background-color: $dark-blue !important;
@@ -117,7 +104,7 @@ body {
     height: 50% !important;
 }
 
-.full-width {
+.full-width, bh-add_receipt {
     width: 100%;
 }
 
@@ -132,10 +119,11 @@ body {
 .font-weight-900-lebo {
     font-weight: 900;
 }
-// .bh-landing {
-//     height: 100%;
-//     width: 100%;
-// }
+
+.form-kim {
+    height: 80%!important;
+    width: 50%!important;
+}
 
 
 //Margins
@@ -159,7 +147,15 @@ body {
     margin-top:5px
 
 }
+.label-margin-kim {
+    margin: 27px;
+}
 
+.input-left{
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper{
+        left: -27px;
+    }
+}
 .dot-groceries-lebo {
     height: 25px;
     width: 25px;

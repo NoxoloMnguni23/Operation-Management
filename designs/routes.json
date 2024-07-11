@@ -64,7 +64,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/operations_dashboard",
+            "redirectTo": "/operations_dashboard/landing",
             "pathMatch": "full",
             "default": true
         },

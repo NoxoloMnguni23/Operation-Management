@@ -96,7 +96,7 @@
                 },
                 {
                     "_key": "fxLayoutGap",
-                    "_value": "1em",
+                    "_value": "3em",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -801,7 +801,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "bbf06717-aeb4-dde4-3f32-fc4d8b28d987",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -827,7 +826,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "f0af4ca8-3434-b461-1a28-f7453a4368a8",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1015,7 +1013,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "242b482a-fc58-b214-119e-0ad7f9d91df1",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -1032,7 +1029,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "{{page.insight}} with a difference of R {{page.diff}}.\r\n <br> <br>\r\nThere is a {{page.perDiff.toFixed(2)}} percentage difference between the two months.",
+                                        "_value": "{{page.insight}} with a difference of R {{page.diff}}.\r\n <br> <br>\r\nThere is a {{page.perDiff.toFixed(2)}} percentage difference between the two months.\r\n\r\n\r\n",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }
@@ -1288,7 +1285,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "d0dfc547-ac9b-4b6c-2e76-c24bc27ca17c",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1314,7 +1310,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "b5c67257-4a6e-6931-c716-a3adca70dc8c",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1502,7 +1497,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "56ebf49b-8917-7556-cedf-2e7e7c4353d3",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -1532,7 +1526,6 @@
                     "paletteKey": "ad-card",
                     "parentEditorKey": "b121d0d2-e0f2-d840-71d0-68e2b19cb270",
                     "isAdvancedComponent": true,
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -1567,7 +1560,6 @@
                         "paletteKey": "ng-card-title",
                         "parentEditorKey": "af870193-c964-868a-2c7e-4e74db626a60",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1603,7 +1595,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "af870193-c964-868a-2c7e-4e74db626a60",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1628,7 +1619,6 @@
                         "8b9d3a07-ed60-0089-f27f-32cd35d04f56": {
                             "paletteKey": "NG-ng-bar-chart",
                             "parentEditorKey": "7b81b28d-47db-4262-5ef7-b95fbb77a746",
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1717,7 +1707,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "af870193-c964-868a-2c7e-4e74db626a60",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1743,7 +1732,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "c5d5d39e-a58e-a5fd-bddc-fc2f7228deb9",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1931,7 +1919,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "32cf5957-6833-4a8d-ac5e-b93d8b752f6c",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
