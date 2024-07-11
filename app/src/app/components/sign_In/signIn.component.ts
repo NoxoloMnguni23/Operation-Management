@@ -55,11 +55,24 @@ export class signInComponent {
     }
   }
 
+  sd_945gHDBbunxj8TJd(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      //appendnew_next_sd_945gHDBbunxj8TJd
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_945gHDBbunxj8TJd');
+    }
+  }
   //appendnew_flow_signInComponent_start
 
   sd_kyQIKe8WKryMkG6c(bh) {
     try {
-      bh = this.sd_iG9OzR29o1W2QzI4(bh);
+      bh = this.sd_wK4hpUOjNf1DK5i7(bh);
       //appendnew_next_sd_kyQIKe8WKryMkG6c
       return bh;
     } catch (e) {
@@ -67,32 +80,57 @@ export class signInComponent {
     }
   }
 
-  sd_iG9OzR29o1W2QzI4(bh) {
+  sd_wK4hpUOjNf1DK5i7(bh) {
     try {
-      const page = this.page;
-      page.doughnutChartData = [
-        { data: [50000, 23000, 27000], label: 'Series A' },
-      ];
-
-      page.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];
-
-      page.doughnutChartColor = [
-        {
-          backgroundColor: 'rgba(256, 123, 234, 0.1)',
-          borderColor: '#230b84',
-          color: '#000',
-        },
-      ];
-
-      page.chartOptions = {
-        legend: {
-          position: 'right', // Position legend to the right of the chart
-        },
-      };
-      //appendnew_next_sd_iG9OzR29o1W2QzI4
+      bh.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_gyTRKnMUMOeFk8UO(bh);
+      //appendnew_next_sd_wK4hpUOjNf1DK5i7
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_iG9OzR29o1W2QzI4');
+      return this.errorHandler(bh, e, 'sd_wK4hpUOjNf1DK5i7');
+    }
+  }
+
+  sd_gyTRKnMUMOeFk8UO(bh) {
+    try {
+      const page = this.page;
+      bh.url = bh.ssdURL + 'user/info';
+
+      console.log(bh.url);
+      bh = this.sd_NxxxiG3oHj8uZJgi(bh);
+      //appendnew_next_sd_gyTRKnMUMOeFk8UO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_gyTRKnMUMOeFk8UO');
+    }
+  }
+
+  async sd_NxxxiG3oHj8uZJgi(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.userInfor = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_fc7FH9T9PL4f0rxm(bh);
+      //appendnew_next_sd_NxxxiG3oHj8uZJgi
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NxxxiG3oHj8uZJgi');
+    }
+  }
+
+  sd_fc7FH9T9PL4f0rxm(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.userInfor);
+      //appendnew_next_sd_fc7FH9T9PL4f0rxm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_fc7FH9T9PL4f0rxm');
     }
   }
 

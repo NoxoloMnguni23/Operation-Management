@@ -679,7 +679,7 @@
                                 {
                                     "_key": "class",
                                     "_value": [
-                                        "color-light-gray"
+                                        "color-dark-gray"
                                     ],
                                     "_type": "dav",
                                     "_attrDef": "p"
@@ -1067,7 +1067,6 @@
                             "parentEditorKey": "6d0482b3-aa47-6b45-04fa-5bfea455996d",
                             "isAdvancedComponent": true,
                             "advancedSiblingType": "after",
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1111,8 +1110,9 @@
                                     "skipCodegen": true,
                                     "_key": "__n_dependant_flows_key__",
                                     "_value": [
-                                        "sd_Fokwf1lXXJzmsqEZ",
-                                        "sd_PbjQ2z5pylux6pBD"
+                                        "sd_WmlEAXUFzL4FCZeY",
+                                        "sd_a7QyryciA6UddZ9I",
+                                        "sd_99AkiApW62Lh7f1v"
                                     ],
                                     "_type": "a",
                                     "_attrDef": "c",
@@ -1125,7 +1125,6 @@
                             "parentEditorKey": "6d0482b3-aa47-6b45-04fa-5bfea455996d",
                             "isAdvancedComponent": true,
                             "advancedSiblingType": "before",
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {

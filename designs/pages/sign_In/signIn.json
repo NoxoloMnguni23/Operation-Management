@@ -51,7 +51,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_iG9OzR29o1W2QzI4"
+                "sd_wK4hpUOjNf1DK5i7"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -60,20 +60,148 @@
         "generated": true
     },
     {
-        "id": "sd_iG9OzR29o1W2QzI4",
+        "id": "sd_945gHDBbunxj8TJd",
+        "type": "PageStart",
+        "z": "sd_NdL0PrOCMLvl6Q63",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "flow_type": "sync",
+        "functionName": "sd_945gHDBbunxj8TJd",
+        "category": "General",
+        "x": 45,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "signInComponent"
+    },
+    {
+        "id": "sd_gyTRKnMUMOeFk8UO",
         "type": "Script",
         "z": "sd_NdL0PrOCMLvl6Q63",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.doughnutChartData = [\n        { data: [50000, 23000, 27000], label: 'Series A' }\n    ];\n    \npage.doughnutChartLabels = ['Savings', 'Expenses', 'Available Balance'];\n\npage.doughnutChartColor = [\n        {\n        backgroundColor: 'rgba(256, 123, 234, 0.1)',\n        borderColor: '#230b84',\n        color: '#000',\n    }\n    ]\n\n     page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}",
-        "functionName": "sd_iG9OzR29o1W2QzI4",
+        "script": "bh.url = bh.ssdURL + 'user/info'\n\nconsole.log(bh.url)",
+        "functionName": "sd_gyTRKnMUMOeFk8UO",
         "category": "Function",
-        "x": 325,
+        "x": 385,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_NxxxiG3oHj8uZJgi"
+            ]
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signInComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_wK4hpUOjNf1DK5i7",
+        "type": "Environment",
+        "z": "sd_NdL0PrOCMLvl6Q63",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_wK4hpUOjNf1DK5i7",
+        "category": "General",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            [
+                "sd_gyTRKnMUMOeFk8UO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signInComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_NxxxiG3oHj8uZJgi",
+        "type": "HttpRequest",
+        "z": "sd_NdL0PrOCMLvl6Q63",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.userInfor",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "userInfor"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_NxxxiG3oHj8uZJgi",
+        "category": "HTTP",
+        "x": 505,
+        "y": 40,
+        "wires": [
+            [
+                "sd_fc7FH9T9PL4f0rxm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signInComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fc7FH9T9PL4f0rxm",
+        "type": "Log",
+        "z": "sd_NdL0PrOCMLvl6Q63",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.userInfor",
+        "functionName": "sd_fc7FH9T9PL4f0rxm",
+        "category": "General",
+        "x": 640,
+        "y": 140,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "userInfor",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "signInComponent",

@@ -17,11 +17,7 @@ body {
     background-color: $gray-blue;
     color: $dark-gray;
 }
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: $gray-blue;
-    color: $dark-gray;
-}
+
 
 
 
@@ -33,21 +29,12 @@ $yellow-supplies : yellow;
 $pending-category: gray;
 
 
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: $gray-blue;
-    color: $dark-gray;
-}
+
 
 .dark-grey-bg {
     background-color: $dark-gray !important;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: $gray-blue;
-    color: $dark-gray;
-}
 
 .dark-blue-bg {
     background-color: $dark-blue !important;
@@ -117,7 +104,7 @@ body {
     height: 50% !important;
 }
 
-.full-width {
+.full-width, bh-add_receipt {
     width: 100%;
 }
 
@@ -132,10 +119,11 @@ body {
 .font-weight-900-lebo {
     font-weight: 900;
 }
-// .bh-landing {
-//     height: 100%;
-//     width: 100%;
-// }
+
+.form-kim {
+    height: 80%!important;
+    width: 50%!important;
+}
 
 
 //Margins
@@ -159,7 +147,15 @@ body {
     margin-top:5px
 
 }
+.label-margin-kim {
+    margin: 27px;
+}
 
+.input-left{
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper{
+        left: -27px;
+    }
+}
 .dot-groceries-lebo {
     height: 25px;
     width: 25px;
@@ -270,6 +266,15 @@ bh-operations_dashboard{
     max-width: 300px;
 }
 
+.max-width-300px2-tii{
+    max-width: 300px;
+}
+
+.max-width-300px-tii:hover{
+    background-color: $light-blue;
+    border-radius: 5px;
+}
+
 .width-50px-tii{
     width: 50px;
 }
@@ -286,7 +291,7 @@ bh-operations_dashboard{
     position: absolute;
     right: -5px;
     top: 65px;
-    background-color: rgba(255, 255, 255, 0.315);
+    background-color: $light-blue;
     border-radius: 5px;
 }
 
@@ -309,7 +314,7 @@ bh-operations_dashboard{
 }
 
 .activeNow-tii{
-    background-color: rgba(255, 255, 255, 0.342);
+    background-color: $light-blue;
     border-radius: 5px;
 }
 
@@ -346,7 +351,7 @@ bh-all_purchased_items_table{
 }
 
 bh-categories{
-    height: 100vh;
+    // height: 100%;
     width: 100%;
 }
 
@@ -363,4 +368,82 @@ bh-landing{
     height: 10px !important; 
     width:100% !important;
      bottom:0 !important;
+}
+.donut-angel{
+          width: 78% !important;
+    height: 78% !important;
+}
+
+// .width-70-angel{
+//     width: 70% !important;
+// }
+// .text-dotted-angel{
+    // p{
+    //      width: 110px !important;
+    // text-overflow: ellipsis !important;
+    // white-space: nowrap !important;
+    // overflow: hidden !important;
+    // }
+    // width: 110px !important;
+    // text-overflow: ellipsis !important;
+    // white-space: nowrap !important;
+    // overflow: hidden !important;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toolbar-bg{
+    background-color: white;
+}
+
+bh-statistics{
+    // background-color: yellow;
+    height: 100vh;
+    width: 100%;
+}
+
+.padding2em-tii{
+    padding: 2em
+}
+
+.card-size-tii{
+    width: 400px; 
+    height: 350px
+}
+
+.fz-15px-tii{
+    font-size: 15px
+}
+
+.width-40px-tii{
+    width: 40px;
+}
+
+.height-30px-tii{
+     height: 30px;
+}
+
+.border-radius-50{
+     border-radius: 50%;
+}
+
+.margin-left-1em{
+     margin-left: 1em
 }
