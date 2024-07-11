@@ -3,7 +3,8 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
-import { AfterViewInit, Component, Injector } from '@angular/core'; //_splitter_
+import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; //_splitter_
+import { MatPaginator } from '@angular/material/paginator'; //_splitter_
 import { MatTableDataSource } from '@angular/material/table'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -19,6 +20,8 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
   ],
 })
 export class landingComponent implements AfterViewInit {
+  @ViewChild(MatPaginator)
+  public MatPaginator: any = null;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -57,17 +60,6 @@ export class landingComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit() {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      //appendnew_next_ngAfterViewInit
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_3NNfV54q3dEqyXcq');
-    }
-  }
-
   openForm(...others) {
     let bh: any = {};
     try {
@@ -82,6 +74,18 @@ export class landingComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_IFPuG9EBlYn7BebM');
     }
   }
+  ngAfterViewInit() {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh = this.sd_xKCCTWKzvgDN0rx7_6(bh);
+      //appendnew_next_ngAfterViewInit
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_WmlEAXUFzL4FCZeY');
+    }
+  }
+
   //appendnew_flow_landingComponent_start
 
   sd_oVwRlrUvGw6hhxZi(bh) {
@@ -166,8 +170,9 @@ export class landingComponent implements AfterViewInit {
 
       bh.local.dataSource = new MatTableDataSource(page.resultReceipts);
       console.log(page.resultReceipts);
+      console.log(bh.local.MatPaginator);
 
-      bh = this.sd_VjJErNp31zBqY8tJ(bh);
+      bh = this.sd_2JXWvVyCSaWUOSSi(bh);
       //appendnew_next_sd_I8cgmZAyUMYw2KLe
       return bh;
     } catch (e) {
@@ -175,13 +180,13 @@ export class landingComponent implements AfterViewInit {
     }
   }
 
-  sd_VjJErNp31zBqY8tJ(bh) {
+  sd_2JXWvVyCSaWUOSSi(bh) {
     try {
       this.page.tableData = bh.local.dataSource;
-      //appendnew_next_sd_VjJErNp31zBqY8tJ
+      //appendnew_next_sd_2JXWvVyCSaWUOSSi
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_VjJErNp31zBqY8tJ');
+      return this.errorHandler(bh, e, 'sd_2JXWvVyCSaWUOSSi');
     }
   }
 
@@ -198,6 +203,30 @@ export class landingComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_TetSjqbxmzLs0g9j');
+    }
+  }
+
+  sd_xKCCTWKzvgDN0rx7_6(bh) {
+    try {
+      bh.pageViews = Object.assign(bh.pageViews || {}, {
+        MatPaginator: this.MatPaginator,
+      });
+      bh = this.sd_2VNGqvcKee34lvOz_6(bh);
+      //appendnew_next_sd_xKCCTWKzvgDN0rx7_6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_a7QyryciA6UddZ9I');
+    }
+  }
+
+  sd_2VNGqvcKee34lvOz_6(bh) {
+    try {
+      const page = this.page;
+      this.page.tableData.paginator = this.MatPaginator;
+      //appendnew_next_sd_2VNGqvcKee34lvOz_6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_99AkiApW62Lh7f1v');
     }
   }
 

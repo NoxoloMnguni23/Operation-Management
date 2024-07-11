@@ -6,7 +6,7 @@
         "label": "landing",
         "disabled": false,
         "info": "",
-        "functionSeq": 5,
+        "functionSeq": 6,
         "generateNext": true,
         "serviceName": "landingComponent"
     },
@@ -174,14 +174,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\n\nbh.local.dataSource = new MatTableDataSource(page.resultReceipts);\nconsole.log(page.resultReceipts)\n\n\n",
+        "script": "\n\nbh.local.dataSource = new MatTableDataSource(page.resultReceipts);\nconsole.log(page.resultReceipts)\nconsole.log(bh.local.MatPaginator)\n\n\n\n",
         "functionName": "sd_I8cgmZAyUMYw2KLe",
         "category": "Function",
         "x": 705,
         "y": 60,
         "wires": [
             [
-                "sd_VjJErNp31zBqY8tJ"
+                "sd_2JXWvVyCSaWUOSSi"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -216,37 +216,6 @@
             [
                 "sd_I8cgmZAyUMYw2KLe"
             ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "landingComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_VjJErNp31zBqY8tJ",
-        "type": "PageVariables",
-        "z": "sd_UWEsrTmDSRRDnTPG",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [
-            {
-                "textIp": "tableData",
-                "typedIpValue": {
-                    "type": "bh.local",
-                    "value": "dataSource"
-                }
-            }
-        ],
-        "functionName": "sd_VjJErNp31zBqY8tJ",
-        "category": "Function",
-        "x": 785,
-        "y": 60,
-        "wires": [
-            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -294,74 +263,6 @@
         "generated": true
     },
     {
-        "id": "sd_3NNfV54q3dEqyXcq",
-        "type": "AfterViewInit",
-        "z": "sd_UWEsrTmDSRRDnTPG",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "functionName": "ngAfterViewInit",
-        "category": "Lifecycle Events",
-        "x": 65,
-        "y": 180,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
-    },
-    {
-        "id": "sd_4eHF3lhr6EqqJFLA",
-        "type": "ViewPicker",
-        "z": "sd_UWEsrTmDSRRDnTPG",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 1,
-        "childViewVariables": [
-            {
-                "key": {
-                    "type": "literal",
-                    "value": "MatPaginator"
-                },
-                "defaultValue": "",
-                "isViewChildren": false
-            }
-        ],
-        "functionName": "sd_xKCCTWKzvgDN0rx7_5",
-        "category": "Function",
-        "x": 205,
-        "y": 180,
-        "wires": [
-            [
-                "sd_RwHb7R338OBIq3nH"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
-    },
-    {
-        "id": "sd_RwHb7R338OBIq3nH",
-        "type": "Script",
-        "z": "sd_UWEsrTmDSRRDnTPG",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "this.page.tableData.paginator = this.MatPaginator;",
-        "functionName": "sd_2VNGqvcKee34lvOz_5",
-        "category": "Function",
-        "x": 345,
-        "y": 180,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
-    },
-    {
         "id": "sd_IFPuG9EBlYn7BebM",
         "type": "PageStart",
         "z": "sd_UWEsrTmDSRRDnTPG",
@@ -397,6 +298,109 @@
         "category": "Navigation",
         "x": 205,
         "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WmlEAXUFzL4FCZeY",
+        "type": "AfterViewInit",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 390,
+        "wires": [
+            [
+                "sd_a7QyryciA6UddZ9I"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "landingComponent"
+    },
+    {
+        "id": "sd_a7QyryciA6UddZ9I",
+        "type": "ViewPicker",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatPaginator"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_6",
+        "category": "Function",
+        "x": 205,
+        "y": 390,
+        "wires": [
+            [
+                "sd_99AkiApW62Lh7f1v"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_99AkiApW62Lh7f1v",
+        "type": "Script",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.paginator = this.MatPaginator;",
+        "functionName": "sd_2VNGqvcKee34lvOz_6",
+        "category": "Function",
+        "x": 345,
+        "y": 390,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2JXWvVyCSaWUOSSi",
+        "type": "PageVariables",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "dataSource"
+                }
+            }
+        ],
+        "functionName": "sd_2JXWvVyCSaWUOSSi",
+        "category": "Function",
+        "x": 825,
+        "y": 60,
         "wires": [
             []
         ],
