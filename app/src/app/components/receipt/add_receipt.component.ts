@@ -3,7 +3,9 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper'; //_splitter_
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { FormBuilder, Validators } from '@angular/forms'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -13,6 +15,10 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
   selector: 'bh-add_receipt',
   templateUrl: './add_receipt.template.html',
   providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { showError: true, displayDefaultIndicatorType: false },
+    },
     //appendnew_element_providers
   ],
 })
@@ -25,6 +31,7 @@ export class add_receiptComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -121,10 +128,42 @@ export class add_receiptComponent {
       this.page.yellow = true;
       this.page.green = true;
       this.page.orange = true;
+      this.page.firstFormGroup = undefined;
+      this.page.secondFormGroup = undefined;
+      bh = this.sd_A5r0H5kDW6WM91jP(bh);
       //appendnew_next_sd_ahkmXkQ9ZOV7VZEC
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ahkmXkQ9ZOV7VZEC');
+    }
+  }
+
+  sd_A5r0H5kDW6WM91jP(bh) {
+    try {
+      this.page._formBuilder = this.__page_injector__.get(FormBuilder);
+      bh = this.sd_3aw5HhPzmUKV6P8y(bh);
+      //appendnew_next_sd_A5r0H5kDW6WM91jP
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_A5r0H5kDW6WM91jP');
+    }
+  }
+
+  sd_3aw5HhPzmUKV6P8y(bh) {
+    try {
+      const page = this.page;
+      {
+        page.firstFormGroup = page._formBuilder.group({
+          firstCtrl: ['', Validators.required],
+        });
+        page.secondFormGroup = page._formBuilder.group({
+          secondCtrl: ['', Validators.required],
+        });
+      }
+      //appendnew_next_sd_3aw5HhPzmUKV6P8y
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3aw5HhPzmUKV6P8y');
     }
   }
 
