@@ -5,6 +5,7 @@
 
 import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; //_splitter_
 import { MatPaginator } from '@angular/material/paginator'; //_splitter_
+import { MatSort } from '@angular/material/sort'; //_splitter_
 import { MatTableDataSource } from '@angular/material/table'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -22,6 +23,8 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 export class view_table_of_receiptComponent implements AfterViewInit {
   @ViewChild(MatPaginator)
   public MatPaginator: any = null;
+  @ViewChild(MatSort)
+  public MatSort: any = null;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -212,8 +215,9 @@ export class view_table_of_receiptComponent implements AfterViewInit {
     try {
       bh.pageViews = Object.assign(bh.pageViews || {}, {
         MatPaginator: this.MatPaginator,
+        MatSort: this.MatSort,
       });
-      bh = this.sd_2VNGqvcKee34lvOz_3(bh);
+      bh = this.sd_cA1EQXXO6kwc8Trh(bh);
       //appendnew_next_sd_xKCCTWKzvgDN0rx7_3
       return bh;
     } catch (e) {
@@ -221,9 +225,22 @@ export class view_table_of_receiptComponent implements AfterViewInit {
     }
   }
 
+  sd_cA1EQXXO6kwc8Trh(bh) {
+    try {
+      this.page.tableData.sort = bh.pageViews.MatSort;
+      this.page.tableData.paginator = bh.pageViews.MatPaginator;
+      bh = this.sd_2VNGqvcKee34lvOz_3(bh);
+      //appendnew_next_sd_cA1EQXXO6kwc8Trh
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cA1EQXXO6kwc8Trh');
+    }
+  }
+
   sd_2VNGqvcKee34lvOz_3(bh) {
     try {
       const page = this.page;
+      this.page.tableData.sort = this.MatSort;
       this.page.tableData.paginator = this.MatPaginator;
       //appendnew_next_sd_2VNGqvcKee34lvOz_3
       return bh;

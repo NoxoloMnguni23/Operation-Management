@@ -1067,8 +1067,8 @@
                             "parentEditorKey": "6d0482b3-aa47-6b45-04fa-5bfea455996d",
                             "isAdvancedComponent": true,
                             "advancedSiblingType": "after",
-                            "isCommented": "true",
-                            "commentid": "1719921688691",
+                            "isCommented": "false",
+                            "commentid": null,
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1125,8 +1125,8 @@
                             "parentEditorKey": "6d0482b3-aa47-6b45-04fa-5bfea455996d",
                             "isAdvancedComponent": true,
                             "advancedSiblingType": "before",
-                            "isCommented": "true",
-                            "commentid": "1719921539956",
+                            "isCommented": "false",
+                            "commentid": null,
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1368,7 +1368,6 @@
             "dae6c1ef-ceb6-8c95-c50c-fe896287f507": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "c28cc6bd-7faa-d194-b40e-167725632b45",
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {

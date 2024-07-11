@@ -43,8 +43,8 @@
         "globalVariables": [],
         "functionName": "sd_XyfbDazfYKEzilS2",
         "category": "Function",
-        "x": 65,
-        "y": 120,
+        "x": 85,
+        "y": 100,
         "wires": [
             [
                 "sd_49ZekZ6zNblKYnYe"

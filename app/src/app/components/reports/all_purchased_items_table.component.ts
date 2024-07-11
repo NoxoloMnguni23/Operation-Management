@@ -291,6 +291,7 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
     try {
       const page = this.page;
       //convert to an Array
+      //try getting the array not the table
       page.arrayData = page.dataSource.data;
 
       //get the table data
