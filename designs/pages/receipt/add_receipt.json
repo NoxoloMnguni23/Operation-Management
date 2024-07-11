@@ -61,6 +61,20 @@
                     "type": "literal",
                     "value": "true"
                 }
+            },
+            {
+                "textIp": "firstFormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "secondFormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_ahkmXkQ9ZOV7VZEC",
@@ -68,7 +82,9 @@
         "x": 180,
         "y": 30,
         "wires": [
-            []
+            [
+                "sd_A5r0H5kDW6WM91jP"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -243,6 +259,74 @@
         "category": "Function",
         "x": 405,
         "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_A5r0H5kDW6WM91jP",
+        "type": "UseDependency",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "FormBuilder",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "_formBuilder"
+                },
+                "injectable": true
+            },
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_A5r0H5kDW6WM91jP",
+        "category": "Function",
+        "x": 265,
+        "y": 80,
+        "wires": [
+            [
+                "sd_3aw5HhPzmUKV6P8y"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3aw5HhPzmUKV6P8y",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "{\n    page.firstFormGroup = page._formBuilder.group({\n      firstCtrl: ['', Validators.required]\n    });\n    page.secondFormGroup = page._formBuilder.group({\n      secondCtrl: ['', Validators.required]\n    });\n  }",
+        "functionName": "sd_3aw5HhPzmUKV6P8y",
+        "category": "Function",
+        "x": 380,
+        "y": 80,
         "wires": [
             []
         ],

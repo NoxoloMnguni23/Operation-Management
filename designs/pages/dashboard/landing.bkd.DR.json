@@ -679,7 +679,7 @@
                                 {
                                     "_key": "class",
                                     "_value": [
-                                        "color-light-gray"
+                                        "color-dark-gray"
                                     ],
                                     "_type": "dav",
                                     "_attrDef": "p"
@@ -1067,8 +1067,7 @@
                             "parentEditorKey": "6d0482b3-aa47-6b45-04fa-5bfea455996d",
                             "isAdvancedComponent": true,
                             "advancedSiblingType": "after",
-                            "isCommented": "true",
-                            "commentid": "1719921688691",
+                            "commentid": null,
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1111,8 +1110,9 @@
                                     "skipCodegen": true,
                                     "_key": "__n_dependant_flows_key__",
                                     "_value": [
-                                        "sd_Fokwf1lXXJzmsqEZ",
-                                        "sd_PbjQ2z5pylux6pBD"
+                                        "sd_WmlEAXUFzL4FCZeY",
+                                        "sd_a7QyryciA6UddZ9I",
+                                        "sd_99AkiApW62Lh7f1v"
                                     ],
                                     "_type": "a",
                                     "_attrDef": "c",
@@ -1125,8 +1125,7 @@
                             "parentEditorKey": "6d0482b3-aa47-6b45-04fa-5bfea455996d",
                             "isAdvancedComponent": true,
                             "advancedSiblingType": "before",
-                            "isCommented": "true",
-                            "commentid": "1719921539956",
+                            "commentid": null,
                             "designerReference": [
                                 {
                                     "_key": "style",

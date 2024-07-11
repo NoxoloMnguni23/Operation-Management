@@ -1,118 +1,69 @@
-<div fxLayout="column wrap" class="full-width full-height" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div fxLayout="column wrap" style="margin-left: 200px;" class="main-container-lebo" fxLayoutAlign="center center" [fxShow]="true">
-    <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-      <h2>
-        Receipt Form</h2>
-    </div>
-    <form>
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
-          <div fxLayout="column wrap" class="padding-left-12px-lebo" fxLayoutAlign="start stretch" [fxShow]="true">
-            <h3 class="margin-bottom-10-lebo">
-              Store Name : </h3>
-            <h3 class="margin-bottom-10-lebo">
-              Total : </h3>
-            <h3 class="margin-bottom-10-lebo">
-              Purchase Date : </h3>
+<div fxLayout="column wrap" class="full-width full-height" fxLayoutAlign="center center" [fxShow]="true"><mat-horizontal-stepper #stepper class="white-blue-bg form-kim"><mat-step [stepControl]="secondFormGroup">
+      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+        <form [formGroup]="page.secondFormGroup">
+          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><ng-template matStepLabel>
+                Fill out receipt details</ng-template></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                  <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                      User Name : </label></div>
+                  <div fxLayout="row wrap" fxLayoutAlign="start space-between" [fxShow]="true">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Current users name" [required]="false">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                  <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                      Store name : </label></div>
+                  <div fxLayout="row wrap" fxLayoutAlign="start space-between" [fxShow]="true">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Enter store name" [required]="false">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                  <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                      Total Amount :</label></div>
+                  <div fxLayout="row wrap" fxLayoutAlign="start space-between" [fxShow]="true">
+                    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput type="number" placeholder="Enter total amount" [required]="false">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="height:15px;width:10px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="right: -110px!important;" matStepperNext>Next</button></div>
           </div>
-          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-            <h3 class="margin-bottom-10-lebo font-300-lebo">
-              Checkers Hyper</h3>
-            <h3 class="margin-bottom-10-lebo font-300-lebo">
-              R20 000</h3>
-            <h3 class="margin-bottom-10-lebo font-300-lebo">
-              10/05/2023</h3>
-          </div>
-        </div>
+        </form>
       </div>
-      <div fxLayout="row wrap" class="padding-left-12px-lebo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
-      <div fxLayout="row wrap" class="gray-blue-bg" fxLayoutAlign="space-between center" [fxShow]="true">
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <h3 class="padding-left-12px-lebo">
-            Item </h3>
-        </div>
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <h3>
-            Category</h3>
-        </div>
-        <div fxLayout="column wrap" class="padding-right-12px-lebo" fxLayoutAlign="start stretch" [fxShow]="true">
-          <h3>
-            Price</h3>
-        </div>
-      </div>
-      <div fxLayout="column wrap" style=" overflow-y: hidden !important;" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" class="padding-right-12px-lebo padding-left-12px-lebo" fxLayoutAlign="space-between center" [fxShow]="true">
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              Milk </h3>
-          </div>
-          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-              <div fxLayout="column wrap" class="dot-supplies-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Supplies" *ngIf="page.yellow" (click)="yellow()"></div>
-              <div fxLayout="column wrap" class="dot-maintenance-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Maintenance" *ngIf="page.orange" (click)="orange()"></div>
-              <div fxLayout="column wrap" class="dot-groceries-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Groceries" *ngIf="page.green" (click)="green()"></div>
+    </mat-step><mat-step [stepControl]=" page.firstFormGroup ">
+      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+        <form>
+          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><ng-template matStepLabel>
+                Add Items</ng-template></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" class="input-left" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput placeholder="Input" [required]="false">
+
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row wrap" style="height:10px;width:10px; margin: 13px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button>+</button></div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" style="height:15px;width:10px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="right: 0px!important;" matStepperPrevious>Back</button></div>
+              <div fxLayout="row wrap" style="height:15px;width:10px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="right: -110px!important;" matStepperNext>Next</button></div>
             </div>
           </div>
-          <div fxLayout="column wrap" fxFlex="25" fxLayoutAlign="end end" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              R500</h3>
-          </div>
-        </div>
-        <div fxLayout="row wrap" class="padding-right-12px-lebo padding-left-12px-lebo" fxLayoutAlign="space-between center" [fxShow]="true">
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              Bleach </h3>
-          </div>
-          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-              <div fxLayout="column wrap" class="dot-supplies-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Supplies" *ngIf="page.yellow" (click)="yellow()"></div>
-              <div fxLayout="column wrap" class="dot-maintenance-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Maintenance" *ngIf="page.orange" (click)="orange()"></div>
-              <div fxLayout="column wrap" class="dot-groceries-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Groceries" *ngIf="page.green" (click)="green()"></div>
-            </div>
-          </div>
-          <div fxLayout="column wrap" fxFlex="25" fxLayoutAlign="end end" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              R500</h3>
-          </div>
-        </div>
-        <div fxLayout="row wrap" class="padding-right-12px-lebo padding-left-12px-lebo" fxLayoutAlign="space-between center" [fxShow]="true">
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              Fertiliser </h3>
-          </div>
-          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-              <div fxLayout="column wrap" class="dot-supplies-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Supplies" *ngIf="page.yellow" (click)="yellow()"></div>
-              <div fxLayout="column wrap" class="dot-maintenance-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Maintenance" *ngIf="page.orange" (click)="orange()"></div>
-              <div fxLayout="column wrap" class="dot-groceries-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Groceries" *ngIf="page.green" (click)="green()"></div>
-            </div>
-          </div>
-          <div fxLayout="column wrap" fxFlex="25" fxLayoutAlign="end end" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              R500</h3>
-          </div>
-        </div>
-        <div fxLayout="row wrap" class="padding-right-12px-lebo padding-left-12px-lebo" fxLayoutAlign="space-between center" [fxShow]="true">
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              Stationery</h3>
-          </div>
-          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-              <div fxLayout="column wrap" class="dot-supplies-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Supplies" *ngIf="page.yellow" (click)="yellow()"></div>
-              <div fxLayout="column wrap" class="dot-maintenance-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Maintenance" *ngIf="page.orange" (click)="orange()"></div>
-              <div fxLayout="column wrap" class="dot-groceries-lebo" fxLayoutAlign="start stretch" [fxShow]="true" matTooltip="Groceries" *ngIf="page.green" (click)="green()"></div>
-            </div>
-          </div>
-          <div fxLayout="column wrap" fxFlex="25" fxLayoutAlign="end end" [fxShow]="true">
-            <h3 class="no-margin-lebo font-300-lebo">
-              R500</h3>
-          </div>
-        </div>
+        </form>
       </div>
-      <div fxLayout="column wrap" class="margin-top-15px-lebo" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" class="padding-10-lebo margin-top-10px-lebo" fxLayoutAlign="center center" [fxShow]="true"><button mat-raised-button class="border-radius-20px-lebo dark-grey-bg half-width">Submit</button></div>
-      </div>
-    </form>
-  </div>
-</div>
+    </mat-step></mat-horizontal-stepper></div>
