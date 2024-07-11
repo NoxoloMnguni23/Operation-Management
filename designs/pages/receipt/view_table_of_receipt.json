@@ -124,7 +124,7 @@
         "script": "bh.url = bh.url + 'get-receipt-data'",
         "functionName": "sd_4Vf2IKcFehdqpqlz",
         "category": "Function",
-        "x": 225,
+        "x": 245,
         "y": 40,
         "wires": [
             [
@@ -282,6 +282,14 @@
                 },
                 "defaultValue": "",
                 "isViewChildren": false
+            },
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatSort"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
             }
         ],
         "functionName": "sd_xKCCTWKzvgDN0rx7_3",
@@ -290,7 +298,7 @@
         "y": 450,
         "wires": [
             [
-                "sd_fsDpw6K92JfXYn9S"
+                "sd_cA1EQXXO6kwc8Trh"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -305,11 +313,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "this.page.tableData.paginator = this.MatPaginator;",
+        "script": "this.page.tableData.sort = this.MatSort;\nthis.page.tableData.paginator = this.MatPaginator;",
         "functionName": "sd_2VNGqvcKee34lvOz_3",
         "category": "Function",
-        "x": 345,
-        "y": 450,
+        "x": 365,
+        "y": 440,
         "wires": [
             []
         ],
@@ -468,6 +476,46 @@
         "wires": [
             [
                 "sd_XWnrzpDujDrKTFX5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "view_table_of_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cA1EQXXO6kwc8Trh",
+        "type": "PageVariables",
+        "z": "sd_PDYpvdpmhJjQKFZR",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData.sort",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": "pageViews.MatSort"
+                }
+            },
+            {
+                "textIp": "tableData.paginator",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": "pageViews.MatPaginator"
+                }
+            }
+        ],
+        "functionName": "sd_cA1EQXXO6kwc8Trh",
+        "category": "Function",
+        "x": 285,
+        "y": 440,
+        "wires": [
+            [
+                "sd_fsDpw6K92JfXYn9S"
             ]
         ],
         "__n_excludedFromValidation__": {},
