@@ -55,14 +55,82 @@ export class signInComponent {
     }
   }
 
+  sd_945gHDBbunxj8TJd(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      //appendnew_next_sd_945gHDBbunxj8TJd
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_945gHDBbunxj8TJd');
+    }
+  }
   //appendnew_flow_signInComponent_start
 
   sd_kyQIKe8WKryMkG6c(bh) {
     try {
+      bh = this.sd_wK4hpUOjNf1DK5i7(bh);
       //appendnew_next_sd_kyQIKe8WKryMkG6c
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_kyQIKe8WKryMkG6c');
+    }
+  }
+
+  sd_wK4hpUOjNf1DK5i7(bh) {
+    try {
+      bh.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_gyTRKnMUMOeFk8UO(bh);
+      //appendnew_next_sd_wK4hpUOjNf1DK5i7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wK4hpUOjNf1DK5i7');
+    }
+  }
+
+  sd_gyTRKnMUMOeFk8UO(bh) {
+    try {
+      const page = this.page;
+      bh.url = bh.ssdURL + 'user/info';
+
+      console.log(bh.url);
+      bh = this.sd_NxxxiG3oHj8uZJgi(bh);
+      //appendnew_next_sd_gyTRKnMUMOeFk8UO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_gyTRKnMUMOeFk8UO');
+    }
+  }
+
+  async sd_NxxxiG3oHj8uZJgi(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.userInfor = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_fc7FH9T9PL4f0rxm(bh);
+      //appendnew_next_sd_NxxxiG3oHj8uZJgi
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NxxxiG3oHj8uZJgi');
+    }
+  }
+
+  sd_fc7FH9T9PL4f0rxm(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.userInfor);
+      //appendnew_next_sd_fc7FH9T9PL4f0rxm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_fc7FH9T9PL4f0rxm');
     }
   }
 
