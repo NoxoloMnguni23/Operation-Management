@@ -110,6 +110,27 @@
                     "type": "literal",
                     "value": "[]"
                 }
+            },
+            {
+                "textIp": "priceg",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            },
+            {
+                "textIp": "prices",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            },
+            {
+                "textIp": "pricem",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
             }
         ],
         "functionName": "sd_XASJm5GtYmf3XfeR",
@@ -155,7 +176,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.Groceries.forEach(item => \n{page.priceG =page.priceG +item.price}\n);\npage.Supplies.forEach(item => \n{page.priceS =page.priceS +item.price}\n);\npage.Maintenance.forEach(item => \n{page.priceM =page.priceM +item.price}\n);\n",
+        "script": "page.Groceries.forEach(item => \n{page.priceg= page.priceg +item.price\npage.priceG = page.priceg.toFixed(2)\n});\npage.Supplies.forEach(item => \n{page.prices =page.prices +item.price\npage.priceS = page.prices.toFixed(2)\n}\n);\npage.Maintenance.forEach(item => \n{page.pricem =page.pricem +item.price\npage.priceM = page.pricem.toFixed(2)\n\n}\n);\n",
         "functionName": "sd_SKCtHJkWA3Ww9vcJ",
         "category": "Function",
         "x": 325,
@@ -202,8 +223,8 @@
         "script": "page.Groceries.forEach(item => {\n  if(!page.Groceriesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Groceriesfinal.push(item)\n    }else {\n\npage.Groceriesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Groceriesfinal[indx].price = page.Groceriesfinal[indx].price + item.price;\n        page.Groceriesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
         "functionName": "groceries",
         "category": "Function",
-        "x": 685,
-        "y": 180,
+        "x": 725,
+        "y": 40,
         "wires": [
             []
         ],
@@ -222,8 +243,8 @@
         "script": "page.Maintenance.forEach(item => {\n  if(!page.Maintenancefinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Maintenancefinal.push(item)\n    }else {\n\npage.Maintenancefinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Maintenancefinal[indx].price = page.Maintenancefinal[indx].price + item.price;\n        page.Maintenancefinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
         "functionName": "maintenance",
         "category": "Function",
-        "x": 565,
-        "y": 140,
+        "x": 625,
+        "y": 40,
         "wires": [
             [
                 "sd_ysYTNzvv6mWUJoXn"
@@ -244,8 +265,8 @@
         "script": "page.Supplies.forEach(item => {\n  if(!page.Suppliesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Suppliesfinal.push(item)\n    }else {\n\npage.Suppliesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Suppliesfinal[indx].price = page.Suppliesfinal[indx].price + item.price;\n        page.Suppliesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
         "functionName": "supplies",
         "category": "Function",
-        "x": 485,
-        "y": 160,
+        "x": 525,
+        "y": 40,
         "wires": [
             [
                 "sd_fq6qiHNJvpwKvu5c"

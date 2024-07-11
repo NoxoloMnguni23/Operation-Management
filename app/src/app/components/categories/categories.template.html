@@ -1,96 +1,97 @@
 <div fxLayout="column wrap" class="text-dotted-angel" fxLayoutAlign="center center" [fxShow]="true" fxFill>
   <div fxLayout="row wrap" style="      " fxLayoutAlign="center space-between" [fxShow]="true">
-    <div fxLayout="column wrap" style=" gap: 1em;   width:45% " fxLayoutAlign="start stretch" [fxShow]="true"><mat-expansion-panel class="width-70-angel">
-        <mat-expansion-panel-header style="background:#84c5f1">
+    <div fxLayout="column wrap" style=" gap: 1em;   width:45% " fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion style="gap:1em">
+        <mat-expansion-panel class="width-70-angel">
+          <mat-expansion-panel-header style="background:#84c5f1">
 
-          <mat-panel-title style="    justify-content: space-between; ">
-            Supplies
-            <div fxLayout="row wrap" style="width: 111px;      height: 36px;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
-              <p>
-                R {{page.priceS}}</p>
-            </div>
-          </mat-panel-title></mat-expansion-panel-header>
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let Supplies of page.Suppliesfinal">
-          <div fxLayout="row wrap" style="padding-left: 7px;" fxLayoutAlign="start center" [fxShow]="true">
-            <div fxLayout="row wrap" style="gap: 5px" fxFlex="66" fxLayoutAlign="start center" [fxShow]="true">
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon><span class="material-symbols-outlined"> trolley </span></mat-icon></div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <div>
-                  X{{Supplies.itemsCount}}</div>
-              </div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-panel-title style="    justify-content: space-between; ">
+              Supplies
+              <div fxLayout="row wrap" style="width: 111px;      height: 36px;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
                 <p>
-                  {{Supplies.name}}
-                </p>
+                  R {{page.priceS}}</p>
               </div>
-            </div>
-            <div fxLayout="row wrap" style="width: 111px;   height: 36px;" fxFlex="28.8" fxLayoutAlign="start stretch" [fxShow]="true">
-              <p>
-                R {{Supplies.price}}</p>
+            </mat-panel-title></mat-expansion-panel-header>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let Supplies of page.Suppliesfinal">
+            <div fxLayout="row wrap" style="padding-left: 7px;" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="row wrap" style="gap: 5px" fxFlex="66" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon><span class="material-symbols-outlined"> trolley </span></mat-icon></div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    X{{Supplies.itemsCount}}</div>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    {{Supplies.name}}
+                  </p>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width: 111px;   height: 36px;" fxFlex="28.8" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R {{Supplies.price}}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </mat-expansion-panel><mat-expansion-panel class="width-70-angel">
-        <mat-expansion-panel-header style="background:#fde098">
+        </mat-expansion-panel><mat-expansion-panel class="width-70-angel">
+          <mat-expansion-panel-header style="background:#fde098">
 
-          <mat-panel-title style="    justify-content: space-between; ">
-            Maintenance
-            <div fxLayout="row wrap" style="width: 111px;   height: 36px;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
-              <p>
-                R {{page.priceM}}</p>
-            </div>
-          </mat-panel-title></mat-expansion-panel-header>
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" style="padding-left: 7px;" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let Maintenance of page.Maintenancefinal">
-            <div fxLayout="row wrap" style="gap: 5px" fxFlex="66" fxLayoutAlign="start center" [fxShow]="true">
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon><span class="material-symbols-outlined"> construction </span></mat-icon></div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <div>
-                  X{{Maintenance.itemsCount}}</div>
-              </div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-panel-title style="    justify-content: space-between; ">
+              Maintenance
+              <div fxLayout="row wrap" style="width: 111px;   height: 36px;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
                 <p>
-                  {{Maintenance.name}}
-                </p>
+                  R {{page.priceM}}</p>
               </div>
-            </div>
-            <div fxLayout="row wrap" style="width: 111px;      height: 36px;" fxFlex="28.8" fxLayoutAlign="start stretch" [fxShow]="true">
-              <p>
-                R {{Maintenance.price}}</p>
+            </mat-panel-title></mat-expansion-panel-header>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" style="padding-left: 7px;" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let Maintenance of page.Maintenancefinal">
+              <div fxLayout="row wrap" style="gap: 5px" fxFlex="66" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon><span class="material-symbols-outlined"> construction </span></mat-icon></div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    X{{Maintenance.itemsCount}}</div>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    {{Maintenance.name}}
+                  </p>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width: 111px;      height: 36px;" fxFlex="28.8" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R {{Maintenance.price}}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </mat-expansion-panel><mat-expansion-panel class="width-70-angel">
-        <mat-expansion-panel-header style="background:#fd9fb3">
+        </mat-expansion-panel><mat-expansion-panel class="width-70-angel">
+          <mat-expansion-panel-header style="background:#fd9fb3">
 
-          <mat-panel-title style="    justify-content: space-between; ">
-            Groceries
-            <div fxLayout="row wrap" style="width: 111px;    height: 36px;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
-              <p>
-                R {{page.priceG}}</p>
-            </div>
-          </mat-panel-title></mat-expansion-panel-header>
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let  Groceries of page.Groceriesfinal">
-          <div fxLayout="row wrap" style="padding-left: 7px;" fxLayoutAlign="start center" [fxShow]="true">
-            <div fxLayout="row wrap" style="gap: 5px" fxFlex="66" fxLayoutAlign="start center" [fxShow]="true">
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon><span class="material-symbols-outlined"> shopping_basket </span></mat-icon></div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <div>
-                  X{{Groceries.itemsCount}}</div>
-              </div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-panel-title style="    justify-content: space-between; ">
+              Groceries
+              <div fxLayout="row wrap" style="width: 111px;    height: 36px;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
                 <p>
-                  {{Groceries.name}}
-                </p>
+                  R {{page.priceG}}</p>
               </div>
-            </div>
-            <div fxLayout="row wrap" style="width: 111px;        height: 36px;" fxFlex="28.8" fxLayoutAlign="start stretch" [fxShow]="true">
-              <p>
-                R {{Groceries.price}}</p>
+            </mat-panel-title></mat-expansion-panel-header>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let  Groceries of page.Groceriesfinal">
+            <div fxLayout="row wrap" style="padding-left: 7px;" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="row wrap" style="gap: 5px" fxFlex="66" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon><span class="material-symbols-outlined"> shopping_basket </span></mat-icon></div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    X{{Groceries.itemsCount}}</div>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    {{Groceries.name}}
+                  </p>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width: 111px;        height: 36px;" fxFlex="28.8" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R {{Groceries.price}}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </mat-expansion-panel></div>
+        </mat-expansion-panel></mat-accordion></div>
     <div fxLayout="column wrap" style="width: 46%; " class="half-height" fxLayoutAlign="start stretch" [fxShow]="true">
       <div>
         <canvas baseChart [datasets]="page.doughnutChartData" style="  " class="donut-angel" [labels]="page.doughnutChartLabels " type="doughnut"></canvas>

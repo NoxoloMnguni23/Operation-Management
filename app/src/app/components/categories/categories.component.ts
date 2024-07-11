@@ -83,6 +83,9 @@ export class categoriesComponent {
       this.page.Suppliesfinal = [];
       this.page.Maintenancefinal = [];
       this.page.Groceriesfinal = [];
+      this.page.priceg = 0;
+      this.page.prices = 0;
+      this.page.pricem = 0;
       bh = this.sd_MwRsJo4lV9LxxPCW(bh);
       //appendnew_next_sd_XASJm5GtYmf3XfeR
       return bh;
@@ -183,13 +186,16 @@ export class categoriesComponent {
     try {
       const page = this.page;
       page.Groceries.forEach((item) => {
-        page.priceG = page.priceG + item.price;
+        page.priceg = page.priceg + item.price;
+        page.priceG = page.priceg.toFixed(2);
       });
       page.Supplies.forEach((item) => {
-        page.priceS = page.priceS + item.price;
+        page.prices = page.prices + item.price;
+        page.priceS = page.prices.toFixed(2);
       });
       page.Maintenance.forEach((item) => {
-        page.priceM = page.priceM + item.price;
+        page.pricem = page.pricem + item.price;
+        page.priceM = page.pricem.toFixed(2);
       });
 
       bh = this.sd_JYIOkH9NmgEaHeE6(bh);
