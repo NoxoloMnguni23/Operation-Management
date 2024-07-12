@@ -9,12 +9,12 @@
       </div>
     </div>
     <table mat-table [dataSource]="page.tableData" matSort class="table-width-fix">
-      <tr mat-header-row *matHeaderRowDef="[&apos;Person | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;totalAmount&apos;,&apos;dateUploaded&apos;]"></tr>
-      <tr mat-row (click)="selected(row)" *matRowDef="let row; columns: [&apos;Person | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;totalAmount&apos;,&apos;dateUploaded&apos;];"></tr>
+      <tr mat-header-row *matHeaderRowDef="[&apos;username | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;totalAmount&apos;,&apos;dateUploaded&apos;]"></tr>
+      <tr mat-row (click)="selected(row)" *matRowDef="let row; columns: [&apos;username | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;totalAmount&apos;,&apos;dateUploaded&apos;];"></tr>
 
-      <ng-container matColumnDef="Person | titlecase">
+      <ng-container matColumnDef="username | titlecase">
         <th mat-header-cell *matHeaderCellDef mat-sort-header class="bg-grey">Name </th>
-        <td mat-cell *matCellDef="let table; let i = index;" class="bg-grey on-hover">{{table.Person | titlecase }}</td>
+        <td mat-cell *matCellDef="let table; let i = index;" class="bg-grey on-hover">{{table.username | titlecase }}</td>
       </ng-container>
 
       <ng-container matColumnDef="shopName | titlecase">
