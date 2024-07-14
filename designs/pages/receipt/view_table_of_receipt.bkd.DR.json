@@ -140,7 +140,7 @@
                     },
                     {
                         "_key": "Mapping",
-                        "_value": "{{table.Person | titlecase }}",
+                        "_value": "{{table.username | titlecase }}",
                         "_type": "ma",
                         "_attrDef": "p",
                         "_useAsLabel": true
