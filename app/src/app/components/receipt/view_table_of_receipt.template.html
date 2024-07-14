@@ -10,7 +10,7 @@
     </div>
     <table mat-table [dataSource]="page.tableData" matSort class="table-width-fix">
       <tr mat-header-row *matHeaderRowDef="[&apos;Person | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;totalAmount&apos;,&apos;dateUploaded&apos;]"></tr>
-      <tr mat-row (click)="selected(row)" *matRowDef="let row; columns: [&apos;Person | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;totalAmount&apos;,&apos;dateUploaded&apos;];"></tr>
+      <tr mat-row *matRowDef="let row; columns: [&apos;Person | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;totalAmount&apos;,&apos;dateUploaded&apos;];"></tr>
 
       <ng-container matColumnDef="Person | titlecase">
         <th mat-header-cell *matHeaderCellDef mat-sort-header class="bg-grey">Name </th>

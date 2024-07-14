@@ -63,7 +63,8 @@
             "paletteKey": "Html5",
             "parentEditorKey": "bb851804-625e-b75b-81f6-9ce0c48feb5c",
             "isAdvancedComponent": true,
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1720701709503",
             "designerReference": [
                 {
                     "_key": "style",
@@ -250,7 +251,8 @@
                 "paletteKey": "html-editor",
                 "parentEditorKey": "a749b0ac-5e72-1ada-310d-106e7abed4af",
                 "isAdvancedChildComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1720701709503",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -287,7 +289,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "",
+                    "_value": "margin-top:1em",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -395,6 +397,75 @@
                         "_attrDef": "p"
                     }
                 ],
+                "bbce8e80-06a2-8bea-7ebe-ababb095c138": {
+                    "paletteKey": "NG-button",
+                    "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "background-color: #8aaee0; color:black",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "buttonname",
+                            "_value": "Export to spreadsheet",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "convert()",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "objValue": {
+                                "nodeID": "sd_MVizDoI525jCG00k",
+                                "functionName": "convert",
+                                "activeTree": "pages",
+                                "z": "sd_4VcSTe3LqzwppFKL",
+                                "input": []
+                            }
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disableRipple]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
+                },
                 "33ff88f8-0846-915b-a2e4-99f18d4cf797": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
@@ -409,7 +480,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "background-color: #8aaee0; color:black; width:100px; border-radius: 8px",
+                            "_value": "background-color: #8aaee0; color:black; width:250px; border-radius: 8px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -663,7 +734,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "{{page.total}}",
+                                    "_value": "Total Amount: {{page.total}}",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -671,11 +742,388 @@
                         }
                     }
                 },
+                "f33b77cd-511c-d1b1-0713-62de53480b74": {
+                    "paletteKey": "NG-Form",
+                    "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Form",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": [
+                                "select",
+                                "phindile"
+                            ],
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "action",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "method",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "target",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(ngSubmit)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(reset)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "#select",
+                            "_value": "ngForm",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ],
+                    "980d61de-7226-43dd-3821-bd2b8ffa8cff": {
+                        "paletteKey": "NG-Select",
+                        "parentEditorKey": "f33b77cd-511c-d1b1-0713-62de53480b74",
+                        "isAdvancedComponent": true,
+                        "commentid": null,
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "background-color: #8aaee0; color:black;border-radius: 8px",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "innerMatSelectStyle",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "innerMatSelectClass",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "placeholder",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "Label",
+                                "_value": "Select Month",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "datasource",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[groupOptions]",
+                                "_value": "noGroup",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[groupLabels]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "[disableGroup]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "[optionDatasource]",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "optionValue",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "optionView",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "formControlName",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[(ngModel)]",
+                                "_value": "page.selectForm.month",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[(value)]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[required]",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[appearance]",
+                                "_value": "'legacy'",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[floatLabel]",
+                                "_value": "'auto'",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disableRipple]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "multiple",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "CustomTriggerValue",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "(openedChange)",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(selectionChange)",
+                                "_value": "sd_yFWEhKeLq7SiKCiL()",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_customAttributeFlag": "flowpicker",
+                                "objValue": {
+                                    "nodeID": "sd_yFWEhKeLq7SiKCiL",
+                                    "functionName": "sd_yFWEhKeLq7SiKCiL",
+                                    "activeTree": "pages",
+                                    "z": "sd_4VcSTe3LqzwppFKL",
+                                    "input": []
+                                }
+                            },
+                            {
+                                "_key": "selectCustomOption",
+                                "_value": [
+                                    {
+                                        "input1": "January",
+                                        "input2": "January",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "February",
+                                        "input2": "February",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "March",
+                                        "input2": "March",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "April",
+                                        "input2": "April",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "May",
+                                        "input2": "May",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "June",
+                                        "input2": "June",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "July",
+                                        "input2": "July",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "August",
+                                        "input2": "August",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "September",
+                                        "input2": "September",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "October",
+                                        "input2": "October",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "November",
+                                        "input2": "November",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    },
+                                    {
+                                        "input1": "December",
+                                        "input2": "December",
+                                        "toggle": {
+                                            "toggleData": [],
+                                            "selected": "false"
+                                        }
+                                    }
+                                ],
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "selectStyle",
+                                "_value": "Basic",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "panelClass",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disabled]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[errorStateMatcher]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "option",
+                                "_value": "option",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "matError",
+                                "_value": [],
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "name",
+                                "_value": "month",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            }
+                        ]
+                    }
+                },
                 "e0d7f930-e9f3-2eea-55a3-b9007f9fb3a3": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
                     "isCommented": "true",
-                    "commentid": "1719558406073",
+                    "commentid": "1720702055731",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -691,7 +1139,7 @@
                         },
                         {
                             "_key": "buttonname",
-                            "_value": "Total Amount",
+                            "_value": "dropdown",
                             "_type": "a",
                             "_attrDef": "p",
                             "_useAsLabel": true
@@ -735,114 +1183,6 @@
                         },
                         {
                             "_key": "routerLink",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        }
-                    ]
-                },
-                "bbce8e80-06a2-8bea-7ebe-ababb095c138": {
-                    "paletteKey": "NG-button",
-                    "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
-                    "commentid": null,
-                    "designerReference": [
-                        {
-                            "_key": "style",
-                            "_value": "background-color: #8aaee0; color:black",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "class",
-                            "_value": "",
-                            "_type": "dav",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "buttonname",
-                            "_value": "Export to spreadsheet",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_useAsLabel": true
-                        },
-                        {
-                            "_key": "color",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "(click)",
-                            "_value": "convert()",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "objValue": {
-                                "nodeID": "sd_MVizDoI525jCG00k",
-                                "functionName": "convert",
-                                "activeTree": "pages",
-                                "z": "sd_4VcSTe3LqzwppFKL",
-                                "input": []
-                            }
-                        },
-                        {
-                            "_key": "[disabled]",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "[disableRipple]",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "type",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "routerLink",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        }
-                    ]
-                },
-                "b54242f4-48ce-4bad-2916-5fcfcd949469": {
-                    "paletteKey": "NG-icon",
-                    "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
-                    "isCommented": "true",
-                    "commentid": "1719401217361",
-                    "designerReference": [
-                        {
-                            "_key": "style",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "class",
-                            "_value": "",
-                            "_type": "dav",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "IconName",
-                            "_value": "arrow_up",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_useAsLabel": true
-                        },
-                        {
-                            "_key": "[inline]",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "color",
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
@@ -1106,7 +1446,7 @@
                         },
                         {
                             "_key": "Mapping",
-                            "_value": " {{table.name}}",
+                            "_value": "{{table.name}}",
                             "_type": "ma",
                             "_attrDef": "p",
                             "_useAsLabel": true
@@ -1152,7 +1492,53 @@
                         },
                         {
                             "_key": "Mapping",
-                            "_value": " {{table.price}}",
+                            "_value": "{{table.price}}",
+                            "_type": "ma",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "columnName",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "headerclass",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "columnclass",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        }
+                    ]
+                },
+                "5b1dbbf7-729f-9a78-a0cc-6eb7d770d122": {
+                    "paletteKey": "ng-table-column",
+                    "parentEditorKey": "2953f5b7-0bd4-d4ab-e1bd-3dbbda779813",
+                    "isAdvancedChildComponent": true,
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "Header Label",
+                            "_value": "Date",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "matSortHeaderColumn",
+                            "_value": "mat-sort-header",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "Mapping",
+                            "_value": "{{table. dateUploaded}}",
                             "_type": "ma",
                             "_attrDef": "p",
                             "_useAsLabel": true

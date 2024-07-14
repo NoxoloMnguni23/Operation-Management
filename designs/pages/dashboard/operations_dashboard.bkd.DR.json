@@ -2036,7 +2036,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "height:30px; width:40px; border-radius:50%;margin-left:1em",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

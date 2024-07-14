@@ -120,6 +120,21 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_wHr6YuVKPRrX2kMN');
     }
   }
+
+  sd_yFWEhKeLq7SiKCiL(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.selected(bh);
+      //appendnew_next_sd_yFWEhKeLq7SiKCiL
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_yFWEhKeLq7SiKCiL');
+    }
+  }
   //appendnew_flow_all_purchased_items_tableComponent_start
 
   sd_7NyJWrMmj6Xj60dl(bh) {
@@ -127,7 +142,10 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       this.page.total = 0;
       this.page.datas = undefined;
       this.page.arrayData = undefined;
-      bh = this.sd_eJuzOUTYKNgXaqdz_1(bh);
+      this.page.tableDataBackup = undefined;
+      this.page.totalA = 0;
+      this.page.tableData = this.page.dataSource;
+      bh = this.sd_1yjEmPi5wUo4o0Do(bh);
       //appendnew_next_sd_7NyJWrMmj6Xj60dl
       return bh;
     } catch (e) {
@@ -135,49 +153,75 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
     }
   }
 
-  sd_eJuzOUTYKNgXaqdz_1(bh) {
+  sd_1yjEmPi5wUo4o0Do(bh) {
+    try {
+      bh.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_6lNqubBSj5hlxHb1(bh);
+      //appendnew_next_sd_1yjEmPi5wUo4o0Do
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1yjEmPi5wUo4o0Do');
+    }
+  }
+
+  sd_6lNqubBSj5hlxHb1(bh) {
     try {
       const page = this.page;
+      bh.url = bh.ssdURL + 'get-receipt-data';
+      bh = this.getReceipts(bh);
+      //appendnew_next_sd_6lNqubBSj5hlxHb1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6lNqubBSj5hlxHb1');
+    }
+  }
 
-      page.dataSource = new MatTableDataSource([
-        { category: 'Groceries', name: 'Eggs', price: 2.99 },
-        { category: 'Groceries', name: 'Milk', price: 3.49 },
-        { category: 'Groceries', name: 'Bread', price: 2.0 },
-        { category: 'Groceries', name: 'Apples', price: 1.99 },
-        { category: 'Groceries', name: 'Pasta', price: 1.5 },
-        {
-          category: 'Maintenance',
-          name: 'Light bulbs (pack of 4)',
-          price: 8.99,
-        },
-        {
-          category: 'Maintenance',
-          name: 'AA Batteries (pack of 12)',
-          price: 6.49,
-        },
-        { category: 'Maintenance', name: 'Duct Tape', price: 4.99 },
-        { category: 'Maintenance', name: 'Multi-purpose Cleaner', price: 3.79 },
-        {
-          category: 'Maintenance',
-          name: 'Paper Towels (pack of 6 rolls)',
-          price: 9.99,
-        },
-        {
-          category: 'Supplies',
-          name: 'Printer Paper (ream of 500 sheets)',
-          price: 5.99,
-        },
-        { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
-        { category: 'Supplies', name: 'Scotch Tape', price: 2.99 },
-        { category: 'Supplies', name: 'Envelopes (pack of 50)', price: 7.99 },
-        { category: 'Groceries', name: 'Eggs', price: 2.99 },
-        { category: 'TOTAL', name: '', price: 0 },
-      ]);
+  async getReceipts(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.resultItems = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_A8gRLs4029yZ1E6F(bh);
+      //appendnew_next_getReceipts
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wjQBMwrERrqb5smV');
+    }
+  }
 
-      //converting the object to an Array
+  sd_A8gRLs4029yZ1E6F(bh) {
+    try {
+      const page = this.page;
+      console.log('Main data', page.resultItems);
+
+      page.items = page.resultItems[0].items;
+
+      console.log('obj', page.items);
+
+      for (let i = 0; i < page.items.length; i++) {
+        console.log(page.items[i]);
+      }
+
+      // for(let i=0;i<page._data.length;i++){
+      //     for(let j = 0;j<page._data[i].length; j++){
+      //       page.items.push(page._data[i][j])
+      //     }
+      // }
+      // console.log("Final data ==>", page.items)
+
+      page.dataSource = new MatTableDataSource(page.items);
+      console.log('backendData =>>', page.items);
+
+      // //converting the object to an Array
       page.arrayData = page.dataSource.data;
 
-      //adding the total to the spreadsheet and table
+      // //adding the total to the spreadsheet and table
       page.arrayData.forEach((item, indx) => {
         if (page.arrayData.length - 1 === indx) {
           return;
@@ -186,20 +230,22 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
           page.arrayData[page.arrayData.length - 1].price + item.price;
       });
 
-      console.log(page.arrayData[page.arrayData.length - 1]);
-      console.log('newArray', page.arrayData);
+      // console.log(page.arrayData[page.arrayData.length - 1])
+      // console.log("newArray", page.arrayData);
 
       //Adding the total to the total outside the table
 
       page.arrayData.forEach((item) => {
-        return (page.total = page.total + item.price / 2);
+        return (page.totalA = page.totalA + item.price / 2);
       });
 
+      page.total = page.totalA.toFixed(2);
       bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
-      //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
+      bh = this.sd_LOQZQmlbaciIhz7W(bh);
+      //appendnew_next_sd_A8gRLs4029yZ1E6F
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_R1PRW9sFGl6VSlzx');
+      return this.errorHandler(bh, e, 'sd_A8gRLs4029yZ1E6F');
     }
   }
 
@@ -208,6 +254,9 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       this.page.tableData = this.page.dataSource;
       this.page.fileName = this.page.excelsheet;
       this.page.price = 0;
+      this.page.month = this.page.month;
+      this.page.selectForm = { month: '' };
+      this.page.filterTotal = undefined;
       bh = this.sd_ivaTji8kiYYwm6z7(bh);
       //appendnew_next_sd_E9QbOlnVduPNV5MO_1
       return bh;
@@ -228,10 +277,71 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
 
   sd_amwwovLCcmHfVQy1(bh) {
     try {
+      bh = this.sd_4CbgeVTcji4sjsBa(bh);
       //appendnew_next_sd_amwwovLCcmHfVQy1
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_amwwovLCcmHfVQy1');
+    }
+  }
+
+  sd_4CbgeVTcji4sjsBa(bh) {
+    try {
+      this.page.tableData = this.page.dataSource;
+      //appendnew_next_sd_4CbgeVTcji4sjsBa
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4CbgeVTcji4sjsBa');
+    }
+  }
+
+  sd_LOQZQmlbaciIhz7W(bh) {
+    try {
+      const page = this.page;
+      switch (new Date().getMonth()) {
+        case 0:
+          page.month = 'January';
+          break;
+        case 1:
+          page.month = 'February';
+          break;
+        case 2:
+          page.month = 'March';
+          break;
+        case 3:
+          page.month = 'April';
+          break;
+        case 4:
+          page.month = 'May';
+          break;
+        case 5:
+          page.month = 'June';
+          break;
+        case 6:
+          page.month = 'July';
+          break;
+        case 7:
+          page.month = 'August';
+          break;
+        case 8:
+          page.month = 'September';
+          break;
+        case 9:
+          page.month = 'October';
+          break;
+        case 10:
+          page.month = 'November';
+          break;
+        case 11:
+          page.month = 'December';
+          break;
+      }
+
+      console.log('month', page.month);
+      //appendnew_next_sd_LOQZQmlbaciIhz7W
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_LOQZQmlbaciIhz7W');
     }
   }
 
@@ -276,10 +386,25 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
   sd_iBlFYTlpoczCmWts_2(bh) {
     try {
       const page = this.page;
-      console.log(bh.input.filterEvent);
       const filterValue = (bh.input.filterEvent.target as HTMLInputElement)
         .value;
       this.page.tableData.filter = filterValue.trim().toLowerCase();
+
+      page.total = page.tableData.filteredData.reduce(
+        (total: any, item: any) => total + item.price,
+        0
+      );
+
+      bh.totalItem = page.dataSource._data._value.filter((item: any) => {
+        return item.category == 'TOTAL';
+      });
+
+      page.tableData.filteredData.push(bh.totalItem[0]);
+
+      // page.dataSource = page.tableData.filteredData
+
+      console.log('filtered with Total ==>', page.tableData.filteredData);
+
       //appendnew_next_sd_iBlFYTlpoczCmWts_2
       return bh;
     } catch (e) {
@@ -292,7 +417,7 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       const page = this.page;
       //convert to an Array
       //try getting the array not the table
-      page.arrayData = page.dataSource.data;
+      page.arrayData = page.tableData.filteredData;
 
       //get the table data
       //  let datas = document.getElementById('table-table')
@@ -300,8 +425,9 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       //converting
       //trying new one
       let data = document.getElementById('table-table');
+      const ws: WorkSheet = utils.json_to_sheet(page.arrayData);
 
-      const ws: WorkSheet = utils.table_to_sheet(data);
+      // const ws:  WorkSheet = utils.table_to_sheet(data);
       //  const workbook: WorkBook = { Sheets: { 'datas': ws }, SheetNames: ['datas'] };
 
       const workbook: WorkBook = utils.book_new();
@@ -338,6 +464,43 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SROyLdDiPneI4O4E');
+    }
+  }
+
+  selected(bh) {
+    try {
+      const page = this.page;
+      page.tableDataBackup.filter = page.selectForm.month.trim().toLowerCase();
+      // console.log("page.tableDataBackup",page.tableDataBackup)
+      page.tableData.filteredData = page.tableDataBackup.filteredData;
+
+      page.total = page.tableData.filteredData.reduce(
+        (total: any, item: any) => total + item.price,
+        0
+      );
+
+      bh.totalItem = page.dataSource._data._value.filter((item: any) => {
+        return item.category == 'TOTAL';
+      });
+
+      bh.totalItem.price = page.tableData.filteredData.reduce(
+        (total: any, item: any) => total + item.price,
+        0
+      );
+      console.log('total ==>', bh.totalItem[0].price);
+      bh.totalItem[0].price = page.total;
+
+      bh.newTable = page.tableData.filteredData.push(bh.totalItem[0]);
+
+      page.tableData = new MatTableDataSource(page.tableData.filteredData);
+
+      console.log('filtered with Total ==>', page.tableData.filteredData);
+      console.log('new table ==>', bh.newTable);
+
+      //appendnew_next_selected
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sZyFeQRfrOBuDMhn');
     }
   }
 
