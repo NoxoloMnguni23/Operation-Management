@@ -64,7 +64,7 @@
         </form>
       </div>
     </mat-step><mat-step [stepControl]=" page.thirdFormGroup ">
-      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="column wrap" class="scroll-kim" fxLayoutAlign="center center" [fxShow]="true">
         <form [formGroup]="page.thirdFormGroup">
           <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><ng-template matStepLabel>
@@ -95,10 +95,10 @@
                 </div>
               </div>
             </div>
-            <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button (click)="addItem()">Add item</button></div>
+            <div fxLayout="row wrap" style=" right: -140px !important" fxLayoutAlign="end end" [fxShow]="true"><button mat-button style="right: -140px;" (click)="addItem()">Add item</button></div>
             <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
-              <div fxLayout="row wrap" style="height:15px;width:10px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="right: 0px!important;" matStepperPrevious>Back</button></div>
-              <div fxLayout="row wrap" style="height:15px;width:10px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="right: -110px!important;" (click)="submitButton()">Submit</button></div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="right: 0px!important;" matStepperPrevious>Back</button></div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="right: -110px!important;" (click)="submitButton()">Submit</button></div>
             </div>
           </div>
         </form>

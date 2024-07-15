@@ -23,7 +23,7 @@
         "y": 30,
         "wires": [
             [
-                "sd_XyfbDazfYKEzilS2"
+                "sd_3edeJLn2fkKlEanm"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -43,8 +43,8 @@
         "globalVariables": [],
         "functionName": "sd_XyfbDazfYKEzilS2",
         "category": "Function",
-        "x": 85,
-        "y": 100,
+        "x": 225,
+        "y": 40,
         "wires": [
             [
                 "sd_49ZekZ6zNblKYnYe"
@@ -102,6 +102,171 @@
         "y": 120,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_99PDKTTfQ8mKGEcD",
+        "type": "PageStart",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "view receipt",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "viewReceipt",
+        "category": "General",
+        "x": 545,
+        "y": 120,
+        "wires": [
+            [
+                "sd_a9eXs9q31YdkwSyt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "selected_receipt_formComponent"
+    },
+    {
+        "id": "sd_a9eXs9q31YdkwSyt",
+        "type": "Environment",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_a9eXs9q31YdkwSyt",
+        "category": "General",
+        "x": 690,
+        "y": 120,
+        "wires": [
+            [
+                "sd_1BdhzLGBcmRGEfLL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1BdhzLGBcmRGEfLL",
+        "type": "Script",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.url = page.ssdUrl + `download-file/${page.userData.fileid}`;\npage.image = page.sanitizer.bypassSecurityTrustHtml(bh.url)\npage.showImage = true\n\nwindow.open(bh.url, '_blank');",
+        "functionName": "sd_1BdhzLGBcmRGEfLL",
+        "category": "Function",
+        "x": 800,
+        "y": 136.80206298828125,
+        "wires": [
+            [
+                "sd_UtDuvQXOyPCNstAe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UtDuvQXOyPCNstAe",
+        "type": "HttpRequest",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "view",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.userData.fileid",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "userData.fileid"
+        },
+        "resultMapping": "this.page.Receipt",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "Receipt"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "view",
+        "category": "HTTP",
+        "x": 900,
+        "y": 136.80206298828125,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3edeJLn2fkKlEanm",
+        "type": "UseDependency",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "DomSanitizer",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "sanitizer"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/platform-browser",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_3edeJLn2fkKlEanm",
+        "category": "Function",
+        "x": 105,
+        "y": 40,
+        "wires": [
+            [
+                "sd_XyfbDazfYKEzilS2"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

@@ -364,6 +364,7 @@ bh-landing{
     width:100% !important; 
     top:0 !important
 }
+
 .table-kim {
     height: 10px !important; 
     width:100% !important;
@@ -372,6 +373,19 @@ bh-landing{
 .donut-angel{
           width: 78% !important;
     height: 78% !important;
+}
+
+
+///scroll
+.scroll-kim {
+  max-height: 300px; 
+  overflow-y: auto; 
+}
+
+.table-scroll-kim {
+  max-height: 300px;
+  overflow-y: auto; 
+  width: 153%;
 }
 
 // .width-70-angel{
