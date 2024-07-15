@@ -694,7 +694,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.submit = true;\nbh.urlData = page.ssdURL+ 'add-receipt-data'\nbh.urlFile = page.ssdURL+ 'upload-receipt'\n\nconsole.log('BH URL FILE: ', bh.urlFile)\n\npage.uploadFile = new FormData()\nconsole.log('FILE: ', page.file)\n\npage.uploadFile.append('file', page.file)\nconsole.log('File in formdata using file: ', page.uploadFile.getAll('file'))\n\nconsole.log('Fil to be upaloded: ', page.uploadFile)\n\n// Shop details\npage.receiptDetails.shopName =  page.secondFormGroup.value.shopName\npage.receiptDetails.username =  page.secondFormGroup.value.username\npage.receiptDetails.totalAmount =  page.secondFormGroup.value.totalAmount\n\n// Items\npage.receiptDetails.items = page.thirdFormGroup.value.items\n\n// bh.headers = {fileId: `fileId-${new Date().getMilliseconds()}`}\n\n// page.receiptDetails.fileId =  bh.headers.fileId\n\n// console.log('Data to be uploaded: ', page.receiptDetails)\n\n\n// page.params = 'filleeee'\n\n\n\n\n",
+        "script": "page.submit = true;\nbh.urlData = page.ssdURL+ 'add-receipt-data'\nbh.urlFile = page.ssdURL+ 'upload-receipt'\n\nconsole.log('BH URL FILE: ', bh.urlFile)\n\npage.uploadFile = new FormData()\n// console.log('FILE: ', page.file)\n\npage.uploadFile.append('file', page.file)\nconsole.log('File in formdata using file: ', page.uploadFile.getAll('file'))\n\n// console.log('Fil to be upaloded: ', page.uploadFile)\n\n// Shop details\npage.receiptDetails.shopName =  page.secondFormGroup.value.shopName\npage.receiptDetails.username =  page.secondFormGroup.value.username\npage.receiptDetails.totalAmount =  page.secondFormGroup.value.totalAmount\n\n// Items\npage.receiptDetails.items = page.thirdFormGroup.value.items\n\nbh.headers = {fileId: `fileId-${new Date().getTime()}`}\npage.headers = bh.headers\n// page.receiptDetails.fileId =  bh.headers.fileId\n\n// console.log('Data to be uploaded: ', page.receiptDetails)\n\n\n// page.params = 'filleeee'\n\n\n\n\n",
         "functionName": "sd_s6dvhkZOu1LGykRK",
         "category": "Function",
         "x": 225,
@@ -739,9 +739,9 @@
             "mapVarType": "bh",
             "mapVarValue": "resultsFile"
         },
-        "headerMapping": "bh.headers",
+        "headerMapping": "this.page.headers",
         "headerMappingObj": {
-            "mapVarType": "bh",
+            "mapVarType": "this.page",
             "mapVarValue": "headers"
         },
         "paramMapping": "this.page.params",

@@ -306,7 +306,7 @@ export class add_receiptComponent {
       console.log('BH URL FILE: ', bh.urlFile);
 
       page.uploadFile = new FormData();
-      console.log('FILE: ', page.file);
+      // console.log('FILE: ', page.file)
 
       page.uploadFile.append('file', page.file);
       console.log(
@@ -314,7 +314,7 @@ export class add_receiptComponent {
         page.uploadFile.getAll('file')
       );
 
-      console.log('Fil to be upaloded: ', page.uploadFile);
+      // console.log('Fil to be upaloded: ', page.uploadFile)
 
       // Shop details
       page.receiptDetails.shopName = page.secondFormGroup.value.shopName;
@@ -324,8 +324,8 @@ export class add_receiptComponent {
       // Items
       page.receiptDetails.items = page.thirdFormGroup.value.items;
 
-      // bh.headers = {fileId: `fileId-${new Date().getMilliseconds()}`}
-
+      bh.headers = { fileId: `fileId-${new Date().getTime()}` };
+      page.headers = bh.headers;
       // page.receiptDetails.fileId =  bh.headers.fileId
 
       // console.log('Data to be uploaded: ', page.receiptDetails)
@@ -421,7 +421,7 @@ export class add_receiptComponent {
         url: 'http://localhost:8081/api/upload-receipt',
         method: 'post',
         responseType: 'json',
-        headers: bh.headers,
+        headers: this.page.headers,
         params: this.page.params,
         body: this.page.uploadFile,
       };
