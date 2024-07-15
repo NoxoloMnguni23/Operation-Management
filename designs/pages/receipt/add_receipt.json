@@ -19,11 +19,11 @@
         "name": "",
         "functionName": "sd_nRZRxWg6wQmHetCJ",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 40,
         "wires": [
             [
-                "sd_ahkmXkQ9ZOV7VZEC"
+                "sd_A5r0H5kDW6WM91jP"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -31,7 +31,246 @@
         "serviceName": "add_receiptComponent"
     },
     {
-        "id": "sd_ahkmXkQ9ZOV7VZEC",
+        "id": "sd_A5r0H5kDW6WM91jP",
+        "type": "UseDependency",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "FormBuilder",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "_formBuilder"
+                },
+                "injectable": true
+            },
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_A5r0H5kDW6WM91jP",
+        "category": "Function",
+        "x": 145,
+        "y": 40,
+        "wires": [
+            [
+                "sd_ahFKFHcLEcEikruI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3aw5HhPzmUKV6P8y",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n{\n  page.firstFormGroup = page._formBuilder.group({\n    firstCtrl: ['', Validators.required]\n  });\n  page.secondFormGroup = page._formBuilder.group({\n    username: [ '', Validators.required],\n    shopName: ['', Validators.required],\n    totalAmount: ['', Validators.required],\n  });\n  page.thirdFormGroup = page._formBuilder.group({\n    items: page._formBuilder.array([])\n  });\n}\n\npage.item = page._formBuilder.group({\n    itemName: ['', Validators.required],\n    price: ['', Validators.required],\n    category: ['', Validators.required]\n})\n\nconsole.log(page.thirdFormGroup)\nconsole.log('Items: ', page.item)\n\n\n// page.clientDetails = {fullName: '', email: '', idNum: '', remotePin: '', confirmRemotePin: '', ID_doc: '', proof_of_res: '', picture: ''}",
+        "functionName": "sd_3aw5HhPzmUKV6P8y",
+        "category": "Function",
+        "x": 365,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Xn5Q5mBqtkhFarTu",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.fileAttached = true;\npage.file = bh.input.event.target.files[0];\n\n\n\nlet file: File\nif(bh.input.event) {\n    page.file = bh.input.event.target.files[0];\n\n    bh.fileType =   page.file['type'].split('/')[0]\n    console.log('file type: ', bh.fileType)\n    bh.fileType = bh.fileType == 'image'\n    console.log('file type: ', bh.fileType)\n\n}else {\n    console.log('The is no file uploaded')\n}\n\n\n  \n",
+        "functionName": "sd_Xn5Q5mBqtkhFarTu",
+        "category": "Function",
+        "x": 205,
+        "y": 180,
+        "wires": [
+            [
+                "sd_ni39tTX5ljnk0Dm3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GOuc6EjJwfP1AfCW",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "fileUpload",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "fileUpload",
+        "category": "General",
+        "x": 85,
+        "y": 180,
+        "wires": [
+            [
+                "sd_Xn5Q5mBqtkhFarTu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_ni39tTX5ljnk0Dm3",
+        "type": "PageSwitch",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "fileType",
+        "propertyType": "bh",
+        "propertyGv": "bh.fileType",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_ni39tTX5ljnk0Dm3",
+        "category": "Function",
+        "x": 340,
+        "y": 200,
+        "wires": [
+            [
+                "sd_zPXa5zK50mrXVXEX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_zPXa5zK50mrXVXEX",
+        "type": "SnackBar",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "File is not an image"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_zPXa5zK50mrXVXEX",
+        "category": "General",
+        "x": 460,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FWcgYRbxKgB1kUrP",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "addItem",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "addItem",
+        "category": "General",
+        "x": 85,
+        "y": 360,
+        "wires": [
+            [
+                "sd_at75G7Cz2S4ahDoN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_at75G7Cz2S4ahDoN",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.item = page._formBuilder.group({\n//     itemName: ['', Validators.required],\n//     price: ['', Validators.required],\n//     category: ['', Validators.required]\n// })\n\npage.thirdFormGroup.controls.items.push(page.item)\n\nconsole.log(page.thirdFormGroup)",
+        "functionName": "sd_at75G7Cz2S4ahDoN",
+        "category": "Function",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ahFKFHcLEcEikruI",
         "type": "PageVariables",
         "z": "sd_1V5aIn6YDe1GpVdE",
         "viewType": "pages",
@@ -75,236 +314,61 @@
                     "type": "this.page",
                     "value": ""
                 }
-            }
-        ],
-        "functionName": "sd_ahkmXkQ9ZOV7VZEC",
-        "category": "Function",
-        "x": 180,
-        "y": 30,
-        "wires": [
-            [
-                "sd_A5r0H5kDW6WM91jP"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "add_receiptComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_jivlYmkKZSJdA57I",
-        "type": "PageStart",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "pages",
-        "nodeType": "start",
-        "name": "green",
-        "outputs": 1,
-        "inputVariables": [],
-        "localVariables": [],
-        "flow_type": "sync",
-        "functionName": "green",
-        "category": "General",
-        "x": 45,
-        "y": 180,
-        "wires": [
-            [
-                "sd_4Qmf5jrH3OWs83SD"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "add_receiptComponent"
-    },
-    {
-        "id": "sd_GtKqUJdNZHTNSC93",
-        "type": "PageStart",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "pages",
-        "nodeType": "start",
-        "name": "orange",
-        "outputs": 1,
-        "inputVariables": [],
-        "localVariables": [],
-        "flow_type": "sync",
-        "functionName": "orange",
-        "category": "General",
-        "x": 45,
-        "y": 360,
-        "wires": [
-            [
-                "sd_lgXb5YjOyVDpQYIA"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "add_receiptComponent"
-    },
-    {
-        "id": "sd_kPblvcC67pkTdzTZ",
-        "type": "PageStart",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "pages",
-        "nodeType": "start",
-        "name": "yellow",
-        "outputs": 1,
-        "inputVariables": [],
-        "localVariables": [],
-        "flow_type": "sync",
-        "functionName": "yellow",
-        "category": "General",
-        "x": 45,
-        "y": 280,
-        "wires": [
-            [
-                "sd_PEuW2A95AfnPt6Ad"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "add_receiptComponent"
-    },
-    {
-        "id": "sd_4Qmf5jrH3OWs83SD",
-        "type": "Script",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.orange =!page.orange\npage.yellow = false",
-        "functionName": "sd_4Qmf5jrH3OWs83SD",
-        "category": "Function",
-        "x": 145,
-        "y": 180,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "add_receiptComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_lgXb5YjOyVDpQYIA",
-        "type": "Script",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.green = false\npage.yellow = false",
-        "functionName": "sd_lgXb5YjOyVDpQYIA",
-        "category": "Function",
-        "x": 145,
-        "y": 360,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "add_receiptComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_PEuW2A95AfnPt6Ad",
-        "type": "Script",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.orange = false\npage.green = false",
-        "functionName": "sd_PEuW2A95AfnPt6Ad",
-        "category": "Function",
-        "x": 145,
-        "y": 280,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "add_receiptComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_WqpKewWxNZbCN1c0",
-        "type": "PageStart",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "pages",
-        "nodeType": "start",
-        "name": "picked",
-        "outputs": 1,
-        "inputVariables": [],
-        "localVariables": [],
-        "flow_type": "sync",
-        "functionName": "picked",
-        "category": "General",
-        "x": 320,
-        "y": 220,
-        "wires": [
-            [
-                "sd_Efhy3iIWo3WByxX4"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "add_receiptComponent"
-    },
-    {
-        "id": "sd_Efhy3iIWo3WByxX4",
-        "type": "Script",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.orange = false\npage.yellow = false\npage.green = false;\n\nif(page.orange = true){\npage.yellow = false\npage.green = false;\n\n}",
-        "functionName": "sd_Efhy3iIWo3WByxX4",
-        "category": "Function",
-        "x": 405,
-        "y": 220,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "add_receiptComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_A5r0H5kDW6WM91jP",
-        "type": "UseDependency",
-        "z": "sd_1V5aIn6YDe1GpVdE",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "property": "",
-        "propertyType": "bh",
-        "propertyGv": "bh.",
-        "alias": "",
-        "modules": [
-            {
-                "textIp": "FormBuilder",
-                "typedIpValue": {
-                    "type": "this.page",
-                    "value": "_formBuilder"
-                },
-                "injectable": true
             },
             {
-                "textIp": "Validators",
+                "textIp": "thirdFormGroup",
                 "typedIpValue": {
                     "type": "this.page",
                     "value": ""
-                },
-                "injectable": false
+                }
+            },
+            {
+                "textIp": "file",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "userName",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "receiptDetails",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{}"
+                }
+            },
+            {
+                "textIp": "item",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "submit",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "uploadFile",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
-        "import_all": false,
-        "library": "@angular/forms",
-        "serviceDesignerType": "pages",
-        "functionName": "sd_A5r0H5kDW6WM91jP",
+        "functionName": "sd_ahFKFHcLEcEikruI",
         "category": "Function",
         "x": 265,
-        "y": 80,
+        "y": 40,
         "wires": [
             [
                 "sd_3aw5HhPzmUKV6P8y"
@@ -316,20 +380,410 @@
         "generated": true
     },
     {
-        "id": "sd_3aw5HhPzmUKV6P8y",
+        "id": "sd_aARaqv8dakl0hEjs",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "deleteItem",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "indx",
+                "defaultValue": {
+                    "type": "num",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "deleteItem",
+        "category": "General",
+        "x": 85,
+        "y": 480,
+        "wires": [
+            [
+                "sd_pdHiYhMVlbasLEU8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_pdHiYhMVlbasLEU8",
         "type": "Script",
         "z": "sd_1V5aIn6YDe1GpVdE",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "{\n    page.firstFormGroup = page._formBuilder.group({\n      firstCtrl: ['', Validators.required]\n    });\n    page.secondFormGroup = page._formBuilder.group({\n      secondCtrl: ['', Validators.required]\n    });\n  }",
-        "functionName": "sd_3aw5HhPzmUKV6P8y",
+        "script": "\npage.thirdFormGroup.controls.items.removeAt(bh.input.indx)\n\nconsole.log(page.thirdFormGroup)",
+        "functionName": "sd_pdHiYhMVlbasLEU8",
         "category": "Function",
-        "x": 380,
-        "y": 80,
+        "x": 225,
+        "y": 480,
         "wires": [
             []
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6leVIgrvohUJBulP",
+        "type": "PageStart",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "submit button",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "submitButton",
+        "category": "General",
+        "x": 65,
+        "y": 600,
+        "wires": [
+            [
+                "sd_9LGvU2NOvRTOlwrQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_receiptComponent"
+    },
+    {
+        "id": "sd_9LGvU2NOvRTOlwrQ",
+        "type": "Environment",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_9LGvU2NOvRTOlwrQ",
+        "category": "General",
+        "x": 145,
+        "y": 600,
+        "wires": [
+            [
+                "sd_s6dvhkZOu1LGykRK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dhlukPp9b0HU2ZkA",
+        "type": "HttpRequest",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "Post receipt Details",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.urlData",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "urlData"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.receiptDetails",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "receiptDetails"
+        },
+        "resultMapping": "bh.resultsData",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "resultsData"
+        },
+        "headerMapping": "bh.headers",
+        "headerMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "headers"
+        },
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "postReceiptDetails",
+        "category": "HTTP",
+        "x": 445,
+        "y": 540,
+        "wires": [
+            [
+                "sd_LqOhakaKQklXKd0v"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_s7tHHBChQebDhs7Y",
+        "type": "PageSwitch",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "receiptDetails",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.receiptDetails",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_s7tHHBChQebDhs7Y",
+        "category": "Function",
+        "x": 305,
+        "y": 580,
+        "wires": [
+            [
+                "sd_dhlukPp9b0HU2ZkA",
+                "sd_71LrZCbGNNuDRf1c"
+            ],
+            [
+                "sd_rSvxiyPkIn4Mlg68"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_rSvxiyPkIn4Mlg68",
+        "type": "SnackBar",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "The form you are sending is empty!"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_rSvxiyPkIn4Mlg68",
+        "category": "General",
+        "x": 380,
+        "y": 740,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LqOhakaKQklXKd0v",
+        "type": "SnackBar",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Receipt form has been submitted"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_LqOhakaKQklXKd0v",
+        "category": "General",
+        "x": 545,
+        "y": 600,
+        "wires": [
+            [
+                "sd_F1vJDnUIRbscHmnX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_F1vJDnUIRbscHmnX",
+        "type": "Navigation",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/operations_dashboard/landing",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_F1vJDnUIRbscHmnX",
+        "category": "Navigation",
+        "x": 685,
+        "y": 600,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_s6dvhkZOu1LGykRK",
+        "type": "Script",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submit = true;\nbh.urlData = page.ssdURL+ 'add-receipt-data'\nbh.urlFile = page.ssdURL+ 'upload-receipt'\n\nconsole.log('BH URL FILE: ', bh.urlFile)\n\npage.uploadFile = new FormData()\n// console.log('FILE: ', page.file)\n\npage.uploadFile.append('file', page.file)\nconsole.log('File in formdata using file: ', page.uploadFile.getAll('file'))\n\n// console.log('Fil to be upaloded: ', page.uploadFile)\n\n// Shop details\npage.receiptDetails.shopName =  page.secondFormGroup.value.shopName\npage.receiptDetails.username =  page.secondFormGroup.value.username\npage.receiptDetails.totalAmount =  page.secondFormGroup.value.totalAmount\n\n// Items\npage.receiptDetails.items = page.thirdFormGroup.value.items\n\nbh.headers = {fileId: `fileId-${new Date().getTime()}`}\npage.headers = bh.headers\n// page.receiptDetails.fileId =  bh.headers.fileId\n\n// console.log('Data to be uploaded: ', page.receiptDetails)\n\n\n// page.params = 'filleeee'\n\n\n\n\n",
+        "functionName": "sd_s6dvhkZOu1LGykRK",
+        "category": "Function",
+        "x": 225,
+        "y": 600,
+        "wires": [
+            [
+                "sd_s7tHHBChQebDhs7Y"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_71LrZCbGNNuDRf1c",
+        "type": "HttpRequest",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "Post receipt file",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "\"http://localhost:8081/api/upload-receipt\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "http://localhost:8081/api/upload-receipt"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.uploadFile",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "uploadFile"
+        },
+        "resultMapping": "bh.resultsFile",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "resultsFile"
+        },
+        "headerMapping": "this.page.headers",
+        "headerMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "headers"
+        },
+        "paramMapping": "this.page.params",
+        "paramMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "params"
+        },
+        "functionName": "postReceiptFile",
+        "category": "HTTP",
+        "x": 445,
+        "y": 640,
+        "wires": [
+            [
+                "sd_nUPxJlgT43TeubxQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_receiptComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_nUPxJlgT43TeubxQ",
+        "type": "Log",
+        "z": "sd_1V5aIn6YDe1GpVdE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.resultsFile",
+        "functionName": "sd_nUPxJlgT43TeubxQ",
+        "category": "General",
+        "x": 560,
+        "y": 720,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh",
+                "value": "resultsFile",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "add_receiptComponent",
