@@ -55,25 +55,10 @@ export class categoriesComponent {
     }
   }
 
-  open(...others) {
-    let bh: any = {};
-    try {
-      bh = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
-      bh = this.sd_ktYD8TZZTgcq0OUO(bh);
-      //appendnew_next_open
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_yhlBySxgfJy54S0Y');
-    }
-  }
   //appendnew_flow_categoriesComponent_start
 
   sd_XASJm5GtYmf3XfeR(bh) {
     try {
-      this.page.items = undefined;
       this.page.Groceries = [];
       this.page.Supplies = [];
       this.page.Maintenance = [];
@@ -86,7 +71,11 @@ export class categoriesComponent {
       this.page.priceg = 0;
       this.page.prices = 0;
       this.page.pricem = 0;
-      bh = this.sd_MwRsJo4lV9LxxPCW(bh);
+      this.page._data = [];
+      this.page.items = [];
+      this.page.price1 = 0;
+      this.page.selecteditems = [];
+      bh = this.sd_BwADdgS5bjBPArMC(bh);
       //appendnew_next_sd_XASJm5GtYmf3XfeR
       return bh;
     } catch (e) {
@@ -94,68 +83,128 @@ export class categoriesComponent {
     }
   }
 
-  sd_MwRsJo4lV9LxxPCW(bh) {
+  sd_BwADdgS5bjBPArMC(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.url(bh);
+      //appendnew_next_sd_BwADdgS5bjBPArMC
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_BwADdgS5bjBPArMC');
+    }
+  }
+
+  url(bh) {
     try {
       const page = this.page;
-      page.items = [
-        { category: 'Groceries', name: 'Eggs', price: 2.99 },
-        { category: 'Groceries', name: 'Milk', price: 3.49 },
-        { category: 'Groceries', name: 'Milk', price: 3.49 },
-        { category: 'Groceries', name: 'Bread', price: 2.0 },
-        { category: 'Groceries', name: 'Apples', price: 1.99 },
-        { category: 'Groceries', name: 'Pasta', price: 1.5 },
-        {
-          category: 'Maintenance',
-          name: 'Light bulbs (pack of 4)',
-          price: 8.99,
-        },
-        {
-          category: 'Maintenance',
-          name: 'AA Batteries (pack of 12)',
-          price: 6.49,
-        },
-        { category: 'Maintenance', name: 'Duct Tape', price: 4.99 },
-        { category: 'Maintenance', name: 'Multi-purpose Cleaner', price: 3.79 },
-        {
-          category: 'Maintenance',
-          name: 'Paper Towels (pack of 6 rolls)',
-          price: 9.99,
-        },
-        {
-          category: 'Supplies',
-          name: 'Printer Paper (ream of 500 sheets)',
-          price: 5.99,
-        },
-        { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
-        { category: 'Supplies', name: 'Scotchi Tape', price: 2.99 },
-        { category: 'Supplies', name: 'Envelopesy (pack of 50)', price: 7.99 },
-        {
-          category: 'Supplies',
-          name: 'Sticky Notesd (pack of 100)',
-          price: 4.29,
-        },
-        {
-          category: 'Supplies',
-          name: 'Printer Papere (ream of 500 sheets)',
-          price: 5.99,
-        },
-        { category: 'Supplies', name: 'Penst (pack of 10)', price: 3.49 },
-        { category: 'Supplies', name: 'Scotchr Tape', price: 2.99 },
-        { category: 'Supplies', name: 'Envelopesk (pack of 50)', price: 7.99 },
-        {
-          category: 'Supplies',
-          name: 'Sticky Notesd (pack of 100)',
-          price: 4.29,
-        },
-      ];
+      bh.url = page.ssdURL + 'get-receipt-data';
+      bh = this.getReceipts(bh);
+      //appendnew_next_url
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_33O4LGTB5VW8oAbd');
+    }
+  }
+
+  async getReceipts(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.resultItems = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.getdataofthismonth(bh);
+      //appendnew_next_getReceipts
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3NPMdpIYttPiURrO');
+    }
+  }
+
+  getdataofthismonth(bh) {
+    try {
+      const page = this.page;
+      console.log('Main datata', page.resultItems);
+
+      let dateToCompare = new Date().toLocaleDateString().substr(0, 1);
+
+      let dateFromMongo = page.resultItems.map((item) => {
+        return item['Date-Uploaded'];
+      });
+
+      console.log('date uploaded:', dateFromMongo);
+      page.monthToCompare;
+      for (let i = 0; i < dateFromMongo.length; i++) {
+        page.monthToCompare = dateFromMongo[i].substr(6, 1);
+        console.log('date items', page.monthToCompare);
+        if (page.monthToCompare == dateToCompare) {
+          page.selecteditems.push(page.resultItems[i]);
+        }
+      }
+      console.log('datauptodate', page.selecteditems);
+
+      bh = this.turnItToANArray(bh);
+      //appendnew_next_getdataofthismonth
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_YxUr7NgnHss76QvQ');
+    }
+  }
+
+  turnItToANArray(bh) {
+    try {
+      const page = this.page; // page.page._data
+      //  page.selecteditems.filter((item,i) =>{
+      //     console.log("Item",item.items);
+
+      // } )
+
+      // let items = []
+
+      console.log('Main data', page.selecteditems);
+
+      for (let i = 0; i < page.selecteditems.length; i++) {
+        page._data.push(page.selecteditems[i].items);
+      }
+
+      for (let i = 0; i < page._data.length; i++) {
+        for (let j = 0; j < page._data[i].length; j++) {
+          page.items.push(page._data[i][j]);
+        }
+      }
+
+      console.log('Final data', page.items);
+      // console.log("data", page._data)
+      // page.items.forEach(item => {
+      //   console.log("items ",item)
+      //   })
+      bh = this.separateTheCategories(bh);
+      //appendnew_next_turnItToANArray
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cjPeEs7jJtuVZkh2');
+    }
+  }
+
+  separateTheCategories(bh) {
+    try {
+      const page = this.page;
+
       page.items.forEach((item) => {
-        if (item.category === 'Groceries') {
+        if (item.category === 'Groceries' || item.category === 'groceries') {
           page.Groceries.push(item);
         }
-        if (item.category === 'Supplies') {
+        if (item.category === 'Supplies' || item.category === 'supplies') {
           return page.Supplies.push(item);
         }
-        if (item.category === 'Maintenance') {
+        if (
+          item.category === 'Maintenance' ||
+          item.category === 'maintenance'
+        ) {
           return page.Maintenance.push(item);
         }
       });
@@ -174,18 +223,19 @@ export class categoriesComponent {
       console.log(page.Supplies);
       console.log(page.Maintenance);
       //  console.log( page.Milk)
-      bh = this.sd_SKCtHJkWA3Ww9vcJ(bh);
-      //appendnew_next_sd_MwRsJo4lV9LxxPCW
+      bh = this.getTheTotalAmount(bh);
+      //appendnew_next_separateTheCategories
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_MwRsJo4lV9LxxPCW');
     }
   }
 
-  sd_SKCtHJkWA3Ww9vcJ(bh) {
+  getTheTotalAmount(bh) {
     try {
       const page = this.page;
       page.Groceries.forEach((item) => {
+        console.log(item.price);
         page.priceg = page.priceg + item.price;
         page.priceG = page.priceg.toFixed(2);
       });
@@ -197,16 +247,18 @@ export class categoriesComponent {
         page.pricem = page.pricem + item.price;
         page.priceM = page.pricem.toFixed(2);
       });
-
-      bh = this.sd_JYIOkH9NmgEaHeE6(bh);
-      //appendnew_next_sd_SKCtHJkWA3Ww9vcJ
+      console.log('page.priceG', page.priceG);
+      console.log('page.priceS', page.priceS);
+      console.log('page.priceM', page.priceM);
+      bh = this.informationOnTheDonut(bh);
+      //appendnew_next_getTheTotalAmount
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SKCtHJkWA3Ww9vcJ');
     }
   }
 
-  sd_JYIOkH9NmgEaHeE6(bh) {
+  informationOnTheDonut(bh) {
     try {
       const page = this.page;
       page.doughnutChartData = [
@@ -229,7 +281,7 @@ export class categoriesComponent {
         },
       };
       bh = this.supplies(bh);
-      //appendnew_next_sd_JYIOkH9NmgEaHeE6
+      //appendnew_next_informationOnTheDonut
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_JYIOkH9NmgEaHeE6');
@@ -239,6 +291,7 @@ export class categoriesComponent {
   supplies(bh) {
     try {
       const page = this.page;
+      console.log(page.Supplies);
       page.Supplies.forEach((item) => {
         if (!page.Suppliesfinal.find((__item) => __item.name === item.name)) {
           item['itemsCount'] = 1;
@@ -247,12 +300,15 @@ export class categoriesComponent {
           page.Suppliesfinal.forEach((_item, indx) => {
             if (_item.name === item.name) {
               page.Suppliesfinal[indx].price =
-                page.Suppliesfinal[indx].price + item.price;
+                Math.round(
+                  (page.Suppliesfinal[indx].price + item.price) * 100
+                ) / 100;
               page.Suppliesfinal[indx].itemsCount += 1;
             }
           });
         }
       });
+      console.log('page.Suppliesfinal', page.Suppliesfinal);
       bh = this.maintenance(bh);
       //appendnew_next_supplies
       return bh;
@@ -274,7 +330,9 @@ export class categoriesComponent {
           page.Maintenancefinal.forEach((_item, indx) => {
             if (_item.name === item.name) {
               page.Maintenancefinal[indx].price =
-                page.Maintenancefinal[indx].price + item.price;
+                Math.round(
+                  (page.Maintenancefinal[indx].price + item.price) * 100
+                ) / 100;
               page.Maintenancefinal[indx].itemsCount += 1;
             }
           });
@@ -299,7 +357,9 @@ export class categoriesComponent {
           page.Groceriesfinal.forEach((_item, indx) => {
             if (_item.name === item.name) {
               page.Groceriesfinal[indx].price =
-                page.Groceriesfinal[indx].price + item.price;
+                Math.round(
+                  (page.Groceriesfinal[indx].price + item.price) * 100
+                ) / 100;
               page.Groceriesfinal[indx].itemsCount += 1;
             }
           });
@@ -309,17 +369,6 @@ export class categoriesComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ysYTNzvv6mWUJoXn');
-    }
-  }
-
-  sd_ktYD8TZZTgcq0OUO(bh) {
-    try {
-      const page = this.page;
-      page.isOpen = !page.isOpen;
-      //appendnew_next_sd_ktYD8TZZTgcq0OUO
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ktYD8TZZTgcq0OUO');
     }
   }
 

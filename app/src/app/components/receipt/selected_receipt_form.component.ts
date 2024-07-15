@@ -4,6 +4,7 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { DomSanitizer } from '@angular/platform-browser'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -47,7 +48,7 @@ export class selected_receipt_formComponent {
 
   sd_uX0UIxISFMwosX18(bh) {
     try {
-      bh = this.sd_XyfbDazfYKEzilS2(bh);
+      bh = this.sd_3edeJLn2fkKlEanm(bh);
       //appendnew_next_sd_uX0UIxISFMwosX18
       return bh;
     } catch (e) {
@@ -55,7 +56,32 @@ export class selected_receipt_formComponent {
     }
   }
 
+  viewReceipt(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_a9eXs9q31YdkwSyt(bh);
+      //appendnew_next_viewReceipt
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_99PDKTTfQ8mKGEcD');
+    }
+  }
   //appendnew_flow_selected_receipt_formComponent_start
+
+  sd_3edeJLn2fkKlEanm(bh) {
+    try {
+      this.page.sanitizer = this.__page_injector__.get(DomSanitizer);
+      bh = this.sd_XyfbDazfYKEzilS2(bh);
+      //appendnew_next_sd_3edeJLn2fkKlEanm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3edeJLn2fkKlEanm');
+    }
+  }
 
   sd_XyfbDazfYKEzilS2(bh) {
     try {
@@ -87,6 +113,51 @@ export class selected_receipt_formComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_q1lHTwDbml4pIrPz');
+    }
+  }
+
+  sd_a9eXs9q31YdkwSyt(bh) {
+    try {
+      this.page.ssdUrl = bh.system.environment.properties.ssdURL;
+      bh = this.sd_1BdhzLGBcmRGEfLL(bh);
+      //appendnew_next_sd_a9eXs9q31YdkwSyt
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_a9eXs9q31YdkwSyt');
+    }
+  }
+
+  sd_1BdhzLGBcmRGEfLL(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdUrl + `download-file/${page.userData.fileid}`;
+      page.image = page.sanitizer.bypassSecurityTrustHtml(bh.url);
+      page.showImage = true;
+
+      window.open(bh.url, '_blank');
+      bh = this.view(bh);
+      //appendnew_next_sd_1BdhzLGBcmRGEfLL
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1BdhzLGBcmRGEfLL');
+    }
+  }
+
+  async view(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: this.page.userData.fileid,
+      };
+      this.page.Receipt = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_view
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_UtDuvQXOyPCNstAe');
     }
   }
 

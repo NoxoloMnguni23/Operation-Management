@@ -4077,7 +4077,9 @@
                         },
                         {
                             "_key": "class",
-                            "_value": [],
+                            "_value": [
+                                "scroll-kim"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -5624,7 +5626,7 @@
                                     },
                                     {
                                         "_key": "style",
-                                        "_value": "",
+                                        "_value": " right: -140px !important",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -5654,13 +5656,13 @@
                                     },
                                     {
                                         "_key": "layoutAlign",
-                                        "_value": "center",
+                                        "_value": "end",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "pLayoutAlign",
-                                        "_value": "center",
+                                        "_value": "end",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -5671,14 +5673,67 @@
                                         "_attrDef": "p"
                                     }
                                 ],
-                                "d5122c6a-ce42-61ad-f74b-1edce244a9fb": {
-                                    "paletteKey": "NG-button",
+                                "3b0f8dcc-a3e5-da01-8740-4c606d3f9b55": {
+                                    "paletteKey": "NG-icon",
                                     "parentEditorKey": "9cab1601-ca48-6525-b954-a3ee500e59a6",
-                                    "commentid": null,
+                                    "isCommented": "true",
+                                    "commentid": "1720977055710",
                                     "designerReference": [
                                         {
                                             "_key": "style",
                                             "_value": "",
+                                            "_type": "kv",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "class",
+                                            "_value": "",
+                                            "_type": "dav",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "IconName",
+                                            "_value": "add",
+                                            "_type": "a",
+                                            "_attrDef": "p",
+                                            "_useAsLabel": true
+                                        },
+                                        {
+                                            "_key": "[inline]",
+                                            "_value": "",
+                                            "_type": "kv",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "color",
+                                            "_value": "",
+                                            "_type": "kv",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "(click)",
+                                            "_value": "addItem()",
+                                            "_type": "kv",
+                                            "_attrDef": "c",
+                                            "objValue": {
+                                                "nodeID": "sd_FWcgYRbxKgB1kUrP",
+                                                "functionName": "addItem",
+                                                "activeTree": "pages",
+                                                "z": "sd_1V5aIn6YDe1GpVdE",
+                                                "input": []
+                                            }
+                                        }
+                                    ]
+                                },
+                                "d5122c6a-ce42-61ad-f74b-1edce244a9fb": {
+                                    "paletteKey": "NG-button",
+                                    "parentEditorKey": "9cab1601-ca48-6525-b954-a3ee500e59a6",
+                                    "isCommented": "false",
+                                    "commentid": null,
+                                    "designerReference": [
+                                        {
+                                            "_key": "style",
+                                            "_value": "right: -140px;",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },
@@ -5816,7 +5871,7 @@
                                         },
                                         {
                                             "_key": "style",
-                                            "_value": "height:15px;width:10px;",
+                                            "_value": "",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },
@@ -5946,7 +6001,7 @@
                                         },
                                         {
                                             "_key": "style",
-                                            "_value": "height:15px;width:10px;",
+                                            "_value": "",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },

@@ -66,6 +66,19 @@
         "mat-toolbar-single-row",
         "router-outlet-content-tii",
         "stat-kim",
-        "table-kim"
+        "table-kim",
+        "donut-angel",
+        "scroll-kim",
+        "table-scroll-kim",
+        "toolbar-bg",
+        "padding2em-tii",
+        "card-size-tii",
+        "fz-15px-tii",
+        "width-40px-tii",
+        "height-30px-tii",
+        "border-radius-50",
+        "margin-left-1em",
+        "mat-expansion-panel-body",
+        "round"
     ]
 }
