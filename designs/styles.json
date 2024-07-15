@@ -79,6 +79,12 @@
         "border-radius-50",
         "margin-left-1em",
         "mat-expansion-panel-body",
-        "round"
+        "round",
+        "no-margin-import-tii",
+        "full-height-impor-tii",
+        "not-set-btn-tii",
+        "submit-btn-tii",
+        "cancel-btn-tii",
+        "canvas-tii"
     ]
 }

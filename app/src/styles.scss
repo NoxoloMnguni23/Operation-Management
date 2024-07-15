@@ -32,7 +32,6 @@ $green-groceries : green;
 $yellow-supplies : yellow;
 $pending-category: gray;
 
-
 body {
     font-family: "Roboto", sans-serif;
     background-color: $gray-blue;
@@ -481,4 +480,52 @@ bh-statistics{
     background: $blue;
     padding: 5px;
     box-sizing: border-box;
+}
+
+.no-margin-import-tii{
+    margin: 0 !important;
+}
+
+.full-height-impor-tii{
+    height: 100% !important;
+}
+
+.not-set-btn-tii{
+    background-color: $dark-blue;
+    width: 42%;
+    height: 70%;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.submit-btn-tii{
+    background: $dark-blue;
+    color: white; 
+    margin-top: 1.5em; 
+    height: 45px; 
+    width: 140px; 
+    position: absolute; 
+    right: 20px 
+}
+
+.cancel-btn-tii{
+    background: $dark-blue;
+    color: white; 
+    margin-top: 1.5em; 
+    height: 45px; 
+    width: 140px; 
+    position: absolute; 
+    left: 0 
+}
+
+.canvas-tii{
+
+    canvas {
+    height: 110px !important;
+    width: 151px !important;
+}
+
 }

@@ -1,6 +1,6 @@
 {
-    "displayName": "Operation-Management",
-    "appName": "operation-management",
+    "displayName": "Operation-Management-Tii",
+    "appName": "operation-management-tii",
     "description": "Operation Management System",
     "lastModified": "2024-07-15T13:26:01.534Z",
     "imgSourcePath": "",
@@ -11,5 +11,5 @@
     "analyticsId": "cb8dfce4-7056-e957-8172-06826a0d2aba",
     "createdStudioVersion": "9.2.1",
     "isCorrupt": false,
-    "oldAppName": "operation-management-main"
+    "oldAppName": "operation-management"
 }
