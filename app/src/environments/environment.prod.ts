@@ -7,7 +7,7 @@ export const environment = {
         "appName": "operation-management",
         "namespace": "com.neutrinos-delivery.operation-management",
         "useDefaultExceptionUI": true,
-        "isIDSEnabled": "false",
+        "isIDSEnabled": "true",
         "webAppMountpoint": "web",
         "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
     }
