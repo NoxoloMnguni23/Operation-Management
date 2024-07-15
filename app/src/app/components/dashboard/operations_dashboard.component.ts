@@ -84,6 +84,21 @@ export class operations_dashboardComponent {
       return this.errorHandler(bh, e, 'sd_xeM9wambVxpp5VLA');
     }
   }
+
+  logout(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_2oBH6wptuYbvqsov(bh);
+      //appendnew_next_logout
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ZQA3y4B2kypUQtTq');
+    }
+  }
   //appendnew_flow_operations_dashboardComponent_start
 
   sd_O2uh2oOCq9Gzz9zw(bh) {
@@ -103,8 +118,12 @@ export class operations_dashboardComponent {
           route: 'all_purchased_items_table',
         },
         { label: 'Statistics', icon: 'trending_up', route: 'statistics' },
-        { label: 'Logout', icon: 'logout', route: '/signIn' },
+        // {label: 'Logout', icon: 'logout', route: '/signIn'},
       ];
+
+      page.currentUser = bh.system.oauthService.userInfo;
+      console.log('logged In', page.currentUser);
+
       bh = this.sd_oILf1PmiKBS7wYCG(bh);
       //appendnew_next_sd_O2uh2oOCq9Gzz9zw
       return bh;
@@ -118,6 +137,7 @@ export class operations_dashboardComponent {
       this.page.collapsed = true;
       this.page.menuItems = bh.menuItems;
       this.page.selectedItem = 0;
+      this.page.user = bh.currentUser;
       bh = this.sd_5X1HLpopsEG2VXgY(bh);
       //appendnew_next_sd_oILf1PmiKBS7wYCG
       return bh;
@@ -203,6 +223,17 @@ export class operations_dashboardComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ESkOTLP0Ll1LnYvR');
+    }
+  }
+
+  sd_2oBH6wptuYbvqsov(bh) {
+    try {
+      const page = this.page;
+      bh.system.oauthService.logout('signIn');
+      //appendnew_next_sd_2oBH6wptuYbvqsov
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_2oBH6wptuYbvqsov');
     }
   }
 

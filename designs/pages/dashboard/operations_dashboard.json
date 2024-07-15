@@ -61,6 +61,13 @@
                     "type": "literal",
                     "value": "0"
                 }
+            },
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": "currentUser"
+                }
             }
         ],
         "functionName": "sd_oILf1PmiKBS7wYCG",
@@ -128,7 +135,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.menuItems = [\n    {label: 'Dashboard', icon: 'dashboard', route: '/operations_dashboard/landing'},\n    {label: 'Categories', icon: 'category', route: 'categories'},\n    {label: 'Receipts', icon: 'receipt', route: 'view_table_of_receipt'},\n    {label: 'Reports', icon: 'table_view', route: 'all_purchased_items_table'},\n    {label: 'Statistics', icon: 'trending_up', route: 'statistics'},\n    {label: 'Logout', icon: 'logout', route: '/signIn'},\n\n]",
+        "script": "bh.menuItems = [\n    {label: 'Dashboard', icon: 'dashboard', route: '/operations_dashboard/landing'},\n    {label: 'Categories', icon: 'category', route: 'categories'},\n    {label: 'Receipts', icon: 'receipt', route: 'view_table_of_receipt'},\n    {label: 'Reports', icon: 'table_view', route: 'all_purchased_items_table'},\n    {label: 'Statistics', icon: 'trending_up', route: 'statistics'},\n    // {label: 'Logout', icon: 'logout', route: '/signIn'},\n\n]\n\n\npage.currentUser = bh.system.oauthService.userInfo\nconsole.log(\"logged In\", page.currentUser)\n",
         "functionName": "sd_O2uh2oOCq9Gzz9zw",
         "category": "Function",
         "x": 185,
@@ -340,6 +347,50 @@
         "category": "Storage",
         "x": 585,
         "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "operations_dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZQA3y4B2kypUQtTq",
+        "type": "PageStart",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "logout",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logout",
+        "category": "General",
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "sd_2oBH6wptuYbvqsov"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "operations_dashboardComponent"
+    },
+    {
+        "id": "sd_2oBH6wptuYbvqsov",
+        "type": "Script",
+        "z": "sd_BMtERI3y1XZQDHBQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.system.oauthService.logout('signIn')",
+        "functionName": "sd_2oBH6wptuYbvqsov",
+        "category": "Function",
+        "x": 420,
+        "y": 200,
         "wires": [
             []
         ],
