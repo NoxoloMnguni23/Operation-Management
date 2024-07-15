@@ -40,27 +40,19 @@
   </div>
   <div fxLayout="column wrap" style="padding: 10px; height:20%" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="column wrap" fxLayoutAlign="start space-around" [fxShow]="true">
-        <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
-          <div class="color-dark-gray">
-            Recent Transaction</div><button mat-button (click)="openForm()">+ Add New Transaction</button>
-        </div>
-        <div fxLayout="column" style="width:150%;">
-
-          <div fxLayout="row" fxLayoutAlign="end">
-            <div fxLayout="column" fxFlex="end">
-              <mat-form-field fxFlex="100">
-                <input matInput (keyup)="onFilter_2($event)" placeholder="Search">
-              </mat-form-field>
-            </div>
-          </div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div class="color-dark-gray">
+          Recent Transaction</div><button mat-button (click)="openForm()">+ Add New Transaction</button>
+      </div>
+      <div fxLayout="column wrap" class="table-scroll-kim" fxLayoutAlign="start space-around" [fxShow]="true">
+        <div fxLayout="column" style="width:100%;">
           <table mat-table [dataSource]="page?.tableData" id="table-table" matSort class="table-width-fix">
-            <tr mat-header-row *matHeaderRowDef="[&apos;Person | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;dateUploaded&apos;,&apos;32275084-3fdf-1c5f-b6eb-0f05044d99cc&apos;]"></tr>
-            <tr mat-row *matRowDef="let row; columns: [&apos;Person | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;dateUploaded&apos;,&apos;32275084-3fdf-1c5f-b6eb-0f05044d99cc&apos;];"></tr>
+            <tr mat-header-row *matHeaderRowDef="[&apos;username | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;6b410a85-072c-f7b1-b7fd-f9fbc0815fd7&apos;]"></tr>
+            <tr mat-row (click)="selected(row)" *matRowDef="let row; columns: [&apos;username | titlecase&apos;,&apos;shopName | titlecase&apos;,&apos;6b410a85-072c-f7b1-b7fd-f9fbc0815fd7&apos;];"></tr>
 
-            <ng-container matColumnDef="Person | titlecase">
+            <ng-container matColumnDef="username | titlecase">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-              <td mat-cell *matCellDef="let table; let i = index;">{{table.Person | titlecase }}</td>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.username | titlecase }}</td>
             </ng-container>
 
             <ng-container matColumnDef="shopName | titlecase">
@@ -68,20 +60,20 @@
               <td mat-cell *matCellDef="let table; let i = index;">{{table.shopName | titlecase}}</td>
             </ng-container>
 
-            <ng-container matColumnDef="dateUploaded">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Uploaded</th>
-              <td mat-cell *matCellDef="let table; let i = index;">{{table.dateUploaded}}</td>
-            </ng-container>
-
-            <ng-container matColumnDef="32275084-3fdf-1c5f-b6eb-0f05044d99cc">
-              <th mat-header-cell *matHeaderCellDef>View Receipt</th>
-              <td mat-cell *matCellDef="let table; let i = index;"><mat-icon>visibility</mat-icon></td>
+            <ng-container matColumnDef="6b410a85-072c-f7b1-b7fd-f9fbc0815fd7">
+              <th mat-header-cell *matHeaderCellDef>Date Uploaded</th>
+              <td mat-cell *matCellDef="let table; let i = index;">
+                <div>
+                  {{table[&apos;Date-Uploaded&apos;] | date}}
+                </div>
+              </td>
             </ng-container>
           </table>
-          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+          <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
           </mat-paginator>
 
         </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
       </div>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>

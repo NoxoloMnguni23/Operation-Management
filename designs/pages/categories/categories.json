@@ -42,13 +42,6 @@
         "operation": "set",
         "globalVariables": [
             {
-                "textIp": "items",
-                "typedIpValue": {
-                    "type": "literal",
-                    "value": ""
-                }
-            },
-            {
                 "textIp": "Groceries",
                 "typedIpValue": {
                     "type": "literal",
@@ -131,6 +124,34 @@
                     "type": "literal",
                     "value": "0"
                 }
+            },
+            {
+                "textIp": "_data",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "items",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "price1",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            },
+            {
+                "textIp": "selecteditems",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
             }
         ],
         "functionName": "sd_XASJm5GtYmf3XfeR",
@@ -139,7 +160,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_MwRsJo4lV9LxxPCW"
+                "sd_BwADdgS5bjBPArMC"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -153,11 +174,11 @@
         "z": "sd_Zg0T4cPUJNxauKEy",
         "viewType": "common",
         "nodeType": "flow",
-        "name": "",
-        "script": "page.items = [\n    { category: \"Groceries\", name: \"Eggs\", price: 2.99 },\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n     { category: \"Groceries\", name: \"Milk\", price: 3.49 },\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 },\n    { category: \"Groceries\", name: \"Apples\", price: 1.99 },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50 },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99 },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49 },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99 },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79 },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99 },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotchi Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopesy (pack of 50)\", price: 7.99 },\n    { category: \"Supplies\", name: \"Sticky Notesd (pack of 100)\", price: 4.29 },\n    { category: \"Supplies\", name: \"Printer Papere (ream of 500 sheets)\", price: 5.99 },\n    { category: \"Supplies\", name: \"Penst (pack of 10)\", price: 3.49 },\n    { category: \"Supplies\", name: \"Scotchr Tape\", price: 2.99 },\n    { category: \"Supplies\", name: \"Envelopesk (pack of 50)\", price: 7.99 },\n    { category: \"Supplies\", name: \"Sticky Notesd (pack of 100)\", price: 4.29 }\n];\npage.items.forEach(item => {\n    if (item.category ===\"Groceries\" ){\n      page.Groceries.push(item)\n\n    }\n     if (item.category ===\"Supplies\" ){\n      return  page.Supplies.push(item)\n    }\n    if(item.category ===\"Maintenance\" ){\n      return  page.Maintenance.push(item)\n    }\n   \n});\n\n// page.Milk = page.items.filter(arr => arr.name == \"Milk\")\n\n// page.milkItems = page.items.filter(item => item.name === \"Milk\");\n// page.milkCount = page.milkItems.length;\n// page.milkTotalPrice = page.milkItems.reduce((total, item) => total + item.price, 0);\n\n// console.log(`Number of \"Milk\" items: ${page.milkCount}`);\n// console.log(`Total price of \"Milk\" items: R${page.milkTotalPrice.toFixed(2)}`);\n\n console.log( page.Groceries)\n \n  console.log( page.Supplies)\n   console.log( page.Maintenance)\n  //  console.log( page.Milk)",
-        "functionName": "sd_MwRsJo4lV9LxxPCW",
+        "name": "separate the categories",
+        "script": "\n\npage.items.forEach(item => {\n \n    if (item.category  ===\"Groceries\" || item.category ===\"groceries\"){\n      page.Groceries.push(item)\n\n    }\n     if (item.category ===\"Supplies\"||item.category ===\"supplies\" ){\n      return  page.Supplies.push(item)\n    }\n    if(item.category ===\"Maintenance\"|| item.category ===\"maintenance\" ){\n      return  page.Maintenance.push(item)\n    }\n   \n});\n\n// page.Milk = page.items.filter(arr => arr.name == \"Milk\")\n\n// page.milkItems = page.items.filter(item => item.name === \"Milk\");\n// page.milkCount = page.milkItems.length;\n// page.milkTotalPrice = page.milkItems.reduce((total, item) => total + item.price, 0);\n\n// console.log(`Number of \"Milk\" items: ${page.milkCount}`);\n// console.log(`Total price of \"Milk\" items: R${page.milkTotalPrice.toFixed(2)}`);\n\n console.log( page.Groceries)\n \n  console.log( page.Supplies)\n   console.log( page.Maintenance)\n  //  console.log( page.Milk)",
+        "functionName": "separateTheCategories",
         "category": "Function",
-        "x": 225,
+        "x": 725,
         "y": 40,
         "wires": [
             [
@@ -175,11 +196,11 @@
         "z": "sd_Zg0T4cPUJNxauKEy",
         "viewType": "common",
         "nodeType": "flow",
-        "name": "",
-        "script": "page.Groceries.forEach(item => \n{page.priceg= page.priceg +item.price\npage.priceG = page.priceg.toFixed(2)\n});\npage.Supplies.forEach(item => \n{page.prices =page.prices +item.price\npage.priceS = page.prices.toFixed(2)\n}\n);\npage.Maintenance.forEach(item => \n{page.pricem =page.pricem +item.price\npage.priceM = page.pricem.toFixed(2)\n\n}\n);\n",
-        "functionName": "sd_SKCtHJkWA3Ww9vcJ",
+        "name": "get the total amount",
+        "script": "page.Groceries.forEach(item => {\n    console.log(item.price)\n    page.priceg = page.priceg + item.price\n    page.priceG = page.priceg.toFixed(2)\n});\npage.Supplies.forEach(item => {\n    page.prices = page.prices + item.price\n    page.priceS = page.prices.toFixed(2)\n}\n);\npage.Maintenance.forEach(item => {\n    page.pricem = page.pricem + item.price\n    page.priceM = page.pricem.toFixed(2)\n\n}\n);\nconsole.log(\"page.priceG\",page.priceG)\nconsole.log(\"page.priceS\",page.priceS)\nconsole.log(\"page.priceM\",page.priceM)",
+        "functionName": "getTheTotalAmount",
         "category": "Function",
-        "x": 325,
+        "x": 865,
         "y": 40,
         "wires": [
             [
@@ -197,11 +218,11 @@
         "z": "sd_Zg0T4cPUJNxauKEy",
         "viewType": "common",
         "nodeType": "flow",
-        "name": "",
+        "name": "information on the donut",
         "script": "page.doughnutChartData = [\n        { data: [page.priceG, page.priceS, page.priceM], label: 'Series A' }\n    ];\n    \npage.doughnutChartLabels = ['Groceries', 'Supplies', 'Maintenance'];\n\npage.doughnutChartColor = [\n        {\n        backgroundColor: 'rgba(256, 123, 234, 0.1)',\n        borderColor: '#230b76',\n        color: '#080',\n    }\n    ]\n\n     page.chartOptions = {\n    legend: {\n      position: 'right' // Position legend to the right of the chart\n    }}",
-        "functionName": "sd_JYIOkH9NmgEaHeE6",
+        "functionName": "informationOnTheDonut",
         "category": "Function",
-        "x": 425,
+        "x": 1005,
         "y": 40,
         "wires": [
             [
@@ -220,10 +241,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Groceries",
-        "script": "page.Groceries.forEach(item => {\n  if(!page.Groceriesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Groceriesfinal.push(item)\n    }else {\n\npage.Groceriesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Groceriesfinal[indx].price = page.Groceriesfinal[indx].price + item.price;\n        page.Groceriesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "script": "page.Groceries.forEach(item => {\n  if(!page.Groceriesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Groceriesfinal.push(item)\n    }else {\n\npage.Groceriesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Groceriesfinal[indx].price = Math.round((page.Groceriesfinal[indx].price + item.price) * 100) / 100;\n        page.Groceriesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
         "functionName": "groceries",
         "category": "Function",
-        "x": 725,
+        "x": 1265,
         "y": 40,
         "wires": [
             []
@@ -240,10 +261,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Maintenance",
-        "script": "page.Maintenance.forEach(item => {\n  if(!page.Maintenancefinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Maintenancefinal.push(item)\n    }else {\n\npage.Maintenancefinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Maintenancefinal[indx].price = page.Maintenancefinal[indx].price + item.price;\n        page.Maintenancefinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "script": "page.Maintenance.forEach(item => {\n  if(!page.Maintenancefinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Maintenancefinal.push(item)\n    }else {\n\npage.Maintenancefinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Maintenancefinal[indx].price =Math.round( (page.Maintenancefinal[indx].price + item.price) * 100) / 100;\n        page.Maintenancefinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
         "functionName": "maintenance",
         "category": "Function",
-        "x": 625,
+        "x": 1185,
         "y": 40,
         "wires": [
             [
@@ -262,10 +283,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Supplies",
-        "script": "page.Supplies.forEach(item => {\n  if(!page.Suppliesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Suppliesfinal.push(item)\n    }else {\n\npage.Suppliesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Suppliesfinal[indx].price = page.Suppliesfinal[indx].price + item.price;\n        page.Suppliesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "script": "console.log(page.Supplies)\npage.Supplies.forEach(item => {\n    if (!page.Suppliesfinal.find((__item) => __item.name === item.name)) {\n        item['itemsCount'] = 1;\n        page.Suppliesfinal.push(item)\n    } else {\n        page.Suppliesfinal.forEach((_item, indx) => {\n            if (_item.name === item.name) {\n             \n                page.Suppliesfinal[indx].price = Math.round((page.Suppliesfinal[indx].price + item.price) * 100) / 100;\n                page.Suppliesfinal[indx].itemsCount += 1;\n            }\n        })\n    }\n})\nconsole.log(\"page.Suppliesfinal\", page.Suppliesfinal)",
         "functionName": "supplies",
         "category": "Function",
-        "x": 525,
+        "x": 1105,
         "y": 40,
         "wires": [
             [
@@ -278,43 +299,145 @@
         "generated": true
     },
     {
-        "id": "sd_yhlBySxgfJy54S0Y",
-        "type": "PageStart",
+        "id": "sd_BwADdgS5bjBPArMC",
+        "type": "Environment",
         "z": "sd_Zg0T4cPUJNxauKEy",
-        "viewType": "pages",
-        "nodeType": "start",
-        "name": "Open",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
         "outputs": 1,
-        "inputVariables": [],
-        "localVariables": [],
-        "flow_type": "sync",
-        "functionName": "open",
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_BwADdgS5bjBPArMC",
         "category": "General",
-        "x": 65,
-        "y": 260,
+        "x": 205,
+        "y": 40,
         "wires": [
             [
-                "sd_ktYD8TZZTgcq0OUO"
+                "sd_33O4LGTB5VW8oAbd"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "categoriesComponent"
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
     },
     {
-        "id": "sd_ktYD8TZZTgcq0OUO",
+        "id": "sd_33O4LGTB5VW8oAbd",
         "type": "Script",
         "z": "sd_Zg0T4cPUJNxauKEy",
         "viewType": "common",
         "nodeType": "flow",
-        "name": "",
-        "script": "page.isOpen =!page.isOpen",
-        "functionName": "sd_ktYD8TZZTgcq0OUO",
+        "name": "url",
+        "script": "bh.url = page.ssdURL + 'get-receipt-data'",
+        "functionName": "url",
         "category": "Function",
-        "x": 220,
-        "y": 260,
+        "x": 285,
+        "y": 40,
         "wires": [
-            []
+            [
+                "sd_3NPMdpIYttPiURrO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3NPMdpIYttPiURrO",
+        "type": "HttpRequest",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "get-receipts",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.resultItems",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "resultItems"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "getReceipts",
+        "category": "HTTP",
+        "x": 365,
+        "y": 40,
+        "wires": [
+            [
+                "sd_YxUr7NgnHss76QvQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cjPeEs7jJtuVZkh2",
+        "type": "Script",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "turn it to a n array",
+        "script": "// page.page._data\n//  page.selecteditems.filter((item,i) =>{\n//     console.log(\"Item\",item.items);\n\n// } )\n\n// let items = []\n\nconsole.log(\"Main data\", page.selecteditems)\n\nfor(let i = 0; i< page.selecteditems.length;i++){\n    page._data.push(page.selecteditems[i].items)\n}\n\nfor(let i=0;i<page._data.length;i++){\n    for(let j = 0;j<page._data[i].length; j++){\n      page.items.push(page._data[i][j])\n    }\n}\n\n\n\n\nconsole.log(\"Final data\", page.items)\n// console.log(\"data\", page._data)\n// page.items.forEach(item => {\n//   console.log(\"items \",item)\n//   })",
+        "functionName": "turnItToANArray",
+        "category": "Function",
+        "x": 585,
+        "y": 40,
+        "wires": [
+            [
+                "sd_MwRsJo4lV9LxxPCW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YxUr7NgnHss76QvQ",
+        "type": "Script",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "getdataofthismonth",
+        "script": "\nconsole.log(\"Main datata\", page.resultItems)\n\nlet dateToCompare = new Date().toLocaleDateString().substr(0,1)\n\nlet dateFromMongo = page.resultItems.map(item =>{\n \n    return item['Date-Uploaded']\n})\n\nconsole.log('date uploaded:', dateFromMongo)\npage.monthToCompare\nfor(let i = 0; i < dateFromMongo.length; i++) {\n    page.monthToCompare = dateFromMongo[i].substr(6,1)\n    console.log(\"date items\",page.monthToCompare)\n    if(page.monthToCompare == dateToCompare){\n      page.selecteditems.push (page.resultItems[i])\n      \n    }\n}\nconsole.log(\"datauptodate\", page.selecteditems)\n\n",
+        "functionName": "getdataofthismonth",
+        "category": "Function",
+        "x": 465,
+        "y": 40,
+        "wires": [
+            [
+                "sd_cjPeEs7jJtuVZkh2"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

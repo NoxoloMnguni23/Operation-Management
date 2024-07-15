@@ -76,21 +76,6 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
     }
   }
 
-  onFilter_2(filterEvent: any = undefined, ...others) {
-    let bh: any = {};
-    try {
-      bh = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = { filterEvent };
-      bh.local = {};
-      bh = this.sd_iBlFYTlpoczCmWts_2(bh);
-      //appendnew_next_onFilter_2
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_1LOy9i89nURhTynD');
-    }
-  }
-
   convert(...others) {
     let bh: any = {};
     try {
@@ -120,6 +105,52 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_wHr6YuVKPRrX2kMN');
     }
   }
+
+  sd_yFWEhKeLq7SiKCiL(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.selected(bh);
+      //appendnew_next_sd_yFWEhKeLq7SiKCiL
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_yFWEhKeLq7SiKCiL');
+    }
+  }
+
+  onFilter_4(filterEvent: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { filterEvent };
+      bh.local = {};
+      bh = this.sd_iBlFYTlpoczCmWts_4(bh);
+      //appendnew_next_onFilter_4
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_yBFg68DzW7wmFcdh');
+    }
+  }
+
+  correctDate(date = '', correctDate = '', ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { date, correctDate };
+      bh.local = {};
+      bh = this.sd_Wz0oU0zwClzNifPc(bh);
+      //appendnew_next_correctDate
+      return bh.input.correctDate;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_uErfSK70yE4LVoI4');
+    }
+  }
   //appendnew_flow_all_purchased_items_tableComponent_start
 
   sd_7NyJWrMmj6Xj60dl(bh) {
@@ -127,7 +158,11 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       this.page.total = 0;
       this.page.datas = undefined;
       this.page.arrayData = undefined;
-      bh = this.sd_eJuzOUTYKNgXaqdz_1(bh);
+      this.page.tableDataBackup = undefined;
+      this.page.totalA = 0;
+      this.page.tableData = this.page.dataSource;
+      this.page.dateUploaded = undefined;
+      bh = this.sd_1yjEmPi5wUo4o0Do(bh);
       //appendnew_next_sd_7NyJWrMmj6Xj60dl
       return bh;
     } catch (e) {
@@ -135,71 +170,158 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
     }
   }
 
-  sd_eJuzOUTYKNgXaqdz_1(bh) {
+  sd_1yjEmPi5wUo4o0Do(bh) {
+    try {
+      bh.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_6lNqubBSj5hlxHb1(bh);
+      //appendnew_next_sd_1yjEmPi5wUo4o0Do
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1yjEmPi5wUo4o0Do');
+    }
+  }
+
+  sd_6lNqubBSj5hlxHb1(bh) {
     try {
       const page = this.page;
+      bh.url = bh.ssdURL + 'get-receipt-data';
+      bh = this.getReceipts(bh);
+      //appendnew_next_sd_6lNqubBSj5hlxHb1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6lNqubBSj5hlxHb1');
+    }
+  }
 
-      page.dataSource = new MatTableDataSource([
-        { category: 'Groceries', name: 'Eggs', price: 2.99 },
-        { category: 'Groceries', name: 'Milk', price: 3.49 },
-        { category: 'Groceries', name: 'Bread', price: 2.0 },
-        { category: 'Groceries', name: 'Apples', price: 1.99 },
-        { category: 'Groceries', name: 'Pasta', price: 1.5 },
-        {
-          category: 'Maintenance',
-          name: 'Light bulbs (pack of 4)',
-          price: 8.99,
-        },
-        {
-          category: 'Maintenance',
-          name: 'AA Batteries (pack of 12)',
-          price: 6.49,
-        },
-        { category: 'Maintenance', name: 'Duct Tape', price: 4.99 },
-        { category: 'Maintenance', name: 'Multi-purpose Cleaner', price: 3.79 },
-        {
-          category: 'Maintenance',
-          name: 'Paper Towels (pack of 6 rolls)',
-          price: 9.99,
-        },
-        {
-          category: 'Supplies',
-          name: 'Printer Paper (ream of 500 sheets)',
-          price: 5.99,
-        },
-        { category: 'Supplies', name: 'Pens (pack of 10)', price: 3.49 },
-        { category: 'Supplies', name: 'Scotch Tape', price: 2.99 },
-        { category: 'Supplies', name: 'Envelopes (pack of 50)', price: 7.99 },
-        { category: 'Groceries', name: 'Eggs', price: 2.99 },
-        { category: 'TOTAL', name: '', price: 0 },
-      ]);
+  async getReceipts(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.resultItems = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_IfBYKhthQTu4bbdH(bh);
+      //appendnew_next_getReceipts
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wjQBMwrERrqb5smV');
+    }
+  }
 
-      //converting the object to an Array
-      page.arrayData = page.dataSource.data;
-
-      //adding the total to the spreadsheet and table
-      page.arrayData.forEach((item, indx) => {
-        if (page.arrayData.length - 1 === indx) {
-          return;
-        }
-        page.arrayData[page.arrayData.length - 1].price =
-          page.arrayData[page.arrayData.length - 1].price + item.price;
+  sd_IfBYKhthQTu4bbdH(bh) {
+    try {
+      const page = this.page;
+      page.items = {};
+      bh.date = page.resultItems.forEach((item: any) => {
+        console.log('main', page.resultItems);
+        //page.items.push(item.dateUploaded)
+        page.items['uploadedDate'] = page.resultItems[0].dateUploaded;
+        page.dateUploaded = this.correctDate(page.items['uploadedDate']);
+        console.log('newdate', page.dateUploaded);
+        page.items['dataSource'] = item.items;
+        console.log('Date plus one', page.items['uploadedDate']);
       });
 
-      console.log(page.arrayData[page.arrayData.length - 1]);
-      console.log('newArray', page.arrayData);
+      // Month correction
+
+      // let parts = page.items['uploadedDate'].split('-');
+      // let year = parts[0];
+      // let month = parseInt(parts[1]);
+      // let day = parts[2];
+
+      // let monthNames = [
+      //   "January", "February", "March", "April", "May", "June",
+      //   "July", "August", "September", "October", "November", "December"
+      // ];
+
+      // month++;
+
+      // page.outputDate = `${day} ${monthNames[month - 1]} ${year}`;
+
+      // console.log("Month date what", page.outputDate)
+      // End month correction
+
+      bh.date = page.resultItems.forEach((item: any) => {
+        item.items.forEach((x: any) => {
+          x.date = page.dateUploaded;
+        });
+        console.log('item', item);
+        //page.items.push(item.dateUploaded)
+        page.items['dataSource'] = item.items;
+        console.log('Date plus one', page.items['uploadedDate']);
+      });
+
+      // for(let i = 0; i< page.items.length;i++){
+      //    console.log(page.items[i])
+      // }
+
+      // for(let i=0;i<page._data.length;i++){
+      //     for(let j = 0;j<page._data[i].length; j++){
+      //       page.items.push(page._data[i][j])
+      //     }
+      // }
+      // console.log("Final data ==>", page.items)
+
+      console.log('Table ==>', page.total);
+
+      page.dataSource = new MatTableDataSource(page.items.dataSource);
+
+      // page.dataSource = new MatTableDataSource( page.items.dataSource.forEach((item:any) => {
+      // item.date = page.dateUploaded
+      // return item
+
+      // }))
+      console.log('sate', page.items.dataSource);
+      console.log('backendData =>>', page.items);
+
+      page.tableDataBackup = new MatTableDataSource(page.items.dataSource);
+
+      // //converting the object to an Array
+      page.arrayData = page.dataSource.data;
+
+      // //adding the total to the spreadsheet and table
+      // page.arrayData.forEach((item,indx) => {
+      //   if(page.arrayData.length - 1 === indx){
+      //     return;
+      //   }
+      //  page.arrayData[page.arrayData.length - 1].price = page.arrayData[page.arrayData.length - 1].price + item.price
+      // })
+
+      page.arrayData = page.dataSource.data;
+
+      let arr = [];
+      page.arrayData.forEach((item) => {
+        arr.push(item.price);
+        // return page.total = Number(page.total) + Number(item.price)
+      });
+      console.log('Pricesssss', arr);
+
+      // console.log(page.arrayData[page.arrayData.length - 1])
+      // console.log("newArray", page.arrayData);
 
       //Adding the total to the total outside the table
 
       page.arrayData.forEach((item) => {
-        return (page.total = page.total + item.price / 2);
+        return (page.totalA = page.totalA + item.price);
       });
 
+      page.total = page.totalA.toFixed(2);
+      bh.total = {
+        category: 'total',
+        price: page.total,
+      };
+
+      page.items.dataSource.push(bh.total);
+
       bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
-      //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
+      //appendnew_next_sd_IfBYKhthQTu4bbdH
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_R1PRW9sFGl6VSlzx');
+      return this.errorHandler(bh, e, 'sd_IfBYKhthQTu4bbdH');
     }
   }
 
@@ -208,6 +330,9 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       this.page.tableData = this.page.dataSource;
       this.page.fileName = this.page.excelsheet;
       this.page.price = 0;
+      this.page.month = this.page.month;
+      this.page.filterTotal = undefined;
+      this.page.selectForm = { month: '' };
       bh = this.sd_ivaTji8kiYYwm6z7(bh);
       //appendnew_next_sd_E9QbOlnVduPNV5MO_1
       return bh;
@@ -228,10 +353,21 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
 
   sd_amwwovLCcmHfVQy1(bh) {
     try {
+      bh = this.sd_4CbgeVTcji4sjsBa(bh);
       //appendnew_next_sd_amwwovLCcmHfVQy1
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_amwwovLCcmHfVQy1');
+    }
+  }
+
+  sd_4CbgeVTcji4sjsBa(bh) {
+    try {
+      this.page.tableData = this.page.dataSource;
+      //appendnew_next_sd_4CbgeVTcji4sjsBa
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4CbgeVTcji4sjsBa');
     }
   }
 
@@ -273,26 +409,12 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
     }
   }
 
-  sd_iBlFYTlpoczCmWts_2(bh) {
-    try {
-      const page = this.page;
-      console.log(bh.input.filterEvent);
-      const filterValue = (bh.input.filterEvent.target as HTMLInputElement)
-        .value;
-      this.page.tableData.filter = filterValue.trim().toLowerCase();
-      //appendnew_next_sd_iBlFYTlpoczCmWts_2
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_hdhS3ro8xt00s7ac');
-    }
-  }
-
   sd_2VNGqvcKee34lvOz_3(bh) {
     try {
       const page = this.page;
       //convert to an Array
       //try getting the array not the table
-      page.arrayData = page.dataSource.data;
+      page.arrayData = page.tableData.filteredData;
 
       //get the table data
       //  let datas = document.getElementById('table-table')
@@ -300,8 +422,9 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       //converting
       //trying new one
       let data = document.getElementById('table-table');
+      const ws: WorkSheet = utils.json_to_sheet(page.arrayData);
 
-      const ws: WorkSheet = utils.table_to_sheet(data);
+      // const ws:  WorkSheet = utils.table_to_sheet(data);
       //  const workbook: WorkBook = { Sheets: { 'datas': ws }, SheetNames: ['datas'] };
 
       const workbook: WorkBook = utils.book_new();
@@ -331,13 +454,103 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       page.arrayData = page.dataSource.data;
 
       page.arrayData.forEach((item) => {
-        return (page.total = page.total + item.price);
+        console.log('Prices', item.price);
+        // return page.total = Number(page.total) + Number(item.price)
       });
       console.log('price', page.arrayData);
       //appendnew_next_sd_SROyLdDiPneI4O4E
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SROyLdDiPneI4O4E');
+    }
+  }
+
+  selected(bh) {
+    try {
+      const page = this.page;
+      page.tableDataBackup.filter = page.selectForm.month.trim().toLowerCase();
+
+      page.tableData.filteredData = page.tableDataBackup.filteredData;
+
+      page.total = page.tableData.filteredData.reduce(
+        (total: any, item: any) => {
+          return total + item.price, 0;
+        }
+      );
+
+      console.log('Totals', page.total);
+
+      bh.totalItem = page.dataSource._data._value.filter((item: any) => {
+        return item.category == 'TOTAL';
+      });
+
+      console.log('total item==>', bh.totalItem);
+
+      bh.totalItem.price = page.tableData.filteredData.reduce(
+        (total: any, item: any) => {
+          return total + item.price, 0;
+        }
+      );
+      // console.log("Tot data data", bh.totalItem)
+      // bh.totalItem[0].price = page.total
+
+      // bh.newTable = page.tableData.filteredData.push(bh.totalItem[0])
+
+      // page.tableData = new MatTableDataSource (page.tableData.filteredData)
+
+      // console.log("filtered with Total ==>", page.tableData.filteredData);
+      // console.log("new table ==>", bh.newTable);
+
+      //appendnew_next_selected
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sZyFeQRfrOBuDMhn');
+    }
+  }
+
+  sd_iBlFYTlpoczCmWts_4(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.input.filterEvent);
+      const filterValue = (bh.input.filterEvent.target as HTMLInputElement)
+        .value;
+      page.dataSource.filter = filterValue.trim().toLowerCase();
+      console.log('Filter ==>', page.dataSource);
+      //appendnew_next_sd_iBlFYTlpoczCmWts_4
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pFe0J3J5sbAUK40h');
+    }
+  }
+
+  sd_Wz0oU0zwClzNifPc(bh) {
+    try {
+      const page = this.page;
+      let parts = page.items['uploadedDate'].split('-');
+      let year = parts[0];
+      let month = parseInt(parts[1]);
+      let day = parts[2];
+      let monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+
+      month++;
+      bh.input.correctDate = `${day} ${monthNames[month - 1]} ${year}`;
+      //appendnew_next_sd_Wz0oU0zwClzNifPc
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Wz0oU0zwClzNifPc');
     }
   }
 

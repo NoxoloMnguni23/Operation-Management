@@ -198,7 +198,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\n\nbh.local.dataSource = new MatTableDataSource(page.resultReceipts);\nconsole.log(page.resultReceipts)\n\n\n",
+        "script": "\n\nbh.local.dataSource = new MatTableDataSource(page.resultReceipts);\nconsole.log(page.resultReceipts)\n\n  bh.items = page.resultReceipts.items;\n\n    // console.log(\"next\",bh.items);  \n\n\n\n",
         "functionName": "sd_ayQcTc5ezfm8IeZV",
         "category": "Function",
         "x": 505,
@@ -471,7 +471,7 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_lkXtOAkx1t3liJdt",
         "category": "Function",
-        "x": 85,
+        "x": 105,
         "y": 40,
         "wires": [
             [

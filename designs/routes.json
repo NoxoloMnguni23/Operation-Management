@@ -68,7 +68,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/operations_dashboard/landing",
+            "redirectTo": "/signIn",
             "pathMatch": "full",
             "default": true
         },

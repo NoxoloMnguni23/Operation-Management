@@ -1,6 +1,7 @@
 {
     "b2f0581d-00d6-99aa-34f7-a8d197bf8ac6": {
         "paletteKey": "FlexLayoutCol",
+        "isCommented": "false",
         "commentid": null,
         "designerReference": [
             {
@@ -63,6 +64,7 @@
             "paletteKey": "Html5",
             "parentEditorKey": "b2f0581d-00d6-99aa-34f7-a8d197bf8ac6",
             "isAdvancedComponent": true,
+            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -246,10 +248,80 @@
                     "_visibility": false
                 }
             ],
+            "8278196c-92c2-ab4a-8f51-a40154ec0536": {
+                "paletteKey": "NG-button",
+                "parentEditorKey": "12e3c19c-6d74-8d57-e0c1-5f3e6f48d23d",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "buttonname",
+                        "_value": "Button",
+                        "_type": "a",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "color",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "viewReceipt()",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "objValue": {
+                            "nodeID": "sd_99PDKTTfQ8mKGEcD",
+                            "functionName": "viewReceipt",
+                            "activeTree": "pages",
+                            "z": "sd_bEbioje8SdrSTKeh",
+                            "input": []
+                        }
+                    },
+                    {
+                        "_key": "[disabled]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[disableRipple]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "type",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "routerLink",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
             "add70b3f-10ed-8ee4-b7a8-0df0ea3f2374": {
                 "paletteKey": "html-editor",
                 "parentEditorKey": "12e3c19c-6d74-8d57-e0c1-5f3e6f48d23d",
                 "isAdvancedChildComponent": true,
+                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {

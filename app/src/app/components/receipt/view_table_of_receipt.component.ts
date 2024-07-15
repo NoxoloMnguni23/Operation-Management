@@ -179,6 +179,10 @@ export class view_table_of_receiptComponent implements AfterViewInit {
       bh.local.dataSource = new MatTableDataSource(page.resultReceipts);
       console.log(page.resultReceipts);
 
+      bh.items = page.resultReceipts.items;
+
+      // console.log("next",bh.items);
+
       bh = this.sd_MVjJdjj6fxMsPKnE(bh);
       //appendnew_next_sd_ayQcTc5ezfm8IeZV
       return bh;
