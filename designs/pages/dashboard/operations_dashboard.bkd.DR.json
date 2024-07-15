@@ -308,7 +308,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "cursor-tii"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -352,7 +354,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "cursor-tii"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },

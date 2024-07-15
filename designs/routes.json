@@ -63,6 +63,10 @@
             "component": "donut_chartComponent"
         },
         {
+            "path": "add_budget",
+            "component": "add_budgetComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/operations_dashboard/landing",
             "pathMatch": "full",

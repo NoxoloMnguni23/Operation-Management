@@ -76,6 +76,12 @@
         "width-40px-tii",
         "height-30px-tii",
         "border-radius-50",
-        "margin-left-1em"
+        "margin-left-1em",
+        "no-margin-import-tii",
+        "full-height-impor-tii",
+        "not-set-btn-tii",
+        "submit-btn-tii",
+        "cancel-btn-tii",
+        "canvas-tii"
     ]
 }

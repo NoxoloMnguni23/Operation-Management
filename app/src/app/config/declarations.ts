@@ -16,6 +16,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-getData
+import { getData } from '../sd-services/getData';
+//CORE_REFERENCE_IMPORT-add_budgetComponent
+import { add_budgetComponent } from '../components/dashboard/add_budget.component';
 //CORE_REFERENCE_IMPORT-statisticsComponent
 import { statisticsComponent } from '../components/statistics/statistics.component';
 //CORE_REFERENCE_IMPORT-landingComponent
@@ -80,6 +84,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-add_budgetComponent
+  add_budgetComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-statisticsComponent
   statisticsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
@@ -129,6 +135,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getData
+getData,
 ];
 
 /**
@@ -166,6 +174,7 @@ export const appRoutes = [
   { path: 'login_guidelines', component: login_guidelinesComponent },
   { path: 'line_chart', component: line_chartComponent },
   { path: 'donut_chart', component: donut_chartComponent },
+  { path: 'add_budget', component: add_budgetComponent },
   { path: '', redirectTo: '/operations_dashboard/landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
