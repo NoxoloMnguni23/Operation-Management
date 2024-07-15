@@ -5,35 +5,28 @@
         <div>
           Total Amount: {{page.total}}</div>
       </div>
-      <form #select="ngForm" class="select phindile"><mat-form-field style="background-color: #8aaee0; color:black;border-radius: 8px" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
-          <mat-label>Select Month</mat-label>
-          <mat-select [(ngModel)]="page.selectForm.month" [required]="false" (selectionChange)="sd_yFWEhKeLq7SiKCiL()" name="month">
-            <mat-option [value]="&apos;January&apos;" disabled="false">January</mat-option><mat-option [value]="&apos;February&apos;" disabled="false">February</mat-option><mat-option [value]="&apos;March&apos;" disabled="false">March</mat-option><mat-option [value]="&apos;April&apos;" disabled="false">April</mat-option><mat-option [value]="&apos;May&apos;" disabled="false">May</mat-option><mat-option [value]="&apos;June&apos;" disabled="false">June</mat-option><mat-option [value]="&apos;July&apos;" disabled="false">July</mat-option><mat-option [value]="&apos;August&apos;" disabled="false">August</mat-option><mat-option [value]="&apos;September&apos;" disabled="false">September</mat-option><mat-option [value]="&apos;October&apos;" disabled="false">October</mat-option><mat-option [value]="&apos;November&apos;" disabled="false">November</mat-option><mat-option [value]="&apos;December&apos;" disabled="false">December</mat-option>
-          </mat-select>
-
-        </mat-form-field></form>
     </div>
     <div fxLayout="column" style="width:90%">
 
       <div fxLayout="row" fxLayoutAlign="end">
         <div fxLayout="column" fxFlex="end">
           <mat-form-field fxFlex="100">
-            <input matInput (keyup)="onFilter_2($event)" placeholder="Search">
+            <input matInput (keyup)="onFilter_4($event)" placeholder="Search">
           </mat-form-field>
         </div>
       </div>
       <table mat-table [dataSource]="page?.tableData" id="table-table" matSort class="table-width-fix">
-        <tr mat-header-row *matHeaderRowDef="[&apos;category&apos;,&apos;name&apos;,&apos;price&apos;,&apos; dateUploaded&apos;]"></tr>
-        <tr mat-row *matRowDef="let row; columns: [&apos;category&apos;,&apos;name&apos;,&apos;price&apos;,&apos; dateUploaded&apos;];"></tr>
+        <tr mat-header-row *matHeaderRowDef="[&apos;category&apos;,&apos;itemName&apos;,&apos;price&apos;,&apos;date |date&apos;]"></tr>
+        <tr mat-row *matRowDef="let row; columns: [&apos;category&apos;,&apos;itemName&apos;,&apos;price&apos;,&apos;date |date&apos;];"></tr>
 
         <ng-container matColumnDef="category">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>CATEGORY</th>
           <td mat-cell *matCellDef="let table; let i = index;">{{table.category}}</td>
         </ng-container>
 
-        <ng-container matColumnDef="name">
+        <ng-container matColumnDef="itemName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>NAME</th>
-          <td mat-cell *matCellDef="let table; let i = index;">{{table.name}}</td>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.itemName}}</td>
         </ng-container>
 
         <ng-container matColumnDef="price">
@@ -41,9 +34,9 @@
           <td mat-cell *matCellDef="let table; let i = index;">{{table.price}}</td>
         </ng-container>
 
-        <ng-container matColumnDef=" dateUploaded">
+        <ng-container matColumnDef="date |date">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
-          <td mat-cell *matCellDef="let table; let i = index;">{{table. dateUploaded}}</td>
+          <td mat-cell *matCellDef="let table; let i = index;">{{ table.date |date}}</td>
         </ng-container>
       </table>
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">

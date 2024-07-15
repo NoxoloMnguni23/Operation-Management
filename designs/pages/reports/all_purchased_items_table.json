@@ -6,7 +6,7 @@
         "label": "all_purchased_items_table",
         "disabled": false,
         "info": "",
-        "functionSeq": 3,
+        "functionSeq": 4,
         "generateNext": true,
         "serviceName": "all_purchased_items_tableComponent"
     },
@@ -82,12 +82,19 @@
                     "type": "this.page",
                     "value": "dataSource"
                 }
+            },
+            {
+                "textIp": "dateUploaded",
+                "typedIpValue": {
+                    "type": "str",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_7NyJWrMmj6Xj60dl",
         "category": "Function",
         "x": 165,
-        "y": 140,
+        "y": 240,
         "wires": [
             [
                 "sd_1yjEmPi5wUo4o0Do"
@@ -97,25 +104,6 @@
         "generateNext": false,
         "serviceName": "all_purchased_items_tableComponent",
         "generated": true
-    },
-    {
-        "id": "sd_R1PRW9sFGl6VSlzx",
-        "type": "Script",
-        "z": "sd_4VcSTe3LqzwppFKL",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "\n\npage.dataSource = new MatTableDataSource ([\n \n  { category: \"Groceries\", name: \"Eggs\", price: 2.99, date: \"02 July\"},\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 , date: \"02 May\"},\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 , date:\"02 April\"},\n    { category: \"Groceries\", name: \"Apples\", price: 1.99, date:\"02 June\" },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50, date: \"02 March\" },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99, date: \"02 May\" },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49, date: \"02 May\" },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99, date:\"02 April\" },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79, date:\"02 April\" },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99, date:\"02 June\"  },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99, date:\"02 June\"  },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49, date:\"02 June\"  },\n    { category: \"Supplies\", name: \"Scotch Tape\", price: 2.99 , date: \"02 March\"},\n    { category: \"Supplies\", name: \"Envelopes (pack of 50)\", price: 7.99, date: \"02 March\" },\n     { category: \"Groceries\", name: \"Eggs\", price: 2.99, date: \"02 March\" },\n     { category: \"TOTAL\", name: \"\", price: 0 },\n\n]);\n\npage.resultReceipts\n// console.log(\"backedn\", page.resultReceipts)\n\npage.tableDataBackup = new MatTableDataSource ([\n \n  { category: \"Groceries\", name: \"Eggs\", price: 2.99, date: \"02 July\"},\n    { category: \"Groceries\", name: \"Milk\", price: 3.49 , date: \"02 May\"},\n    { category: \"Groceries\", name: \"Bread\", price: 2.00 , date:\"02 April\"},\n    { category: \"Groceries\", name: \"Apples\", price: 1.99, date:\"02 June\" },\n    { category: \"Groceries\", name: \"Pasta\", price: 1.50, date: \"02 March\" },\n    { category: \"Maintenance\", name: \"Light bulbs (pack of 4)\", price: 8.99, date: \"02 May\" },\n    { category: \"Maintenance\", name: \"AA Batteries (pack of 12)\", price: 6.49, date: \"02 May\" },\n    { category: \"Maintenance\", name: \"Duct Tape\", price: 4.99, date:\"02 April\" },\n    { category: \"Maintenance\", name: \"Multi-purpose Cleaner\", price: 3.79, date:\"02 April\" },\n    { category: \"Maintenance\", name: \"Paper Towels (pack of 6 rolls)\", price: 9.99, date:\"02 June\"  },\n    { category: \"Supplies\", name: \"Printer Paper (ream of 500 sheets)\", price: 5.99, date:\"02 June\"  },\n    { category: \"Supplies\", name: \"Pens (pack of 10)\", price: 3.49, date:\"02 June\"  },\n    { category: \"Supplies\", name: \"Scotch Tape\", price: 2.99 , date: \"02 March\"},\n    { category: \"Supplies\", name: \"Envelopes (pack of 50)\", price: 7.99, date: \"02 March\" },\n     { category: \"Groceries\", name: \"Eggs\", price: 2.99, date: \"02 March\" },\n     { category: \"TOTAL\", name: \"\", price: page.total },\n\n])\n\n//converting the object to an Array\npage.arrayData = page.dataSource.data\n\n//adding the total to the spreadsheet and table\npage.arrayData .forEach((item,indx) => {\n  if(page.arrayData.length - 1 === indx){\n    return;\n  }\n page.arrayData[page.arrayData.length - 1].price = page.arrayData[page.arrayData.length - 1].price + item.price \n})\n\n\n\nconsole.log(page.arrayData[page.arrayData.length - 1])\n// console.log(\"newArray\", page.arrayData);\n\n//Adding the total to the total outside the table\n\npage.arrayData .forEach(item => {\n  return page.totalA = page.totalA + item.price / 2\n\n})\n\npage.total = page.totalA.toFixed(2)\n\n\n\n   \n  \n    \n  \n\n\n\n\n",
-        "functionName": "sd_eJuzOUTYKNgXaqdz_1",
-        "category": "Function",
-        "x": 245,
-        "y": 20,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "all_purchased_items_tableComponent"
     },
     {
         "id": "sd_B79Ed5PwcUVtN8Md",
@@ -157,24 +145,24 @@
                 }
             },
             {
-                "textIp": "selectForm",
-                "typedIpValue": {
-                    "type": "literal",
-                    "value": "{month: ''}"
-                }
-            },
-            {
                 "textIp": "filterTotal",
                 "typedIpValue": {
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "selectForm",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{month: \"\"}"
+                }
             }
         ],
         "functionName": "sd_E9QbOlnVduPNV5MO_1",
         "category": "Function",
-        "x": 365,
-        "y": 20,
+        "x": 305,
+        "y": 80,
         "wires": [
             [
                 "sd_ivaTji8kiYYwm6z7"
@@ -264,59 +252,6 @@
         "generateNext": false,
         "serviceName": "all_purchased_items_tableComponent",
         "generated": true
-    },
-    {
-        "id": "sd_hdhS3ro8xt00s7ac",
-        "type": "Script",
-        "z": "sd_4VcSTe3LqzwppFKL",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "const filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\nthis.page.tableData.filter = filterValue.trim().toLowerCase();\n\npage.total = page.tableData.filteredData.reduce((total:any, item:any) => total + item.price, 0);\n\nbh.totalItem = page.dataSource._data._value.filter((item:any) => {\n    return item.category == \"TOTAL\"\n})\n\npage.tableData.filteredData.push(bh.totalItem[0])\n\n// page.dataSource = page.tableData.filteredData\n\n\nconsole.log(\"filtered with Total ==>\", page.tableData.filteredData)\n",
-        "functionName": "sd_iBlFYTlpoczCmWts_2",
-        "category": "Function",
-        "x": 185,
-        "y": 560,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "all_purchased_items_tableComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_1LOy9i89nURhTynD",
-        "type": "PageStart",
-        "z": "sd_4VcSTe3LqzwppFKL",
-        "viewType": "pages",
-        "nodeType": "start",
-        "name": "onFilter_2",
-        "outputs": 1,
-        "inputVariables": [
-            {
-                "key": "filterEvent",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
-            }
-        ],
-        "localVariables": [],
-        "flow_type": "sync",
-        "functionName": "onFilter_2",
-        "category": "General",
-        "x": 65,
-        "y": 560,
-        "wires": [
-            [
-                "sd_hdhS3ro8xt00s7ac"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "all_purchased_items_tableComponent"
     },
     {
         "id": "sd_PbjQ2z5pylux6pBD",
@@ -454,8 +389,8 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_ivaTji8kiYYwm6z7",
         "category": "Function",
-        "x": 465,
-        "y": 20,
+        "x": 405,
+        "y": 80,
         "wires": [
             [
                 "sd_amwwovLCcmHfVQy1"
@@ -494,8 +429,8 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_amwwovLCcmHfVQy1",
         "category": "Function",
-        "x": 545,
-        "y": 40,
+        "x": 485,
+        "y": 80,
         "wires": [
             [
                 "sd_4CbgeVTcji4sjsBa"
@@ -519,8 +454,8 @@
         "flow_type": "sync",
         "functionName": "totalAmount",
         "category": "General",
-        "x": 65,
-        "y": 760,
+        "x": 265,
+        "y": 340,
         "wires": [
             [
                 "sd_SROyLdDiPneI4O4E"
@@ -537,31 +472,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\npage.arrayData = page.dataSource.data\n\n\npage.arrayData .forEach(item => {\n  return page.total = page.total + item.price\n\n})\nconsole.log(\"price\", page.arrayData)",
+        "script": "\npage.arrayData = page.dataSource.data\n\n\npage.arrayData.forEach(item => {\n  console.log(\"Prices\", item.price)\n  // return page.total = Number(page.total) + Number(item.price)\n\n})\nconsole.log(\"price\", page.arrayData)",
         "functionName": "sd_SROyLdDiPneI4O4E",
         "category": "Function",
-        "x": 225,
-        "y": 760,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "all_purchased_items_tableComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_LOQZQmlbaciIhz7W",
-        "type": "Script",
-        "z": "sd_4VcSTe3LqzwppFKL",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "switch (new Date().getMonth()) {\n  case 0:\n    page.month = \"January\";\n    break;\n  case 1:\n     page.month = \"February\";\n    break;\n  case 2:\n      page.month = \"March\";\n    break;\n  case 3:\n     page.month = \"April\";\n    break;\n  case 4:\n     page.month = \"May\";\n    break;\n  case 5:\n     page.month = \"June\";\n    break;\n  case 6:\n     page.month = \"July\";\n      break;\n      case 7:\n    page.month = \"August\";\n    break;\n  case 8:\n     page.month = \"September\";\n    break;\n  case 9:\n      page.month = \"October\";\n    break;\n  case 10:\n     page.month = \"November\";\n    break;\n  case 11:\n     page.month = \"December\";\n    break;\n}\n\nconsole.log(\"month\",page.month)",
-        "functionName": "sd_LOQZQmlbaciIhz7W",
-        "category": "Function",
-        "x": 685,
-        "y": 240,
+        "x": 425,
+        "y": 340,
         "wires": [
             []
         ],
@@ -601,7 +516,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "selected",
-        "script": "page.tableDataBackup.filter = page.selectForm.month.trim().toLowerCase()\n// console.log(\"page.tableDataBackup\",page.tableDataBackup)\npage.tableData.filteredData = page.tableDataBackup.filteredData;\n\npage.total = page.tableData.filteredData.reduce((total:any, item:any) => total + item.price, 0);\n\nbh.totalItem = page.dataSource._data._value.filter((item:any) => {\n    return item.category == \"TOTAL\"\n})\n\nbh.totalItem.price = page.tableData.filteredData.reduce((total:any, item:any) => total + item.price, 0);\nconsole.log(\"total ==>\", bh.totalItem[0].price)\nbh.totalItem[0].price = page.total\n\n bh.newTable = page.tableData.filteredData.push(bh.totalItem[0]) \n\n page.tableData = new MatTableDataSource (page.tableData.filteredData)\n\nconsole.log(\"filtered with Total ==>\", page.tableData.filteredData);\nconsole.log(\"new table ==>\", bh.newTable);\n\n",
+        "script": "page.tableDataBackup.filter = page.selectForm.month.trim().toLowerCase()\n\npage.tableData.filteredData = page.tableDataBackup.filteredData;\n\npage.total = page.tableData.filteredData.reduce((total:any, item:any) => {\n     return total + item.price, 0\n});\n\nconsole.log(\"Totals\", page.total)\n\nbh.totalItem = page.dataSource._data._value.filter((item:any) => {\n    return item.category == \"TOTAL\"\n})\n\nconsole.log(\"total item==>\", bh.totalItem)\n\nbh.totalItem.price = page.tableData.filteredData.reduce((total:any, item:any) => {return total + item.price, 0});\n// console.log(\"Tot data data\", bh.totalItem)\n// bh.totalItem[0].price = page.total\n\n// bh.newTable = page.tableData.filteredData.push(bh.totalItem[0]) \n\n// page.tableData = new MatTableDataSource (page.tableData.filteredData)\n\n// console.log(\"filtered with Total ==>\", page.tableData.filteredData);\n// console.log(\"new table ==>\", bh.newTable);\n\n",
         "functionName": "selected",
         "category": "Function",
         "x": 185,
@@ -714,30 +629,7 @@
         "y": 240,
         "wires": [
             [
-                "sd_A8gRLs4029yZ1E6F"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "all_purchased_items_tableComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_A8gRLs4029yZ1E6F",
-        "type": "Script",
-        "z": "sd_4VcSTe3LqzwppFKL",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(\"Main data\", page.resultItems)\n\npage.items = page.resultItems[0].items\n\nconsole.log(\"obj\", page.items)\n\n\nfor(let i = 0; i< page.items.length;i++){\n   console.log(page.items[i])\n}\n\n// for(let i=0;i<page._data.length;i++){\n//     for(let j = 0;j<page._data[i].length; j++){\n//       page.items.push(page._data[i][j])\n//     }\n// }\n// console.log(\"Final data ==>\", page.items)\n\n\npage.dataSource = new MatTableDataSource( page.items)\nconsole.log(\"backendData =>>\", page.items)\n\n// //converting the object to an Array\npage.arrayData = page.dataSource.data\n\n// //adding the total to the spreadsheet and table\npage.arrayData .forEach((item,indx) => {\n  if(page.arrayData.length - 1 === indx){\n    return;\n  }\n page.arrayData[page.arrayData.length - 1].price = page.arrayData[page.arrayData.length - 1].price + item.price \n})\n\n\n\n// console.log(page.arrayData[page.arrayData.length - 1])\n// console.log(\"newArray\", page.arrayData);\n\n//Adding the total to the total outside the table\n\npage.arrayData .forEach(item => {\n  return page.totalA = page.totalA + item.price / 2\n\n})\n\npage.total = page.totalA.toFixed(2)",
-        "functionName": "sd_A8gRLs4029yZ1E6F",
-        "category": "Function",
-        "x": 585,
-        "y": 240,
-        "wires": [
-            [
-                "sd_B79Ed5PwcUVtN8Md",
-                "sd_LOQZQmlbaciIhz7W"
+                "sd_IfBYKhthQTu4bbdH"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -766,10 +658,165 @@
         ],
         "functionName": "sd_4CbgeVTcji4sjsBa",
         "category": "Function",
-        "x": 645,
-        "y": 40,
+        "x": 585,
+        "y": 80,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "all_purchased_items_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Q6PKxHEGu01npHqu",
+        "type": "Script",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// switch (new Date().getMonth()) {\n//   case 0:\n//     page.month = \"January\";\n//     break;\n//   case 1:\n//      page.month = \"February\";\n//     break;\n//   case 2:\n//       page.month = \"March\";\n//     break;\n//   case 3:\n//      page.month = \"April\";\n//     break;\n//   case 4:\n//      page.month = \"May\";\n//     break;\n//   case 5:\n//      page.month = \"June\";\n//     break;\n//   case 6:\n//      page.month = \"July\";\n//       break;\n//       case 7:\n//     page.month = \"August\";\n//     break;\n//   case 8:\n//      page.month = \"September\";\n//     break;\n//   case 9:\n//       page.month = \"October\";\n//     break;\n//   case 10:\n//      page.month = \"November\";\n//     break;\n//   case 11:\n//      page.month = \"December\";\n//     break;\n// }\n\n// console.log(\"month\",page.month)",
+        "functionName": "sd_Q6PKxHEGu01npHqu",
+        "category": "Function",
+        "x": 152.3333282470703,
+        "y": 46.80208206176758,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "all_purchased_items_tableComponent"
+    },
+    {
+        "id": "sd_pFe0J3J5sbAUK40h",
+        "type": "Script",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.filterEvent);\nconst filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\npage.dataSource.filter = filterValue.trim().toLowerCase();\nconsole.log(\"Filter ==>\", page.dataSource)",
+        "functionName": "sd_iBlFYTlpoczCmWts_4",
+        "category": "Function",
+        "x": 205,
+        "y": 880,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "all_purchased_items_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yBFg68DzW7wmFcdh",
+        "type": "PageStart",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onFilter_4",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filterEvent",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onFilter_4",
+        "category": "General",
+        "x": 60,
+        "y": 880,
+        "wires": [
+            [
+                "sd_pFe0J3J5sbAUK40h"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "all_purchased_items_tableComponent"
+    },
+    {
+        "id": "sd_uErfSK70yE4LVoI4",
+        "type": "PageStart",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "correctDate",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "date",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "correctDate",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "correctDate",
+        "category": "General",
+        "x": 260,
+        "y": 600,
+        "wires": [
+            [
+                "sd_Wz0oU0zwClzNifPc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "all_purchased_items_tableComponent"
+    },
+    {
+        "id": "sd_Wz0oU0zwClzNifPc",
+        "type": "Script",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let parts = page.items['uploadedDate'].split('-');\nlet year = parts[0];\nlet month = parseInt(parts[1]);\nlet day = parts[2];\nlet monthNames = [\n  \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n];\n\nmonth++;\nbh.input.correctDate = `${day} ${monthNames[month - 1]} ${year}`;",
+        "functionName": "sd_Wz0oU0zwClzNifPc",
+        "category": "Function",
+        "x": 380,
+        "y": 600,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "all_purchased_items_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_IfBYKhthQTu4bbdH",
+        "type": "Script",
+        "z": "sd_4VcSTe3LqzwppFKL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.items = {};\nbh.date = page.resultItems.forEach((item:any) => {\n  console.log(\"main\", page.resultItems)\n  //page.items.push(item.dateUploaded)\n  page.items['uploadedDate']=page.resultItems[0].dateUploaded\n  page.dateUploaded =this.correctDate(page.items['uploadedDate'])\n  console.log(\"newdate\",  page.dateUploaded)\n  page.items['dataSource'] = item.items;\n  console.log(\"Date plus one\",page.items['uploadedDate'])\n})\n\n// Month correction\n\n// let parts = page.items['uploadedDate'].split('-');\n// let year = parts[0];\n// let month = parseInt(parts[1]);\n// let day = parts[2];\n\n// let monthNames = [\n//   \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n//   \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n// ];\n\n// month++;\n\n// page.outputDate = `${day} ${monthNames[month - 1]} ${year}`;\n\n// console.log(\"Month date what\", page.outputDate)\n// End month correction\n\n\nbh.date = page.resultItems.forEach((item:any) => {\n  item.items.forEach((x:any) => {\nx.date = page.dateUploaded;\n  })\n  console.log(\"item\", item)\n  //page.items.push(item.dateUploaded)\n  page.items['dataSource'] = item.items;\n  console.log(\"Date plus one\",page.items['uploadedDate'])\n})\n\n// for(let i = 0; i< page.items.length;i++){\n//    console.log(page.items[i])\n// }\n\n// for(let i=0;i<page._data.length;i++){\n//     for(let j = 0;j<page._data[i].length; j++){\n//       page.items.push(page._data[i][j])\n//     }\n// }\n// console.log(\"Final data ==>\", page.items)\n\n\nconsole.log(\"Table ==>\",page.total)\n\n\n\n\n page.dataSource = new MatTableDataSource( page.items.dataSource) \n\n// page.dataSource = new MatTableDataSource( page.items.dataSource.forEach((item:any) => {\n// item.date = page.dateUploaded\n// return item\n\n// }))\nconsole.log(\"sate\",page.items.dataSource )\nconsole.log(\"backendData =>>\", page.items)\n\npage.tableDataBackup = new  MatTableDataSource( page.items.dataSource)\n\n// //converting the object to an Array\npage.arrayData = page.dataSource.data\n\n// //adding the total to the spreadsheet and table\n// page.arrayData.forEach((item,indx) => {\n//   if(page.arrayData.length - 1 === indx){\n//     return;\n//   }\n//  page.arrayData[page.arrayData.length - 1].price = page.arrayData[page.arrayData.length - 1].price + item.price \n// })\n\n\npage.arrayData = page.dataSource.data\n\nlet arr = []\npage.arrayData.forEach(item => {\n  arr.push(item.price)\n  // return page.total = Number(page.total) + Number(item.price)\n})\n  console.log(\"Pricesssss\", arr)\n\n// console.log(page.arrayData[page.arrayData.length - 1])\n// console.log(\"newArray\", page.arrayData);\n\n//Adding the total to the total outside the table\n\npage.arrayData.forEach(item => {\n  return page.totalA = page.totalA + item.price \n\n})\n\npage.total = page.totalA.toFixed(2)\nbh.total = {\n  category: \"total\",\n  price: page.total\n}\n\npage.items.dataSource.push(bh.total)\n",
+        "functionName": "sd_IfBYKhthQTu4bbdH",
+        "category": "Function",
+        "x": 385,
+        "y": 160,
+        "wires": [
+            [
+                "sd_B79Ed5PwcUVtN8Md"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

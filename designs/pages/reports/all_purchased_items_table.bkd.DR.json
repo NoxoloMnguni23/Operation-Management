@@ -745,7 +745,8 @@
                 "f33b77cd-511c-d1b1-0713-62de53480b74": {
                     "paletteKey": "NG-Form",
                     "parentEditorKey": "dd99f534-c75f-7a9b-13a1-0fe05aaf39bb",
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1721039387051",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -810,7 +811,8 @@
                         "paletteKey": "NG-Select",
                         "parentEditorKey": "f33b77cd-511c-d1b1-0713-62de53480b74",
                         "isAdvancedComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1721039387051",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1380,18 +1382,18 @@
                         },
                         {
                             "_key": "(tableFilterFunction)",
-                            "_value": "onFilter_2($event)",
+                            "_value": "onFilter_4($event)",
                             "_type": "dav",
                             "_attrDef": "p",
-                            "value": "onFilter_2($event)",
+                            "value": "onFilter_4($event)",
                             "_customAttributeFlag": "flowpicker",
                             "objValue": {
                                 "activeTree": "pages",
-                                "functionName": "onFilter_2",
+                                "functionName": "onFilter_4",
                                 "input": [
                                     "$event"
                                 ],
-                                "nodeID": "sd_1LOy9i89nURhTynD",
+                                "nodeID": "sd_yBFg68DzW7wmFcdh",
                                 "z": ""
                             }
                         },
@@ -1417,11 +1419,11 @@
                             "skipCodegen": true,
                             "_key": "__n_dependant_flows_key__",
                             "_value": [
-                                "sd_hdhS3ro8xt00s7ac",
-                                "sd_1LOy9i89nURhTynD"
+                                "sd_pFe0J3J5sbAUK40h",
+                                "sd_yBFg68DzW7wmFcdh"
                             ],
                             "_type": "a",
-                            "_attrDef": "c",
+                            "_attrDef": "p",
                             "_visibility": false
                         }
                     ]
@@ -1446,7 +1448,7 @@
                         },
                         {
                             "_key": "Mapping",
-                            "_value": "{{table.name}}",
+                            "_value": "{{table.itemName}}",
                             "_type": "ma",
                             "_attrDef": "p",
                             "_useAsLabel": true
@@ -1538,7 +1540,7 @@
                         },
                         {
                             "_key": "Mapping",
-                            "_value": "{{table. dateUploaded}}",
+                            "_value": "{{ table.date |date}}",
                             "_type": "ma",
                             "_attrDef": "p",
                             "_useAsLabel": true
