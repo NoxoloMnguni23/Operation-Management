@@ -46,22 +46,6 @@
         "operation": "set",
         "globalVariables": [
             {
-                "textIp": "showImage",
-                "typedIpValue": {
-                    "type": "this.page",
-                    "value": "false"
-                }
-            },
-            {
-                "textIp": "image",
-                "typedIpValue": {
-                    "type": "this.page",
-                    "value": ""
-                }
-            }
-        ],
-        "globalVariables": [
-            {
                 "textIp": "lineChartData",
                 "typedIpValue": {
                     "type": "this.page",
@@ -155,12 +139,13 @@
         ],
         "functionName": "sd_oVwRlrUvGw6hhxZi",
         "category": "Function",
-        "x": 165,
+        "x": 205,
         "y": 60,
         "wires": [
             [
                 "sd_2l8EVQOKmVRV14Om",
-                "sd_zgDzU2ECixcC1ak6"
+                "sd_zgDzU2ECixcC1ak6",
+                "sd_FECy6IniGnW4Nad1"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -195,8 +180,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_RDN6unfHnk0O5Kfz",
@@ -216,8 +202,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_F2ZToH6C34R0qqKu",
@@ -271,8 +258,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_I8cgmZAyUMYw2KLe",
@@ -292,8 +280,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_qzr4I51Z7TShqyIx",
@@ -324,8 +313,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_2l8EVQOKmVRV14Om",
@@ -355,11 +345,11 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_2l8EVQOKmVRV14Om",
         "category": "Function",
-        "x": 285,
+        "x": 305,
         "y": 60,
         "wires": [
             [
-                "sd_F27d4EoalWd068UB"
+                "sd_HqphZUawWwBmzlQe"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -380,8 +370,8 @@
         "flow_type": "sync",
         "functionName": "openForm",
         "category": "General",
-        "x": 65,
-        "y": 560,
+        "x": 85,
+        "y": 640,
         "wires": [
             [
                 "sd_TetSjqbxmzLs0g9j"
@@ -408,8 +398,8 @@
         "resultMapping": "",
         "functionName": "sd_TetSjqbxmzLs0g9j",
         "category": "Navigation",
-        "x": 190,
-        "y": 560,
+        "x": 205,
+        "y": 640,
         "wires": [
             []
         ],
@@ -459,7 +449,7 @@
         "functionName": "ngAfterViewInit",
         "category": "Lifecycle Events",
         "x": 65,
-        "y": 700,
+        "y": 740,
         "wires": [
             [
                 "sd_YunV0YBBxiCkT3rq"
@@ -490,7 +480,7 @@
         "functionName": "sd_xKCCTWKzvgDN0rx7_7",
         "category": "Function",
         "x": 205,
-        "y": 700,
+        "y": 740,
         "wires": [
             [
                 "sd_7EXZYpVdzpz0TAgw"
@@ -512,7 +502,7 @@
         "functionName": "sd_2VNGqvcKee34lvOz_7",
         "category": "Function",
         "x": 345,
-        "y": 700,
+        "y": 740,
         "wires": [
             []
         ],
@@ -673,8 +663,8 @@
         "flow_type": "sync",
         "functionName": "selected",
         "category": "General",
-        "x": 305,
-        "y": 180,
+        "x": 165,
+        "y": 300,
         "wires": [
             [
                 "sd_QBsrjh36mJG7EFMY"
@@ -694,8 +684,8 @@
         "script": "page.user = bh.input.row\npage.router.navigate(['/selected_receipt_form'])",
         "functionName": "sd_QBsrjh36mJG7EFMY",
         "category": "Function",
-        "x": 445,
-        "y": 180,
+        "x": 305,
+        "y": 300,
         "wires": [
             [
                 "sd_K0NrFIERzJXKe8GP"
@@ -727,8 +717,8 @@
         "resultMapping": {},
         "functionName": "sd_K0NrFIERzJXKe8GP",
         "category": "Storage",
-        "x": 560,
-        "y": 180,
+        "x": 420,
+        "y": 300,
         "wires": [
             []
         ],
@@ -768,11 +758,14 @@
         "x": 125,
         "y": 60,
         "wires": [
-            []
+            [
+                "sd_oVwRlrUvGw6hhxZi"
+            ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_A27nuw79xKmoRPh6",
@@ -964,7 +957,7 @@
         "script": "page.currentDate = new Date();\npage.currentMonth = page.currentDate.getMonth();\npage.currentYear = page.currentDate.getFullYear();\n\n// Get the start and end date of the current month\npage.startDate = new Date(page.currentYear, page.currentMonth, 1);\npage.endDate = new Date(page.currentYear, page.currentMonth + 1, 0);\n\npage.monthNames = [\n  \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n];\n\npage.monthName = page.monthNames[page.currentMonth];\n\npage.thisMonthRangeDate = `${page.monthName} ${page.startDate.getDate()} - ${page.monthName} ${page.endDate.getDate()} , ${page.currentYear}`\n\n",
         "functionName": "getMonthlyDate",
         "category": "Function",
-        "x": 85,
+        "x": 165,
         "y": 180,
         "wires": [
             []
@@ -993,8 +986,8 @@
         ],
         "functionName": "sd_vUvXw8Y3lnhbpYIv",
         "category": "General",
-        "x": 585,
-        "y": 200,
+        "x": 645,
+        "y": 300,
         "wires": [
             [
                 "sd_9jVuoDurVkeCshlO"
@@ -1015,8 +1008,8 @@
         "script": "bh.ssdURL = bh.ssdURL + 'get-budget'",
         "functionName": "sd_9jVuoDurVkeCshlO",
         "category": "Function",
-        "x": 685,
-        "y": 200,
+        "x": 725,
+        "y": 300,
         "wires": [
             [
                 "sd_dBpXjBZ3VAm2xzVs"
@@ -1070,8 +1063,8 @@
         "paramMappingObj": {},
         "functionName": "sd_dBpXjBZ3VAm2xzVs",
         "category": "HTTP",
-        "x": 790,
-        "y": 200,
+        "x": 805,
+        "y": 300,
         "wires": [
             [
                 "sd_CgrszF5ITUXVawZm"
@@ -1092,8 +1085,8 @@
         "script": "let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\n\npage.currentMonthBugetAmt;\n\npage.findCurrBudget = page.result[0].budget.filter((budget) => {\n    if(budget.month == months[new Date().getMonth()])\n    {\n        page.currentMonthBugetAmt = budget.amount\n    }\n})\n\n",
         "functionName": "gettingCurrentMonthBudget",
         "category": "Function",
-        "x": 925,
-        "y": 200,
+        "x": 945,
+        "y": 300,
         "wires": [
             [
                 "sd_fuoLcsRnYFq7cDyH",
@@ -1112,11 +1105,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "getting accumulated Annual",
-        "script": "page.data = page.result[0].budget\npage.budgetAmount = []\npage.data.forEach(item => {\n  page.budgetAmount.push(item.amount)\n});\n\npage.accumulatedAnnual = page.budgetAmount.reduce((accumulator, currentValue) => accumulator + currentValue, 0)\n",
+        "script": "page.data = page.result[0].budget\npage.budgetAmount = []\npage.data.forEach(item => {\n  page.budgetAmount.push(item.amount)\n});\n\npage.accumulatedAnnual = page.budgetAmount.reduce((accumulator, currentValue) => accumulator + currentValue, 0)\npage.accumulatedAnnual = page.accumulatedAnnual.toFixed(2)\n",
         "functionName": "gettingAccumulatedAnnual",
         "category": "Function",
-        "x": 1065,
-        "y": 280,
+        "x": 1125,
+        "y": 300,
         "wires": [
             []
         ],
@@ -1132,7 +1125,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url3 = bh.url3 + 'get-receipt'\nbh.url4 = bh.url4 + 'get-budget'\n",
+        "script": "bh.url3 = bh.url3 + 'get-receipt-data'\nbh.url4 = bh.url4 + 'get-budget'\n",
         "functionName": "sd_P2pfUhNMAOXpl7us",
         "category": "Function",
         "x": 545,
@@ -1210,7 +1203,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Find expenses spent by month",
-        "script": "page.annualAccumulatedExpenses = 0;\n\nlet nData = page.receiptData\nnData.forEach(entry => {\n  page.annualAccumulatedExpenses += entry.total;\n});\n\nconst currentDate = new Date();\nconst currentMonth = currentDate.getMonth(); \nconst currentYear = currentDate.getFullYear();\n\n// Initialize the sum for totals\npage.sumTotal = 0;\n\nlet data = page.receiptData\n// Loop through the data array and calculate the sum of totals for the current month\ndata.forEach(item => {\n  // Extract the month and year from the Date-Uploaded field\n  const uploadedDate = new Date(item[\"Date-Uploaded\"]);\n  const uploadedMonth = uploadedDate.getMonth(); \n  const uploadedYear = uploadedDate.getFullYear();\n\n  // Check if the month and year match the current month and year\n  if (uploadedMonth === currentMonth && uploadedYear === currentYear) {\n    page.sumTotal += item.total;\n  }\n});\n\n// console.log(`Sum of totals for ${currentDate.toLocaleString('default', { month: 'long' })} ${currentYear}: ${page.sumTotal.toFixed(2)}`);\n\n\npage.savings = Math.abs(page.sumTotal - page.currentMonthBugetAmt);\n\npage.doughnutChartData = [\n  {data: [page.currentMonthBugetAmt, page.savings, page.sumTotal ], label: \"Budget; Savings; Expenses\"},\n]\n\npage.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];\n\n",
+        "script": "page.annualAccumulatedExpenses = 0;\n\nlet nData = page.receiptData\nnData.forEach(entry => {\n  page.annualAccumulatedExpenses += entry.total;\n});\n\npage.annualAccumulatedExpenses = page.annualAccumulatedExpenses.toFixed(2)\n\nconst currentDate = new Date();\nconst currentMonth = currentDate.getMonth(); \nconst currentYear = currentDate.getFullYear();\n\n// Initialize the sum for totals\npage.sumTotal = 0;\n\nlet data = page.receiptData\n// Loop through the data array and calculate the sum of totals for the current month\ndata.forEach(item => {\n  // Extract the month and year from the Date-Uploaded field\n  const uploadedDate = new Date(item[\"Date-Uploaded\"]);\n  const uploadedMonth = uploadedDate.getMonth(); \n  const uploadedYear = uploadedDate.getFullYear();\n\n  // Check if the month and year match the current month and year\n  if (uploadedMonth === currentMonth && uploadedYear === currentYear) {\n    page.sumTotal += item.total;\n  }\n});\n\npage.sumTotal = page.sumTotal.toFixed(2)\n\n// console.log(`Sum of totals for ${currentDate.toLocaleString('default', { month: 'long' })} ${currentYear}: ${page.sumTotal.toFixed(2)}`);\n\n\npage.savings = Math.abs(page.sumTotal - page.currentMonthBugetAmt);\npage.savings = page.savings.toFixed(2)\n\npage.doughnutChartData = [\n  {data: [page.currentMonthBugetAmt, page.savings, page.sumTotal ], label: \"Budget; Savings; Expenses\"},\n]\n\npage.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];\n\n",
         "functionName": "findExpensesSpentByMonth",
         "category": "Function",
         "x": 925,
@@ -1262,50 +1255,6 @@
         "generated": true
     },
     {
-        "id": "sd_F27d4EoalWd068UB",
-        "type": "PageCallService",
-        "z": "sd_UWEsrTmDSRRDnTPG",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "getReceiptD",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "sd_UWEsrTmDSRRDnTPG",
-            "type": "tab",
-            "createdDate": "2024-06-27T07:07:21.203Z",
-            "label": "landing",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 6
-        },
-        "flow": {
-            "flowId": "sd_aUrDhh0olpySfMuW",
-            "flowName": "getReceiptData"
-        },
-        "inputVariables": [],
-        "outputMapping": [],
-        "serviceImportPath": "./",
-        "startName": "getReceiptData",
-        "inputParams": [],
-        "accept_bh": false,
-        "accept_csd": false,
-        "functionName": "getReceiptD",
-        "category": "General",
-        "x": 365,
-        "y": 340,
-        "wires": [
-            [
-                "sd_mvbmnglvGhpSeZzR"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "landingComponent",
-        "generated": true
-    },
-    {
         "id": "sd_aUrDhh0olpySfMuW",
         "type": "PageStart",
         "z": "sd_UWEsrTmDSRRDnTPG",
@@ -1342,8 +1291,8 @@
         "flow_type": "sync",
         "functionName": "getThisMonthBudget",
         "category": "General",
-        "x": 465,
-        "y": 200,
+        "x": 545,
+        "y": 300,
         "wires": [
             [
                 "sd_vUvXw8Y3lnhbpYIv"
@@ -1352,48 +1301,6 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "landingComponent"
-    },
-    {
-        "id": "sd_mvbmnglvGhpSeZzR",
-        "type": "PageCallService",
-        "z": "sd_UWEsrTmDSRRDnTPG",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "getThisMonthB",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "sd_UWEsrTmDSRRDnTPG",
-            "type": "tab",
-            "createdDate": "2024-06-27T07:07:21.203Z",
-            "label": "landing",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 6
-        },
-        "flow": {
-            "flowId": "sd_PtcKuhrJBxCvGj2j",
-            "flowName": "getThisMonthBudget"
-        },
-        "inputVariables": [],
-        "outputMapping": [],
-        "serviceImportPath": "./",
-        "startName": "getThisMonthBudget",
-        "inputParams": [],
-        "accept_bh": false,
-        "accept_csd": false,
-        "functionName": "getThisMonthB",
-        "category": "General",
-        "x": 461,
-        "y": 343.1354064941406,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "landingComponent",
-        "generated": true
     },
     {
         "id": "sd_NDGNkGNOMv3LdRki",
@@ -1526,12 +1433,10 @@
         "script": "page.dataSet1 =[\n    {data: page.amounts, label: \"Budget\" },\n    {data: page.monthlyExpenses, label: \"Expenses\"}\n]\n\nlet data = page.dataSet1\n\nconst budget = data[0].data;\nconst expenses = data[1].data;\n\n// Calculate savings with non-negative values\nconst savings = budget.map((budgetAmount, index) => {\n  const expenseAmount = expenses[index] || 0; // Handle case if expenses have fewer elements\n  return Math.abs(budgetAmount - expenseAmount);\n});\n\n// Create the savings object\nconst savingsObject = {\n  data: savings,\n  label: \"Savings\"\n};\n\npage.monthlySavings = savingsObject.data\n\npage.donoughtDataSet = [\n  {data: page.amounts, label: \"Budget\" },\n  {data: page.monthlyExpenses, label: \"Expenses\"},\n  {data: page.monthlySavings, label: \"Savings\"}\n]\n\n",
         "functionName": "adjustingDataForAnotherChart",
         "category": "Function",
-        "x": 1105,
-        "y": 560,
+        "x": 1125,
+        "y": 580,
         "wires": [
-            [
-                "sd_oVwRlrUvGw6hhxZi"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -1559,6 +1464,92 @@
                 "constant": false
             }
         },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FECy6IniGnW4Nad1",
+        "type": "PageCallService",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "getReceiptD",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_UWEsrTmDSRRDnTPG",
+            "type": "tab",
+            "createdDate": "2024-06-27T07:07:21.203Z",
+            "label": "landing",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 7
+        },
+        "flow": {
+            "flowId": "sd_aUrDhh0olpySfMuW",
+            "flowName": "getReceiptData"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "getReceiptData",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": false,
+        "functionName": "getReceiptD",
+        "category": "General",
+        "x": 301,
+        "y": 178.46875,
+        "wires": [
+            [
+                "sd_gzKx4SlR1U4XfqJb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_gzKx4SlR1U4XfqJb",
+        "type": "PageCallService",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "getThisMonthB",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_UWEsrTmDSRRDnTPG",
+            "type": "tab",
+            "createdDate": "2024-06-27T07:07:21.203Z",
+            "label": "landing",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 7
+        },
+        "flow": {
+            "flowId": "sd_PtcKuhrJBxCvGj2j",
+            "flowName": "getThisMonthBudget"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "getThisMonthBudget",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": false,
+        "functionName": "getThisMonthB",
+        "category": "General",
+        "x": 421,
+        "y": 178.46875,
+        "wires": [
+            []
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "landingComponent",

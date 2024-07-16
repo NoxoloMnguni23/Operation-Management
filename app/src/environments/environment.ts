@@ -2,7 +2,7 @@ export const environment = {
     "name": "dev",
     "properties": {
         "production": false,
-        "ssdURL": "http://localhost:8080/api/",
+        "ssdURL": "http://localhost:8081/api/",
         "tenantName": "neutrinos-delivery",
         "appName": "operation-management-tii",
         "namespace": "com.neutrinos-delivery.operation-management-tii",

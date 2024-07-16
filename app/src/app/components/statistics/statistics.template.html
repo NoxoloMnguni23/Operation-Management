@@ -8,6 +8,13 @@
             <canvas baseChart [datasets]="page.dataSet" [labels]="page.barChartLabels" type="line"></canvas>
           </div>
         </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            The month with the highest expenses is {{page.highestExpenses1Month}} with an amount of R {{page.highestExpenses1Amt}} <br>
+            The month with the highest savings {{page.highestSavings1Month}} with an amount of R {{page.highestSavings1Amt}}
+          </p>
+        </mat-card-content>
       </mat-card><mat-card class="card-size-tii">
         <mat-card-title class="fz-15px-tii">Previous and current month comparison</mat-card-title>
 
@@ -15,6 +22,14 @@
           <div fxFlex="100">
             <canvas baseChart [datasets]="page.barChartDataTwo" [labels]="page.barChartDataTwoLabels" type="bar"></canvas>
           </div>
+        </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            {{page.chartTwoInsight}}
+
+
+          </p>
         </mat-card-content>
       </mat-card></div>
     <div fxLayout="row " fxLayoutGap="6em" fxLayoutAlign="start stretch" [fxShow]="true"><mat-card class="card-size-tii">
@@ -25,6 +40,12 @@
             <canvas baseChart [datasets]="page.fourthChartData" [labels]="page.fourthChartLabels" [legend]="true" type="bar"></canvas>
           </div>
         </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            The category with the most expendicure in {{page.previousMonth}} was {{page.prevMonthMostCategory}}. <br>
+            The category with the most expendicure so far in {{page.currentMonth}} is {{page.currMonthMostCategory}}.</p>
+        </mat-card-content>
       </mat-card><mat-card class="card-size-tii">
         <mat-card-title class="fz-15px-tii">Previous and current month comparison</mat-card-title>
 
@@ -32,6 +53,12 @@
           <div fxFlex="100">
             <canvas baseChart [datasets]="page.fifthChartData" [labels]="page.fourthChartLabels" type="bar"></canvas>
           </div>
+        </mat-card-content>
+
+        <mat-card-content>
+          <p>
+            {{page.finalChartResult}}
+          </p>
         </mat-card-content>
       </mat-card></div>
   </div>

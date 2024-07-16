@@ -55,20 +55,6 @@ export class statisticsComponent {
     }
   }
 
-  getLineGraphData(...others) {
-    let bh: any = {};
-    try {
-      bh = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
-      bh = this.sd_3gS4TAs4TXKmYr0X(bh);
-      //appendnew_next_getLineGraphData
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_QGbU2ySh6kGREEO6');
-    }
-  }
   //appendnew_flow_statisticsComponent_start
 
   sd_HmysSc28zLxg8P5S(bh) {
@@ -209,7 +195,7 @@ export class statisticsComponent {
     try {
       const page = this.page;
       bh.url1 = bh.ssdURL + 'get-budget';
-      bh.url2 = bh.ssdURL + 'get-receipt';
+      bh.url2 = bh.ssdURL + 'get-receipt-data';
 
       bh = this.sd_SEZAeyvG1j9ff0w8(bh);
       //appendnew_next_sd_qqm3czit2D7anmB3
@@ -253,8 +239,8 @@ export class statisticsComponent {
       this.page.receiptData = await this.sdService.nHttpRequest(requestOptions);
       bh = this.sd_JVGzVah92BWUgJxM(bh);
       bh = this.sd_8aE0PlTSd1RAOH6q(bh);
-      bh = this.sd_dzcNy0FhCjlim4tN(bh);
-      bh = this.thirdChart(bh);
+      bh = this.chartTwoAndInsights(bh);
+      bh = this.fourthChart(bh);
       //appendnew_next_sd_FbCEXSfe41G7Z3fa
       return bh;
     } catch (e) {
@@ -345,6 +331,7 @@ export class statisticsComponent {
       page.barChartLabels = page.barChartLabels[0].data;
 
       bh = this.calculateSavingsWithNonNegativeValues(bh);
+      bh = this.insightsForChart1(bh);
       //appendnew_next_sd_WePnd0dH4lkTVFEH
       return bh;
     } catch (e) {
@@ -360,7 +347,7 @@ export class statisticsComponent {
       const expenses = data[1].data;
 
       const savings = budget.map((budgetAmount, index) => {
-        const expenseAmount = expenses[index] || 0; // Handle case if expenses have fewer elements
+        const expenseAmount = expenses[index] || 0;
         return Math.abs(budgetAmount - expenseAmount);
       });
 
@@ -389,25 +376,42 @@ export class statisticsComponent {
   fifthChartData(bh) {
     try {
       const page = this.page;
-      const currentMonth = new Date().getMonth();
+      // const currentMonth = new Date().getMonth();
+      page.currentMonth = new Date().getMonth();
 
       // Calculate the previous month (handling the wrap-around from January to December)
-      const previousMonth = (currentMonth - 1 + 12) % 12;
+      page.previousMonth = (page.currentMonth - 1 + 12) % 12;
 
       let responseData = page.dataSet;
       const savingsData = responseData.find(
         (item) => item.label === 'Savings'
       ).data;
 
-      const currentMonthSavings = savingsData[currentMonth];
-      const previousMonthSavings = savingsData[previousMonth];
-
-      // console.log(`Savings for the current month (month index ${currentMonth}): ${currentMonthSavings}`);
-      // console.log(`Savings for the previous month (month index ${previousMonth}): ${previousMonthSavings}`);
+      page.currentMonthSavings = savingsData[page.currentMonth];
+      page.previousMonthSavings = savingsData[page.previousMonth];
 
       page.fifthChartData = [
-        { data: [currentMonthSavings, previousMonthSavings], label: 'Savings' },
+        {
+          data: [page.currentMonthSavings, page.previousMonthSavings],
+          label: 'Savings',
+        },
       ];
+
+      function mostSavingsMonth(data) {
+        let result;
+        const difference = Math.abs(data[0] - data[1]);
+
+        if (data[0] > data[1]) {
+          result = `The previous month had more savings, R ${data[0]}, than the current month, which currently has savings of R ${data[1]}. There is a difference of R ${difference} between the two months.`;
+        } else if (data[0] < data[1]) {
+          result = `The current month, currently has more savings, R ${data[1]}, than the previous month, which currently has savings of R ${data[0]}. There is a difference of R ${difference} between the two months.`;
+        } else {
+          result = `Both months have the same amount of savings`;
+        }
+        return result;
+      }
+
+      page.finalChartResult = mostSavingsMonth(page.fifthChartData[0].data);
 
       //appendnew_next_fifthChartData
       return bh;
@@ -416,7 +420,60 @@ export class statisticsComponent {
     }
   }
 
-  sd_dzcNy0FhCjlim4tN(bh) {
+  insightsForChart1(bh) {
+    try {
+      const page = this.page;
+      const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+
+      let dataArray = page.dataSet;
+      let expensesData = page.dataSet[1].data;
+      let savingsData = page.dataSet[2].data;
+
+      function findHighest(dataArray) {
+        let maxIndex = 0;
+        for (let i = 1; i < dataArray.length; i++) {
+          if (dataArray[i] > dataArray[maxIndex]) {
+            maxIndex = i;
+          }
+        }
+        return {
+          month: months[maxIndex],
+          amount: dataArray[maxIndex],
+        };
+      }
+
+      const highestExpenses = findHighest(expensesData);
+      const highestSavings = findHighest(savingsData);
+
+      page.highestExpenses1 = highestExpenses;
+      page.highestExpenses1Month = page.highestExpenses1.month;
+      page.highestExpenses1Amt = page.highestExpenses1.amount;
+
+      page.highestSavings1 = findHighest(savingsData);
+      page.highestSavings1Month = page.highestSavings1.month;
+      page.highestSavings1Amt = page.highestSavings1.amount;
+
+      //appendnew_next_insightsForChart1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_s61YfQGYWXv8Zy83');
+    }
+  }
+
+  chartTwoAndInsights(bh) {
     try {
       const page = this.page;
       const currentDate = new Date();
@@ -463,14 +520,36 @@ export class statisticsComponent {
 
       page.barChartDataTwoLabels = page.barChartDataTwoLabels[0].data;
 
-      //appendnew_next_sd_dzcNy0FhCjlim4tN
+      //Insights for graph
+
+      function compareAmountsWithMonths(amounts, months) {
+        let result;
+        const difference = Math.abs(amounts[0] - amounts[1]);
+
+        if (amounts[0] > amounts[1]) {
+          result = `The previous month, ${months[0]}, had a higher budget, R ${amounts[0]}, than the current month, ${months[1]} which has a budget of R (${amounts[1]}). There is a difference of R ${difference} between the two months.`;
+        } else if (amounts[0] < amounts[1]) {
+          result = `The current month, ${months[1]}, has a higher budget of R ${amounts[1]}, which is higher than the previous month, ${months[0]}, which had a budget of R ${amounts[0]}. There is a difference of R ${difference} between the two months.`;
+        } else {
+          result = `Both months, ${months[0]} and ${months[1]}, have the same amount of R ${amounts[0]}.`;
+        }
+
+        return result;
+      }
+
+      page.chartTwoInsight = compareAmountsWithMonths(
+        budgetAmounts,
+        budgetMonths
+      );
+
+      //appendnew_next_chartTwoAndInsights
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_dzcNy0FhCjlim4tN');
     }
   }
 
-  thirdChart(bh) {
+  fourthChart(bh) {
     try {
       const page = this.page;
       let data = page.receiptData;
@@ -550,11 +629,6 @@ export class statisticsComponent {
         return { currentMonthMax, previousMonthMax };
       }
 
-      console.log(
-        'getCategoryWithMostExpenditure',
-        getCategoryWithMostExpenditure(data)
-      );
-
       page.prevMonthMostCategory =
         getCategoryWithMostExpenditure(data).previousMonthMax.category;
       page.currMonthMostCategory =
@@ -563,23 +637,20 @@ export class statisticsComponent {
       let currentMonthCat = page.currMonthMostCategory;
       let prevMonthCat = page.prevMonthMostCategory;
 
+      const previousMonthMax =
+        getCategoryWithMostExpenditure(data).previousMonthMax.amount;
+      const currentMonthMax =
+        getCategoryWithMostExpenditure(data).currentMonthMax.amount;
+
       page.fourthChartData = [
-        {
-          data: [
-            getCategoryWithMostExpenditure(data).previousMonthMax.amount,
-            getCategoryWithMostExpenditure(data).currentMonthMax.amount,
-          ],
-          label: prevMonthCat,
-          currentMonthCat,
-        },
+        { data: [previousMonthMax], label: page.prevMonthMostCategory },
+        { data: [currentMonthMax], label: page.currMonthMostCategory },
       ];
 
       page.fourthChartLabels = [page.previousMonth, page.currentMonth];
-      // page.fourthChartLabels = [ page.currentMonth, getCategoryWithMostExpenditure(data).currentMonthMax.category];
 
-      console.log('fourthChartData', page.fourthChartData);
       bh = this.fourth(bh);
-      //appendnew_next_thirdChart
+      //appendnew_next_fourthChart
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_e9YVHgGXBH6NP9Mk');
@@ -672,49 +743,10 @@ export class statisticsComponent {
           label: getCategoryWithMostExpenditure(data).previousMonthMax.category,
         },
       ];
-
-      console.log('Fifth graph data', page.fifthDataChart);
       //appendnew_next_fourth
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_93qcqkrPGMtTfP6B');
-    }
-  }
-
-  sd_3gS4TAs4TXKmYr0X(bh) {
-    try {
-      const page = this.page;
-      // page.lineChartData = [
-      //         { data: page.newData2 , label: 'Expenses'},
-      //     ];
-      // page.lineChartLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July','Aug','Sep','Oct','nov','dec',];
-      // console.log("line data",page.lineChartData[0].data)
-      // page.lineDataFinal = page.lineChartData[0].data
-
-      page.lineChartData = [
-        { data: [65, 59, 80, 81, 56, 55, 40, 10, 20, 30, 40, 50] },
-      ];
-
-      page.lineChartLabels = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'June',
-        'July',
-        'Aug',
-        'Sep',
-        'Oct',
-        'nov',
-        'dec',
-      ];
-      page.lineChartData = page.lineChartData[0].data;
-
-      //appendnew_next_sd_3gS4TAs4TXKmYr0X
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_3gS4TAs4TXKmYr0X');
     }
   }
 
