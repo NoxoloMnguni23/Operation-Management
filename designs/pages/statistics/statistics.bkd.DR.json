@@ -280,7 +280,7 @@
                                 "_attrDef": "p"
                             }
                         ],
-                        "d8b0bcdc-cda2-4b47-687e-87890903b7d3": {
+                        "2cd3423e-a886-3df3-24c6-7a99c54e1335": {
                             "paletteKey": "NG-ng-line-chart",
                             "parentEditorKey": "540c735d-16fd-0a60-f96b-00aa97db4a36",
                             "commentid": null,
@@ -312,13 +312,13 @@
                                 },
                                 {
                                     "_key": "[datasets]",
-                                    "_value": "page.lineChartData",
+                                    "_value": "page.dataSet",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "[labels]",
-                                    "_value": "page.lineChartLabels",
+                                    "_value": "page.barChartLabels",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -348,17 +348,9 @@
                                 },
                                 {
                                     "_key": "(chartClick)",
-                                    "_value": "mycharclick()",
+                                    "_value": "",
                                     "_type": "kv",
-                                    "_attrDef": "p",
-                                    "_customAttributeFlag": "flowpicker",
-                                    "objValue": {
-                                        "nodeID": "sd_50DaZEwV8Ka1zbqm",
-                                        "functionName": "mycharclick",
-                                        "activeTree": "pages",
-                                        "z": "sd_EHqxhFZBDfBQcB9S",
-                                        "input": []
-                                    }
+                                    "_attrDef": "p"
                                 },
                                 {
                                     "_key": "fxLayout",
@@ -379,7 +371,8 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "0d44cb15-62dd-71f7-291e-9f0f61ee9262",
                         "isAdvancedChildComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1720789367348",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -404,7 +397,8 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "a5e97196-3e9c-171e-2e00-2fbc785387fe",
                             "isAdvancedComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1720789367348",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -591,7 +585,8 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "020610e1-c750-d350-a642-f84b80bceeec",
                                 "isAdvancedChildComponent": true,
-                                "commentid": null,
+                                "isCommented": "true",
+                                "commentid": "1720789367348",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -742,13 +737,13 @@
                                 },
                                 {
                                     "_key": "[datasets]",
-                                    "_value": "page.barChartExpenses",
+                                    "_value": "page.barChartDataTwo",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "[labels]",
-                                    "_value": "page.barChartLabels",
+                                    "_value": "page.barChartDataTwoLabels",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -801,7 +796,8 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "bbf06717-aeb4-dde4-3f32-fc4d8b28d987",
                         "isAdvancedChildComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1720869720519",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -826,7 +822,8 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "f0af4ca8-3434-b461-1a28-f7453a4368a8",
                             "isAdvancedComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1720869720519",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1013,7 +1010,8 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "242b482a-fc58-b214-119e-0ad7f9d91df1",
                                 "isAdvancedChildComponent": true,
-                                "commentid": null,
+                                "isCommented": "true",
+                                "commentid": "1720869720519",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -1226,13 +1224,13 @@
                                 },
                                 {
                                     "_key": "[datasets]",
-                                    "_value": "page.barChartBudget",
+                                    "_value": "page.fourthChartData",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "[labels]",
-                                    "_value": "page.barChartLabels",
+                                    "_value": "page.fourthChartLabels",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1250,7 +1248,7 @@
                                 },
                                 {
                                     "_key": "[legend]",
-                                    "_value": "",
+                                    "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1285,7 +1283,8 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "d0dfc547-ac9b-4b6c-2e76-c24bc27ca17c",
                         "isAdvancedChildComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1720985323016",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1310,7 +1309,8 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "b5c67257-4a6e-6931-c716-a3adca70dc8c",
                             "isAdvancedComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1720985323016",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1497,7 +1497,8 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "56ebf49b-8917-7556-cedf-2e7e7c4353d3",
                                 "isAdvancedChildComponent": true,
-                                "commentid": null,
+                                "isCommented": "true",
+                                "commentid": "1720985323016",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -1513,7 +1514,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "{{page.newAmount}}",
+                                        "_value": "",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }
@@ -1526,6 +1527,7 @@
                     "paletteKey": "ad-card",
                     "parentEditorKey": "b121d0d2-e0f2-d840-71d0-68e2b19cb270",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -1560,6 +1562,7 @@
                         "paletteKey": "ng-card-title",
                         "parentEditorKey": "af870193-c964-868a-2c7e-4e74db626a60",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1595,6 +1598,7 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "af870193-c964-868a-2c7e-4e74db626a60",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1619,6 +1623,7 @@
                         "8b9d3a07-ed60-0089-f27f-32cd35d04f56": {
                             "paletteKey": "NG-ng-bar-chart",
                             "parentEditorKey": "7b81b28d-47db-4262-5ef7-b95fbb77a746",
+                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1648,13 +1653,13 @@
                                 },
                                 {
                                     "_key": "[datasets]",
-                                    "_value": "page.barChartSavings",
+                                    "_value": "page.fifthChartData",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "[labels]",
-                                    "_value": "page.barChartLabels",
+                                    "_value": "page.fourthChartLabels",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1707,7 +1712,8 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "af870193-c964-868a-2c7e-4e74db626a60",
                         "isAdvancedChildComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1721042278305",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1732,7 +1738,8 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "c5d5d39e-a58e-a5fd-bddc-fc2f7228deb9",
                             "isAdvancedComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1721042278305",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1919,7 +1926,8 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "32cf5957-6833-4a8d-ac5e-b93d8b752f6c",
                                 "isAdvancedChildComponent": true,
-                                "commentid": null,
+                                "isCommented": "true",
+                                "commentid": "1721042278305",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -1935,7 +1943,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "{{page.savedMoreMonth}}",
+                                        "_value": "",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }

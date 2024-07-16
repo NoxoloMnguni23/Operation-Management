@@ -17,7 +17,11 @@ body {
     background-color: $gray-blue;
     color: $dark-gray;
 }
-
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
 
 
 
@@ -28,13 +32,21 @@ $green-groceries : green;
 $yellow-supplies : yellow;
 $pending-category: gray;
 
-
-
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
 
 .dark-grey-bg {
     background-color: $dark-gray !important;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $gray-blue;
+    color: $dark-gray;
+}
 
 .dark-blue-bg {
     background-color: $dark-blue !important;
@@ -104,7 +116,7 @@ $pending-category: gray;
     height: 50% !important;
 }
 
-.full-width, bh-add_receipt {
+.full-width {
     width: 100%;
 }
 
@@ -147,15 +159,7 @@ $pending-category: gray;
     margin-top:5px
 
 }
-.label-margin-kim {
-    margin: 27px;
-}
 
-.input-left{
-    .mat-form-field-appearance-legacy .mat-form-field-wrapper{
-        left: -27px;
-    }
-}
 .dot-groceries-lebo {
     height: 25px;
     width: 25px;
@@ -257,22 +261,23 @@ tr.mat-header-row{
     background-color: $mid-blue;
 }
 
+.phindile{
+    .mat-form-field {
+        text-align: center !important;
+    }
+}
 
+.select{
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: transparent !important
+}
+}
 bh-operations_dashboard{
     height: 100vh;
 }
 
 .max-width-300px-tii{
     max-width: 300px;
-}
-
-.max-width-300px2-tii{
-    max-width: 300px;
-}
-
-.max-width-300px-tii:hover{
-    background-color: $light-blue;
-    border-radius: 5px;
 }
 
 .width-50px-tii{
@@ -291,7 +296,7 @@ bh-operations_dashboard{
     position: absolute;
     right: -5px;
     top: 65px;
-    background-color: $light-blue;
+    background-color: rgba(255, 255, 255, 0.315);
     border-radius: 5px;
 }
 
@@ -314,7 +319,7 @@ bh-operations_dashboard{
 }
 
 .activeNow-tii{
-    background-color: $light-blue;
+    background-color: rgba(255, 255, 255, 0.342);
     border-radius: 5px;
 }
 
@@ -352,6 +357,7 @@ bh-all_purchased_items_table{
 
 bh-categories{
     // height: 100%;
+    height: 79vh;
     width: 100%;
 }
 
@@ -371,8 +377,8 @@ bh-landing{
      bottom:0 !important;
 }
 .donut-angel{
-          width: 78% !important;
-    height: 78% !important;
+        
+    height: 70% !important;
 }
 
 
@@ -460,4 +466,66 @@ bh-statistics{
 
 .margin-left-1em{
      margin-left: 1em
+}
+// angel-scrollin expander
+.mat-expansion-panel-body {
+ 
+    height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.round {
+    border: 1px solid $blue;
+    background: $blue;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.no-margin-import-tii{
+    margin: 0 !important;
+}
+
+.full-height-impor-tii{
+    height: 100% !important;
+}
+
+.not-set-btn-tii{
+    background-color: $dark-blue;
+    width: 42%;
+    height: 70%;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.submit-btn-tii{
+    background: $dark-blue;
+    color: white; 
+    margin-top: 1.5em; 
+    height: 45px; 
+    width: 140px; 
+    position: absolute; 
+    right: 20px 
+}
+
+.cancel-btn-tii{
+    background: $dark-blue;
+    color: white; 
+    margin-top: 1.5em; 
+    height: 45px; 
+    width: 140px; 
+    position: absolute; 
+    left: 0 
+}
+
+.canvas-tii{
+
+    canvas {
+    height: 110px !important;
+    width: 151px !important;
+}
+
 }

@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "operation-management": {
+        "operation-management-tii": {
             "root": "",
             "sourceRoot": "src",
             "projectType": "application",
@@ -70,18 +70,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "operation-management:build"
+                        "browserTarget": "operation-management-tii:build"
                     },
                     "configurations": {
                         "prod": {
-                            "browserTarget": "operation-management:build:prod"
+                            "browserTarget": "operation-management-tii:build:prod"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "operation-management:build"
+                        "browserTarget": "operation-management-tii:build"
                     }
                 },
                 "test": {
@@ -110,7 +110,7 @@
                 }
             }
         },
-        "operation-management-e2e": {
+        "operation-management-tii-e2e": {
             "root": "e2e/",
             "projectType": "application",
             "architect": {
@@ -118,7 +118,7 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "operation-management:serve"
+                        "devServerTarget": "operation-management-tii:serve"
                     },
                     "configurations": {
                         "prod": {
@@ -129,7 +129,7 @@
             }
         }
     },
-    "defaultProject": "operation-management",
+    "defaultProject": "operation-management-tii",
     "schematics": {
         "@schematics/angular:component": {
             "prefix": "app",

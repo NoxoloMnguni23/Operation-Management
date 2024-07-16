@@ -67,8 +67,12 @@
             "component": "view_receipt_imageComponent"
         },
         {
+            "path": "add_budget",
+            "component": "add_budgetComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "/operations_dashboard/landing",
+            "redirectTo": "/signIn",
             "pathMatch": "full",
             "default": true
         },

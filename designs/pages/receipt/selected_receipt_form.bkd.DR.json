@@ -1,6 +1,7 @@
 {
     "b2f0581d-00d6-99aa-34f7-a8d197bf8ac6": {
         "paletteKey": "FlexLayoutCol",
+        "isCommented": "false",
         "commentid": null,
         "designerReference": [
             {
@@ -63,6 +64,7 @@
             "paletteKey": "Html5",
             "parentEditorKey": "b2f0581d-00d6-99aa-34f7-a8d197bf8ac6",
             "isAdvancedComponent": true,
+            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -311,6 +313,33 @@
                         "_key": "routerLink",
                         "_value": "",
                         "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
+            "add70b3f-10ed-8ee4-b7a8-0df0ea3f2374": {
+                "paletteKey": "html-editor",
+                "parentEditorKey": "12e3c19c-6d74-8d57-e0c1-5f3e6f48d23d",
+                "isAdvancedChildComponent": true,
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "html",
+                        "_value": "\r\n{{page.userData.listOfItems[0]}}",
+                        "_type": "a",
                         "_attrDef": "p"
                     }
                 ]

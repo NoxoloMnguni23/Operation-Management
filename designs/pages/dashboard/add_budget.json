@@ -1,0 +1,667 @@
+[
+    {
+        "id": "sd_IwKGWaKGgP9yA6Xq",
+        "type": "tab",
+        "createdDate": "2024-07-11T13:50:15.764Z",
+        "label": "add_budget",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "add_budgetComponent"
+    },
+    {
+        "id": "sd_nMnY0EpCBAnvOIvy",
+        "type": "OnInit",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_nMnY0EpCBAnvOIvy",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 120,
+        "wires": [
+            [
+                "sd_4NMMyKYttXzCYfTI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_budgetComponent"
+    },
+    {
+        "id": "sd_4NMMyKYttXzCYfTI",
+        "type": "PageVariables",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "newBudget",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "newBudget"
+                }
+            }
+        ],
+        "functionName": "sd_4NMMyKYttXzCYfTI",
+        "category": "Function",
+        "x": 165,
+        "y": 120,
+        "wires": [
+            [
+                "sd_5IWiZjaWsZBDcD1E"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5IWiZjaWsZBDcD1E",
+        "type": "UseDependency",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "FormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormControl",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_5IWiZjaWsZBDcD1E",
+        "category": "Function",
+        "x": 265,
+        "y": 120,
+        "wires": [
+            [
+                "sd_DAugc1hrhkQvskVE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_DAugc1hrhkQvskVE",
+        "type": "Script",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.newBudgetForm = new FormGroup({\n    amount: new FormControl('', [Validators.required])\n})",
+        "functionName": "sd_DAugc1hrhkQvskVE",
+        "category": "Function",
+        "x": 365,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_00SfmvxpC6jofZsD",
+        "type": "PageStart",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "Budget",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "budget",
+        "category": "General",
+        "x": 65,
+        "y": 260,
+        "wires": [
+            [
+                "sd_o9P7UGqQFl5NZ9nj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_budgetComponent"
+    },
+    {
+        "id": "sd_o9P7UGqQFl5NZ9nj",
+        "type": "Environment",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_o9P7UGqQFl5NZ9nj",
+        "category": "General",
+        "x": 165,
+        "y": 260,
+        "wires": [
+            [
+                "sd_MRYcnV8k2xKPeckz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_MRYcnV8k2xKPeckz",
+        "type": "Script",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url1 = bh.ssdURL + 'add-budget'\nbh.url2 = bh.ssdURL + 'get-budget'\n\n\nbh.body = {\n    amount: bh.input.form.get('amount').value,\n    month: new Date().getMonth()\n};\n\n\n\n",
+        "functionName": "sd_MRYcnV8k2xKPeckz",
+        "category": "Function",
+        "x": 265,
+        "y": 260,
+        "wires": [
+            [
+                "sd_8IzWj48KOmX4zbBc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8IzWj48KOmX4zbBc",
+        "type": "HttpRequest",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url1",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url1"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_8IzWj48KOmX4zbBc",
+        "category": "HTTP",
+        "x": 365,
+        "y": 260,
+        "wires": [
+            [
+                "sd_Q5wCg4ycU1ukvX2d"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_tc6w6ehMPsQtyJta",
+        "type": "CloseDialog",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "data": "this.page.currentMonthBugetAmt",
+        "functionName": "sd_tc6w6ehMPsQtyJta",
+        "category": "Dialog",
+        "x": 665,
+        "y": 260,
+        "wires": [
+            [
+                "sd_e1IXYcZ7xBPDtuKZ"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "currentMonthBugetAmt",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Q5wCg4ycU1ukvX2d",
+        "type": "HttpRequest",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url2",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url2"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.budgetResults",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "budgetResults"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_Q5wCg4ycU1ukvX2d",
+        "category": "HTTP",
+        "x": 465,
+        "y": 260,
+        "wires": [
+            [
+                "sd_F2vxo8hJsDF5Qmyf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_F2vxo8hJsDF5Qmyf",
+        "type": "Script",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('After hitting get API ',page.budgetResults[0].budget)\n\nlet months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\n\npage.currentMonthBugetAmt;\n\npage.findCurrBudget = page.budgetResults[0].budget.filter((budget) => {\n    if(budget.month == months[new Date().getMonth()])\n    {\n        page.currentMonthBugetAmt = budget.amount\n    }\n})\n\n\nconsole.log('Current month budget from pop: ', page.currentMonthBugetAmt)",
+        "functionName": "sd_F2vxo8hJsDF5Qmyf",
+        "category": "Function",
+        "x": 565,
+        "y": 260,
+        "wires": [
+            [
+                "sd_tc6w6ehMPsQtyJta"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_J4osXHviYMo4i4Bd",
+        "type": "Environment",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_J4osXHviYMo4i4Bd",
+        "category": "General",
+        "x": 245,
+        "y": 380,
+        "wires": [
+            [
+                "sd_qvblgH4wi5OyQxm0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_qvblgH4wi5OyQxm0",
+        "type": "Script",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.ssdURL = bh.ssdURL + 'get-budget'",
+        "functionName": "sd_qvblgH4wi5OyQxm0",
+        "category": "Function",
+        "x": 345,
+        "y": 380,
+        "wires": [
+            [
+                "sd_e4H1wcZboGM8kDOn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_e4H1wcZboGM8kDOn",
+        "type": "HttpRequest",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.ssdURL",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "ssdURL"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_e4H1wcZboGM8kDOn",
+        "category": "HTTP",
+        "x": 450,
+        "y": 380,
+        "wires": [
+            [
+                "sd_DnLGACPTy26ZyFga"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_DnLGACPTy26ZyFga",
+        "type": "Script",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Getting Current Month Budget that was just entered",
+        "script": "\nlet months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\n\nconsole.log('Year budget: ', page?.result[0])\npage.currentMonthBugetAmt;\n\npage.findCurrBudget = page.result[0].budget.filter((budget) => {\n    if(budget.month == months[new Date().getMonth()])\n    {\n        page.currentMonthBugetAmt = budget.amount\n    }\n})\n\n\nconsole.log('Current month budget: ', page.currentMonthBugetAmt)",
+        "functionName": "gettingCurrentMonthBudgetThatWasJustEntered",
+        "category": "Function",
+        "x": 605,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_exTt9V0AJ0YfMWsA",
+        "type": "Script",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.data = page.result[0].budget\npage.budgetAmount = []\npage.data.forEach(item => {\n  page.budgetAmount.push(item.amount)\n});\n\n\n  page.accumulatedAnnual = page.budgetAmount.reduce((accumulator, currentValue) => accumulator + currentValue, 0)\n  // console.log(\"final amount\",page.accumulatedAnnual)\n",
+        "functionName": "sd_exTt9V0AJ0YfMWsA",
+        "category": "Function",
+        "x": 765,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_budgetComponent"
+    },
+    {
+        "id": "sd_bQfhj38MTqPFNcH4",
+        "type": "PageStart",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "getThisMonthBudget",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getThisMonthBudget",
+        "category": "General",
+        "x": 125,
+        "y": 380,
+        "wires": [
+            [
+                "sd_J4osXHviYMo4i4Bd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_budgetComponent"
+    },
+    {
+        "id": "sd_e1IXYcZ7xBPDtuKZ",
+        "type": "Navigation",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/line_chart",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_e1IXYcZ7xBPDtuKZ",
+        "category": "Navigation",
+        "x": 745,
+        "y": 260,
+        "wires": [
+            [
+                "sd_5zbk2lP6OBk1etNV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5zbk2lP6OBk1etNV",
+        "type": "Navigation",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/operations_dashboard/landing",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_5zbk2lP6OBk1etNV",
+        "category": "Navigation",
+        "x": 845,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cM8edAtvzfaM4wZM",
+        "type": "PageStart",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "closeDialog",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "closeDialog",
+        "category": "General",
+        "x": 505,
+        "y": 120,
+        "wires": [
+            [
+                "sd_rCBigoAhcQDq8Wo8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_budgetComponent"
+    },
+    {
+        "id": "sd_rCBigoAhcQDq8Wo8",
+        "type": "CloseDialog",
+        "z": "sd_IwKGWaKGgP9yA6Xq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "data": "this.page.nothing",
+        "functionName": "sd_rCBigoAhcQDq8Wo8",
+        "category": "Dialog",
+        "x": 605,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "nothing",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_budgetComponent",
+        "generated": true
+    }
+]

@@ -93,19 +93,10 @@
                 },
                 {
                     "_key": "(rowclick)",
-                    "_value": "selected(row)",
+                    "_value": "",
                     "_type": "a",
                     "_attrDef": "p",
-                    "_customAttributeFlag": "flowpicker",
-                    "objValue": {
-                        "nodeID": "sd_LPpzec9McQsWn2OI",
-                        "functionName": "selected",
-                        "activeTree": "pages",
-                        "z": "sd_PDYpvdpmhJjQKFZR",
-                        "input": [
-                            "row"
-                        ]
-                    }
+                    "_customAttributeFlag": "flowpicker"
                 },
                 {
                     "_key": "header",

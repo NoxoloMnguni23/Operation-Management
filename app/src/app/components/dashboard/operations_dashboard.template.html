@@ -1,5 +1,5 @@
 <div fxLayout="column " fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true"><mat-sidenav-container class="full-height" autosize="true" [hasBackdrop]="false"><mat-sidenav #sidenav class="overflow-hidden-tii position-relative-tii color-white-blue dark-blue-bg full-height" [mode]="&apos;side&apos;" [position]="&apos;start&apos;" [opened]="true" fixedInViewport="false">
-      <div fxLayout="row wrap" class="close-nav-icon-tii" fxLayoutAlign="start stretch" [fxShow]="true" (click)="sidenavToggles()"><mat-icon *ngIf="!page.collapsed">chevron_right</mat-icon><mat-icon *ngIf="page.collapsed">chevron_left</mat-icon></div>
+      <div fxLayout="row wrap" class="close-nav-icon-tii" fxLayoutAlign="start stretch" [fxShow]="true" (click)="sidenavToggles()"><mat-icon class="cursor-tii" *ngIf="!page.collapsed">chevron_right</mat-icon><mat-icon class="cursor-tii" *ngIf="page.collapsed">chevron_left</mat-icon></div>
       <div fxLayout="column wrap" class="margin-1em-tii overflow-hidden-tii" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxLayout="row wrap" class="max-width-300px2-tii margin-bottom-2em-tii height-10-tii" fxLayoutAlign="start center" [fxShow]="true">
           <div fxLayout="row wrap" class="width-50px-tii" fxLayoutAlign="center center" [fxShow]="true"><mat-icon>receipt_long</mat-icon></div>
@@ -19,8 +19,14 @@
           {{page.label.label}}
         </div><span class="flex1-tii">
                 </span>
-        <div>
-          Lucas Walker</div><img imgSrc="Web/Images/lucas.jpg" class="margin-left-1em border-radius-50 height-30px-tii width-40px-tii">
+        <div fxLayout="row wrap" fxLayoutGap="0.5em" fxLayoutAlign="center center" [fxShow]="true"><button mat-raised-button class="blue-bg color-white-blue" (click)="logout()">Logout</button>
+          <div>
+            {{page.currentUser.firstName}} {{page.currentUser.lastName}}
+          </div>
+        </div>
+        <div class="text-center round margin-left-1em border-radius-50">
+          {{page.currentUser.firstName.slice(0,1)}}{{page.currentUser.lastName.slice(0,1)}}
+        </div>
       </mat-toolbar>
       <div fxLayout="row wrap" class="gray-blue-bg router-outlet-content-tii" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" fxFill><router-outlet></router-outlet></div>
     </div>
