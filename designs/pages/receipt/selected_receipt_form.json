@@ -76,8 +76,8 @@
         },
         "functionName": "sd_49ZekZ6zNblKYnYe",
         "category": "Storage",
-        "x": 165,
-        "y": 120,
+        "x": 385,
+        "y": 40,
         "wires": [
             [
                 "sd_q1lHTwDbml4pIrPz"
@@ -98,8 +98,8 @@
         "script": "\n\n\nconsole.log(\"recived\",page.userData)",
         "functionName": "sd_q1lHTwDbml4pIrPz",
         "category": "Function",
-        "x": 305,
-        "y": 120,
+        "x": 505,
+        "y": 40,
         "wires": [
             []
         ],
@@ -170,7 +170,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nbh.url = page.ssdUrl + `download-file/${page.userData.fileid}`;\npage.image = page.sanitizer.bypassSecurityTrustHtml(bh.url)\npage.showImage = true\n\nwindow.open(bh.url, '_blank');",
+        "script": "\nbh.url = page.ssdUrl + `download-file/${page.userData.fileid}`;\npage.image = page.sanitizer.bypassSecurityTrustHtml(bh.url)\npage.showImage = true\n\nconsole.log(\"bh.url\",bh.url)\n  console.log(\"res\",page.Receipt)\n\nwindow.open(\"/view_receipt_image\", '_blank');",
         "functionName": "sd_1BdhzLGBcmRGEfLL",
         "category": "Function",
         "x": 800,
@@ -210,10 +210,10 @@
             "mapVarType": "this.page",
             "mapVarValue": "userData.fileid"
         },
-        "resultMapping": "this.page.Receipt",
+        "resultMapping": "this.page.res",
         "resultMappingObj": {
             "mapVarType": "this.page",
-            "mapVarValue": "Receipt"
+            "mapVarValue": "res"
         },
         "headers": {},
         "headersObj": [],
@@ -226,7 +226,9 @@
         "x": 900,
         "y": 136.80206298828125,
         "wires": [
-            []
+            [
+                "sd_79Hz6legshY35Dv6"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -266,6 +268,87 @@
         "wires": [
             [
                 "sd_XyfbDazfYKEzilS2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_D4IUBlbXve1T7sZ2",
+        "type": "Storage",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "imgData"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "res"
+        },
+        "resultMapping": {},
+        "functionName": "sd_D4IUBlbXve1T7sZ2",
+        "category": "Storage",
+        "x": 1105,
+        "y": 200,
+        "wires": [
+            [
+                "sd_BFX4kzBdgJvncSEQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BFX4kzBdgJvncSEQ",
+        "type": "Log",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.Receipt",
+        "functionName": "sd_BFX4kzBdgJvncSEQ",
+        "category": "General",
+        "x": 1225,
+        "y": 200,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "Receipt",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_79Hz6legshY35Dv6",
+        "type": "Script",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " console.log(\"res\",page.res)\n//  let res = page.res;\n//   const blob = await res.blob()\n//   const img = new Image()\n//   img.src = URL.createObjectURL(blob)\n\n//   // newer promise based version of img.onload\n//   await img.decode()\n  \n//   // document.body.append(img)\n  \n//   console.log(\"res\",img)\n\n//   // Don't forget to revoke the blob url when \n//   // you no longer need it (to release memory)\n//   URL.revokeObjectURL(img.src)",
+        "functionName": "sd_79Hz6legshY35Dv6",
+        "category": "Function",
+        "x": 980,
+        "y": 200,
+        "wires": [
+            [
+                "sd_D4IUBlbXve1T7sZ2"
             ]
         ],
         "__n_excludedFromValidation__": {},

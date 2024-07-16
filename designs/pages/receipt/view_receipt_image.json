@@ -1,0 +1,119 @@
+[
+    {
+        "id": "sd_ZxtfH4raqIzFAWHy",
+        "type": "tab",
+        "createdDate": "2024-07-15T08:43:31.047Z",
+        "label": "view_receipt_image",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "view_receipt_imageComponent"
+    },
+    {
+        "id": "sd_IjtHzzPUBEHRsfCx",
+        "type": "OnInit",
+        "z": "sd_ZxtfH4raqIzFAWHy",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_IjtHzzPUBEHRsfCx",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_i4rQVDm2mSdEwVRw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "view_receipt_imageComponent"
+    },
+    {
+        "id": "sd_i4rQVDm2mSdEwVRw",
+        "type": "PageVariables",
+        "z": "sd_ZxtfH4raqIzFAWHy",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "image",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_i4rQVDm2mSdEwVRw",
+        "category": "Function",
+        "x": 165,
+        "y": 80,
+        "wires": [
+            [
+                "sd_jUudG01HtZOREdWi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "view_receipt_imageComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jUudG01HtZOREdWi",
+        "type": "Storage",
+        "z": "sd_ZxtfH4raqIzFAWHy",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "imgData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_jUudG01HtZOREdWi",
+        "category": "Storage",
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "sd_KYKuH3G7m1PCNNwg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "view_receipt_imageComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KYKuH3G7m1PCNNwg",
+        "type": "Script",
+        "z": "sd_ZxtfH4raqIzFAWHy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.image = page.url\n\nconsole.log(\"buff\",page.result[0].data)\n\n//document.getElementById(\"ItemPreview\").src = \"data:image/png;base64,\" + page.result[0].data;\n page.image = `data:image/png;base64,${page.result[0].data}`\n",
+        "functionName": "sd_KYKuH3G7m1PCNNwg",
+        "category": "Function",
+        "x": 420,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "view_receipt_imageComponent",
+        "generated": true
+    }
+]
