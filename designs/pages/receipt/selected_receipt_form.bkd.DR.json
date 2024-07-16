@@ -314,32 +314,6 @@
                         "_attrDef": "p"
                     }
                 ]
-            },
-            "add70b3f-10ed-8ee4-b7a8-0df0ea3f2374": {
-                "paletteKey": "html-editor",
-                "parentEditorKey": "12e3c19c-6d74-8d57-e0c1-5f3e6f48d23d",
-                "isAdvancedChildComponent": true,
-                "commentid": null,
-                "designerReference": [
-                    {
-                        "_key": "style",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "html",
-                        "_value": "\r\n{{page.userData.listOfItems[0]}}",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    }
-                ]
             }
         }
     }

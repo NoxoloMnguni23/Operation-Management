@@ -263,7 +263,7 @@ export class add_receiptComponent {
       // })
 
       page.thirdFormGroup.controls.items.push(page.item);
-
+      page.item.controls['itemName'].clear();
       console.log(page.thirdFormGroup);
       //appendnew_next_sd_at75G7Cz2S4ahDoN
       return bh;
