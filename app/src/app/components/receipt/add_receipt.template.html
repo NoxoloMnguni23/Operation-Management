@@ -78,19 +78,19 @@
 
                     </mat-form-field>
                   </div>
+                  <div fxLayout="row wrap" class="input-left" fxLayoutAlign="start stretch" [fxShow]="true"><mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                      <mat-label>Categroy</mat-label>
+                      <mat-select formControlName="category" [required]="false">
+                        <mat-option [value]="&apos;Supplies&apos;" disabled="false">Supplies</mat-option><mat-option [value]="&apos;Maintenance&apos;" disabled="false">Maintenance</mat-option><mat-option [value]="&apos;Groceries&apos;" disabled="false">Groceries</mat-option>
+                      </mat-select>
+
+                    </mat-form-field></div>
                   <div fxLayout="row wrap" class="input-left" fxLayoutAlign="start stretch" [fxShow]="true">
                     <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
                       <input matInput type="number" placeholder="price" [required]="false" formControlName="price">
 
                     </mat-form-field>
                   </div>
-                  <div fxLayout="row wrap" class="input-left" fxLayoutAlign="start stretch" [fxShow]="true"><mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
-                      <mat-label>Categroy</mat-label>
-                      <mat-select formControlName="category" [required]="false">
-                        <mat-option [value]="&apos;Option 1&apos;" disabled="false">Supplies</mat-option><mat-option [value]="&apos;Option 2&apos;" disabled="false">Maintenance</mat-option><mat-option [value]="&apos;Option 3&apos;" disabled="false">Groceries</mat-option>
-                      </mat-select>
-
-                    </mat-form-field></div>
                   <div fxLayout="row wrap" style="height:20px;width:10px; " fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon (click)="deleteItem(i)">delete</mat-icon></div>
                 </div>
               </div>

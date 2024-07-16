@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-view_receipt_imageComponent
+import { view_receipt_imageComponent } from '../components/receipt/view_receipt_image.component';
 //CORE_REFERENCE_IMPORT-getData
 import { getData } from '../sd-services/getData';
 //CORE_REFERENCE_IMPORT-add_budgetComponent
@@ -84,6 +86,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-view_receipt_imageComponent
+  view_receipt_imageComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-add_budgetComponent
   add_budgetComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-statisticsComponent
@@ -174,6 +178,7 @@ export const appRoutes = [
   { path: 'login_guidelines', component: login_guidelinesComponent },
   { path: 'line_chart', component: line_chartComponent },
   { path: 'donut_chart', component: donut_chartComponent },
+  { path: 'view_receipt_image', component: view_receipt_imageComponent },
   { path: 'add_budget', component: add_budgetComponent },
   { path: '', redirectTo: '/signIn', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

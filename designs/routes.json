@@ -63,6 +63,10 @@
             "component": "donut_chartComponent"
         },
         {
+            "path": "view_receipt_image",
+            "component": "view_receipt_imageComponent"
+        },
+        {
             "path": "add_budget",
             "component": "add_budgetComponent"
         },

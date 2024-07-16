@@ -256,7 +256,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// page.item = page._formBuilder.group({\n//     itemName: ['', Validators.required],\n//     price: ['', Validators.required],\n//     category: ['', Validators.required]\n// })\n\npage.thirdFormGroup.controls.items.push(page.item)\n\nconsole.log(page.thirdFormGroup)",
+        "script": "// page.item = page._formBuilder.group({\n//     itemName: ['', Validators.required],\n//     price: ['', Validators.required],\n//     category: ['', Validators.required]\n// })\n\npage.thirdFormGroup.controls.items.push(page.item)\npage.item.controls['itemName'].clear()\nconsole.log(page.thirdFormGroup)",
         "functionName": "sd_at75G7Cz2S4ahDoN",
         "category": "Function",
         "x": 220,
@@ -495,6 +495,7 @@
         "nodeType": "flow",
         "name": "Post receipt Details",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.urlData",
         "urlMappingObj": {
@@ -502,8 +503,10 @@
             "mapVarValue": "urlData"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -517,6 +520,8 @@
             "mapVarType": "bh",
             "mapVarValue": "resultsData"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.headers",
         "headerMappingObj": {
             "mapVarType": "bh",
@@ -524,6 +529,7 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "postReceiptDetails",
         "category": "HTTP",
@@ -717,6 +723,7 @@
         "nodeType": "flow",
         "name": "Post receipt file",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "\"http://localhost:8081/api/upload-receipt\"",
         "urlMappingObj": {
@@ -724,8 +731,10 @@
             "mapVarValue": "http://localhost:8081/api/upload-receipt"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -739,11 +748,15 @@
             "mapVarType": "bh",
             "mapVarValue": "resultsFile"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "this.page.headers",
         "headerMappingObj": {
             "mapVarType": "this.page",
             "mapVarValue": "headers"
         },
+        "params": [],
+        "paramsObj": {},
         "paramMapping": "this.page.params",
         "paramMappingObj": {
             "mapVarType": "this.page",

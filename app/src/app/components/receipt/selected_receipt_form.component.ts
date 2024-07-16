@@ -134,7 +134,10 @@ export class selected_receipt_formComponent {
       page.image = page.sanitizer.bypassSecurityTrustHtml(bh.url);
       page.showImage = true;
 
-      window.open(bh.url, '_blank');
+      console.log('bh.url', bh.url);
+      console.log('res', page.Receipt);
+
+      window.open('/view_receipt_image', '_blank');
       bh = this.view(bh);
       //appendnew_next_sd_1BdhzLGBcmRGEfLL
       return bh;
@@ -153,11 +156,60 @@ export class selected_receipt_formComponent {
         params: {},
         body: this.page.userData.fileid,
       };
-      this.page.Receipt = await this.sdService.nHttpRequest(requestOptions);
+      this.page.res = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_79Hz6legshY35Dv6(bh);
       //appendnew_next_view
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_UtDuvQXOyPCNstAe');
+    }
+  }
+
+  sd_79Hz6legshY35Dv6(bh) {
+    try {
+      const page = this.page;
+      console.log('res', page.res);
+      //  let res = page.res;
+      //   const blob = await res.blob()
+      //   const img = new Image()
+      //   img.src = URL.createObjectURL(blob)
+
+      //   // newer promise based version of img.onload
+      //   await img.decode()
+
+      //   // document.body.append(img)
+
+      //   console.log("res",img)
+
+      //   // Don't forget to revoke the blob url when
+      //   // you no longer need it (to release memory)
+      //   URL.revokeObjectURL(img.src)
+      bh = this.sd_D4IUBlbXve1T7sZ2(bh);
+      //appendnew_next_sd_79Hz6legshY35Dv6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_79Hz6legshY35Dv6');
+    }
+  }
+
+  sd_D4IUBlbXve1T7sZ2(bh) {
+    try {
+      localStorage.setItem('imgData', JSON.stringify(this.page.res));
+      this.sd_BFX4kzBdgJvncSEQ(bh);
+      //appendnew_next_sd_D4IUBlbXve1T7sZ2
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_D4IUBlbXve1T7sZ2');
+    }
+  }
+
+  sd_BFX4kzBdgJvncSEQ(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.Receipt);
+      //appendnew_next_sd_BFX4kzBdgJvncSEQ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_BFX4kzBdgJvncSEQ');
     }
   }
 
