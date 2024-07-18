@@ -219,6 +219,7 @@ export class statisticsComponent {
         requestOptions
       );
       bh = this.sd_FbCEXSfe41G7Z3fa(bh);
+      bh = this.sd_8aE0PlTSd1RAOH6q(bh);
       //appendnew_next_sd_SEZAeyvG1j9ff0w8
       return bh;
     } catch (e) {
@@ -237,10 +238,9 @@ export class statisticsComponent {
         body: undefined,
       };
       this.page.receiptData = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_JVGzVah92BWUgJxM(bh);
-      bh = this.sd_8aE0PlTSd1RAOH6q(bh);
-      bh = this.chartTwoAndInsights(bh);
+      bh = this.graphOne(bh);
       bh = this.fourthChart(bh);
+      bh = this.chartTwoAndInsights(bh);
       //appendnew_next_sd_FbCEXSfe41G7Z3fa
       return bh;
     } catch (e) {
@@ -248,13 +248,14 @@ export class statisticsComponent {
     }
   }
 
-  sd_JVGzVah92BWUgJxM(bh) {
+  graphOne(bh) {
     try {
-      const page = this.page;
-      // Function to parse the month and year from the date
+      const page = this.page; // Function to parse the month and year from the date
       function parseMonth(dateStr) {
-        const date = new Date(dateStr);
-        const month = date.getMonth();
+        const [year, month, day] = dateStr.split('/');
+        const date = new Date(year, month - 1, day);
+        const monthIndex = date.getMonth();
+        const yearIndex = date.getFullYear();
         const monthNames = [
           'January',
           'February',
@@ -269,31 +270,62 @@ export class statisticsComponent {
           'November',
           'December',
         ];
-        return monthNames[month];
+        return `${monthNames[monthIndex]} ${yearIndex}`;
       }
 
       // Create a map to store the totals for each month
       const monthlyTotalsMap = {};
-      let nData = page.receiptData;
+      let nData = page.receiptData; // Assuming page.receiptData contains the API data
 
       // Iterate through the data and update the map
       nData.forEach((entry) => {
-        const month = parseMonth(entry['Date-Uploaded']);
-        if (!monthlyTotalsMap[month]) {
-          monthlyTotalsMap[month] = 0;
+        const monthYear = parseMonth(entry['Date-Uploaded']);
+        if (!monthlyTotalsMap[monthYear]) {
+          monthlyTotalsMap[monthYear] = 0;
         }
-        monthlyTotalsMap[month] += entry.total;
+        monthlyTotalsMap[monthYear] += entry.totalAmount;
       });
 
       // Separate the keys and values into two arrays
       const months = Object.keys(monthlyTotalsMap);
       page.monthlyExpenses = Object.values(monthlyTotalsMap);
 
+      // // Function to parse the month and year from the date
+      // function parseMonth(dateStr) {
+      //   const [month, day, year] = dateStr.split('/');
+      //   const date = new Date(year, month - 1, day);
+      //   const monthIndex = date.getMonth();
+      //   const monthNames = [
+      //     "January", "February", "March", "April", "May", "June",
+      //     "July", "August", "September", "October", "November", "December"
+      //   ];
+      //   return monthNames[monthIndex];
+      // }
+
+      // // Create a map to store the totals for each month
+      // const monthlyTotalsMap = {};
+      // let nData = page.receiptData; // Assuming page.receiptData contains the API data
+
+      // // Iterate through the data and update the map
+      // nData.forEach(entry => {
+      //   const month = parseMonth(entry["Date-Uploaded"]);
+      //   if (!monthlyTotalsMap[month]) {
+      //     monthlyTotalsMap[month] = 0;
+      //   }
+      //   monthlyTotalsMap[month] += entry.totalAmount;
+      // });
+
+      // // Separate the keys and values into two arrays
+      // const months = Object.keys(monthlyTotalsMap);
+      // page.monthlyExpenses = Object.values(monthlyTotalsMap);
+
+      // console.log("ex", page.monthlyExpenses)
+
       bh = this.sd_8aE0PlTSd1RAOH6q(bh);
-      //appendnew_next_sd_JVGzVah92BWUgJxM
+      //appendnew_next_graphOne
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_JVGzVah92BWUgJxM');
+      return this.errorHandler(bh, e, 'sd_t1pzThl1Nky4ckT0');
     }
   }
 
@@ -375,24 +407,64 @@ export class statisticsComponent {
 
   fifthChartData(bh) {
     try {
-      const page = this.page;
-      // const currentMonth = new Date().getMonth();
-      page.currentMonth = new Date().getMonth();
+      const page = this.page; // const monthNames = [
+      //   "January", "February", "March", "April", "May", "June",
+      //   "July", "August", "September", "October", "November", "December"
+      // ];
 
-      // Calculate the previous month (handling the wrap-around from January to December)
-      page.previousMonth = (page.currentMonth - 1 + 12) % 12;
+      // page.currentMonthIndex = new Date().getMonth();
+      // page.currentMonth = monthNames[page.currentMonthIndex];
+      // page.previousMonthIndex = (page.currentMonthIndex - 1 + 12) % 12;
+      // page.previousMonth = monthNames[page.previousMonthIndex];
+
+      // let responseData = page.dataSet
+      // const savingsData = responseData.find(item => item.label === "Savings").data;
+
+      // page.currentMonthSavings = savingsData[page.currentMonthIndex];
+      // page.previousMonthSavings = savingsData[page.previousMonthIndex];
+
+      // page.fifthChartData = [
+      //     {data: [page.currentMonthSavings, page.previousMonthSavings], label: "Savings"}
+      // ]
+
+      // const page = page || {}; // Initialize page object if not already done
+
+      const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+
+      // Get current month and previous month indexes
+      page.currentMonthIndex = new Date().getMonth();
+      page.currentMonth = monthNames[page.currentMonthIndex];
+      page.previousMonthIndex = (page.currentMonthIndex - 1 + 12) % 12;
+      page.previousMonth = monthNames[page.previousMonthIndex];
 
       let responseData = page.dataSet;
+
+      // Find the savings data in the response
       const savingsData = responseData.find(
         (item) => item.label === 'Savings'
       ).data;
 
-      page.currentMonthSavings = savingsData[page.currentMonth];
-      page.previousMonthSavings = savingsData[page.previousMonth];
+      // Get current and previous month savings
+      page.currentMonthSavings = savingsData[page.currentMonthIndex];
+      page.previousMonthSavings = savingsData[page.previousMonthIndex];
 
+      // Prepare the fifth chart data
       page.fifthChartData = [
         {
-          data: [page.currentMonthSavings, page.previousMonthSavings],
+          data: [page.previousMonthSavings, page.currentMonthSavings],
           label: 'Savings',
         },
       ];
@@ -473,87 +545,10 @@ export class statisticsComponent {
     }
   }
 
-  chartTwoAndInsights(bh) {
-    try {
-      const page = this.page;
-      const currentDate = new Date();
-
-      const monthNames = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ];
-
-      const currentMonthIndex = currentDate.getMonth();
-      const previousMonthIndex = (currentMonthIndex - 1 + 12) % 12;
-
-      page.currentMonth = monthNames[currentMonthIndex];
-      page.previousMonth = monthNames[previousMonthIndex];
-
-      let data = page.allYearBudget[0].budget;
-
-      // Find the budget for the current and previous months
-      const currentBudget = data.find(
-        (item) => item.month === page.currentMonth
-      );
-
-      const previousBudget = data.find(
-        (item) => item.month === page.previousMonth
-      );
-
-      // Store the budgets and corresponding months in separate arrays
-      const budgetAmounts = [previousBudget.amount, currentBudget.amount];
-      const budgetMonths = [previousBudget.month, currentBudget.month];
-
-      page.barChartDataTwo = [{ data: budgetAmounts, label: 'Budget' }];
-
-      page.barChartDataTwoLabels = [{ data: budgetMonths }];
-
-      page.barChartDataTwoLabels = page.barChartDataTwoLabels[0].data;
-
-      //Insights for graph
-
-      function compareAmountsWithMonths(amounts, months) {
-        let result;
-        const difference = Math.abs(amounts[0] - amounts[1]);
-
-        if (amounts[0] > amounts[1]) {
-          result = `The previous month, ${months[0]}, had a higher budget, R ${amounts[0]}, than the current month, ${months[1]} which has a budget of R (${amounts[1]}). There is a difference of R ${difference} between the two months.`;
-        } else if (amounts[0] < amounts[1]) {
-          result = `The current month, ${months[1]}, has a higher budget of R ${amounts[1]}, which is higher than the previous month, ${months[0]}, which had a budget of R ${amounts[0]}. There is a difference of R ${difference} between the two months.`;
-        } else {
-          result = `Both months, ${months[0]} and ${months[1]}, have the same amount of R ${amounts[0]}.`;
-        }
-
-        return result;
-      }
-
-      page.chartTwoInsight = compareAmountsWithMonths(
-        budgetAmounts,
-        budgetMonths
-      );
-
-      //appendnew_next_chartTwoAndInsights
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_dzcNy0FhCjlim4tN');
-    }
-  }
-
   fourthChart(bh) {
     try {
       const page = this.page;
       let data = page.receiptData;
-
       function getCategoryWithMostExpenditure(data) {
         const categorySumsByMonth = {};
         const monthNames = [
@@ -581,16 +576,26 @@ export class statisticsComponent {
           const monthYear = formatMonthYear(uploadedDate);
 
           if (!categorySumsByMonth[monthYear]) {
-            categorySumsByMonth[monthYear] = {
-              Groceries: 0,
-              Maintenance: 0,
-              Supplies: 0,
-            };
+            categorySumsByMonth[monthYear] = {};
           }
 
           entry.items.forEach((item) => {
-            if (categorySumsByMonth[monthYear][item.category] !== undefined) {
-              categorySumsByMonth[monthYear][item.category] += item.price;
+            const categoryKey = Object.keys(item).find((key) =>
+              key.startsWith('category')
+            );
+            const priceKey = Object.keys(item).find((key) =>
+              key.startsWith('price')
+            );
+
+            if (categoryKey && priceKey) {
+              const category = item[categoryKey];
+              const price = item[priceKey];
+
+              if (!categorySumsByMonth[monthYear][category]) {
+                categorySumsByMonth[monthYear][category] = 0;
+              }
+
+              categorySumsByMonth[monthYear][category] += price;
             }
           });
         });
@@ -620,34 +625,36 @@ export class statisticsComponent {
 
         const currentMonthMax = categorySumsByMonth[currentMonthYear]
           ? getMaxCategory(categorySumsByMonth[currentMonthYear])
-          : null;
+          : { category: null, amount: 0 };
 
         const previousMonthMax = categorySumsByMonth[previousMonthYear]
           ? getMaxCategory(categorySumsByMonth[previousMonthYear])
-          : null;
+          : { category: null, amount: 0 };
 
         return { currentMonthMax, previousMonthMax };
       }
 
-      page.prevMonthMostCategory =
-        getCategoryWithMostExpenditure(data).previousMonthMax.category;
-      page.currMonthMostCategory =
-        getCategoryWithMostExpenditure(data).currentMonthMax.category;
+      const expenditureData = getCategoryWithMostExpenditure(data);
+      page.prevMonthMostCategory = expenditureData.previousMonthMax.category;
+      page.currenttMonthMaxCatetory = expenditureData.currentMonthMax.category;
 
-      let currentMonthCat = page.currMonthMostCategory;
+      let currentMonthCat = page.currenttMonthMaxCatetory;
       let prevMonthCat = page.prevMonthMostCategory;
 
-      const previousMonthMax =
-        getCategoryWithMostExpenditure(data).previousMonthMax.amount;
-      const currentMonthMax =
-        getCategoryWithMostExpenditure(data).currentMonthMax.amount;
+      const previousMonthMaxAmount = expenditureData.previousMonthMax.amount;
+      const currentMonthMaxAmount = expenditureData.currentMonthMax.amount;
+
+      page.prevMonthMaxCatAmt = previousMonthMaxAmount;
+      page.currMonthMaxCatAmt = currentMonthMaxAmount;
 
       page.fourthChartData = [
-        { data: [previousMonthMax], label: page.prevMonthMostCategory },
-        { data: [currentMonthMax], label: page.currMonthMostCategory },
+        {
+          data: [previousMonthMaxAmount, currentMonthMaxAmount],
+          label: [currentMonthCat, prevMonthCat],
+        },
       ];
 
-      page.fourthChartLabels = [page.previousMonth, page.currentMonth];
+      page.fourthChartLabels = [currentMonthCat, prevMonthCat];
 
       bh = this.fourth(bh);
       //appendnew_next_fourthChart
@@ -743,10 +750,86 @@ export class statisticsComponent {
           label: getCategoryWithMostExpenditure(data).previousMonthMax.category,
         },
       ];
+
       //appendnew_next_fourth
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_93qcqkrPGMtTfP6B');
+    }
+  }
+
+  chartTwoAndInsights(bh) {
+    try {
+      const page = this.page;
+      const currentDate = new Date();
+
+      const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+
+      const currentMonthIndex = currentDate.getMonth();
+      const previousMonthIndex = (currentMonthIndex - 1 + 12) % 12;
+
+      page.currentMonth = monthNames[currentMonthIndex];
+      page.previousMonth = monthNames[previousMonthIndex];
+
+      let data = page.allYearBudget[0].budget;
+
+      // Find the budget for the current and previous months
+      const currentBudget = data.find(
+        (item) => item.month === page.currentMonth
+      );
+
+      const previousBudget = data.find(
+        (item) => item.month === page.previousMonth
+      );
+
+      // Store the budgets and corresponding months in separate arrays
+      const budgetAmounts = [previousBudget.amount, currentBudget.amount];
+      const budgetMonths = [previousBudget.month, currentBudget.month];
+
+      page.barChartDataTwo = [{ data: budgetAmounts, label: 'Budget' }];
+      page.barChartDataTwoLabels = [{ data: budgetMonths }];
+
+      page.barChartDataTwoLabels = page.barChartDataTwoLabels[0].data;
+
+      //Insights for graph
+
+      function compareAmountsWithMonths(amounts, months) {
+        let result;
+        const difference = Math.abs(amounts[0] - amounts[1]);
+
+        if (amounts[0] > amounts[1]) {
+          result = `The previous month, ${months[0]}, had a higher budget, R ${amounts[0]}, than the current month, ${months[1]} which has a budget of R ${amounts[1]}. There is a difference of R ${difference} between the two months.`;
+        } else if (amounts[0] < amounts[1]) {
+          result = `The current month, ${months[1]}, has a higher budget of R ${amounts[1]}, which is higher than the previous month, ${months[0]}, which had a budget of R ${amounts[0]}. There is a difference of R ${difference} between the two months.`;
+        } else {
+          result = `Both months, ${months[0]} and ${months[1]}, have the same amount of R ${amounts[0]}.`;
+        }
+
+        return result;
+      }
+
+      page.chartTwoInsight = compareAmountsWithMonths(
+        budgetAmounts,
+        budgetMonths
+      );
+
+      //appendnew_next_chartTwoAndInsights
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_dzcNy0FhCjlim4tN');
     }
   }
 

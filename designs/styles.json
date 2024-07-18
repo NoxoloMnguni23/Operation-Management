@@ -22,6 +22,7 @@
         "half-width",
         "font-300-lebo",
         "font-weight-900-lebo",
+        "form-kim",
         "no-margin-lebo",
         "margin-top-10px-lebo",
         "margin-right-160px-lebo",
@@ -85,6 +86,7 @@
         "not-set-btn-tii",
         "submit-btn-tii",
         "cancel-btn-tii",
-        "canvas-tii"
+        "canvas-tii",
+        "canvas2-tii"
     ]
 }

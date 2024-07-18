@@ -216,69 +216,108 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
     try {
       const page = this.page;
       page.items = {};
-      bh.date = page.resultItems.forEach((item: any) => {
-        console.log('main', page.resultItems);
-        //page.items.push(item.dateUploaded)
-        page.items['uploadedDate'] = page.resultItems[0].dateUploaded;
-        page.dateUploaded = this.correctDate(page.items['uploadedDate']);
-        console.log('newdate', page.dateUploaded);
+      bh.items = [];
+      //  console.log('ALL FROM MONGO; ', page.resultItems.items)
+      bh.date = page.resultItems.filter((item: any, indx: number) => {
+        // console.log(`data source index:${indx} `, page.items.dataSource)
+        // bh.items.push(page.items.dataSource)
+        // page.items.push(item.dateUploaded)
+        let _item = {};
+        page.items['Date-Uploaded'] = page.resultItems[0]['Date-Uploaded'];
+        //  console.log("Date plus one",page.items['Date-Uploaded'])
+        page.dateUploaded = this.correctDate(page.items['Date-Uploaded']);
+        //console.log("newdate",  page.dateUploaded)
         page.items['dataSource'] = item.items;
-        console.log('Date plus one', page.items['uploadedDate']);
+        // page.items.push(_item)
+        return page.items.dataSource;
       });
 
-      // Month correction
+      // console.log('all data with date: ', bh.date)
+      // console.log('all items: ', bh.items)
 
-      // let parts = page.items['uploadedDate'].split('-');
-      // let year = parts[0];
-      // let month = parseInt(parts[1]);
-      // let day = parts[2];
+      let newIs = [];
 
-      // let monthNames = [
-      //   "January", "February", "March", "April", "May", "June",
-      //   "July", "August", "September", "October", "November", "December"
-      // ];
+      page.resultItems.forEach((item) => {
+        if (item.items?.constructor != Array) {
+          return newIs.push(item);
+        }
+        item.items?.forEach((value) => {
+          newIs.push(value);
+        });
+      });
 
-      // month++;
+      // console.log('New Ins:', newIs)
 
-      // page.outputDate = `${day} ${monthNames[month - 1]} ${year}`;
+      let newData = [];
+      const transformedData = newIs.map((obj, indx) => {
+        // console.log('Obj: ', obj)
+        const newObj = { date: '' };
+        newObj.date = bh.date[0]['Date-Uploaded'];
+        Object.keys(obj).forEach((key, i) => {
+          const newKey = key.replace(/[0-9]/g, ''); // Remove any digits from the key
+          newObj[newKey] = obj[key];
+          // console.log(newObj)
+          if (i === 2) {
+            newData.push(newObj);
+          }
+        });
+        // return newObj;
+      });
 
-      // console.log("Month date what", page.outputDate)
-      // End month correction
+      newIs = newData;
 
+      let newItems = [];
+      bh.items = bh.items.filter((item) => {
+        let _item;
+        if (item?.constructor != Array) {
+          return newItems.push(item);
+        }
+        item.forEach((value) => {
+          newItems.push(value);
+        });
+      });
+
+      // console.log('New Items: ', bh.items)
+
+      //Pushing in the date
       bh.date = page.resultItems.forEach((item: any) => {
         item.items.forEach((x: any) => {
           x.date = page.dateUploaded;
         });
-        console.log('item', item);
+        // console.log("item", item)
         //page.items.push(item.dateUploaded)
         page.items['dataSource'] = item.items;
-        console.log('Date plus one', page.items['uploadedDate']);
+        // console.log("Date plus one",page.items['Date-Uploaded'])
       });
 
-      // for(let i = 0; i< page.items.length;i++){
-      //    console.log(page.items[i])
-      // }
+      //getting all items from different slips
+      // console.log('Page items: ', page.items)
+      for (let i = 0; i < page.items.length; i++) {
+        page.totalItems.push(page.items[i].dataSource);
+      }
+      // console.log("get", page.totalItems)
 
       // for(let i=0;i<page._data.length;i++){
       //     for(let j = 0;j<page._data[i].length; j++){
       //       page.items.push(page._data[i][j])
       //     }
-      // }
+      //}
       // console.log("Final data ==>", page.items)
 
-      console.log('Table ==>', page.total);
+      // console.log("Table ==>",page.total)
 
-      page.dataSource = new MatTableDataSource(page.items.dataSource);
+      //assigning the backend data the table
+      page.dataSource = new MatTableDataSource(newIs);
 
       // page.dataSource = new MatTableDataSource( page.items.dataSource.forEach((item:any) => {
       // item.date = page.dateUploaded
       // return item
 
       // }))
-      console.log('sate', page.items.dataSource);
-      console.log('backendData =>>', page.items);
+      // console.log("sate",page.items.dataSource )
+      // console.log("backendData =>>", page.items)
 
-      page.tableDataBackup = new MatTableDataSource(page.items.dataSource);
+      //page.tableDataBackup = new  MatTableDataSource( page.items.dataSource)
 
       // //converting the object to an Array
       page.arrayData = page.dataSource.data;
@@ -298,7 +337,7 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
         arr.push(item.price);
         // return page.total = Number(page.total) + Number(item.price)
       });
-      console.log('Pricesssss', arr);
+      // console.log("Pricesssss", arr)
 
       // console.log(page.arrayData[page.arrayData.length - 1])
       // console.log("newArray", page.arrayData);
@@ -311,12 +350,11 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
 
       page.total = page.totalA.toFixed(2);
       bh.total = {
-        category: 'total',
+        category: 'Total',
         price: page.total,
       };
 
-      page.items.dataSource.push(bh.total);
-
+      newIs.push(bh.total);
       bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
       //appendnew_next_sd_IfBYKhthQTu4bbdH
       return bh;
@@ -457,7 +495,7 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
         console.log('Prices', item.price);
         // return page.total = Number(page.total) + Number(item.price)
       });
-      console.log('price', page.arrayData);
+      // console.log("price", page.arrayData)
       //appendnew_next_sd_SROyLdDiPneI4O4E
       return bh;
     } catch (e) {
@@ -525,8 +563,9 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
 
   sd_Wz0oU0zwClzNifPc(bh) {
     try {
-      const page = this.page;
-      let parts = page.items['uploadedDate'].split('-');
+      const page = this.page; // console.log('page.items: ', page.items)
+
+      let parts = page.items['Date-Uploaded'].split('/');
       let year = parts[0];
       let month = parseInt(parts[1]);
       let day = parts[2];
@@ -546,7 +585,7 @@ export class all_purchased_items_tableComponent implements AfterViewInit {
       ];
 
       month++;
-      bh.input.correctDate = `${day} ${monthNames[month - 1]} ${year}`;
+      bh.input.correctDate = `${day} ${monthNames[month - 2]} ${year}`;
       //appendnew_next_sd_Wz0oU0zwClzNifPc
       return bh;
     } catch (e) {

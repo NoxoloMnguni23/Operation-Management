@@ -150,6 +150,7 @@ export class add_receiptComponent {
       this.page.item = undefined;
       this.page.submit = false;
       this.page.uploadFile = undefined;
+      this.page.control = 0;
       bh = this.sd_3aw5HhPzmUKV6P8y(bh);
       //appendnew_next_sd_ahFKFHcLEcEikruI
       return bh;
@@ -161,12 +162,14 @@ export class add_receiptComponent {
   sd_3aw5HhPzmUKV6P8y(bh) {
     try {
       const page = this.page;
+      page.user = bh.system.oauthService.userInfo.displayName;
+
       {
         page.firstFormGroup = page._formBuilder.group({
           firstCtrl: ['', Validators.required],
         });
         page.secondFormGroup = page._formBuilder.group({
-          username: ['', Validators.required],
+          username: [page.user, Validators.required],
           shopName: ['', Validators.required],
           totalAmount: ['', Validators.required],
         });
@@ -175,11 +178,11 @@ export class add_receiptComponent {
         });
       }
 
-      page.item = page._formBuilder.group({
-        itemName: ['', Validators.required],
-        price: ['', Validators.required],
-        category: ['', Validators.required],
-      });
+      // page.item = page._formBuilder.group({
+      //     itemName: ['', Validators.required],
+      //     price: ['', Validators.required],
+      //     category: ['', Validators.required]
+      // })
 
       console.log(page.thirdFormGroup);
       console.log('Items: ', page.item);
@@ -256,14 +259,21 @@ export class add_receiptComponent {
 
   sd_at75G7Cz2S4ahDoN(bh) {
     try {
-      const page = this.page; // page.item = page._formBuilder.group({
-      //     itemName: ['', Validators.required],
-      //     price: ['', Validators.required],
-      //     category: ['', Validators.required]
-      // })
+      const page = this.page;
+      let itemName = `itemName${page.control}`;
+      let price = `price${page.control}`;
+      let category = `category${page.control}`;
+
+      page.item = page._formBuilder.group({
+        [itemName]: ['', Validators.required],
+        [price]: ['', Validators.required],
+        [category]: ['', Validators.required],
+      });
 
       page.thirdFormGroup.controls.items.push(page.item);
-      page.item.controls['itemName'].clear();
+
+      page.control++;
+
       console.log(page.thirdFormGroup);
       //appendnew_next_sd_at75G7Cz2S4ahDoN
       return bh;

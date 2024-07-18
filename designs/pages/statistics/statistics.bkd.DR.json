@@ -283,6 +283,7 @@
                         "2cd3423e-a886-3df3-24c6-7a99c54e1335": {
                             "paletteKey": "NG-ng-line-chart",
                             "parentEditorKey": "540c735d-16fd-0a60-f96b-00aa97db4a36",
+                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -371,7 +372,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "0d44cb15-62dd-71f7-291e-9f0f61ee9262",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -397,7 +397,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "a5e97196-3e9c-171e-2e00-2fbc785387fe",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -585,7 +584,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "020610e1-c750-d350-a642-f84b80bceeec",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -796,7 +794,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "bbf06717-aeb4-dde4-3f32-fc4d8b28d987",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -822,7 +819,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "f0af4ca8-3434-b461-1a28-f7453a4368a8",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1010,7 +1006,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "242b482a-fc58-b214-119e-0ad7f9d91df1",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -1181,7 +1176,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "canvas2-tii"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -1192,27 +1189,27 @@
                                 "_attrDef": "p"
                             }
                         ],
-                        "9ac7cdc4-40b7-c0f1-aca5-439c1b6b9d75": {
-                            "paletteKey": "NG-ng-bar-chart",
+                        "e44edb23-2577-aa1f-133c-c7608dd3bbdc": {
+                            "paletteKey": "NG-ng-pie-chart",
                             "parentEditorKey": "6fc4a103-d3f9-b99e-12df-5cd49922d342",
                             "commentid": null,
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
-                                    "_value": "Bar Chart",
+                                    "_value": "Pie Chart",
                                     "_type": "kv",
                                     "_attrDef": "p",
                                     "_useAsLabel": true
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "",
+                                    "_value": "margin-left: 40px",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -1272,6 +1269,93 @@
                                 },
                                 {
                                     "_key": "fxFlex",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        },
+                        "9ac7cdc4-40b7-c0f1-aca5-439c1b6b9d75": {
+                            "paletteKey": "NG-ng-bar-chart",
+                            "parentEditorKey": "6fc4a103-d3f9-b99e-12df-5cd49922d342",
+                            "isCommented": "true",
+                            "commentid": "1721220220139",
+                            "designerReference": [
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "Bar Chart",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[data]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[datasets]",
+                                    "_value": "page.barChartData",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[labels]",
+                                    "_value": "page.barChartLabels",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[options]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[colors]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[legend]",
+                                    "_value": "true",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "(chartHover)",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "(chartClick)",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "fxLayout",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "fxFlex",
                                     "_value": "100",
                                     "_type": "kv",
                                     "_attrDef": "p"
@@ -1283,7 +1367,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "d0dfc547-ac9b-4b6c-2e76-c24bc27ca17c",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1309,7 +1392,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "b5c67257-4a6e-6931-c716-a3adca70dc8c",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1497,7 +1579,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "56ebf49b-8917-7556-cedf-2e7e7c4353d3",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -1514,7 +1595,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "The category with the most expendicure in {{page.previousMonth}} was {{page.prevMonthMostCategory}}. <br>\r\nThe category with the most expendicure so far in {{page.currentMonth}} is {{page.currMonthMostCategory}}.",
+                                        "_value": "The category with the most expendicure in {{page.previousMonth}} was {{page.prevMonthMostCategory}} whereby R {{page.prevMonthMaxCatAmt}} was spent. <br>\r\nThe category with the most expendicure so far in {{page.currentMonth}} is {{page.currenttMonthMaxCatetory}} whereby R {{page.currMonthMaxCatAmt}} has been spent so far.",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }
@@ -1655,7 +1736,7 @@
                                 },
                                 {
                                     "_key": "[labels]",
-                                    "_value": "page.fourthChartLabels",
+                                    "_value": "page.barChartDataTwoLabels",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1708,7 +1789,6 @@
                         "paletteKey": "ng-card-content",
                         "parentEditorKey": "af870193-c964-868a-2c7e-4e74db626a60",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1734,7 +1814,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "c5d5d39e-a58e-a5fd-bddc-fc2f7228deb9",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1922,7 +2001,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "32cf5957-6833-4a8d-ac5e-b93d8b752f6c",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {

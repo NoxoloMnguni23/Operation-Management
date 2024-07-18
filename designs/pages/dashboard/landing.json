@@ -253,8 +253,7 @@
         "y": 60,
         "wires": [
             [
-                "sd_qzr4I51Z7TShqyIx",
-                "sd_vSgbhGeWJWC21z49"
+                "sd_qzr4I51Z7TShqyIx"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -269,7 +268,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.url)\n\n\nbh.local.dataSource = new MatTableDataSource(page.resultReceipts);\nconsole.log(page.resultReceipts)\n// console.log(bh.local.MatPaginator)\n\npage.resultReceipts.forEach(res => console.log(res['Date-Uploaded']))\n\n",
+        "script": "// console.log(bh.url)\n\n\nbh.local.dataSource = new MatTableDataSource(page.resultReceipts);\n// console.log(page.resultReceipts)\n// console.log(bh.local.MatPaginator)\n\n// page.resultReceipts.forEach(res => console.log(res['Date-Uploaded']))\n\n",
         "functionName": "sd_I8cgmZAyUMYw2KLe",
         "category": "Function",
         "x": 725,
@@ -1082,7 +1081,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "getting current month budget",
-        "script": "let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\n\npage.currentMonthBugetAmt;\n\npage.findCurrBudget = page.result[0].budget.filter((budget) => {\n    if(budget.month == months[new Date().getMonth()])\n    {\n        page.currentMonthBugetAmt = budget.amount\n    }\n})\n\n",
+        "script": "let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\n\npage.currentMonthBugetAmt;\n\npage.findCurrBudget = page.result[0].budget.filter((budget) => {\n    if(budget.month == months[new Date().getMonth()])\n    {\n        page.currentMonthBugetAmt = budget.amount\n    }\n})\n\npage.currentMonthBugetAmt =  page.currentMonthBugetAmt.toFixed(2)\n",
         "functionName": "gettingCurrentMonthBudget",
         "category": "Function",
         "x": 945,
@@ -1090,7 +1089,7 @@
         "wires": [
             [
                 "sd_fuoLcsRnYFq7cDyH",
-                "sd_cC8X4aU4RlF9xXxn"
+                "sd_dfjtjzrbfmekIOpW"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1187,8 +1186,8 @@
         "y": 460,
         "wires": [
             [
-                "sd_cC8X4aU4RlF9xXxn",
-                "sd_NDGNkGNOMv3LdRki"
+                "sd_QLB2Z8M4r03celxw",
+                "sd_dfjtjzrbfmekIOpW"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1202,19 +1201,18 @@
         "z": "sd_UWEsrTmDSRRDnTPG",
         "viewType": "common",
         "nodeType": "flow",
-        "name": "Find expenses spent by month",
-        "script": "page.annualAccumulatedExpenses = 0;\n\nlet nData = page.receiptData\nnData.forEach(entry => {\n  page.annualAccumulatedExpenses += entry.total;\n});\n\npage.annualAccumulatedExpenses = page.annualAccumulatedExpenses.toFixed(2)\n\nconst currentDate = new Date();\nconst currentMonth = currentDate.getMonth(); \nconst currentYear = currentDate.getFullYear();\n\n// Initialize the sum for totals\npage.sumTotal = 0;\n\nlet data = page.receiptData\n// Loop through the data array and calculate the sum of totals for the current month\ndata.forEach(item => {\n  // Extract the month and year from the Date-Uploaded field\n  const uploadedDate = new Date(item[\"Date-Uploaded\"]);\n  const uploadedMonth = uploadedDate.getMonth(); \n  const uploadedYear = uploadedDate.getFullYear();\n\n  // Check if the month and year match the current month and year\n  if (uploadedMonth === currentMonth && uploadedYear === currentYear) {\n    page.sumTotal += item.total;\n  }\n});\n\npage.sumTotal = page.sumTotal.toFixed(2)\n\n// console.log(`Sum of totals for ${currentDate.toLocaleString('default', { month: 'long' })} ${currentYear}: ${page.sumTotal.toFixed(2)}`);\n\n\npage.savings = Math.abs(page.sumTotal - page.currentMonthBugetAmt);\npage.savings = page.savings.toFixed(2)\n\npage.doughnutChartData = [\n  {data: [page.currentMonthBugetAmt, page.savings, page.sumTotal ], label: \"Budget; Savings; Expenses\"},\n]\n\npage.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];\n\n",
-        "functionName": "findExpensesSpentByMonth",
+        "name": "Find expenses spent by month OLD",
+        "script": "page.annualAccumulatedExpenses = 0;\n\nconsole.log(\"Receipt Data Ti\", page.receiptData)\nlet nData = page.receiptData\nnData.forEach(entry => {\n  page.annualAccumulatedExpenses += entry.total;\n});\n\npage.annualAccumulatedExpenses = page.annualAccumulatedExpenses.toFixed(2)\nconsole.log(\"annualAccumulatedExpenses\", page.annualAccumulatedExpenses)\n\nconst currentDate = new Date();\nconst currentMonth = currentDate.getMonth(); \nconst currentYear = currentDate.getFullYear();\n\n// Initialize the sum for totals\npage.sumTotal = 0;\n\nlet data = page.receiptData\n// Loop through the data array and calculate the sum of totals for the current month\ndata.forEach(item => {\n  // Extract the month and year from the Date-Uploaded field\n  const uploadedDate = new Date(item[\"Date-Uploaded\"]);\n  const uploadedMonth = uploadedDate.getMonth(); \n  const uploadedYear = uploadedDate.getFullYear();\n\n  // Check if the month and year match the current month and year\n  if (uploadedMonth === currentMonth && uploadedYear === currentYear) {\n    page.sumTotal += item.total;\n  }\n});\n\npage.sumTotal = page.sumTotal.toFixed(2)\n\n// console.log(`Sum of totals for ${currentDate.toLocaleString('default', { month: 'long' })} ${currentYear}: ${page.sumTotal.toFixed(2)}`);\n\n\npage.savings = Math.abs(page.sumTotal - page.currentMonthBugetAmt);\npage.savings = page.savings.toFixed(2)\n\npage.doughnutChartData = [\n  {data: [page.currentMonthBugetAmt, page.savings, page.sumTotal ], label: \"Budget; Savings; Expenses\"},\n]\n\npage.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];\n\n",
+        "functionName": "findExpensesSpentByMonthOld",
         "category": "Function",
-        "x": 925,
-        "y": 460,
+        "x": 1305,
+        "y": 420,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "landingComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "landingComponent"
     },
     {
         "id": "sd_iHHgiJl1FT8ENppO",
@@ -1308,21 +1306,18 @@
         "z": "sd_UWEsrTmDSRRDnTPG",
         "viewType": "common",
         "nodeType": "flow",
-        "name": "Finding expenses for another chart",
+        "name": "Finding expenses for another chart OLD",
         "script": "// Function to parse the month and year from the date\nfunction parseMonth(dateStr) {\n  const date = new Date(dateStr);\n  const month = date.getMonth(); \n  const monthNames = [\n    \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n    \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n  ];\n  return monthNames[month];\n}\n\n// Create a map to store the totals for each month\nconst monthlyTotalsMap = {};\nlet nData = page.receiptData\n\n// Iterate through the data and update the map\nnData.forEach(entry => {\n  const month = parseMonth(entry[\"Date-Uploaded\"]);\n  if (!monthlyTotalsMap[month]) {\n    monthlyTotalsMap[month] = 0;\n  }\n  monthlyTotalsMap[month] += entry.total;\n});\n\n// Separate the keys and values into two arrays\nconst months = Object.keys(monthlyTotalsMap);\npage.monthlyExpenses = Object.values(monthlyTotalsMap);\n\n",
-        "functionName": "findingExpensesForAnotherChart",
+        "functionName": "findingExpensesForAnotherChartOld",
         "category": "Function",
-        "x": 745,
-        "y": 580,
+        "x": 1305,
+        "y": 540,
         "wires": [
-            [
-                "sd_S0K4PVYTwA5CWVJR"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "landingComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "landingComponent"
     },
     {
         "id": "sd_S0K4PVYTwA5CWVJR",
@@ -1331,7 +1326,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "remove script",
-        "script": "page.months = [];\npage.amounts = [];\n\nlet data = page.allYearBudget[0]\n\ndata.budget.forEach(item => {\n  page.months.push(item.month);\n  page.amounts.push(item.amount);\n});\n\n",
+        "script": "page.months = [];\npage.amounts = [];\n\nlet data = page.allYearBudget[0]\n\ndata.budget.forEach(item => {\n  page.months.push(item.month);\n  page.amounts.push(item.amount);\n});\n",
         "functionName": "removeScript",
         "category": "Function",
         "x": 905,
@@ -1353,7 +1348,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "chart data",
-        "script": "page.dataSet =[\n    {data: page.monthlyExpenses, label: \"Expenses\"}\n]\n\npage.barChartLabels = [\n    {data: page.months}\n]\n\npage.barChartLabels = page.barChartLabels[0].data\n\n\n",
+        "script": "\nlet data = page.receiptData\nconst sumByMonth = (data) => {\n    const result = {};\n    const monthNames = [\n        \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n        \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n    ];\n\n    data.forEach(entry => {\n        const date = new Date(entry[\"Date-Uploaded\"]);\n        const month = date.getMonth() + 1; // 1 for January, 2 for February, etc.\n        \n        const monthStr = month.toString().padStart(2, '0'); // Convert to 2-digit string\n        \n        if (!result[monthStr]) {\n            result[monthStr] = 0;\n        }\n\n        result[monthStr] += entry.totalAmount;\n    });\n\n    // Create the result array with month names\n    const monthlyTotals = [];\n    for (let i = 1; i <= 12; i++) {\n        const monthStr = i.toString().padStart(2, '0');\n        if (result[monthStr] !== undefined) {\n            monthlyTotals.push({ month: monthNames[i - 1], totalAmount: result[monthStr] });\n        }\n    }\n\n    return monthlyTotals;\n};\n\nconst monthlyTotals = sumByMonth(data);\n\nconst months1 = monthlyTotals.map(entry => entry.month);\nconst totals = monthlyTotals.map(entry => entry.totalAmount);\n\npage.eachMnthlyExpenses = totals\npage.eMonths = months1\n\npage.dataSet =[\n    {data: page.eachMnthlyExpenses, label: \"Expenses\"}\n]\n\npage.barChartLabels = [\n    {data: page.eMonths}\n]\n\npage.barChartLabels = page.barChartLabels[0].data\n\n",
         "functionName": "chartData",
         "category": "Function",
         "x": 1005,
@@ -1465,9 +1460,8 @@
             }
         },
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "landingComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "landingComponent"
     },
     {
         "id": "sd_FECy6IniGnW4Nad1",
@@ -1547,6 +1541,67 @@
         "category": "General",
         "x": 421,
         "y": 178.46875,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_NGv9ye4xqc39mw8z",
+        "type": "Script",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Find expenses spent by month",
+        "script": "let data = page.receiptData\n\n// Helper function to parse the date\nconst parseDate = (dateString) => {\n  const [month, day, year] = dateString.split('/');\n  return new Date(year, month - 1, day);\n};\n\n// Get the current month and year\nconst currentMonth = new Date().getMonth();\nconst currentYear = new Date().getFullYear();\n\npage.annualAccumulatedExpenses = 0;\npage.sumTotal = 0;\n\n// Loop through the data to calculate totals\ndata.forEach((entry) => {\n  const date = parseDate(entry[\"Date-Uploaded\"]);\n  page.annualAccumulatedExpenses += entry.totalAmount;\n\n  if (date.getMonth() === currentMonth && date.getFullYear() === currentYear) {\n    // console.log(`Adding ${entry.totalAmount} to current month total`);\n    page.sumTotal += entry.totalAmount;\n  }\n});\n\npage.annualAccumulatedExpenses = page.annualAccumulatedExpenses.toFixed(2)\npage.sumTotal = page.sumTotal.toFixed(2)\n\npage.savings = Math.abs(page.sumTotal - page.currentMonthBugetAmt);\npage.savings = page.savings.toFixed(2)\n\npage.doughnutChartData = [\n  {data: [page.currentMonthBugetAmt, page.savings, page.sumTotal ], label: \"Budget; Savings; Expenses\"},\n]\n\npage.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];\n",
+        "functionName": "findExpensesSpentByMonth",
+        "category": "Function",
+        "x": 1040,
+        "y": 440,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "landingComponent"
+    },
+    {
+        "id": "sd_QLB2Z8M4r03celxw",
+        "type": "Script",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Finding expenses for another chart",
+        "script": "function isCurrentMonth(dateStr) {\n  const date = new Date(dateStr);\n  const now = new Date();\n  return date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear();\n}\n\n// Initialize the total for the current month\nlet totalForCurrentMonth = 0;\n\nlet nData = page.receiptData;\n\n// Iterate through the data and update the total for the current month\nnData.forEach(entry => {\n  if (isCurrentMonth(entry[\"Date-Uploaded\"])) {\n    totalForCurrentMonth += entry.totalAmount;\n  }\n});\n\npage.monthlyExpenses = totalForCurrentMonth;\n\n\n\n\n\n\n\n\n// // Function to parse the month and year from the date\n// function parseMonth(dateStr) {\n//   const [month, day, year] = dateStr.split('/');\n//   const date = new Date(year, month - 1, day);\n//   const monthIndex = date.getMonth(); \n//   const monthNames = [\n//     \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n//     \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n//   ];\n//   return monthNames[monthIndex];\n// }\n\n// const monthlyTotalsMap = {};\n// console.log(\"receiptData\", page.receiptData)\n// let nData = page.receiptData; \n\n// // Iterate through the data and update the map\n// nData.forEach(entry => {\n//   const month = parseMonth(entry[\"Date-Uploaded\"]);\n//   if (!monthlyTotalsMap[month]) {\n//     monthlyTotalsMap[month] = 0;\n//   }\n//   monthlyTotalsMap[month] += entry.totalAmount; \n// });\n\n// // Separate the keys and values into two arrays\n// const months = Object.keys(monthlyTotalsMap);\n// page.monthlyExpenses = Object.values(monthlyTotalsMap);\n\n// console.log(\"monthly\", page.monthlyExpenses)\n\n",
+        "functionName": "findingExpensesForAnotherChart",
+        "category": "Function",
+        "x": 725,
+        "y": 580,
+        "wires": [
+            [
+                "sd_S0K4PVYTwA5CWVJR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dfjtjzrbfmekIOpW",
+        "type": "Script",
+        "z": "sd_UWEsrTmDSRRDnTPG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let data = page.receiptData;\n\n// Helper function to parse the date\nconst parseDate = (dateString) => {\n  const [year, month, day] = dateString.split('/');\n  return new Date(year, month - 1, day);\n};\n\n// Get the current month and year\nconst currentMonth = new Date().getMonth();\nconst currentYear = new Date().getFullYear();\n\npage.annualAccumulatedExpenses = 0;\npage.sumTotal = 0;\n\n// Loop through the data to calculate totals\ndata.forEach((entry) => {\n  const date = parseDate(entry[\"Date-Uploaded\"]);\n  page.annualAccumulatedExpenses += entry.totalAmount;\n\n  if (date.getMonth() === currentMonth && date.getFullYear() === currentYear) {\n    page.sumTotal += entry.totalAmount;\n  }\n});\n\npage.annualAccumulatedExpenses = page.annualAccumulatedExpenses.toFixed(2);\npage.sumTotal = page.sumTotal.toFixed(2);\n\npage.savings = Math.abs(page.sumTotal - page.currentMonthBugetAmt).toFixed(2);\n\npage.doughnutChartData = [\n  { data: [page.currentMonthBugetAmt, page.savings, page.sumTotal], label: \"Budget; Savings; Expenses\" },\n];\n\npage.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];\n\n// console.log(\"Annual Accumulated Expenses:\", page.annualAccumulatedExpenses);\n// console.log(\"Sum Total for Current Month:\", page.sumTotal);\n// console.log(\"Savings:\", page.savings);\n// console.log(\"Doughnut Chart Data:\", page.doughnutChartData);\n// console.log(\"Doughnut Chart Labels:\", page.doughnutChartLabels);\n",
+        "functionName": "sd_dfjtjzrbfmekIOpW",
+        "category": "Function",
+        "x": 925,
+        "y": 400,
         "wires": [
             []
         ],

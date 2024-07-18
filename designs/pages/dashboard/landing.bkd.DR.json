@@ -137,7 +137,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "width: 45%; height: 90%; background-color: white; border-radius: 8px; padding: 4px",
+                        "_value": "width: 45%; height: 90%; background-color: white; border-radius: 8px; padding: 10px",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -882,7 +882,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "R {{page.annualAccumulatedExpenses}}",
+                                    "_value": "<span *ngIf=\"page.annualAccumulatedExpenses !== undefined\" >R {{page.annualAccumulatedExpenses}}</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1376,7 +1376,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Monthly Budget: <span *ngIf=\"page.currentMonthBugetAmt !== undefined else notSet\" > R {{page.currentMonthBugetAmt.toFixed(2)}}</span>\r\n<ng-template #notSet >\r\n    <button (click)=\"openDialog()\" class=\"not-set-btn-tii\">Click here to set</button>\r\n</ng-template>",
+                                    "_value": "Monthly Budget: <span *ngIf=\"page.currentMonthBugetAmt !== undefined else notSet\" > R {{page.currentMonthBugetAmt}}</span>\r\n<ng-template #notSet >\r\n    <button (click)=\"openDialog()\" class=\"not-set-btn-tii\">Click here to set</button>\r\n</ng-template>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1806,7 +1806,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<ul *ngIf=\"page.currentMonthBugetAmt !== undefined && page.currentMonthBugetAmt !== undefined \">\r\n    <li >Expenses: R {{page.sumTotal}} </li>\r\n    <li >Savings: R {{page.savings}} </li>\r\n</ul>",
+                                    "_value": "<ul *ngIf=\"page.currentMonthBugetAmt !== undefined && page.currentMonthBugetAmt !== undefined \">\r\n    <li >Expenses: R {{page.monthlyExpenses}} </li> <br>\r\n    <li >Savings: R {{page.savings}} </li>\r\n</ul>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1933,7 +1933,7 @@
                             },
                             {
                                 "_key": "[legend]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

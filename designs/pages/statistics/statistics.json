@@ -283,7 +283,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "get",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url1",
         "urlMappingObj": {
@@ -291,14 +290,11 @@
             "mapVarValue": "url1"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
-        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "this.page",
             "mapVarValue": ""
@@ -310,11 +306,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_SEZAeyvG1j9ff0w8",
         "category": "HTTP",
@@ -322,7 +316,8 @@
         "y": 60,
         "wires": [
             [
-                "sd_FbCEXSfe41G7Z3fa"
+                "sd_FbCEXSfe41G7Z3fa",
+                "sd_8aE0PlTSd1RAOH6q"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -377,10 +372,9 @@
         "y": 60,
         "wires": [
             [
-                "sd_JVGzVah92BWUgJxM",
-                "sd_8aE0PlTSd1RAOH6q",
-                "sd_dzcNy0FhCjlim4tN",
-                "sd_e9YVHgGXBH6NP9Mk"
+                "sd_t1pzThl1Nky4ckT0",
+                "sd_e9YVHgGXBH6NP9Mk",
+                "sd_dzcNy0FhCjlim4tN"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -434,35 +428,13 @@
         "generated": true
     },
     {
-        "id": "sd_JVGzVah92BWUgJxM",
-        "type": "Script",
-        "z": "sd_EHqxhFZBDfBQcB9S",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "\n// Function to parse the month and year from the date\nfunction parseMonth(dateStr) {\n  const date = new Date(dateStr);\n  const month = date.getMonth(); \n  const monthNames = [\n    \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n    \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n  ];\n  return monthNames[month];\n}\n\n// Create a map to store the totals for each month\nconst monthlyTotalsMap = {};\nlet nData = page.receiptData\n\n// Iterate through the data and update the map\nnData.forEach(entry => {\n  const month = parseMonth(entry[\"Date-Uploaded\"]);\n  if (!monthlyTotalsMap[month]) {\n    monthlyTotalsMap[month] = 0;\n  }\n  monthlyTotalsMap[month] += entry.total;\n});\n\n// Separate the keys and values into two arrays\nconst months = Object.keys(monthlyTotalsMap);\npage.monthlyExpenses = Object.values(monthlyTotalsMap);\n",
-        "functionName": "sd_JVGzVah92BWUgJxM",
-        "category": "Function",
-        "x": 685,
-        "y": 180,
-        "wires": [
-            [
-                "sd_8aE0PlTSd1RAOH6q"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "statisticsComponent",
-        "generated": true
-    },
-    {
         "id": "sd_vOYHrSZmp7T0yTx2",
         "type": "Script",
         "z": "sd_EHqxhFZBDfBQcB9S",
         "viewType": "common",
         "nodeType": "flow",
         "name": "Calculate savings with non-negative values",
-        "script": "let data = page.dataSet\nconst budget = data[0].data;\nconst expenses = data[1].data;\n\nconst savings = budget.map((budgetAmount, index) => {\n  const expenseAmount = expenses[index] || 0; \n  return Math.abs(budgetAmount - expenseAmount);\n});\n\n// Create the savings object\nconst savingsObject = {\n  data: savings,\n  label: \"Savings\"\n};\n\npage.monthlySavings = savingsObject.data\n\npage.dataSet = [\n  {data: page.amounts, label: \"Budget\" },\n  {data: page.monthlyExpenses, label: \"Expenses\"},\n  {data: page.monthlySavings, label: \"Savings\"}\n]\n\n\n",
+        "script": "\nlet data = page.dataSet\nconst budget = data[0].data;\nconst expenses = data[1].data;\n\nconst savings = budget.map((budgetAmount, index) => {\n  const expenseAmount = expenses[index] || 0; \n  return Math.abs(budgetAmount - expenseAmount);\n});\n\n// Create the savings object\nconst savingsObject = {\n  data: savings,\n  label: \"Savings\"\n};\n\npage.monthlySavings = savingsObject.data\n\npage.dataSet = [\n  {data: page.amounts, label: \"Budget\" },\n  {data: page.monthlyExpenses, label: \"Expenses\"},\n  {data: page.monthlySavings, label: \"Savings\"}\n]\n\n\n",
         "functionName": "calculateSavingsWithNonNegativeValues",
         "category": "Function",
         "x": 825,
@@ -484,7 +456,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Chart Two and Insights",
-        "script": "const currentDate = new Date();\n\nconst monthNames = [\n  \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n];\n\nconst currentMonthIndex = currentDate.getMonth();\nconst previousMonthIndex = (currentMonthIndex - 1 + 12) % 12;\n\npage.currentMonth = monthNames[currentMonthIndex];\npage.previousMonth = monthNames[previousMonthIndex];\n\n\nlet data = page.allYearBudget[0].budget\n\n// Find the budget for the current and previous months\nconst currentBudget = data.find(item => item.month === page.currentMonth);\n\nconst previousBudget = data.find(item => item.month === page.previousMonth);\n\n// Store the budgets and corresponding months in separate arrays\nconst budgetAmounts = [previousBudget.amount, currentBudget.amount];\nconst budgetMonths = [previousBudget.month, currentBudget.month];\n\npage.barChartDataTwo = [\n  {data: budgetAmounts, label: \"Budget\"}\n]\n\npage.barChartDataTwoLabels = [\n  {data: budgetMonths}\n]\n\npage.barChartDataTwoLabels = page.barChartDataTwoLabels[0].data\n\n//Insights for graph\n\nfunction compareAmountsWithMonths(amounts, months) {\n    let result;\n    const difference = Math.abs(amounts[0] - amounts[1]);\n    \n    if (amounts[0] > amounts[1]) {\n        result = `The previous month, ${months[0]}, had a higher budget, R ${amounts[0]}, than the current month, ${months[1]} which has a budget of R (${amounts[1]}). There is a difference of R ${difference} between the two months.`;\n    } else if (amounts[0] < amounts[1]) {\n        result = `The current month, ${months[1]}, has a higher budget of R ${amounts[1]}, which is higher than the previous month, ${months[0]}, which had a budget of R ${amounts[0]}. There is a difference of R ${difference} between the two months.`;\n    } else {\n        result = `Both months, ${months[0]} and ${months[1]}, have the same amount of R ${amounts[0]}.`;\n    }\n    \n    return result;\n}\n\npage.chartTwoInsight = compareAmountsWithMonths(budgetAmounts, budgetMonths)\n\n",
+        "script": "const currentDate = new Date();\n\nconst monthNames = [\n  \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n];\n\nconst currentMonthIndex = currentDate.getMonth();\nconst previousMonthIndex = (currentMonthIndex - 1 + 12) % 12;\n\npage.currentMonth = monthNames[currentMonthIndex];\npage.previousMonth = monthNames[previousMonthIndex];\n\n\nlet data = page.allYearBudget[0].budget\n\n// Find the budget for the current and previous months\nconst currentBudget = data.find(item => item.month === page.currentMonth);\n\nconst previousBudget = data.find(item => item.month === page.previousMonth);\n\n// Store the budgets and corresponding months in separate arrays\nconst budgetAmounts = [previousBudget.amount, currentBudget.amount];\nconst budgetMonths = [previousBudget.month, currentBudget.month];\n\npage.barChartDataTwo = [\n  {data: budgetAmounts, label: \"Budget\"}\n]\npage.barChartDataTwoLabels = [\n  {data: budgetMonths}\n]\n\npage.barChartDataTwoLabels = page.barChartDataTwoLabels[0].data\n\n//Insights for graph\n\nfunction compareAmountsWithMonths(amounts, months) {\n    let result;\n    const difference = Math.abs(amounts[0] - amounts[1]);\n    \n    if (amounts[0] > amounts[1]) {\n        result = `The previous month, ${months[0]}, had a higher budget, R ${amounts[0]}, than the current month, ${months[1]} which has a budget of R ${amounts[1]}. There is a difference of R ${difference} between the two months.`;\n    } else if (amounts[0] < amounts[1]) {\n        result = `The current month, ${months[1]}, has a higher budget of R ${amounts[1]}, which is higher than the previous month, ${months[0]}, which had a budget of R ${amounts[0]}. There is a difference of R ${difference} between the two months.`;\n    } else {\n        result = `Both months, ${months[0]} and ${months[1]}, have the same amount of R ${amounts[0]}.`;\n    }\n    \n    return result;\n}\n\npage.chartTwoInsight = compareAmountsWithMonths(budgetAmounts, budgetMonths)\n\n",
         "functionName": "chartTwoAndInsights",
         "category": "Function",
         "x": 825,
@@ -504,7 +476,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "fourth chart",
-        "script": "let data = page.receiptData\n\nfunction getCategoryWithMostExpenditure(data) {\n  const categorySumsByMonth = {};\n  const monthNames = [\n    \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n    \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n  ];\n\n  // Helper function to format month and year\n  const formatMonthYear = (date) => `${monthNames[date.getMonth()]} ${date.getFullYear()}`;\n\n  // Calculate sums by category for each month\n  data.forEach(entry => {\n    const uploadedDate = new Date(entry[\"Date-Uploaded\"]);\n    const monthYear = formatMonthYear(uploadedDate);\n\n    if (!categorySumsByMonth[monthYear]) {\n      categorySumsByMonth[monthYear] = { Groceries: 0, Maintenance: 0, Supplies: 0 };\n    }\n\n    entry.items.forEach(item => {\n      if (categorySumsByMonth[monthYear][item.category] !== undefined) {\n        categorySumsByMonth[monthYear][item.category] += item.price;\n      }\n    });\n  });\n\n  // Get the current and previous month\n  const currentDate = new Date();\n  const currentMonthYear = formatMonthYear(currentDate);\n  const previousMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);\n  const previousMonthYear = formatMonthYear(previousMonthDate);\n\n\n  // Helper function to get category with the most expenditure\n  const getMaxCategory = (sums) => {\n    let maxCategory = null;\n    let maxAmount = -1;\n    for (let category in sums) {\n      if (sums[category] > maxAmount) {\n        maxAmount = sums[category];\n        maxCategory = category;\n      }\n    }\n    return { category: maxCategory, amount: maxAmount };\n  };\n\n  const currentMonthMax = categorySumsByMonth[currentMonthYear]\n    ? getMaxCategory(categorySumsByMonth[currentMonthYear])\n    : null;\n\n  const previousMonthMax = categorySumsByMonth[previousMonthYear]\n    ? getMaxCategory(categorySumsByMonth[previousMonthYear])\n    : null;\n\n  return { currentMonthMax, previousMonthMax };\n}\n\npage.prevMonthMostCategory = getCategoryWithMostExpenditure(data).previousMonthMax.category\npage.currMonthMostCategory = getCategoryWithMostExpenditure(data).currentMonthMax.category\n\nlet currentMonthCat = page.currMonthMostCategory;\nlet prevMonthCat = page.prevMonthMostCategory\n\nconst previousMonthMax = getCategoryWithMostExpenditure(data).previousMonthMax.amount;\nconst currentMonthMax = getCategoryWithMostExpenditure(data).currentMonthMax.amount;\n\n\npage.fourthChartData = [\n  {data:[previousMonthMax], label: page.prevMonthMostCategory},\n  {data: [currentMonthMax], label: page.currMonthMostCategory}\n]\n\npage.fourthChartLabels =[ page.previousMonth , page.currentMonth] ;\n\n",
+        "script": "let data = page.receiptData;\nfunction getCategoryWithMostExpenditure(data) {\n  const categorySumsByMonth = {};\n  const monthNames = [\n    \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n    \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n  ];\n\n  // Helper function to format month and year\n  const formatMonthYear = (date) => `${monthNames[date.getMonth()]} ${date.getFullYear()}`;\n\n  // Calculate sums by category for each month\n  data.forEach(entry => {\n    const uploadedDate = new Date(entry[\"Date-Uploaded\"]);\n    const monthYear = formatMonthYear(uploadedDate);\n\n    if (!categorySumsByMonth[monthYear]) {\n      categorySumsByMonth[monthYear] = {};\n    }\n\n    entry.items.forEach(item => {\n      const categoryKey = Object.keys(item).find(key => key.startsWith('category'));\n      const priceKey = Object.keys(item).find(key => key.startsWith('price'));\n\n      if (categoryKey && priceKey) {\n        const category = item[categoryKey];\n        const price = item[priceKey];\n\n        if (!categorySumsByMonth[monthYear][category]) {\n          categorySumsByMonth[monthYear][category] = 0;\n        }\n\n        categorySumsByMonth[monthYear][category] += price;\n      }\n    });\n  });\n\n  // Get the current and previous month\n  const currentDate = new Date();\n  const currentMonthYear = formatMonthYear(currentDate);\n  const previousMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);\n  const previousMonthYear = formatMonthYear(previousMonthDate);\n\n  // Helper function to get category with the most expenditure\n  const getMaxCategory = (sums) => {\n    let maxCategory = null;\n    let maxAmount = -1;\n    for (let category in sums) {\n      if (sums[category] > maxAmount) {\n        maxAmount = sums[category];\n        maxCategory = category;\n      }\n    }\n    return { category: maxCategory, amount: maxAmount };\n  };\n\n  const currentMonthMax = categorySumsByMonth[currentMonthYear]\n    ? getMaxCategory(categorySumsByMonth[currentMonthYear])\n    : { category: null, amount: 0 };\n\n  const previousMonthMax = categorySumsByMonth[previousMonthYear]\n    ? getMaxCategory(categorySumsByMonth[previousMonthYear])\n    : { category: null, amount: 0 };\n\n  return { currentMonthMax, previousMonthMax };\n}\n\nconst expenditureData = getCategoryWithMostExpenditure(data);\npage.prevMonthMostCategory = expenditureData.previousMonthMax.category;\npage.currenttMonthMaxCatetory = expenditureData.currentMonthMax.category;\n\nlet currentMonthCat = page.currenttMonthMaxCatetory;\nlet prevMonthCat = page.prevMonthMostCategory;\n\nconst previousMonthMaxAmount = expenditureData.previousMonthMax.amount;\nconst currentMonthMaxAmount = expenditureData.currentMonthMax.amount;\n\npage.prevMonthMaxCatAmt = previousMonthMaxAmount\npage.currMonthMaxCatAmt = currentMonthMaxAmount\n\npage.fourthChartData = [\n  { data: [previousMonthMaxAmount, currentMonthMaxAmount], label : [currentMonthCat, prevMonthCat]}\n];\n\n\npage.fourthChartLabels = [currentMonthCat, prevMonthCat];\n\n\n\n\n\n\n",
         "functionName": "fourthChart",
         "category": "Function",
         "x": 945,
@@ -526,7 +498,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "fourth",
-        "script": "let data = page.receiptData\n\nfunction getCategoryWithMostExpenditure(data) {\n  const categorySumsByMonth = {};\n  const monthNames = [\n    \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n    \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n  ];\n\n  // Helper function to format month and year\n  const formatMonthYear = (date) => `${monthNames[date.getMonth()]} ${date.getFullYear()}`;\n\n  // Calculate sums by category for each month\n  data.forEach(entry => {\n    const uploadedDate = new Date(entry[\"Date-Uploaded\"]);\n    const monthYear = formatMonthYear(uploadedDate);\n\n    if (!categorySumsByMonth[monthYear]) {\n      categorySumsByMonth[monthYear] = { Groceries: 0, Maintenance: 0, Supplies: 0 };\n    }\n\n    entry.items.forEach(item => {\n      if (categorySumsByMonth[monthYear][item.category] !== undefined) {\n        categorySumsByMonth[monthYear][item.category] += item.price;\n      }\n    });\n  });\n\n  // Get the current and previous month\n  const currentDate = new Date();\n  const currentMonthYear = formatMonthYear(currentDate);\n  const previousMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);\n  const previousMonthYear = formatMonthYear(previousMonthDate);\n\n\n  // Helper function to get category with the most expenditure\n  const getMaxCategory = (sums) => {\n    let maxCategory = null;\n    let maxAmount = -1;\n    for (let category in sums) {\n      if (sums[category] > maxAmount) {\n        maxAmount = sums[category];\n        maxCategory = category;\n      }\n    }\n    return { category: maxCategory, amount: maxAmount };\n  };\n\n  const currentMonthMax = categorySumsByMonth[currentMonthYear]\n    ? getMaxCategory(categorySumsByMonth[currentMonthYear])\n    : null;\n\n  const previousMonthMax = categorySumsByMonth[previousMonthYear]\n    ? getMaxCategory(categorySumsByMonth[previousMonthYear])\n    : null;\n\n  return { currentMonthMax, previousMonthMax };\n}\n\npage.fifthDataChart = [\n  {data: getCategoryWithMostExpenditure(data).previousMonthMax.amount, label: getCategoryWithMostExpenditure(data).previousMonthMax.category}\n]",
+        "script": "let data = page.receiptData\n\nfunction getCategoryWithMostExpenditure(data) {\n  const categorySumsByMonth = {};\n  const monthNames = [\n    \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n    \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n  ];\n\n  // Helper function to format month and year\n  const formatMonthYear = (date) => `${monthNames[date.getMonth()]} ${date.getFullYear()}`;\n\n  // Calculate sums by category for each month\n  data.forEach(entry => {\n    const uploadedDate = new Date(entry[\"Date-Uploaded\"]);\n    const monthYear = formatMonthYear(uploadedDate);\n\n    if (!categorySumsByMonth[monthYear]) {\n      categorySumsByMonth[monthYear] = { Groceries: 0, Maintenance: 0, Supplies: 0 };\n    }\n\n    entry.items.forEach(item => {\n      if (categorySumsByMonth[monthYear][item.category] !== undefined) {\n        categorySumsByMonth[monthYear][item.category] += item.price;\n      }\n    });\n  });\n\n  // Get the current and previous month\n  const currentDate = new Date();\n  const currentMonthYear = formatMonthYear(currentDate);\n  const previousMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);\n  const previousMonthYear = formatMonthYear(previousMonthDate);\n\n\n  // Helper function to get category with the most expenditure\n  const getMaxCategory = (sums) => {\n    let maxCategory = null;\n    let maxAmount = -1;\n    for (let category in sums) {\n      if (sums[category] > maxAmount) {\n        maxAmount = sums[category];\n        maxCategory = category;\n      }\n    }\n    return { category: maxCategory, amount: maxAmount };\n  };\n\n  const currentMonthMax = categorySumsByMonth[currentMonthYear]\n    ? getMaxCategory(categorySumsByMonth[currentMonthYear])\n    : null;\n\n  const previousMonthMax = categorySumsByMonth[previousMonthYear]\n    ? getMaxCategory(categorySumsByMonth[previousMonthYear])\n    : null;\n\n  return { currentMonthMax, previousMonthMax };\n}\n\npage.fifthDataChart = [\n  {data: getCategoryWithMostExpenditure(data).previousMonthMax.amount, label: getCategoryWithMostExpenditure(data).previousMonthMax.category}\n]\n\n",
         "functionName": "fourth",
         "category": "Function",
         "x": 1105,
@@ -546,7 +518,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "fifth Chart Data",
-        "script": "\n// const currentMonth = new Date().getMonth();\npage.currentMonth = new Date().getMonth();\n\n// Calculate the previous month (handling the wrap-around from January to December)\npage.previousMonth = (page.currentMonth - 1 + 12) % 12;\n\nlet responseData = page.dataSet\nconst savingsData = responseData.find(item => item.label === \"Savings\").data;\n\npage.currentMonthSavings = savingsData[page.currentMonth];\npage.previousMonthSavings = savingsData[page.previousMonth];\n\npage.fifthChartData = [\n    {data: [page.currentMonthSavings, page.previousMonthSavings], label: \"Savings\"}\n]\n\nfunction mostSavingsMonth(data) {\n    let result;\n    const difference = Math.abs(data[0] - data[1]);\n    \n    if (data[0] > data[1]) {\n        result = `The previous month had more savings, R ${data[0]}, than the current month, which currently has savings of R ${data[1]}. There is a difference of R ${difference} between the two months.`;\n    } else if (data[0] < data[1]) {\n        result = `The current month, currently has more savings, R ${data[1]}, than the previous month, which currently has savings of R ${data[0]}. There is a difference of R ${difference} between the two months.`;\n    } else {\n        result = `Both months have the same amount of savings`;\n    }\n    return result;\n}\n\npage.finalChartResult = mostSavingsMonth(page.fifthChartData[0].data)\n\n",
+        "script": "// const monthNames = [\n//   \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n//   \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n// ];\n\n// page.currentMonthIndex = new Date().getMonth();\n// page.currentMonth = monthNames[page.currentMonthIndex];\n// page.previousMonthIndex = (page.currentMonthIndex - 1 + 12) % 12;\n// page.previousMonth = monthNames[page.previousMonthIndex];\n\n// let responseData = page.dataSet\n// const savingsData = responseData.find(item => item.label === \"Savings\").data;\n\n// page.currentMonthSavings = savingsData[page.currentMonthIndex];\n// page.previousMonthSavings = savingsData[page.previousMonthIndex];\n\n// page.fifthChartData = [\n//     {data: [page.currentMonthSavings, page.previousMonthSavings], label: \"Savings\"}\n// ]\n\n// const page = page || {}; // Initialize page object if not already done\n\n\nconst monthNames = [\n  \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n];\n\n// Get current month and previous month indexes\npage.currentMonthIndex = new Date().getMonth();\npage.currentMonth = monthNames[page.currentMonthIndex];\npage.previousMonthIndex = (page.currentMonthIndex - 1 + 12) % 12;\npage.previousMonth = monthNames[page.previousMonthIndex];\n\nlet responseData = page.dataSet;\n\n// Find the savings data in the response\nconst savingsData = responseData.find(item => item.label === \"Savings\").data;\n\n// Get current and previous month savings\npage.currentMonthSavings = savingsData[page.currentMonthIndex];\npage.previousMonthSavings = savingsData[page.previousMonthIndex];\n\n// Prepare the fifth chart data\npage.fifthChartData = [\n    {data: [page.previousMonthSavings, page.currentMonthSavings], label: \"Savings\"}\n];\n\n\nfunction mostSavingsMonth(data) {\n    let result;\n    const difference = Math.abs(data[0] - data[1]);\n    \n    if (data[0] > data[1]) {\n        result = `The previous month had more savings, R ${data[0]}, than the current month, which currently has savings of R ${data[1]}. There is a difference of R ${difference} between the two months.`;\n    } else if (data[0] < data[1]) {\n        result = `The current month, currently has more savings, R ${data[1]}, than the previous month, which currently has savings of R ${data[0]}. There is a difference of R ${difference} between the two months.`;\n    } else {\n        result = `Both months have the same amount of savings`;\n    }\n    return result;\n}\n\npage.finalChartResult = mostSavingsMonth(page.fifthChartData[0].data)\n\n\n",
         "functionName": "fifthChartData",
         "category": "Function",
         "x": 1065,
@@ -573,6 +545,28 @@
         "y": 440,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "statisticsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_t1pzThl1Nky4ckT0",
+        "type": "Script",
+        "z": "sd_EHqxhFZBDfBQcB9S",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Graph One",
+        "script": "// Function to parse the month and year from the date\nfunction parseMonth(dateStr) {\n  const [year, month, day] = dateStr.split('/');\n  const date = new Date(year, month - 1, day);\n  const monthIndex = date.getMonth(); \n  const yearIndex = date.getFullYear();\n  const monthNames = [\n    \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n    \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n  ];\n  return `${monthNames[monthIndex]} ${yearIndex}`;\n}\n\n// Create a map to store the totals for each month\nconst monthlyTotalsMap = {};\nlet nData = page.receiptData; // Assuming page.receiptData contains the API data\n\n// Iterate through the data and update the map\nnData.forEach(entry => {\n  const monthYear = parseMonth(entry[\"Date-Uploaded\"]);\n  if (!monthlyTotalsMap[monthYear]) {\n    monthlyTotalsMap[monthYear] = 0;\n  }\n  monthlyTotalsMap[monthYear] += entry.totalAmount;\n});\n\n// Separate the keys and values into two arrays\nconst months = Object.keys(monthlyTotalsMap);\npage.monthlyExpenses = Object.values(monthlyTotalsMap);\n\n\n\n\n\n\n\n\n\n\n\n// // Function to parse the month and year from the date\n// function parseMonth(dateStr) {\n//   const [month, day, year] = dateStr.split('/');\n//   const date = new Date(year, month - 1, day);\n//   const monthIndex = date.getMonth(); \n//   const monthNames = [\n//     \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n//     \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n//   ];\n//   return monthNames[monthIndex];\n// }\n\n// // Create a map to store the totals for each month\n// const monthlyTotalsMap = {};\n// let nData = page.receiptData; // Assuming page.receiptData contains the API data\n\n// // Iterate through the data and update the map\n// nData.forEach(entry => {\n//   const month = parseMonth(entry[\"Date-Uploaded\"]);\n//   if (!monthlyTotalsMap[month]) {\n//     monthlyTotalsMap[month] = 0;\n//   }\n//   monthlyTotalsMap[month] += entry.totalAmount;\n// });\n\n// // Separate the keys and values into two arrays\n// const months = Object.keys(monthlyTotalsMap);\n// page.monthlyExpenses = Object.values(monthlyTotalsMap);\n\n// console.log(\"ex\", page.monthlyExpenses)\n\n",
+        "functionName": "graphOne",
+        "category": "Function",
+        "x": 645,
+        "y": 160,
+        "wires": [
+            [
+                "sd_8aE0PlTSd1RAOH6q"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
