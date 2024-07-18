@@ -75,6 +75,7 @@ export class categoriesComponent {
       this.page.items = [];
       this.page.price1 = 0;
       this.page.selecteditems = [];
+      this.page.data = [];
       bh = this.sd_BwADdgS5bjBPArMC(bh);
       //appendnew_next_sd_XASJm5GtYmf3XfeR
       return bh;
@@ -128,7 +129,7 @@ export class categoriesComponent {
   getdataofthismonth(bh) {
     try {
       const page = this.page;
-      console.log('Main datata', page.resultItems);
+      // console.log("Main datata", page.resultItems)
 
       let dateToCompare = new Date().toLocaleDateString().substr(0, 1);
 
@@ -136,16 +137,16 @@ export class categoriesComponent {
         return item['Date-Uploaded'];
       });
 
-      console.log('date uploaded:', dateFromMongo);
+      // console.log('date uploaded:', dateFromMongo)
       page.monthToCompare;
       for (let i = 0; i < dateFromMongo.length; i++) {
         page.monthToCompare = dateFromMongo[i].substr(6, 1);
-        console.log('date items', page.monthToCompare);
+        // console.log("date items",page.monthToCompare)
         if (page.monthToCompare == dateToCompare) {
           page.selecteditems.push(page.resultItems[i]);
         }
       }
-      console.log('datauptodate', page.selecteditems);
+      // console.log("datauptodate", page.selecteditems)
 
       bh = this.turnItToANArray(bh);
       //appendnew_next_getdataofthismonth
@@ -165,7 +166,7 @@ export class categoriesComponent {
 
       // let items = []
 
-      console.log('Main data', page.selecteditems);
+      // console.log("Main data", page.selecteditems)
 
       for (let i = 0; i < page.selecteditems.length; i++) {
         page._data.push(page.selecteditems[i].items);
@@ -173,20 +174,40 @@ export class categoriesComponent {
 
       for (let i = 0; i < page._data.length; i++) {
         for (let j = 0; j < page._data[i].length; j++) {
-          page.items.push(page._data[i][j]);
+          page.data.push(page._data[i][j]);
         }
       }
 
-      console.log('Final data', page.items);
+      // console.log("Final data", page.data)
       // console.log("data", page._data)
       // page.items.forEach(item => {
       //   console.log("items ",item)
       //   })
-      bh = this.separateTheCategories(bh);
+      bh = this.sd_1IobYtlsatlI64fh(bh);
       //appendnew_next_turnItToANArray
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_cjPeEs7jJtuVZkh2');
+    }
+  }
+
+  sd_1IobYtlsatlI64fh(bh) {
+    try {
+      const page = this.page;
+      page.items = page.data.map((item) => {
+        let newitem = {};
+        for (let key in item) {
+          let newKey = key.replace(/[0-9]/g, '');
+          newitem[newKey] = item[key];
+        }
+        return newitem;
+      });
+      // console.log(page.items)
+      bh = this.separateTheCategories(bh);
+      //appendnew_next_sd_1IobYtlsatlI64fh
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1IobYtlsatlI64fh');
     }
   }
 
@@ -218,10 +239,10 @@ export class categoriesComponent {
       // console.log(`Number of "Milk" items: ${page.milkCount}`);
       // console.log(`Total price of "Milk" items: R${page.milkTotalPrice.toFixed(2)}`);
 
-      console.log(page.Groceries);
+      //  console.log( page.Groceries)
 
-      console.log(page.Supplies);
-      console.log(page.Maintenance);
+      // console.log( page.Supplies)
+      //  console.log( page.Maintenance)
       //  console.log( page.Milk)
       bh = this.getTheTotalAmount(bh);
       //appendnew_next_separateTheCategories
@@ -235,7 +256,7 @@ export class categoriesComponent {
     try {
       const page = this.page;
       page.Groceries.forEach((item) => {
-        console.log(item.price);
+        // console.log(item.price)
         page.priceg = page.priceg + item.price;
         page.priceG = page.priceg.toFixed(2);
       });
@@ -247,9 +268,9 @@ export class categoriesComponent {
         page.pricem = page.pricem + item.price;
         page.priceM = page.pricem.toFixed(2);
       });
-      console.log('page.priceG', page.priceG);
-      console.log('page.priceS', page.priceS);
-      console.log('page.priceM', page.priceM);
+      // console.log("page.priceG",page.priceG)
+      // console.log("page.priceS",page.priceS)
+      // console.log("page.priceM",page.priceM)
       bh = this.informationOnTheDonut(bh);
       //appendnew_next_getTheTotalAmount
       return bh;
@@ -290,15 +311,18 @@ export class categoriesComponent {
 
   supplies(bh) {
     try {
-      const page = this.page;
-      console.log(page.Supplies);
+      const page = this.page; // console.log(page.Supplies)
       page.Supplies.forEach((item) => {
-        if (!page.Suppliesfinal.find((__item) => __item.name === item.name)) {
+        if (
+          !page.Suppliesfinal.find(
+            (__item) => __item.itemName === item.itemName
+          )
+        ) {
           item['itemsCount'] = 1;
           page.Suppliesfinal.push(item);
         } else {
           page.Suppliesfinal.forEach((_item, indx) => {
-            if (_item.name === item.name) {
+            if (_item.itemName === item.itemName) {
               page.Suppliesfinal[indx].price =
                 Math.round(
                   (page.Suppliesfinal[indx].price + item.price) * 100
@@ -308,7 +332,7 @@ export class categoriesComponent {
           });
         }
       });
-      console.log('page.Suppliesfinal', page.Suppliesfinal);
+      // console.log("page.Suppliesfinal", page.Suppliesfinal)
       bh = this.maintenance(bh);
       //appendnew_next_supplies
       return bh;
@@ -322,13 +346,15 @@ export class categoriesComponent {
       const page = this.page;
       page.Maintenance.forEach((item) => {
         if (
-          !page.Maintenancefinal.find((__item) => __item.name === item.name)
+          !page.Maintenancefinal.find(
+            (__item) => __item.itemName === item.itemName
+          )
         ) {
           item['itemsCount'] = 1;
           page.Maintenancefinal.push(item);
         } else {
           page.Maintenancefinal.forEach((_item, indx) => {
-            if (_item.name === item.name) {
+            if (_item.itemName === item.itemName) {
               page.Maintenancefinal[indx].price =
                 Math.round(
                   (page.Maintenancefinal[indx].price + item.price) * 100
@@ -350,12 +376,16 @@ export class categoriesComponent {
     try {
       const page = this.page;
       page.Groceries.forEach((item) => {
-        if (!page.Groceriesfinal.find((__item) => __item.name === item.name)) {
+        if (
+          !page.Groceriesfinal.find(
+            (__item) => __item.itemName === item.itemName
+          )
+        ) {
           item['itemsCount'] = 1;
           page.Groceriesfinal.push(item);
         } else {
           page.Groceriesfinal.forEach((_item, indx) => {
-            if (_item.name === item.name) {
+            if (_item.itemName === item.itemName) {
               page.Groceriesfinal[indx].price =
                 Math.round(
                   (page.Groceriesfinal[indx].price + item.price) * 100

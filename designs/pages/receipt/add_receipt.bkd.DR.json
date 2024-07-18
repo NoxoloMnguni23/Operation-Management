@@ -60,6 +60,12 @@
                 "_value": "true",
                 "_type": "kv",
                 "_attrDef": "p"
+            },
+            {
+                "_key": "fxFill",
+                "_value": "fxFill",
+                "_type": "a",
+                "_attrDef": "c"
             }
         ],
         "7a686d77-a5d3-2a79-58bd-db60a1c34508": {
@@ -886,7 +892,7 @@
                                             },
                                             {
                                                 "_key": "[disabled]",
-                                                "_value": "",
+                                                "_value": "false",
                                                 "_type": "kv",
                                                 "_attrDef": "p"
                                             },
@@ -2213,7 +2219,7 @@
                                                     },
                                                     {
                                                         "_key": "placeholder",
-                                                        "_value": "Current users name",
+                                                        "_value": "",
                                                         "_type": "kv",
                                                         "_attrDef": "p",
                                                         "_useAsLabel": true
@@ -2274,7 +2280,7 @@
                                                     },
                                                     {
                                                         "_key": "[disabled]",
-                                                        "_value": "",
+                                                        "_value": "true",
                                                         "_type": "kv",
                                                         "_attrDef": "p"
                                                     },
@@ -4958,7 +4964,7 @@
                                                     },
                                                     {
                                                         "_key": "formControlName",
-                                                        "_value": "itemName",
+                                                        "_value": "itemName{{i}}",
                                                         "_type": "kv",
                                                         "_attrDef": "c"
                                                     }
@@ -5118,7 +5124,7 @@
                                                     },
                                                     {
                                                         "_key": "formControlName",
-                                                        "_value": "category",
+                                                        "_value": "category{{i}}",
                                                         "_type": "kv",
                                                         "_attrDef": "p"
                                                     },
@@ -5487,7 +5493,7 @@
                                                     },
                                                     {
                                                         "_key": "formControlName",
-                                                        "_value": "price",
+                                                        "_value": "price{{i}}",
                                                         "_type": "kv",
                                                         "_attrDef": "c"
                                                     }

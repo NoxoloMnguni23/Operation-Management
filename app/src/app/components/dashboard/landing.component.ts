@@ -6,6 +6,7 @@
 import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; //_splitter_
 import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { MatPaginator } from '@angular/material/paginator'; //_splitter_
+import { MatTableDataSource } from '@angular/material/table'; //_splitter_
 import { DomSanitizer } from '@angular/platform-browser'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
 import { add_budgetComponent } from 'app/components/dashboard/add_budget.component'; //_splitter_
@@ -118,6 +119,7 @@ export class landingComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_gwfbYYgTgPPU5vRK');
     }
   }
+
   openDialog(...others) {
     let bh: any = {};
     try {
@@ -177,8 +179,6 @@ export class landingComponent implements AfterViewInit {
 
   sd_oVwRlrUvGw6hhxZi(bh) {
     try {
-      this.page.showImage = this.page.false;
-      this.page.image = undefined;
       this.page.lineChartData = this.page.lineChartData;
       this.page.lineChartLabels = this.page.lineChartLabels;
       this.page.pieChartLabels = this.page.pieChartLabels;
@@ -207,6 +207,7 @@ export class landingComponent implements AfterViewInit {
       this.page.newLineData = this.page.newLineData;
       bh = this.sd_2l8EVQOKmVRV14Om(bh);
       bh = this.getMonthlyDate(bh);
+      bh = this.getReceiptD(bh);
       //appendnew_next_sd_oVwRlrUvGw6hhxZi
       return bh;
     } catch (e) {
@@ -217,7 +218,7 @@ export class landingComponent implements AfterViewInit {
   sd_2l8EVQOKmVRV14Om(bh) {
     try {
       this.page.router = this.__page_injector__.get(Router);
-      bh = this.getReceiptD(bh);
+      bh = this.sd_HqphZUawWwBmzlQe(bh);
       //appendnew_next_sd_2l8EVQOKmVRV14Om
       return bh;
     } catch (e) {
@@ -225,21 +226,32 @@ export class landingComponent implements AfterViewInit {
     }
   }
 
-  getReceiptD(bh) {
+  sd_HqphZUawWwBmzlQe(bh) {
     try {
-      let outputVariables = this.getReceiptData();
-
-
-      console.log(bh.url);
-      bh = this.getThisMonthB(bh);
-      //appendnew_next_getReceiptD
+      bh.url = bh.system.environment.properties.ssdURL;
+      bh = this.sd_RDN6unfHnk0O5Kfz(bh);
+      //appendnew_next_sd_HqphZUawWwBmzlQe
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_F27d4EoalWd068UB');
+      return this.errorHandler(bh, e, 'sd_HqphZUawWwBmzlQe');
     }
   }
 
-  getThisMonthB(bh) {
+  sd_RDN6unfHnk0O5Kfz(bh) {
+    try {
+      const page = this.page;
+      bh.url = bh.url + 'get-receipt-data';
+
+      console.log(bh.url);
+      bh = this.getReceipts(bh);
+      //appendnew_next_sd_RDN6unfHnk0O5Kfz
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RDN6unfHnk0O5Kfz');
+    }
+  }
+
+  async getReceipts(bh) {
     try {
       let requestOptions = {
         url: bh.url,
@@ -253,7 +265,6 @@ export class landingComponent implements AfterViewInit {
         requestOptions
       );
       bh = this.sd_qzr4I51Z7TShqyIx(bh);
-      this.sd_vSgbhGeWJWC21z49(bh);
       //appendnew_next_getReceipts
       return bh;
     } catch (e) {
@@ -266,25 +277,21 @@ export class landingComponent implements AfterViewInit {
       this.page.tableData = bh.local.dataSource;
       bh = this.sd_I8cgmZAyUMYw2KLe(bh);
       //appendnew_next_sd_qzr4I51Z7TShqyIx
-      let outputVariables = this.getThisMonthBudget();
-
-      //appendnew_next_getThisMonthB
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_mvbmnglvGhpSeZzR');
+      return this.errorHandler(bh, e, 'sd_qzr4I51Z7TShqyIx');
     }
   }
 
-  getMonthlyDate(bh) {
+  sd_I8cgmZAyUMYw2KLe(bh) {
     try {
-      const page = this.page;
-      console.log(bh.url);
+      const page = this.page; // console.log(bh.url)
 
       bh.local.dataSource = new MatTableDataSource(page.resultReceipts);
-      console.log(page.resultReceipts);
+      // console.log(page.resultReceipts)
       // console.log(bh.local.MatPaginator)
 
-      page.resultReceipts.forEach((res) => console.log(res['Date-Uploaded']));
+      // page.resultReceipts.forEach(res => console.log(res['Date-Uploaded']))
 
       bh = this.sd_2JXWvVyCSaWUOSSi(bh);
       //appendnew_next_sd_I8cgmZAyUMYw2KLe
@@ -298,6 +305,15 @@ export class landingComponent implements AfterViewInit {
     try {
       this.page.tableData = bh.local.dataSource;
       //appendnew_next_sd_2JXWvVyCSaWUOSSi
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_2JXWvVyCSaWUOSSi');
+    }
+  }
+
+  getMonthlyDate(bh) {
+    try {
+      const page = this.page;
       page.currentDate = new Date();
       page.currentMonth = page.currentDate.getMonth();
       page.currentYear = page.currentDate.getFullYear();
@@ -336,13 +352,26 @@ export class landingComponent implements AfterViewInit {
     }
   }
 
-  sd_vSgbhGeWJWC21z49(bh) {
+  getReceiptD(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), this.page.resultReceipts);
-      //appendnew_next_sd_vSgbhGeWJWC21z49
+      let outputVariables = this.getReceiptData();
+
+      bh = this.getThisMonthB(bh);
+      //appendnew_next_getReceiptD
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_vSgbhGeWJWC21z49');
+      return this.errorHandler(bh, e, 'sd_FECy6IniGnW4Nad1');
+    }
+  }
+
+  getThisMonthB(bh) {
+    try {
+      let outputVariables = this.getThisMonthBudget();
+
+      //appendnew_next_getThisMonthB
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_gzKx4SlR1U4XfqJb');
     }
   }
 
@@ -485,7 +514,7 @@ export class landingComponent implements AfterViewInit {
   sd_P2pfUhNMAOXpl7us(bh) {
     try {
       const page = this.page;
-      bh.url3 = bh.url3 + 'get-receipt';
+      bh.url3 = bh.url3 + 'get-receipt-data';
       bh.url4 = bh.url4 + 'get-budget';
 
       bh = this.sd_d1wEqhb2I0Az2Gig(bh);
@@ -528,8 +557,8 @@ export class landingComponent implements AfterViewInit {
         body: undefined,
       };
       this.page.receiptData = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.findExpensesSpentByMonth(bh);
       bh = this.findingExpensesForAnotherChart(bh);
+      bh = this.sd_dfjtjzrbfmekIOpW(bh);
       //appendnew_next_sd_hd1tYEWeV3FFJDsW
       return bh;
     } catch (e) {
@@ -537,102 +566,68 @@ export class landingComponent implements AfterViewInit {
     }
   }
 
-  findExpensesSpentByMonth(bh) {
-    try {
-      const page = this.page;
-      page.annualAccumulatedExpenses = 0;
-
-      let nData = page.receiptData;
-      nData.forEach((entry) => {
-        page.annualAccumulatedExpenses += entry.total;
-      });
-
-      const currentDate = new Date();
-      const currentMonth = currentDate.getMonth();
-      const currentYear = currentDate.getFullYear();
-
-      // Initialize the sum for totals
-      page.sumTotal = 0;
-
-      let data = page.receiptData;
-      // Loop through the data array and calculate the sum of totals for the current month
-      data.forEach((item) => {
-        // Extract the month and year from the Date-Uploaded field
-        const uploadedDate = new Date(item['Date-Uploaded']);
-        const uploadedMonth = uploadedDate.getMonth();
-        const uploadedYear = uploadedDate.getFullYear();
-
-        // Check if the month and year match the current month and year
-        if (uploadedMonth === currentMonth && uploadedYear === currentYear) {
-          page.sumTotal += item.total;
-        }
-      });
-
-      // console.log(`Sum of totals for ${currentDate.toLocaleString('default', { month: 'long' })} ${currentYear}: ${page.sumTotal.toFixed(2)}`);
-
-      page.savings = Math.abs(page.sumTotal - page.currentMonthBugetAmt);
-
-      page.doughnutChartData = [
-        {
-          data: [page.currentMonthBugetAmt, page.savings, page.sumTotal],
-          label: 'Budget; Savings; Expenses',
-        },
-      ];
-
-      page.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];
-
-      //appendnew_next_findExpensesSpentByMonth
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_cC8X4aU4RlF9xXxn');
-    }
-  }
-
   findingExpensesForAnotherChart(bh) {
     try {
-      const page = this.page; // Function to parse the month and year from the date
-      function parseMonth(dateStr) {
+      const page = this.page;
+      function isCurrentMonth(dateStr) {
         const date = new Date(dateStr);
-        const month = date.getMonth();
-        const monthNames = [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December',
-        ];
-        return monthNames[month];
+        const now = new Date();
+        return (
+          date.getMonth() === now.getMonth() &&
+          date.getFullYear() === now.getFullYear()
+        );
       }
 
-      // Create a map to store the totals for each month
-      const monthlyTotalsMap = {};
+      // Initialize the total for the current month
+      let totalForCurrentMonth = 0;
+
       let nData = page.receiptData;
 
-      // Iterate through the data and update the map
+      // Iterate through the data and update the total for the current month
       nData.forEach((entry) => {
-        const month = parseMonth(entry['Date-Uploaded']);
-        if (!monthlyTotalsMap[month]) {
-          monthlyTotalsMap[month] = 0;
+        if (isCurrentMonth(entry['Date-Uploaded'])) {
+          totalForCurrentMonth += entry.totalAmount;
         }
-        monthlyTotalsMap[month] += entry.total;
       });
 
-      // Separate the keys and values into two arrays
-      const months = Object.keys(monthlyTotalsMap);
-      page.monthlyExpenses = Object.values(monthlyTotalsMap);
+      page.monthlyExpenses = totalForCurrentMonth;
+
+      // // Function to parse the month and year from the date
+      // function parseMonth(dateStr) {
+      //   const [month, day, year] = dateStr.split('/');
+      //   const date = new Date(year, month - 1, day);
+      //   const monthIndex = date.getMonth();
+      //   const monthNames = [
+      //     "January", "February", "March", "April", "May", "June",
+      //     "July", "August", "September", "October", "November", "December"
+      //   ];
+      //   return monthNames[monthIndex];
+      // }
+
+      // const monthlyTotalsMap = {};
+      // console.log("receiptData", page.receiptData)
+      // let nData = page.receiptData;
+
+      // // Iterate through the data and update the map
+      // nData.forEach(entry => {
+      //   const month = parseMonth(entry["Date-Uploaded"]);
+      //   if (!monthlyTotalsMap[month]) {
+      //     monthlyTotalsMap[month] = 0;
+      //   }
+      //   monthlyTotalsMap[month] += entry.totalAmount;
+      // });
+
+      // // Separate the keys and values into two arrays
+      // const months = Object.keys(monthlyTotalsMap);
+      // page.monthlyExpenses = Object.values(monthlyTotalsMap);
+
+      // console.log("monthly", page.monthlyExpenses)
 
       bh = this.removeScript(bh);
       //appendnew_next_findingExpensesForAnotherChart
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_NDGNkGNOMv3LdRki');
+      return this.errorHandler(bh, e, 'sd_QLB2Z8M4r03celxw');
     }
   }
 
@@ -660,9 +655,63 @@ export class landingComponent implements AfterViewInit {
   chartData(bh) {
     try {
       const page = this.page;
-      page.dataSet = [{ data: page.monthlyExpenses, label: 'Expenses' }];
+      let data = page.receiptData;
+      const sumByMonth = (data) => {
+        const result = {};
+        const monthNames = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ];
 
-      page.barChartLabels = [{ data: page.months }];
+        data.forEach((entry) => {
+          const date = new Date(entry['Date-Uploaded']);
+          const month = date.getMonth() + 1; // 1 for January, 2 for February, etc.
+
+          const monthStr = month.toString().padStart(2, '0'); // Convert to 2-digit string
+
+          if (!result[monthStr]) {
+            result[monthStr] = 0;
+          }
+
+          result[monthStr] += entry.totalAmount;
+        });
+
+        // Create the result array with month names
+        const monthlyTotals = [];
+        for (let i = 1; i <= 12; i++) {
+          const monthStr = i.toString().padStart(2, '0');
+          if (result[monthStr] !== undefined) {
+            monthlyTotals.push({
+              month: monthNames[i - 1],
+              totalAmount: result[monthStr],
+            });
+          }
+        }
+
+        return monthlyTotals;
+      };
+
+      const monthlyTotals = sumByMonth(data);
+
+      const months1 = monthlyTotals.map((entry) => entry.month);
+      const totals = monthlyTotals.map((entry) => entry.totalAmount);
+
+      page.eachMnthlyExpenses = totals;
+      page.eMonths = months1;
+
+      page.dataSet = [{ data: page.eachMnthlyExpenses, label: 'Expenses' }];
+
+      page.barChartLabels = [{ data: page.eMonths }];
 
       page.barChartLabels = page.barChartLabels[0].data;
 
@@ -711,6 +760,67 @@ export class landingComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_UawrgOePVwDuGaja');
+    }
+  }
+
+  sd_dfjtjzrbfmekIOpW(bh) {
+    try {
+      const page = this.page;
+      let data = page.receiptData;
+
+      // Helper function to parse the date
+      const parseDate = (dateString) => {
+        const [year, month, day] = dateString.split('/');
+        return new Date(year, month - 1, day);
+      };
+
+      // Get the current month and year
+      const currentMonth = new Date().getMonth();
+      const currentYear = new Date().getFullYear();
+
+      page.annualAccumulatedExpenses = 0;
+      page.sumTotal = 0;
+
+      // Loop through the data to calculate totals
+      data.forEach((entry) => {
+        const date = parseDate(entry['Date-Uploaded']);
+        page.annualAccumulatedExpenses += entry.totalAmount;
+
+        if (
+          date.getMonth() === currentMonth &&
+          date.getFullYear() === currentYear
+        ) {
+          page.sumTotal += entry.totalAmount;
+        }
+      });
+
+      page.annualAccumulatedExpenses =
+        page.annualAccumulatedExpenses.toFixed(2);
+      page.sumTotal = page.sumTotal.toFixed(2);
+
+      page.savings = Math.abs(
+        page.sumTotal - page.currentMonthBugetAmt
+      ).toFixed(2);
+
+      page.doughnutChartData = [
+        {
+          data: [page.currentMonthBugetAmt, page.savings, page.sumTotal],
+          label: 'Budget; Savings; Expenses',
+        },
+      ];
+
+      page.doughnutChartLabels = ['Budget', 'Savings', 'Expenses'];
+
+      // console.log("Annual Accumulated Expenses:", page.annualAccumulatedExpenses);
+      // console.log("Sum Total for Current Month:", page.sumTotal);
+      // console.log("Savings:", page.savings);
+      // console.log("Doughnut Chart Data:", page.doughnutChartData);
+      // console.log("Doughnut Chart Labels:", page.doughnutChartLabels);
+
+      //appendnew_next_sd_dfjtjzrbfmekIOpW
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_dfjtjzrbfmekIOpW');
     }
   }
 
@@ -782,8 +892,10 @@ export class landingComponent implements AfterViewInit {
         }
       });
 
+      page.currentMonthBugetAmt = page.currentMonthBugetAmt.toFixed(2);
+
       bh = this.gettingAccumulatedAnnual(bh);
-      bh = this.findExpensesSpentByMonth(bh);
+      bh = this.sd_dfjtjzrbfmekIOpW(bh);
       //appendnew_next_gettingCurrentMonthBudget
       return bh;
     } catch (e) {
@@ -804,6 +916,7 @@ export class landingComponent implements AfterViewInit {
         (accumulator, currentValue) => accumulator + currentValue,
         0
       );
+      page.accumulatedAnnual = page.accumulatedAnnual.toFixed(2);
 
       //appendnew_next_gettingAccumulatedAnnual
       return bh;

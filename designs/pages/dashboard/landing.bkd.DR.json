@@ -137,7 +137,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "width: 45%; height: 90%; background-color: white; border-radius: 8px; padding: 4px",
+                        "_value": "width: 45%; height: 90%; background-color: white; border-radius: 8px; padding: 10px",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -882,7 +882,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "R {{page.annualAccumulatedExpenses.toFixed(2)}}",
+                                    "_value": "<span *ngIf=\"page.annualAccumulatedExpenses !== undefined\" >R {{page.annualAccumulatedExpenses}}</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1376,7 +1376,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Monthly Budget: <span *ngIf=\"page.currentMonthBugetAmt !== undefined else notSet\" > R {{page.currentMonthBugetAmt.toFixed(2)}}</span>\r\n<ng-template #notSet >\r\n    <button (click)=\"openDialog()\" class=\"not-set-btn-tii\">Click here to set</button>\r\n</ng-template>",
+                                    "_value": "Monthly Budget: <span *ngIf=\"page.currentMonthBugetAmt !== undefined else notSet\" > R {{page.currentMonthBugetAmt}}</span>\r\n<ng-template #notSet >\r\n    <button (click)=\"openDialog()\" class=\"not-set-btn-tii\">Click here to set</button>\r\n</ng-template>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1603,7 +1603,6 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "b43aa342-637a-86df-6431-1d91ab9799e4",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1791,7 +1790,6 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "8b33ae4f-8c4b-d7e1-1da4-44b168bc0be8",
                             "isAdvancedChildComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1808,34 +1806,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<ul>\r\n    <li *ngIf=\"page.currentMonthBugetAmt !== undefined\"  >Expenses: R {{page.sumTotal.toFixed(2)}} </li>\r\n    <li *ngIf=\"page.currentMonthBugetAmt !== undefined \">Savings: R {{page.savings.toFixed(2)}} </li>\r\n</ul>",
-                                    "_type": "a",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        },
-                        "2d3a19f0-91e8-1e06-a183-df1c5c445f1f": {
-                            "paletteKey": "html-editor",
-                            "parentEditorKey": "8b33ae4f-8c4b-d7e1-1da4-44b168bc0be8",
-                            "isAdvancedChildComponent": true,
-                            "isCommented": "true",
-                            "commentid": null,
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "html",
-                                    "_value": "",
+                                    "_value": "<ul *ngIf=\"page.currentMonthBugetAmt !== undefined && page.currentMonthBugetAmt !== undefined \">\r\n    <li >Expenses: R {{page.monthlyExpenses}} </li> <br>\r\n    <li >Savings: R {{page.savings}} </li>\r\n</ul>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1962,7 +1933,7 @@
                             },
                             {
                                 "_key": "[legend]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

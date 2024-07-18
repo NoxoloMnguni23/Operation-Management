@@ -152,6 +152,13 @@
                     "type": "literal",
                     "value": "[]"
                 }
+            },
+            {
+                "textIp": "data",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
             }
         ],
         "functionName": "sd_XASJm5GtYmf3XfeR",
@@ -175,10 +182,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "separate the categories",
-        "script": "\n\npage.items.forEach(item => {\n \n    if (item.category  ===\"Groceries\" || item.category ===\"groceries\"){\n      page.Groceries.push(item)\n\n    }\n     if (item.category ===\"Supplies\"||item.category ===\"supplies\" ){\n      return  page.Supplies.push(item)\n    }\n    if(item.category ===\"Maintenance\"|| item.category ===\"maintenance\" ){\n      return  page.Maintenance.push(item)\n    }\n   \n});\n\n// page.Milk = page.items.filter(arr => arr.name == \"Milk\")\n\n// page.milkItems = page.items.filter(item => item.name === \"Milk\");\n// page.milkCount = page.milkItems.length;\n// page.milkTotalPrice = page.milkItems.reduce((total, item) => total + item.price, 0);\n\n// console.log(`Number of \"Milk\" items: ${page.milkCount}`);\n// console.log(`Total price of \"Milk\" items: R${page.milkTotalPrice.toFixed(2)}`);\n\n console.log( page.Groceries)\n \n  console.log( page.Supplies)\n   console.log( page.Maintenance)\n  //  console.log( page.Milk)",
+        "script": "\n\npage.items.forEach(item => {\n \n    if (item.category  ===\"Groceries\" || item.category ===\"groceries\"){\n      page.Groceries.push(item)\n\n    }\n     if (item.category ===\"Supplies\"||item.category ===\"supplies\" ){\n      return  page.Supplies.push(item)\n    }\n    if(item.category ===\"Maintenance\"|| item.category ===\"maintenance\" ){\n      return  page.Maintenance.push(item)\n    }\n   \n});\n\n// page.Milk = page.items.filter(arr => arr.name == \"Milk\")\n\n// page.milkItems = page.items.filter(item => item.name === \"Milk\");\n// page.milkCount = page.milkItems.length;\n// page.milkTotalPrice = page.milkItems.reduce((total, item) => total + item.price, 0);\n\n// console.log(`Number of \"Milk\" items: ${page.milkCount}`);\n// console.log(`Total price of \"Milk\" items: R${page.milkTotalPrice.toFixed(2)}`);\n\n//  console.log( page.Groceries)\n \n  // console.log( page.Supplies)\n  //  console.log( page.Maintenance)\n  //  console.log( page.Milk)",
         "functionName": "separateTheCategories",
         "category": "Function",
-        "x": 725,
+        "x": 745,
         "y": 40,
         "wires": [
             [
@@ -197,7 +204,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "get the total amount",
-        "script": "page.Groceries.forEach(item => {\n    console.log(item.price)\n    page.priceg = page.priceg + item.price\n    page.priceG = page.priceg.toFixed(2)\n});\npage.Supplies.forEach(item => {\n    page.prices = page.prices + item.price\n    page.priceS = page.prices.toFixed(2)\n}\n);\npage.Maintenance.forEach(item => {\n    page.pricem = page.pricem + item.price\n    page.priceM = page.pricem.toFixed(2)\n\n}\n);\nconsole.log(\"page.priceG\",page.priceG)\nconsole.log(\"page.priceS\",page.priceS)\nconsole.log(\"page.priceM\",page.priceM)",
+        "script": "page.Groceries.forEach(item => {\n    // console.log(item.price)\n    page.priceg = page.priceg + item.price\n    page.priceG = page.priceg.toFixed(2)\n});\npage.Supplies.forEach(item => {\n    page.prices = page.prices + item.price\n    page.priceS = page.prices.toFixed(2)\n}\n);\npage.Maintenance.forEach(item => {\n    page.pricem = page.pricem + item.price\n    page.priceM = page.pricem.toFixed(2)\n\n}\n);\n// console.log(\"page.priceG\",page.priceG)\n// console.log(\"page.priceS\",page.priceS)\n// console.log(\"page.priceM\",page.priceM)",
         "functionName": "getTheTotalAmount",
         "category": "Function",
         "x": 865,
@@ -241,7 +248,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Groceries",
-        "script": "page.Groceries.forEach(item => {\n  if(!page.Groceriesfinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Groceriesfinal.push(item)\n    }else {\n\npage.Groceriesfinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Groceriesfinal[indx].price = Math.round((page.Groceriesfinal[indx].price + item.price) * 100) / 100;\n        page.Groceriesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "script": "page.Groceries.forEach(item => {\n  if(!page.Groceriesfinal.find((__item) => __item.itemName === item.itemName)){\n        item['itemsCount'] = 1;\n        page.Groceriesfinal.push(item)\n    }else {\n\npage.Groceriesfinal.forEach((_item,indx) => {\n    if(_item.itemName === item.itemName) {\n        page.Groceriesfinal[indx].price = Math.round((page.Groceriesfinal[indx].price + item.price) * 100) / 100;\n        page.Groceriesfinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
         "functionName": "groceries",
         "category": "Function",
         "x": 1265,
@@ -261,7 +268,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Maintenance",
-        "script": "page.Maintenance.forEach(item => {\n  if(!page.Maintenancefinal.find((__item) => __item.name === item.name)){\n        item['itemsCount'] = 1;\n        page.Maintenancefinal.push(item)\n    }else {\n\npage.Maintenancefinal.forEach((_item,indx) => {\n    if(_item.name === item.name) {\n        page.Maintenancefinal[indx].price =Math.round( (page.Maintenancefinal[indx].price + item.price) * 100) / 100;\n        page.Maintenancefinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
+        "script": "page.Maintenance.forEach(item => {\n  if(!page.Maintenancefinal.find((__item) => __item.itemName === item.itemName)){\n        item['itemsCount'] = 1;\n        page.Maintenancefinal.push(item)\n    }else {\n\npage.Maintenancefinal.forEach((_item,indx) => {\n    if(_item.itemName === item.itemName) {\n        page.Maintenancefinal[indx].price =Math.round( (page.Maintenancefinal[indx].price + item.price) * 100) / 100;\n        page.Maintenancefinal[indx].itemsCount += 1;\n    }\n})\n    }\n    \n})",
         "functionName": "maintenance",
         "category": "Function",
         "x": 1185,
@@ -283,7 +290,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Supplies",
-        "script": "console.log(page.Supplies)\npage.Supplies.forEach(item => {\n    if (!page.Suppliesfinal.find((__item) => __item.name === item.name)) {\n        item['itemsCount'] = 1;\n        page.Suppliesfinal.push(item)\n    } else {\n        page.Suppliesfinal.forEach((_item, indx) => {\n            if (_item.name === item.name) {\n             \n                page.Suppliesfinal[indx].price = Math.round((page.Suppliesfinal[indx].price + item.price) * 100) / 100;\n                page.Suppliesfinal[indx].itemsCount += 1;\n            }\n        })\n    }\n})\nconsole.log(\"page.Suppliesfinal\", page.Suppliesfinal)",
+        "script": "// console.log(page.Supplies)\npage.Supplies.forEach(item => {\n    if (!page.Suppliesfinal.find((__item) => __item.itemName === item.itemName)) {\n        item['itemsCount'] = 1;\n        page.Suppliesfinal.push(item)\n    } else {\n        page.Suppliesfinal.forEach((_item, indx) => {\n            if (_item.itemName === item.itemName) {\n             \n                page.Suppliesfinal[indx].price = Math.round((page.Suppliesfinal[indx].price + item.price) * 100) / 100;\n                page.Suppliesfinal[indx].itemsCount += 1;\n            }\n        })\n    }\n})\n// console.log(\"page.Suppliesfinal\", page.Suppliesfinal)",
         "functionName": "supplies",
         "category": "Function",
         "x": 1105,
@@ -359,6 +366,7 @@
         "nodeType": "flow",
         "name": "get-receipts",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -366,11 +374,14 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "this.page",
             "mapVarValue": ""
@@ -382,9 +393,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "getReceipts",
         "category": "HTTP",
@@ -407,14 +420,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "turn it to a n array",
-        "script": "// page.page._data\n//  page.selecteditems.filter((item,i) =>{\n//     console.log(\"Item\",item.items);\n\n// } )\n\n// let items = []\n\nconsole.log(\"Main data\", page.selecteditems)\n\nfor(let i = 0; i< page.selecteditems.length;i++){\n    page._data.push(page.selecteditems[i].items)\n}\n\nfor(let i=0;i<page._data.length;i++){\n    for(let j = 0;j<page._data[i].length; j++){\n      page.items.push(page._data[i][j])\n    }\n}\n\n\n\n\nconsole.log(\"Final data\", page.items)\n// console.log(\"data\", page._data)\n// page.items.forEach(item => {\n//   console.log(\"items \",item)\n//   })",
+        "script": "// page.page._data\n//  page.selecteditems.filter((item,i) =>{\n//     console.log(\"Item\",item.items);\n\n// } )\n\n// let items = []\n\n// console.log(\"Main data\", page.selecteditems)\n\nfor(let i = 0; i< page.selecteditems.length;i++){\n    page._data.push(page.selecteditems[i].items)\n}\n\nfor(let i=0;i<page._data.length;i++){\n    for(let j = 0;j<page._data[i].length; j++){\n      page.data.push(page._data[i][j])\n    }\n}\n\n\n\n\n// console.log(\"Final data\", page.data)\n// console.log(\"data\", page._data)\n// page.items.forEach(item => {\n//   console.log(\"items \",item)\n//   })",
         "functionName": "turnItToANArray",
         "category": "Function",
         "x": 585,
         "y": 40,
         "wires": [
             [
-                "sd_MwRsJo4lV9LxxPCW"
+                "sd_1IobYtlsatlI64fh"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -429,7 +442,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "getdataofthismonth",
-        "script": "\nconsole.log(\"Main datata\", page.resultItems)\n\nlet dateToCompare = new Date().toLocaleDateString().substr(0,1)\n\nlet dateFromMongo = page.resultItems.map(item =>{\n \n    return item['Date-Uploaded']\n})\n\nconsole.log('date uploaded:', dateFromMongo)\npage.monthToCompare\nfor(let i = 0; i < dateFromMongo.length; i++) {\n    page.monthToCompare = dateFromMongo[i].substr(6,1)\n    console.log(\"date items\",page.monthToCompare)\n    if(page.monthToCompare == dateToCompare){\n      page.selecteditems.push (page.resultItems[i])\n      \n    }\n}\nconsole.log(\"datauptodate\", page.selecteditems)\n\n",
+        "script": "\n// console.log(\"Main datata\", page.resultItems)\n\nlet dateToCompare = new Date().toLocaleDateString().substr(0,1)\n\nlet dateFromMongo = page.resultItems.map(item =>{\n \n    return item['Date-Uploaded']\n})\n\n// console.log('date uploaded:', dateFromMongo)\npage.monthToCompare\nfor(let i = 0; i < dateFromMongo.length; i++) {\n    page.monthToCompare = dateFromMongo[i].substr(6,1)\n    // console.log(\"date items\",page.monthToCompare)\n    if(page.monthToCompare == dateToCompare){\n      page.selecteditems.push (page.resultItems[i])\n      \n    }\n}\n// console.log(\"datauptodate\", page.selecteditems)\n\n",
         "functionName": "getdataofthismonth",
         "category": "Function",
         "x": 465,
@@ -437,6 +450,28 @@
         "wires": [
             [
                 "sd_cjPeEs7jJtuVZkh2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "categoriesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1IobYtlsatlI64fh",
+        "type": "Script",
+        "z": "sd_Zg0T4cPUJNxauKEy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.items = page.data.map(item =>{\n    let newitem ={}\n    for (let key in item){\n        let newKey = key.replace(/[0-9]/g,'');\n        newitem[newKey] = item[key]\n    }\n    return newitem\n})\n// console.log(page.items)",
+        "functionName": "sd_1IobYtlsatlI64fh",
+        "category": "Function",
+        "x": 665,
+        "y": 40,
+        "wires": [
+            [
+                "sd_MwRsJo4lV9LxxPCW"
             ]
         ],
         "__n_excludedFromValidation__": {},

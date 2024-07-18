@@ -122,7 +122,6 @@ export class operations_dashboardComponent {
       ];
 
       page.currentUser = bh.system.oauthService.userInfo;
-      console.log('logged In', page.currentUser);
 
       bh = this.sd_oILf1PmiKBS7wYCG(bh);
       //appendnew_next_sd_O2uh2oOCq9Gzz9zw
