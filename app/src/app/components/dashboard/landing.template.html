@@ -7,7 +7,7 @@
         <h5 style="color: gray; " class="no-margin-lebo">
           Annual Expenditure:</h5>
         <h3 style="margin-bottom: 0; color: red">
-          R {{page.annualAccumulatedExpenses.toFixed(2)}}</h3>
+          R {{page.annualAccumulatedExpenses}}</h3>
       </div>
       <div fxLayout="column wrap" style="width: 50%; height: 100%" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxFlex="100">
@@ -27,8 +27,8 @@
           {{page.thisMonthRangeDate}}
         </h6><span style="margin-bottom: 0; color: gray">
                 <ul>
-    <li *ngIf="page.currentMonthBugetAmt !== undefined">Expenses: R {{page.sumTotal.toFixed(2)}} </li>
-    <li *ngIf="page.currentMonthBugetAmt !== undefined ">Savings: R {{page.savings.toFixed(2)}} </li>
+    <li *ngIf="page.currentMonthBugetAmt !== undefined">Expenses: R {{page.sumTotal}} </li>
+    <li *ngIf="page.currentMonthBugetAmt !== undefined ">Savings: R {{page.savings}} </li>
 </ul></span>
       </div>
       <div fxLayout="column wrap" style="width: 40%; height: 100%" class="canvas-tii" fxLayoutAlign="start stretch" [fxShow]="true">

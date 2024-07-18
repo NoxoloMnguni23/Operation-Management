@@ -40,10 +40,18 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "items",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_XyfbDazfYKEzilS2",
         "category": "Function",
-        "x": 225,
+        "x": 265,
         "y": 40,
         "wires": [
             [
@@ -95,7 +103,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\n\n\nconsole.log(\"recived\",page.userData)",
+        "script": "page.items = page.userData.items;\nconsole.log(\"items\",page.items)\n",
         "functionName": "sd_q1lHTwDbml4pIrPz",
         "category": "Function",
         "x": 505,
@@ -193,6 +201,7 @@
         "nodeType": "flow",
         "name": "view",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -200,8 +209,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -217,9 +228,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "view",
         "category": "HTTP",
@@ -267,7 +280,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_XyfbDazfYKEzilS2"
+                "sd_X1rcRfJO0qqrTWKq"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -349,6 +362,90 @@
         "wires": [
             [
                 "sd_D4IUBlbXve1T7sZ2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_liwuthMhQB2ld3F2",
+        "type": "PageStart",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "go back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "sd_W3KqUjDxo9NcogMu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "selected_receipt_formComponent"
+    },
+    {
+        "id": "sd_W3KqUjDxo9NcogMu",
+        "type": "Script",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "sessionStorage.clear();\npage.location.back();",
+        "functionName": "sd_W3KqUjDxo9NcogMu",
+        "category": "Function",
+        "x": 325,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "selected_receipt_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_X1rcRfJO0qqrTWKq",
+        "type": "UseDependency",
+        "z": "sd_bEbioje8SdrSTKeh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Location",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "location"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/common",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_X1rcRfJO0qqrTWKq",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_XyfbDazfYKEzilS2"
             ]
         ],
         "__n_excludedFromValidation__": {},

@@ -24,7 +24,7 @@
         "functionName": "sd_g8anwqOVxkl7dnK1",
         "category": "Lifecycle Events",
         "x": 45,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "sd_xW4Pjtkb5SQe5Fy6"
@@ -44,22 +44,6 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [
-            {
-                "textIp": "showImage",
-                "typedIpValue": {
-                    "type": "this.page",
-                    "value": "false"
-                }
-            },
-            {
-                "textIp": "image",
-                "typedIpValue": {
-                    "type": "this.page",
-                    "value": ""
-                }
-            }
-        ],
         "globalVariables": [
             {
                 "textIp": "lineChartData",
@@ -155,12 +139,13 @@
         ],
         "functionName": "sd_oVwRlrUvGw6hhxZi",
         "category": "Function",
-        "x": 165,
-        "y": 60,
+        "x": 205,
+        "y": 100,
         "wires": [
             [
                 "sd_2l8EVQOKmVRV14Om",
-                "sd_zgDzU2ECixcC1ak6"
+                "sd_zgDzU2ECixcC1ak6",
+                "sd_F27d4EoalWd068UB"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -188,15 +173,16 @@
         "functionName": "sd_HqphZUawWwBmzlQe",
         "category": "General",
         "x": 385,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "sd_RDN6unfHnk0O5Kfz"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_RDN6unfHnk0O5Kfz",
@@ -209,15 +195,16 @@
         "functionName": "sd_RDN6unfHnk0O5Kfz",
         "category": "Function",
         "x": 465,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "sd_F2ZToH6C34R0qqKu"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_F2ZToH6C34R0qqKu",
@@ -263,7 +250,7 @@
         "functionName": "getReceipts",
         "category": "HTTP",
         "x": 545,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "sd_qzr4I51Z7TShqyIx",
@@ -271,8 +258,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_I8cgmZAyUMYw2KLe",
@@ -285,15 +273,16 @@
         "functionName": "sd_I8cgmZAyUMYw2KLe",
         "category": "Function",
         "x": 725,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "sd_2JXWvVyCSaWUOSSi"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_qzr4I51Z7TShqyIx",
@@ -317,15 +306,16 @@
         "functionName": "sd_qzr4I51Z7TShqyIx",
         "category": "Function",
         "x": 645,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "sd_I8cgmZAyUMYw2KLe"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_2l8EVQOKmVRV14Om",
@@ -356,10 +346,10 @@
         "functionName": "sd_2l8EVQOKmVRV14Om",
         "category": "Function",
         "x": 285,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
-                "sd_F27d4EoalWd068UB"
+                "sd_HqphZUawWwBmzlQe"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -381,7 +371,7 @@
         "functionName": "openForm",
         "category": "General",
         "x": 65,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "sd_TetSjqbxmzLs0g9j"
@@ -408,8 +398,8 @@
         "resultMapping": "",
         "functionName": "sd_TetSjqbxmzLs0g9j",
         "category": "Navigation",
-        "x": 190,
-        "y": 560,
+        "x": 205,
+        "y": 620,
         "wires": [
             []
         ],
@@ -440,7 +430,7 @@
         "functionName": "sd_2JXWvVyCSaWUOSSi",
         "category": "Function",
         "x": 825,
-        "y": 60,
+        "y": 80,
         "wires": [
             []
         ],
@@ -674,7 +664,7 @@
         "functionName": "selected",
         "category": "General",
         "x": 305,
-        "y": 180,
+        "y": 240,
         "wires": [
             [
                 "sd_QBsrjh36mJG7EFMY"
@@ -694,8 +684,8 @@
         "script": "page.user = bh.input.row\npage.router.navigate(['/selected_receipt_form'])",
         "functionName": "sd_QBsrjh36mJG7EFMY",
         "category": "Function",
-        "x": 445,
-        "y": 180,
+        "x": 425,
+        "y": 240,
         "wires": [
             [
                 "sd_K0NrFIERzJXKe8GP"
@@ -727,8 +717,8 @@
         "resultMapping": {},
         "functionName": "sd_K0NrFIERzJXKe8GP",
         "category": "Storage",
-        "x": 560,
-        "y": 180,
+        "x": 545,
+        "y": 260,
         "wires": [
             []
         ],
@@ -766,13 +756,16 @@
         "functionName": "sd_xW4Pjtkb5SQe5Fy6",
         "category": "Function",
         "x": 125,
-        "y": 60,
+        "y": 100,
         "wires": [
-            []
+            [
+                "sd_oVwRlrUvGw6hhxZi"
+            ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "landingComponent"
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
     },
     {
         "id": "sd_A27nuw79xKmoRPh6",
@@ -964,8 +957,8 @@
         "script": "page.currentDate = new Date();\npage.currentMonth = page.currentDate.getMonth();\npage.currentYear = page.currentDate.getFullYear();\n\n// Get the start and end date of the current month\npage.startDate = new Date(page.currentYear, page.currentMonth, 1);\npage.endDate = new Date(page.currentYear, page.currentMonth + 1, 0);\n\npage.monthNames = [\n  \"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"\n];\n\npage.monthName = page.monthNames[page.currentMonth];\n\npage.thisMonthRangeDate = `${page.monthName} ${page.startDate.getDate()} - ${page.monthName} ${page.endDate.getDate()} , ${page.currentYear}`\n\n",
         "functionName": "getMonthlyDate",
         "category": "Function",
-        "x": 85,
-        "y": 180,
+        "x": 225,
+        "y": 20,
         "wires": [
             []
         ],
@@ -994,7 +987,7 @@
         "functionName": "sd_vUvXw8Y3lnhbpYIv",
         "category": "General",
         "x": 585,
-        "y": 200,
+        "y": 340,
         "wires": [
             [
                 "sd_9jVuoDurVkeCshlO"
@@ -1016,7 +1009,7 @@
         "functionName": "sd_9jVuoDurVkeCshlO",
         "category": "Function",
         "x": 685,
-        "y": 200,
+        "y": 340,
         "wires": [
             [
                 "sd_dBpXjBZ3VAm2xzVs"
@@ -1070,8 +1063,8 @@
         "paramMappingObj": {},
         "functionName": "sd_dBpXjBZ3VAm2xzVs",
         "category": "HTTP",
-        "x": 790,
-        "y": 200,
+        "x": 785,
+        "y": 340,
         "wires": [
             [
                 "sd_CgrszF5ITUXVawZm"
@@ -1092,8 +1085,8 @@
         "script": "let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\n\npage.currentMonthBugetAmt;\n\npage.findCurrBudget = page.result[0].budget.filter((budget) => {\n    if(budget.month == months[new Date().getMonth()])\n    {\n        page.currentMonthBugetAmt = budget.amount\n    }\n})\n\n",
         "functionName": "gettingCurrentMonthBudget",
         "category": "Function",
-        "x": 925,
-        "y": 200,
+        "x": 905,
+        "y": 340,
         "wires": [
             [
                 "sd_fuoLcsRnYFq7cDyH",
@@ -1132,7 +1125,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url3 = bh.url3 + 'get-receipt'\nbh.url4 = bh.url4 + 'get-budget'\n",
+        "script": "bh.url3 = bh.url3 + 'get-receipt-data'\nbh.url4 = bh.url4 + 'get-budget'\n",
         "functionName": "sd_P2pfUhNMAOXpl7us",
         "category": "Function",
         "x": 545,
@@ -1293,8 +1286,8 @@
         "accept_csd": false,
         "functionName": "getReceiptD",
         "category": "General",
-        "x": 365,
-        "y": 340,
+        "x": 65,
+        "y": 220,
         "wires": [
             [
                 "sd_mvbmnglvGhpSeZzR"
@@ -1342,8 +1335,8 @@
         "flow_type": "sync",
         "functionName": "getThisMonthBudget",
         "category": "General",
-        "x": 465,
-        "y": 200,
+        "x": 445,
+        "y": 340,
         "wires": [
             [
                 "sd_vUvXw8Y3lnhbpYIv"
@@ -1385,8 +1378,8 @@
         "accept_csd": false,
         "functionName": "getThisMonthB",
         "category": "General",
-        "x": 461,
-        "y": 343.1354064941406,
+        "x": 185,
+        "y": 220,
         "wires": [
             []
         ],
@@ -1529,9 +1522,7 @@
         "x": 1105,
         "y": 560,
         "wires": [
-            [
-                "sd_oVwRlrUvGw6hhxZi"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

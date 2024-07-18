@@ -2430,7 +2430,6 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "fdf41433-54f7-60a8-c9b2-f35e0540a751",
                             "isAdvancedChildComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -2476,6 +2475,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "full-width",
                                 "gray-blue-bg",
                                 "router-outlet-content-tii"
                             ],

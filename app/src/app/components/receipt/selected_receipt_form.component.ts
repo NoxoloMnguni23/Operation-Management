@@ -3,7 +3,9 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
+import { Location } from '@angular/common'; //_splitter_
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { FormBuilder } from '@angular/forms'; //_splitter_
 import { DomSanitizer } from '@angular/platform-browser'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
@@ -26,6 +28,7 @@ export class selected_receipt_formComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -70,12 +73,27 @@ export class selected_receipt_formComponent {
       return this.errorHandler(bh, e, 'sd_99PDKTTfQ8mKGEcD');
     }
   }
+
+  goBack(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_W3KqUjDxo9NcogMu(bh);
+      //appendnew_next_goBack
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_liwuthMhQB2ld3F2');
+    }
+  }
   //appendnew_flow_selected_receipt_formComponent_start
 
   sd_3edeJLn2fkKlEanm(bh) {
     try {
       this.page.sanitizer = this.__page_injector__.get(DomSanitizer);
-      bh = this.sd_XyfbDazfYKEzilS2(bh);
+      bh = this.sd_X1rcRfJO0qqrTWKq(bh);
       //appendnew_next_sd_3edeJLn2fkKlEanm
       return bh;
     } catch (e) {
@@ -83,8 +101,20 @@ export class selected_receipt_formComponent {
     }
   }
 
+  sd_X1rcRfJO0qqrTWKq(bh) {
+    try {
+      this.page.location = this.__page_injector__.get(Location);
+      bh = this.sd_XyfbDazfYKEzilS2(bh);
+      //appendnew_next_sd_X1rcRfJO0qqrTWKq
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_X1rcRfJO0qqrTWKq');
+    }
+  }
+
   sd_XyfbDazfYKEzilS2(bh) {
     try {
+      this.page.items = undefined;
       bh = this.sd_49ZekZ6zNblKYnYe(bh);
       //appendnew_next_sd_XyfbDazfYKEzilS2
       return bh;
@@ -107,8 +137,9 @@ export class selected_receipt_formComponent {
   sd_q1lHTwDbml4pIrPz(bh) {
     try {
       const page = this.page;
+      page.items = page.userData.items;
+      console.log('items', page.items);
 
-      console.log('recived', page.userData);
       //appendnew_next_sd_q1lHTwDbml4pIrPz
       return bh;
     } catch (e) {
@@ -210,6 +241,18 @@ export class selected_receipt_formComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_BFX4kzBdgJvncSEQ');
+    }
+  }
+
+  sd_W3KqUjDxo9NcogMu(bh) {
+    try {
+      const page = this.page;
+      sessionStorage.clear();
+      page.location.back();
+      //appendnew_next_sd_W3KqUjDxo9NcogMu
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_W3KqUjDxo9NcogMu');
     }
   }
 

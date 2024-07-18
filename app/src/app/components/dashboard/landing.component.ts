@@ -6,6 +6,7 @@
 import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; //_splitter_
 import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { MatPaginator } from '@angular/material/paginator'; //_splitter_
+import { MatTableDataSource } from '@angular/material/table'; //_splitter_
 import { DomSanitizer } from '@angular/platform-browser'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
 import { add_budgetComponent } from 'app/components/dashboard/add_budget.component'; //_splitter_
@@ -118,6 +119,7 @@ export class landingComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_gwfbYYgTgPPU5vRK');
     }
   }
+
   openDialog(...others) {
     let bh: any = {};
     try {
@@ -177,8 +179,6 @@ export class landingComponent implements AfterViewInit {
 
   sd_oVwRlrUvGw6hhxZi(bh) {
     try {
-      this.page.showImage = this.page.false;
-      this.page.image = undefined;
       this.page.lineChartData = this.page.lineChartData;
       this.page.lineChartLabels = this.page.lineChartLabels;
       this.page.pieChartLabels = this.page.pieChartLabels;
@@ -207,6 +207,7 @@ export class landingComponent implements AfterViewInit {
       this.page.newLineData = this.page.newLineData;
       bh = this.sd_2l8EVQOKmVRV14Om(bh);
       bh = this.getMonthlyDate(bh);
+      bh = this.getReceiptD(bh);
       //appendnew_next_sd_oVwRlrUvGw6hhxZi
       return bh;
     } catch (e) {
@@ -217,7 +218,7 @@ export class landingComponent implements AfterViewInit {
   sd_2l8EVQOKmVRV14Om(bh) {
     try {
       this.page.router = this.__page_injector__.get(Router);
-      bh = this.getReceiptD(bh);
+      bh = this.sd_HqphZUawWwBmzlQe(bh);
       //appendnew_next_sd_2l8EVQOKmVRV14Om
       return bh;
     } catch (e) {
@@ -225,21 +226,32 @@ export class landingComponent implements AfterViewInit {
     }
   }
 
-  getReceiptD(bh) {
+  sd_HqphZUawWwBmzlQe(bh) {
     try {
-      let outputVariables = this.getReceiptData();
-
-
-      console.log(bh.url);
-      bh = this.getThisMonthB(bh);
-      //appendnew_next_getReceiptD
+      bh.url = bh.system.environment.properties.ssdURL;
+      bh = this.sd_RDN6unfHnk0O5Kfz(bh);
+      //appendnew_next_sd_HqphZUawWwBmzlQe
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_F27d4EoalWd068UB');
+      return this.errorHandler(bh, e, 'sd_HqphZUawWwBmzlQe');
     }
   }
 
-  getThisMonthB(bh) {
+  sd_RDN6unfHnk0O5Kfz(bh) {
+    try {
+      const page = this.page;
+      bh.url = bh.url + 'get-receipt-data';
+
+      console.log(bh.url);
+      bh = this.getReceipts(bh);
+      //appendnew_next_sd_RDN6unfHnk0O5Kfz
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RDN6unfHnk0O5Kfz');
+    }
+  }
+
+  async getReceipts(bh) {
     try {
       let requestOptions = {
         url: bh.url,
@@ -266,16 +278,13 @@ export class landingComponent implements AfterViewInit {
       this.page.tableData = bh.local.dataSource;
       bh = this.sd_I8cgmZAyUMYw2KLe(bh);
       //appendnew_next_sd_qzr4I51Z7TShqyIx
-      let outputVariables = this.getThisMonthBudget();
-
-      //appendnew_next_getThisMonthB
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_mvbmnglvGhpSeZzR');
+      return this.errorHandler(bh, e, 'sd_qzr4I51Z7TShqyIx');
     }
   }
 
-  getMonthlyDate(bh) {
+  sd_I8cgmZAyUMYw2KLe(bh) {
     try {
       const page = this.page;
       console.log(bh.url);
@@ -298,6 +307,25 @@ export class landingComponent implements AfterViewInit {
     try {
       this.page.tableData = bh.local.dataSource;
       //appendnew_next_sd_2JXWvVyCSaWUOSSi
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_2JXWvVyCSaWUOSSi');
+    }
+  }
+
+  sd_vSgbhGeWJWC21z49(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.resultReceipts);
+      //appendnew_next_sd_vSgbhGeWJWC21z49
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_vSgbhGeWJWC21z49');
+    }
+  }
+
+  getMonthlyDate(bh) {
+    try {
+      const page = this.page;
       page.currentDate = new Date();
       page.currentMonth = page.currentDate.getMonth();
       page.currentYear = page.currentDate.getFullYear();
@@ -336,13 +364,26 @@ export class landingComponent implements AfterViewInit {
     }
   }
 
-  sd_vSgbhGeWJWC21z49(bh) {
+  getReceiptD(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), this.page.resultReceipts);
-      //appendnew_next_sd_vSgbhGeWJWC21z49
+      let outputVariables = this.getReceiptData();
+
+      bh = this.getThisMonthB(bh);
+      //appendnew_next_getReceiptD
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_vSgbhGeWJWC21z49');
+      return this.errorHandler(bh, e, 'sd_F27d4EoalWd068UB');
+    }
+  }
+
+  getThisMonthB(bh) {
+    try {
+      let outputVariables = this.getThisMonthBudget();
+
+      //appendnew_next_getThisMonthB
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_mvbmnglvGhpSeZzR');
     }
   }
 
@@ -485,7 +526,7 @@ export class landingComponent implements AfterViewInit {
   sd_P2pfUhNMAOXpl7us(bh) {
     try {
       const page = this.page;
-      bh.url3 = bh.url3 + 'get-receipt';
+      bh.url3 = bh.url3 + 'get-receipt-data';
       bh.url4 = bh.url4 + 'get-budget';
 
       bh = this.sd_d1wEqhb2I0Az2Gig(bh);

@@ -60,6 +60,12 @@
                 "_value": "true",
                 "_type": "kv",
                 "_attrDef": "p"
+            },
+            {
+                "_key": "fxFill",
+                "_value": "fxFill",
+                "_type": "a",
+                "_attrDef": "c"
             }
         ],
         "7a686d77-a5d3-2a79-58bd-db60a1c34508": {
@@ -83,8 +89,8 @@
                 {
                     "_key": "class",
                     "_value": [
-                        "white-blue-bg",
-                        "form-kim"
+                        "form-kim",
+                        "white-blue-bg"
                     ],
                     "_type": "dav",
                     "_attrDef": "p"
