@@ -1408,7 +1408,8 @@
                                             "paletteKey": "html-editor",
                                             "parentEditorKey": "bdc1de65-534e-dd3a-52da-a0305c9e0e16",
                                             "isAdvancedChildComponent": true,
-                                            "commentid": null,
+                                            "isCommented": "true",
+                                            "commentid": "1721221755709",
                                             "designerReference": [
                                                 {
                                                     "_key": "style",
@@ -1424,7 +1425,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "{{Supplies.name}}",
+                                                    "_value": "{{Supplies.itemName}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -2979,7 +2980,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "{{Maintenance.name}}",
+                                                    "_value": "{{Maintenance.itemName}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -4533,7 +4534,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "{{Groceries.name}}",
+                                                    "_value": "{{Groceries.itemName}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }

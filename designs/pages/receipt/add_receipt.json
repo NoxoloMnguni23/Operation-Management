@@ -85,7 +85,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\n{\n  page.firstFormGroup = page._formBuilder.group({\n    firstCtrl: ['', Validators.required]\n  });\n  page.secondFormGroup = page._formBuilder.group({\n    username: [ '', Validators.required],\n    shopName: ['', Validators.required],\n    totalAmount: ['', Validators.required],\n  });\n  page.thirdFormGroup = page._formBuilder.group({\n    items: page._formBuilder.array([])\n  });\n}\n\npage.item = page._formBuilder.group({\n    itemName: ['', Validators.required],\n    price: ['', Validators.required],\n    category: ['', Validators.required]\n})\n\nconsole.log(page.thirdFormGroup)\nconsole.log('Items: ', page.item)\n\n\n// page.clientDetails = {fullName: '', email: '', idNum: '', remotePin: '', confirmRemotePin: '', ID_doc: '', proof_of_res: '', picture: ''}",
+        "script": "page.user = bh.system.oauthService.userInfo.displayName\n\n\n{\n  page.firstFormGroup = page._formBuilder.group({\n    firstCtrl: ['', Validators.required]\n  });\n  page.secondFormGroup = page._formBuilder.group({\n    username: [ page.user, Validators.required],\n    shopName: ['', Validators.required],\n    totalAmount: ['', Validators.required],\n  });\n  page.thirdFormGroup = page._formBuilder.group({\n    items: page._formBuilder.array([])\n  });\n}\n\n// page.item = page._formBuilder.group({\n//     itemName: ['', Validators.required],\n//     price: ['', Validators.required],\n//     category: ['', Validators.required]\n// })\n\nconsole.log(page.thirdFormGroup)\nconsole.log('Items: ', page.item)\n\n\n\n\n\n// page.clientDetails = {fullName: '', email: '', idNum: '', remotePin: '', confirmRemotePin: '', ID_doc: '', proof_of_res: '', picture: ''}",
         "functionName": "sd_3aw5HhPzmUKV6P8y",
         "category": "Function",
         "x": 365,
@@ -256,7 +256,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// page.item = page._formBuilder.group({\n//     itemName: ['', Validators.required],\n//     price: ['', Validators.required],\n//     category: ['', Validators.required]\n// })\n\npage.thirdFormGroup.controls.items.push(page.item)\npage.item.controls['itemName'].clear()\nconsole.log(page.thirdFormGroup)",
+        "script": "let itemName = `itemName${page.control}`\nlet price = `price${page.control}`\nlet category = `category${page.control}`\n\npage.item = page._formBuilder.group({\n    [itemName]: ['', Validators.required],\n    [price]: ['', Validators.required],\n    [category]: ['', Validators.required]\n})\n\npage.thirdFormGroup.controls.items.push(page.item)\n\npage.control++\n\nconsole.log(page.thirdFormGroup)",
         "functionName": "sd_at75G7Cz2S4ahDoN",
         "category": "Function",
         "x": 220,
@@ -362,6 +362,13 @@
                 "typedIpValue": {
                     "type": "literal",
                     "value": ""
+                }
+            },
+            {
+                "textIp": "control",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
                 }
             }
         ],

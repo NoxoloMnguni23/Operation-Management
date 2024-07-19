@@ -271,7 +271,8 @@
                 "paletteKey": "ng-table-column",
                 "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
                 "isAdvancedChildComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1721212093385",
                 "designerReference": [
                     {
                         "_key": "Header Label",
@@ -321,8 +322,8 @@
                 "paletteKey": "ng-droppable-table-column",
                 "parentEditorKey": "0e8ee8e1-a292-44d4-5d72-5a5395d3ed50",
                 "isAdvancedChildComponent": true,
-                "isCommented": "true",
-                "commentid": "1719393589949",
+                "isCommented": "false",
+                "commentid": null,
                 "designerReference": [
                     {
                         "_key": "Sort Key",
@@ -344,7 +345,7 @@
                     },
                     {
                         "_key": "Header Label",
-                        "_value": "",
+                        "_value": "Date Uploaded",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -365,12 +366,11 @@
                         "_attrDef": "p"
                     }
                 ],
-                "e7ec0e04-9c0a-6259-c20d-db9f6f303e44": {
+                "e2d07882-a456-06d5-32e1-8b8782c3f3d3": {
                     "paletteKey": "Html5",
                     "parentEditorKey": "8333a50f-15f8-0038-b3a2-cf32d492db73",
                     "isAdvancedComponent": true,
-                    "isCommented": "true",
-                    "commentid": "1719393589949",
+                    "commentid": null,
                     "designerReference": [
                         {
                             "_key": "style",
@@ -553,12 +553,11 @@
                             "_visibility": false
                         }
                     ],
-                    "edf15999-95d2-7477-8e85-74f9db1b8794": {
+                    "43149ccf-ef86-8ad2-5845-3a1a2f274f2d": {
                         "paletteKey": "html-editor",
-                        "parentEditorKey": "e7ec0e04-9c0a-6259-c20d-db9f6f303e44",
+                        "parentEditorKey": "e2d07882-a456-06d5-32e1-8b8782c3f3d3",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "true",
-                        "commentid": "1719393578156",
+                        "commentid": null,
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -574,7 +573,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "<div>\r\n  <!-- <p>Status: {{ table.status | titlecase }}</p> -->\r\n  <span *ngIf=\"(table.status | titlecase) === 'Rejected'\" class=\"dot red-dot\"></span>\r\n  <span *ngIf=\"(table.status | titlecase) === 'Approved'\" class=\"dot green-dot\"></span>\r\n  <span *ngIf=\"(table.status | titlecase) === 'Pending'\" class=\"dot blue-dot\"></span>\r\n</div>",
+                                "_value": "{{table['Date-Uploaded'] | date}}",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }

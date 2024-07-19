@@ -1,13 +1,14 @@
 <div fxLayout="column wrap" class="full-width full-height" fxLayoutAlign="start stretch" [fxShow]="true">
   <div fxLayout="row wrap" style="height:35%;width:100%;" fxLayoutAlign="space-evenly center" [fxShow]="true">
-    <div fxLayout="row wrap" style="width: 45%; height: 90%; background-color: white; border-radius: 8px; padding: 4px" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" style="width: 45%; height: 90%; background-color: white; border-radius: 8px; padding: 10px" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="column wrap" style="width: 42%; height: 100%" fxLayoutAlign="start stretch" [fxShow]="true">
         <h4 style="color: gray; margin-top: 0">
           Accounts Overview</h4>
         <h5 style="color: gray; " class="no-margin-lebo">
           Annual Expenditure:</h5>
         <h3 style="margin-bottom: 0; color: red">
-          R {{page.annualAccumulatedExpenses}}</h3>
+          <span *ngIf="page.annualAccumulatedExpenses !== undefined">R {{page.annualAccumulatedExpenses}}</span>
+        </h3>
       </div>
       <div fxLayout="column wrap" style="width: 50%; height: 100%" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxFlex="100">
@@ -18,7 +19,7 @@
     <div fxLayout="row wrap" style="width: 45%; height: 90%; background-color: white; border-radius: 8px; padding: 10px" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="column wrap" style="width: 60%; height: 100%" fxLayoutAlign="start stretch" [fxShow]="true">
         <h4 style="color: gray; " class="no-margin-lebo">
-          Monthly Budget: <span *ngIf="page.currentMonthBugetAmt !== undefined else notSet"> R {{page.currentMonthBugetAmt.toFixed(2)}}</span>
+          Monthly Budget: <span *ngIf="page.currentMonthBugetAmt !== undefined else notSet"> R {{page.currentMonthBugetAmt}}</span>
           <ng-template #notSet>
             <button (click)="openDialog()" class="not-set-btn-tii">Click here to set</button>
           </ng-template>
@@ -26,14 +27,14 @@
         <h6 style="color: lightgray; " class="no-margin-lebo">
           {{page.thisMonthRangeDate}}
         </h6><span style="margin-bottom: 0; color: gray">
-                <ul>
-    <li *ngIf="page.currentMonthBugetAmt !== undefined">Expenses: R {{page.sumTotal}} </li>
-    <li *ngIf="page.currentMonthBugetAmt !== undefined ">Savings: R {{page.savings}} </li>
+                <ul *ngIf="page.currentMonthBugetAmt !== undefined &amp;&amp; page.currentMonthBugetAmt !== undefined ">
+    <li>Expenses: R {{page.monthlyExpenses}} </li> <br>
+    <li>Savings: R {{page.savings}} </li>
 </ul></span>
       </div>
       <div fxLayout="column wrap" style="width: 40%; height: 100%" class="canvas-tii" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxFlex="100">
-          <canvas baseChart [datasets]="page.doughnutChartData" [labels]="page.doughnutChartLabels" [legend]="false" type="doughnut"></canvas>
+          <canvas baseChart [datasets]="page.doughnutChartData" [labels]="page.doughnutChartLabels" [legend]="true" type="doughnut"></canvas>
         </div>
       </div>
     </div>
