@@ -24,7 +24,7 @@
         "functionName": "sd_g8anwqOVxkl7dnK1",
         "category": "Lifecycle Events",
         "x": 45,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "sd_xW4Pjtkb5SQe5Fy6"
@@ -173,7 +173,7 @@
         "functionName": "sd_HqphZUawWwBmzlQe",
         "category": "General",
         "x": 385,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "sd_RDN6unfHnk0O5Kfz"
@@ -195,7 +195,7 @@
         "functionName": "sd_RDN6unfHnk0O5Kfz",
         "category": "Function",
         "x": 465,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "sd_F2ZToH6C34R0qqKu"
@@ -250,7 +250,7 @@
         "functionName": "getReceipts",
         "category": "HTTP",
         "x": 545,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "sd_qzr4I51Z7TShqyIx"
@@ -272,7 +272,7 @@
         "functionName": "sd_I8cgmZAyUMYw2KLe",
         "category": "Function",
         "x": 725,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "sd_2JXWvVyCSaWUOSSi"
@@ -305,7 +305,7 @@
         "functionName": "sd_qzr4I51Z7TShqyIx",
         "category": "Function",
         "x": 645,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "sd_I8cgmZAyUMYw2KLe"
@@ -429,7 +429,7 @@
         "functionName": "sd_2JXWvVyCSaWUOSSi",
         "category": "Function",
         "x": 825,
-        "y": 60,
+        "y": 80,
         "wires": [
             []
         ],
@@ -755,7 +755,7 @@
         "functionName": "sd_xW4Pjtkb5SQe5Fy6",
         "category": "Function",
         "x": 125,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "sd_oVwRlrUvGw6hhxZi"

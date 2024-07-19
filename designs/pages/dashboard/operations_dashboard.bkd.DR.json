@@ -2403,6 +2403,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "full-width",
                                 "gray-blue-bg",
                                 "router-outlet-content-tii"
                             ],

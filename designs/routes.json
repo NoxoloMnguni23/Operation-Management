@@ -39,10 +39,6 @@
             "path": "user_dashboard"
         },
         {
-            "component": "selected_receipt_formComponent",
-            "path": "selected_receipt_form"
-        },
-        {
             "path": "view_table_of_receipt",
             "component": "view_table_of_receiptComponent"
         },
@@ -69,6 +65,10 @@
         {
             "path": "add_budget",
             "component": "add_budgetComponent"
+        },
+        {
+            "path": "selected_receipt_form",
+            "component": "selected_receipt_formComponent"
         },
         {
             "path": "''",

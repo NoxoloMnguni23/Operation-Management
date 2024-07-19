@@ -132,9 +132,32 @@ body {
     font-weight: 900;
 }
 
+
 .form-kim {
     height: 80%!important;
-    width: 70%!important;
+    // width: 100%!important;
+}
+//inputs
+
+.input-kim {
+    
+mat-form-field-infix ng-tns-c154-1{
+        margin-left: 43px;
+    width: 205px;
+}
+
+bh-selected_receipt_form{
+
+    font-family: "Roboto", sans-serif;
+    color: rgba(0,0,0,.87);
+    width: 100%;
+}
+
+
+
+
+
+   
 }
 
 bh-add_receipt{
@@ -194,6 +217,20 @@ bh-add_receipt{
     border-radius: 10px;
     margin: 10px;
 }
+
+///borders
+
+.border-right-kim{
+    border-right: 1px dashed black;
+    padding-right:50px!important
+
+}
+.border-none-kim{
+ border: none!important;;
+   outline: none!important;
+   
+}
+
 
 //Paddings
 .padding-left-12px-lebo {

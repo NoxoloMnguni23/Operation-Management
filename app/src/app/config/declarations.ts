@@ -169,7 +169,6 @@ export const appRoutes = [
     ],
   },
   { path: 'user_dashboard', component: user_dashboardComponent },
-  { path: 'selected_receipt_form', component: selected_receipt_formComponent },
   { path: 'view_table_of_receipt', component: view_table_of_receiptComponent },
   {
     path: 'all_purchased_items_table',
@@ -180,6 +179,7 @@ export const appRoutes = [
   { path: 'donut_chart', component: donut_chartComponent },
   { path: 'view_receipt_image', component: view_receipt_imageComponent },
   { path: 'add_budget', component: add_budgetComponent },
+  { path: 'selected_receipt_form', component: selected_receipt_formComponent },
   { path: '', redirectTo: '/signIn', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

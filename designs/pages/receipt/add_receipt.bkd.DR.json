@@ -89,8 +89,8 @@
                 {
                     "_key": "class",
                     "_value": [
-                        "white-blue-bg",
-                        "form-kim"
+                        "form-kim",
+                        "white-blue-bg"
                     ],
                     "_type": "dav",
                     "_attrDef": "p"

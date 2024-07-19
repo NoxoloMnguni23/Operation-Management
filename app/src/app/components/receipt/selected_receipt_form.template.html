@@ -1,5 +1,79 @@
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div>
-    <button mat-button (click)="viewReceipt()">Button</button>
+<div fxLayout="column wrap" class="full-width full-height" fxLayoutAlign="center center" [fxShow]="true" fxFill>
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon style="position: absolute;     top: 0px;     left: 0px; height:50px;width:50px" (click)="goBack()"><span class="material-symbols-outlined"> chevron_left </span></mat-icon></div>
+  <div fxLayout="column wrap" style="height: 80%!important; width: 70%!important;" class="white-blue-bg" fxLayoutAlign="center start" [fxShow]="true">
+    <div fxLayout="row wrap" class="scroll-kim full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="padding-left:50px!important" class="border-right-kim" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <h1>
+              Receipt Details</h1>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                Use who uploaded:</label></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="border-none-kim" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput name="userName" value="{{page.userData.username}}" [required]="false" [disabled]="true">
+
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                Shop Name : </label></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start space-between" [fxShow]="true">
+              <mat-form-field style="margin-left: 43px!important; width: 205px!important;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput value="{{page.userData. shopName}}" [required]="false" [disabled]="true">
+
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                Total Amount :
+              </label></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start space-between" [fxShow]="true">
+              <mat-form-field style="margin-left: 27px!important; width: 205px!important;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput name="totalAmount" value="{{page.userData.totalAmount | currency:&apos;ZAR&apos;:&apos;symbol&apos;:&apos;1.2-2&apos; }}" [required]="false" [disabled]="true">
+
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                Date-Uploaded :</label></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start space-between" [fxShow]="true">
+              <mat-form-field style="margin-left: 16px!important; width: 205px!important;" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput name=" Date-Uploaded" value="{{page.userData[&apos;Date-Uploaded&apos;] | date}}" [required]="false" [disabled]="true">
+
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" class="label-margin-kim" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon (click)="viewReceipt()" matTooltip="View receipt">visibility</mat-icon></div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="padding-left:50px!important" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <h1>
+              Items </h1>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+            <div>
+
+              <ul>
+                <li *ngFor="let item of page.items">
+                  <strong>Item Name:</strong> {{ item.itemName }}<br>
+                  <strong>Price:</strong> {{ item.price | currency:&apos;ZAR&apos;:&apos;symbol&apos;:&apos;1.2-2&apos; }}<br>
+                  <strong>Category:</strong> {{ item.category }}<br><br>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
